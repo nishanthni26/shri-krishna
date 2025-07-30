@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Heart, Home, Phone, Users } from "lucide-react";
+import { Heart, Home as HomeIcon, Phone, Users } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -87,7 +87,7 @@ export default function Home() {
                 <div className="mt-8 grid grid-cols-2 gap-6">
                   <div className="flex items-center gap-4">
                     <div className="bg-secondary p-3 rounded-full">
-                      <Home className="h-6 w-6 text-primary" />
+                      <HomeIcon className="h-6 w-6 text-primary" />
                     </div>
                     <div>
                       <h3 className="font-bold">Natural Shelter</h3>
