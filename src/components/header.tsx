@@ -17,9 +17,6 @@ export function Header() {
           <Link href="/#services" className="text-muted-foreground transition-colors hover:text-foreground">
             Services
           </Link>
-          <Link href="/ask-krishna" className="text-muted-foreground transition-colors hover:text-foreground">
-            Ask Krishna
-          </Link>
           <Link href="/#gallery" className="text-muted-foreground transition-colors hover:text-foreground">
             Gallery
           </Link>

@@ -163,19 +163,6 @@ export default function Home() {
         </div>
       </section>
       
-      <section id="ask-krishna" className="py-16 md:py-24 bg-accent text-accent-foreground">
-        <div className="container mx-auto px-4 text-center">
-          <MessageCircle className="w-16 h-16 mx-auto mb-4"/>
-          <h2 className="text-3xl md:text-4xl font-headline mb-4">Ask Krishna</h2>
-          <p className="max-w-2xl mx-auto mb-8">
-            Have questions about cows and their significance in ancient scriptures? Our AI, inspired by Lord Krishna, has the answers.
-          </p>
-          <Button asChild size="lg" variant="secondary" className="bg-background text-foreground hover:bg-background/90">
-            <Link href="/ask-krishna">Seek Wisdom</Link>
-          </Button>
-        </div>
-      </section>
-
       <section id="gallery" className="py-16 md:py-24">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-headline text-center mb-12">Glimpses of Goshala</h2>
