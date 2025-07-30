@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --background: 210 40% 98%; /* #f8f9fa - Very Light Cool Gray */
+    --background: 35 100% 98%; /* #fffaf2 - Papaya Whip */
     --foreground: 210 10% 23%; /* #343a40 - Dark Slate Gray */
 
     --card: 0 0% 100%; /* #ffffff - White */
