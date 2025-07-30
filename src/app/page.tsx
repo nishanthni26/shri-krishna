@@ -79,7 +79,7 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       <section className="relative w-full h-[60vh] md:h-[80vh]">
         <Image
-          src="https://placehold.co/1600x900.png"
+          src="https://images.unsplash.com/photo-1596093408353-242281ea4246?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxnb3NoYWxhfGVufDB8fHx8MTc1MzkwMDQ5M3ww&ixlib=rb-4.1.0&q=80&w=1080"
           alt="A tranquil Goshala with cows at sunrise"
           layout="fill"
           objectFit="cover"
@@ -113,7 +113,7 @@ export default function Home() {
             </div>
             <div className="w-full h-80 relative rounded-lg overflow-hidden shadow-xl">
                <Image
-                  src="https://placehold.co/600x400.png"
+                  src="https://images.unsplash.com/photo-1546722228-7baeca4bd0b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyMHx8Y293JTIwaW1hZ2VzJTIwaW5kaWF8ZW58MHx8fHwxNzUzODk4NjEzfDA&ixlib=rb-4.1.0&q=80&w=1080"
                   alt="A person gently petting a cow"
                   layout="fill"
                   objectFit="cover"
