@@ -87,11 +87,11 @@ export default function Home() {
           className="brightness-50"
           data-ai-hint="tranquil goshala"
         />
-        <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white p-4">
-          <h1 className="text-4xl md:text-7xl font-headline tracking-wider drop-shadow-lg">
+        <div className="relative z-10 flex flex-col items-center justify-center h-full text-center p-4">
+          <h1 className="text-4xl md:text-7xl font-headline tracking-wider drop-shadow-lg text-accent">
             Sri Krishna Goshala
           </h1>
-          <p className="mt-4 text-lg md:text-2xl max-w-3xl drop-shadow-md">
+          <p className="mt-4 text-lg md:text-2xl max-w-3xl drop-shadow-md text-white">
             A sanctuary of love, care, and devotion for the sacred cow.
           </p>
           <Button asChild size="lg" className="mt-8 text-lg">
