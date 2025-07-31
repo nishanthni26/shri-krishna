@@ -141,7 +141,7 @@ export default function Home() {
                 className="rounded-lg shadow-md hover:scale-105 transition-transform"
               />
               <Image
-                src="https://placehold.co/400x400.png"
+                src="https://images.unsplash.com/photo-1523715201095-8bc5927fa2bf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxCdWZmb2xvJTIwaW5kaWElMjBjb3d8ZW58MHx8fHwxNzUzOTM0MjgzfDA&ixlib=rb-4.1.0&q=80&w=1080"
                 alt="Cow 2"
                 data-ai-hint="grazing cow"
                 width={400}
