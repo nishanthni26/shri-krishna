@@ -63,7 +63,7 @@ export default function Home() {
             objectFit="cover"
             className="z-0"
           />
-          <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white bg-black/50 p-4">
+          <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white bg-black/60 p-4">
             <h1 className="text-4xl md:text-7xl font-bold tracking-tight drop-shadow-lg">
               Welcome to Sri Krishna Goshala
             </h1>
@@ -268,5 +268,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
