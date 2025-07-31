@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Heart, Home as HomeIcon, Phone, Users } from "lucide-react";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { DollarSign, Gift, Heart, Home as HomeIcon, Phone, Wheat } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -21,6 +21,12 @@ export default function Home() {
               className="text-muted-foreground hover:text-primary transition-colors"
             >
               About
+            </Link>
+            <Link
+              href="#seva"
+              className="text-muted-foreground hover:text-primary transition-colors"
+            >
+              Seva
             </Link>
             <Link
               href="#gallery"
@@ -122,8 +128,66 @@ export default function Home() {
             </div>
           </div>
         </section>
+        
+        <section id="seva" className="py-16 md:py-24 bg-secondary">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="text-center">
+              <h2 className="text-3xl md:text-4xl font-bold text-primary">Offer Seva</h2>
+              <p className="mt-4 max-w-2xl mx-auto text-muted-foreground text-lg">
+                Your service and contributions help us care for the sacred cows. Choose a Seva that resonates with you.
+              </p>
+            </div>
+            <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+              <Card className="flex flex-col">
+                <CardHeader className="items-center">
+                  <div className="bg-primary/10 p-4 rounded-full">
+                    <Wheat className="h-8 w-8 text-primary" />
+                  </div>
+                  <CardTitle className="mt-4">Go-Grasa Seva</CardTitle>
+                  <CardDescription>Feed a cow for a day</CardDescription>
+                </CardHeader>
+                <CardContent className="text-center flex-grow">
+                  <p className="text-3xl font-bold">₹251</p>
+                </CardContent>
+                <CardFooter className="justify-center">
+                  <Button>Offer Seva</Button>
+                </CardFooter>
+              </Card>
+              <Card className="flex flex-col">
+                <CardHeader className="items-center">
+                  <div className="bg-primary/10 p-4 rounded-full">
+                    <Heart className="h-8 w-8 text-primary" />
+                  </div>
+                  <CardTitle className="mt-4">Medical Seva</CardTitle>
+                  <CardDescription>Sponsor medical care</CardDescription>
+                </CardHeader>
+                <CardContent className="text-center flex-grow">
+                  <p className="text-3xl font-bold">₹501</p>
+                </CardContent>
+                <CardFooter className="justify-center">
+                  <Button>Offer Seva</Button>
+                </CardFooter>
+              </Card>
+              <Card className="flex flex-col">
+                <CardHeader className="items-center">
+                  <div className="bg-primary/10 p-4 rounded-full">
+                    <DollarSign className="h-8 w-8 text-primary" />
+                  </div>
+                  <CardTitle className="mt-4">Vatsa Seva</CardTitle>
+                  <CardDescription>Adopt a calf for a month</CardDescription>
+                </CardHeader>
+                <CardContent className="text-center flex-grow">
+                  <p className="text-3xl font-bold">₹2100</p>
+                </CardContent>
+                <CardFooter className="justify-center">
+                  <Button>Offer Seva</Button>
+                </CardFooter>
+              </Card>
+            </div>
+          </div>
+        </section>
 
-        <section id="gallery" className="py-16 md:py-24 bg-secondary">
+        <section id="gallery" className="py-16 md:py-24 bg-white">
           <div className="container mx-auto px-4 md:px-6 text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-primary">
               Our Gentle Residents
@@ -204,3 +268,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
