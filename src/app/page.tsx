@@ -67,7 +67,7 @@ export default function Home() {
             <h1 className="text-4xl md:text-7xl font-bold tracking-tight drop-shadow-lg">
               Welcome to Sri Krishna Goshala
             </h1>
-            <p className="mt-4 text-lg md:text-2xl max-w-3xl drop-shadow-md">
+            <p className="mt-4 text-base md:text-xl max-w-3xl drop-shadow-md">
               A sanctuary of love, care, and devotion for the sacred cow.
             </p>
             <Button size="lg" className="mt-8" asChild>
