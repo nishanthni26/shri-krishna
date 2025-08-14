@@ -197,7 +197,7 @@ export default function Home() {
             </p>
             <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
               <Image
-                src="https://images.unsplash.com/photo-1596522869019-461d3afc4173?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjb3clMjBnaXJ8ZW58MHx8fHwxNzUzOTM0MjA5fDA&ixlib=rb-4.1.0&q=80&w=1080"
+                src="https://images.unsplash.com/photo-1589954418888-1c36477b1fe5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxoYXBweSUyMGNvd3xlbnwwfHx8fDE3NTUxNTI5NTN8MA&ixlib=rb-4.1.0&q=80&w=1080"
                 alt="Cow 1"
                 data-ai-hint="happy cow"
                 width={400}
@@ -205,7 +205,7 @@ export default function Home() {
                 className="rounded-lg shadow-md hover:scale-105 transition-transform"
               />
               <Image
-                src="https://images.unsplash.com/photo-1523715201095-8bc5927fa2bf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxCdWZmb2xvJTIwaW5kaWElMjBjb3d8ZW58MHx8fHwxNzUzOTM0MjgzfDA&ixlib=rb-4.1.0&q=80&w=1080"
+                src="https://images.unsplash.com/photo-1740968786457-03abb9f06c3d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxncmF6aW5nJTIwY293fGVufDB8fHx8MTc1NTE1Mjk1M3ww&ixlib=rb-4.1.0&q=80&w=1080"
                 alt="Cow 2"
                 data-ai-hint="grazing cow"
                 width={400}
@@ -213,7 +213,7 @@ export default function Home() {
                 className="rounded-lg shadow-md hover:scale-105 transition-transform"
               />
               <Image
-                src="https://images.unsplash.com/photo-1527153857715-3908f2bae5e8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjb3d8ZW58MHx8fHwxNzU0OTA3Mjc4fDA&ixlib=rb-4.1.0&q=80&w=1080"
+                src="https://images.unsplash.com/photo-1496178149619-50f91d4669fc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxjYWxmJTIwcGxheWluZ3xlbnwwfHx8fDE3NTUxNTI5NTR8MA&ixlib=rb-4.1.0&q=80&w=1080"
                 alt="Cow 3"
                 data-ai-hint="calf playing"
                 width={400}
@@ -221,7 +221,7 @@ export default function Home() {
                 className="rounded-lg shadow-md hover:scale-105 transition-transform"
               />
               <Image
-                src="https://placehold.co/400x400.png"
+                src="https://images.unsplash.com/reserve/tv3te4tNQsugPmYU4Aj7_KS_CattleFence.jpg?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjb3clMjBoZXJkfGVufDB8fHx8MTc1NTE1Mjk1M3ww&ixlib=rb-4.1.0&q=80&w=1080"
                 alt="Cow 4"
                 data-ai-hint="cow herd"
                 width={400}
