@@ -54,15 +54,17 @@ export default function Home() {
       </header>
 
       <main className="flex-1">
-        <section className="relative h-[60vh] md:h-[80vh] w-full">
-          <Image
-            src="https://placehold.co/1600x900.png"
-            alt="Hero cow"
-            data-ai-hint="indian cow"
-            layout="fill"
-            objectFit="cover"
-            className="z-0"
-          />
+        <section className="relative h-[60vh] md:h-[80vh] w-full overflow-hidden">
+          <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="absolute z-0 w-full h-full object-cover"
+            >
+              <source src="/animations/cow-animation.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white bg-black/60 p-4">
             <h1 className="text-4xl md:text-7xl font-bold tracking-tight drop-shadow-lg">
               Welcome to Sri Krishna Goshala
