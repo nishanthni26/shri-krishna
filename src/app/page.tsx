@@ -80,7 +80,7 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-16 items-center">
               <div className="relative w-full aspect-square">
                  <Image
-                  src="https://images.unsplash.com/photo-1672858074971-55cf899b2f66?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjb3clMjBwb3J0cmFpdHxlbnwwfHx8fDE3NTU3MjIxMTR8MA&ixlib=rb-4.1.0&q=80&w=1080"
+                  src="/gallery/cow-portrait.jpg"
                   alt="A calm cow with gentle eyes"
                   layout="fill"
                   objectFit="cover"
@@ -193,7 +193,7 @@ export default function Home() {
               </div>
 
               <Button asChild size="lg" variant="secondary" className="mt-10 rounded-full text-lg px-10 py-7 group bg-white text-primary hover:bg-white/90 shadow-2xl">
-                <Link href="/login">
+                <Link href="/payment">
                     Donate for a Cause <HeartHandshake className="w-6 h-6 ml-3 transition-transform group-hover:scale-125" />
                 </Link>
               </Button>
