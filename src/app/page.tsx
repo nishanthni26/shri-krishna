@@ -4,8 +4,13 @@ import { ArrowRight, Milk, Sprout, HeartHandshake, ShieldCheck, Phone, Video, Lo
 import Image from "next/image";
 import Link from "next/link";
 import { HeroCarousel } from "@/components/ui/hero-carousel";
+import { Progress } from "@/components/ui/progress";
 
 export default function Home() {
+  const raisedAmount = 287000;
+  const goalAmount = 500000;
+  const progressPercentage = (raisedAmount / goalAmount) * 100;
+
   return (
     <div className="flex flex-col min-h-dvh bg-background antialiased">
       <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-sm">
@@ -75,7 +80,7 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-16 items-center">
               <div className="relative w-full aspect-square">
                  <Image
-                  src="/gallery/cow-face.jpg"
+                  src="https://images.unsplash.com/photo-1672858074971-55cf899b2f66?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjb3clMjBwb3J0cmFpdHxlbnwwfHx8fDE3NTU3MjIxMTR8MA&ixlib=rb-4.1.0&q=80&w=1080"
                   alt="A calm cow with gentle eyes"
                   layout="fill"
                   objectFit="cover"
@@ -177,6 +182,16 @@ export default function Home() {
               <p className="mt-5 max-w-3xl mx-auto text-lg text-white/80">
                 Your generous donation helps us provide nutritious food, safe shelter, and medical care for our beloved cows. Every contribution, big or small, makes a monumental difference.
               </p>
+              
+              <div className="max-w-2xl mx-auto mt-10">
+                <div className="flex justify-between items-center text-white/90 font-bold mb-2 text-lg">
+                    <span>Raised: ₹{new Intl.NumberFormat('en-IN').format(raisedAmount)}</span>
+                    <span>Goal: ₹{new Intl.NumberFormat('en-IN').format(goalAmount)}</span>
+                </div>
+                <Progress value={progressPercentage} className="h-5 border-2 border-white/30" />
+                <p className="text-center mt-3 text-white/90 font-semibold">{Math.round(progressPercentage)}% of our monthly goal reached!</p>
+              </div>
+
               <Button size="lg" variant="secondary" className="mt-10 rounded-full text-lg px-10 py-7 group bg-white text-primary hover:bg-white/90 shadow-2xl">
                 Donate for a Cause <HeartHandshake className="w-6 h-6 ml-3 transition-transform group-hover:scale-125" />
               </Button>
