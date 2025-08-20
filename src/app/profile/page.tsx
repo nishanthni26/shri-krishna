@@ -7,8 +7,8 @@ import { Separator } from '@/components/ui/separator';
 import { Badge } from '@/components/ui/badge';
 import Image from 'next/image';
 import Link from 'next/link';
+import { DollarSign, LogOut } from 'lucide-react';
 
-// Mock data for user profile and donation history
 const userProfile = {
   name: 'Krishna Das',
   email: 'krishna.das@example.com',
@@ -25,54 +25,60 @@ const donationHistory = [
 
 export default function ProfilePage() {
   return (
-    <div className="flex flex-col min-h-screen bg-secondary/50">
-      <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-sm">
+    <div className="flex flex-col min-h-screen bg-secondary/30">
+      <header className="sticky top-0 z-50 bg-background/90 backdrop-blur-sm">
         <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
           <Link href="/" className="flex items-center gap-3">
              <Image
               src="/gallery/cow-1.jpg"
               alt="Goshala Logo"
-              width={40}
-              height={40}
-              className="rounded-full object-cover"
+              width={48}
+              height={48}
+              className="rounded-full object-cover border-2 border-primary/50"
             />
-            <span className="text-2xl font-bold text-foreground">
+            <span className="text-2xl font-bold text-foreground tracking-tight">
               Sri Krishna Goshala
             </span>
           </Link>
           <Button asChild variant="outline">
-            <Link href="/">Logout</Link>
+            <Link href="/" className="flex items-center gap-2">
+                <LogOut className="w-4 h-4" />
+                Logout
+            </Link>
           </Button>
         </div>
       </header>
 
       <main className="flex-1 p-4 md:p-8">
-        <div className="container mx-auto">
-          <Card className="shadow-xl">
-            <CardHeader className="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-6">
+        <div className="container mx-auto max-w-4xl">
+          <Card className="shadow-xl border-t-4 border-primary">
+            <CardHeader className="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-6 p-6">
               <Avatar className="h-24 w-24 border-4 border-primary">
                 <AvatarImage src={userProfile.avatarUrl} alt={userProfile.name} data-ai-hint="smiling person" />
                 <AvatarFallback>{userProfile.name.charAt(0)}</AvatarFallback>
               </Avatar>
               <div className="flex-1">
-                <CardTitle className="text-3xl">{userProfile.name}</CardTitle>
+                <CardTitle className="text-3xl font-bold">{userProfile.name}</CardTitle>
                 <CardDescription className="text-lg text-muted-foreground">{userProfile.email}</CardDescription>
                 <p className="text-sm text-muted-foreground mt-1">Joined on {new Date(userProfile.joinDate).toLocaleDateString()}</p>
               </div>
             </CardHeader>
             <Separator />
-            <CardContent className="pt-6">
-              <h3 className="text-2xl font-bold mb-4">Donation History</h3>
+            <CardContent className="p-6">
+              <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
+                <DollarSign className="w-6 h-6 text-primary" />
+                Donation History
+              </h3>
               <div className="space-y-4">
                 {donationHistory.map((donation) => (
-                  <Card key={donation.id} className="p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+                  <Card key={donation.id} className="p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 bg-secondary/40 border">
                     <div className="flex-1">
                       <p className="font-bold text-primary">{donation.type}</p>
-                      <p className="text-sm text-muted-foreground">ID: {donation.id} | Date: {donation.date}</p>
+                      <p className="text-sm text-muted-foreground">ID: {donation.id} | Date: {new Date(donation.date).toLocaleDateString()}</p>
                     </div>
-                    <div className="text-right">
+                    <div className="text-right flex items-center gap-4">
                        <p className="text-xl font-bold">{donation.amount}</p>
-                       <Badge>{donation.status}</Badge>
+                       <Badge variant={donation.status === 'Completed' ? 'default' : 'secondary'} className="bg-green-100 text-green-800 border-green-300">{donation.status}</Badge>
                     </div>
                   </Card>
                 ))}

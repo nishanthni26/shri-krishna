@@ -13,38 +13,36 @@ export default function LoginPage() {
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real app, you'd handle authentication here.
-    // For this prototype, we'll just navigate to the profile page.
     router.push('/profile');
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-secondary/50">
-      <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-sm">
+    <div className="flex flex-col min-h-screen bg-secondary/30">
+      <header className="sticky top-0 z-50 bg-background/90 backdrop-blur-sm">
         <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
           <Link href="/" className="flex items-center gap-3">
             <Image
               src="/gallery/cow-1.jpg"
               alt="Goshala Logo"
-              width={40}
-              height={40}
-              className="rounded-full object-cover"
+              width={48}
+              height={48}
+              className="rounded-full object-cover border-2 border-primary/50"
             />
-            <span className="text-2xl font-bold text-foreground">
+            <span className="text-2xl font-bold text-foreground tracking-tight">
               Sri Krishna Goshala
             </span>
           </Link>
-          <Button asChild>
+          <Button asChild variant="outline">
             <Link href="/">Back to Home</Link>
           </Button>
         </div>
       </header>
       <main className="flex-1 flex items-center justify-center p-4">
-        <Card className="w-full max-w-sm shadow-2xl">
-          <CardHeader>
-            <CardTitle className="text-2xl">Login</CardTitle>
+        <Card className="w-full max-w-sm shadow-xl border-t-4 border-primary">
+          <CardHeader className="text-center">
+            <CardTitle className="text-3xl">Welcome Back</CardTitle>
             <CardDescription>
-              Enter your email below to login to your account.
+              Enter your credentials to access your account.
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -62,7 +60,7 @@ export default function LoginPage() {
                 <Label htmlFor="password">Password</Label>
                 <Input id="password" type="password" required />
               </div>
-              <Button type="submit" className="w-full">
+              <Button type="submit" className="w-full mt-2" size="lg">
                 Login
               </Button>
             </form>
