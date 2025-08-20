@@ -10,7 +10,7 @@ export default function Home() {
       <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-sm">
         <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
           <Link href="#" className="flex items-center gap-3">
-            <Image src="https://placehold.co/400x400.png" alt="Goshala Logo" width={40} height={40} className="rounded-full" />
+            <Image src="https://placehold.co/400x400.png" alt="Goshala Logo" data-ai-hint="happy cow" width={40} height={40} className="rounded-full" />
             <span className="text-2xl font-bold text-foreground">
               Sri Krishna Goshala
             </span>
@@ -194,7 +194,7 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-6 py-10">
           <div className="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
              <div className="flex items-center gap-3">
-                <Image src="https://placehold.co/400x400.png" alt="Goshala Logo" width={32} height={32} className="rounded-full" />
+                <Image src="https://placehold.co/400x400.png" alt="Goshala Logo" data-ai-hint="happy cow" width={32} height={32} className="rounded-full" />
                 <span className="text-lg font-bold">Sri Krishna Goshala</span>
              </div>
             <p className="text-muted-foreground mt-4 md:mt-0">

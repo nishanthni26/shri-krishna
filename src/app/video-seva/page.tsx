@@ -51,7 +51,7 @@ export default function VideoSevaPage() {
       <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-sm">
         <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
           <Link href="/" className="flex items-center gap-3">
-             <Image src="https://placehold.co/400x400.png" alt="Goshala Logo" width={40} height={40} className="rounded-full" />
+             <Image src="https://placehold.co/400x400.png" alt="Goshala Logo" data-ai-hint="happy cow" width={40} height={40} className="rounded-full" />
             <span className="text-2xl font-bold text-foreground">
               Sri Krishna Goshala
             </span>
