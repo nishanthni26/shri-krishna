@@ -151,7 +151,6 @@ export default function Home() {
                 { src: "/gallery/cow-2.jpg", alt: "Grazing Cow"},
                 { src: "/gallery/cow-3.jpg", alt: "Calf Playing"},
                 { src: "/gallery/cow-4.jpg", alt: "Cow Herd"},
-                { src: "/gallery/123.png", alt: "Cow standing in a field"},
               ].map((image, index) => (
                 <div key={index} className="overflow-hidden rounded-2xl group aspect-w-1 aspect-h-1">
                   <Image
