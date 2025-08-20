@@ -43,7 +43,7 @@ export default function AdminDashboardPage() {
       <aside className="hidden w-64 flex-col border-r bg-background p-4 sm:flex">
         <div className="flex items-center gap-3 mb-8">
             <Image 
-              src="/gallery/cow-1.jpg" 
+              src="/logo.png" 
               alt="Goshala Logo" 
               width={48} 
               height={48} 

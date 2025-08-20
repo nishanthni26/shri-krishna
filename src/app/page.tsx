@@ -12,7 +12,7 @@ export default function Home() {
         <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
           <Link href="#" className="flex items-center gap-3">
             <Image 
-              src="/gallery/cow-1.jpg" 
+              src="/logo.png" 
               alt="Goshala Logo" 
               width={48} 
               height={48} 
@@ -190,7 +190,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-6">
              <div className="flex items-center gap-3">
                 <Image 
-                  src="/gallery/cow-1.jpg" 
+                  src="/logo.png" 
                   alt="Goshala Logo" 
                   width={40} 
                   height={40} 
