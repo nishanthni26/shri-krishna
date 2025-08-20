@@ -1,94 +1,37 @@
 'use client';
 
-import { useState } from 'react';
+import { Bar, BarChart, CartesianGrid, ResponsiveContainer, XAxis, YAxis, Tooltip, Legend } from 'recharts';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
-import { Separator } from '@/components/ui/separator';
-import { GalleryVertical, Palette, LogOut, Upload, Trash2, Plus } from 'lucide-react';
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
+import { Activity, ArrowUpRight, CreditCard, DollarSign, Users, LogOut, LayoutDashboard } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useToast } from '@/components/ui/use-toast';
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
 
+const chartData = [
+  { name: 'Jan', total: Math.floor(Math.random() * 5000) + 1000 },
+  { name: 'Feb', total: Math.floor(Math.random() * 5000) + 1000 },
+  { name: 'Mar', total: Math.floor(Math.random() * 5000) + 1000 },
+  { name: 'Apr', total: Math.floor(Math.random() * 5000) + 1000 },
+  { name: 'May', total: Math.floor(Math.random() * 5000) + 1000 },
+  { name: 'Jun', total: Math.floor(Math.random() * 5000) + 1000 },
+  { name: 'Jul', total: Math.floor(Math.random() * 5000) + 1000 },
+  { name: 'Aug', total: Math.floor(Math.random() * 5000) + 1000 },
+  { name: 'Sep', total: Math.floor(Math.random() * 5000) + 1000 },
+  { name: 'Oct', total: Math.floor(Math.random() * 5000) + 1000 },
+  { name: 'Nov', total: Math.floor(Math.random() * 5000) + 1000 },
+  { name: 'Dec', total: Math.floor(Math.random() * 5000) + 1000 },
+];
 
-const initialGalleryImages = [
-  { src: "/gallery/cow-1.jpg", alt: "Happy Cow"},
-  { src: "/gallery/cow-2.jpg", alt: "Grazing Cow"},
-  { src: "/gallery/cow-3.jpg", alt: "Calf Playing"},
-  { src: "/gallery/cow-4.jpg", alt: "Cow Herd"},
+const recentSevas = [
+  { name: 'Ramesh Patel', email: 'ramesh@example.com', seva: 'Go-Grasa Seva', amount: '₹1,100' },
+  { name: 'Priya Sharma', email: 'priya.s@example.com', seva: 'Medical Seva', amount: '₹2,100' },
+  { name: 'Amit Singh', email: 'amit.singh@example.com', seva: 'Vatsa Seva', amount: '₹5,100' },
+  { name: 'Sunita Gupta', email: 'sunita@example.com', seva: 'Video Seva', amount: '₹1,100' },
+  { name: 'Vikram Kumar', email: 'vikram.k@example.com', seva: 'Gau Daan', amount: '₹21,000' },
 ];
 
 export default function AdminDashboardPage() {
-  const [galleryImages, setGalleryImages] = useState(initialGalleryImages);
-  const [customCss, setCustomCss] = useState('');
-  const [newImageUrl, setNewImageUrl] = useState('');
-  const [isDialogOpen, setIsDialogOpen] = useState(false);
-  const { toast } = useToast();
-
-  const handleAddImage = () => {
-    if (newImageUrl.trim()) {
-      setGalleryImages([...galleryImages, { src: newImageUrl, alt: "Newly Added Cow" }]);
-      setNewImageUrl('');
-      setIsDialogOpen(false);
-      toast({
-        title: 'Image Added',
-        description: 'The new image has been added to the gallery.',
-      });
-    } else {
-      toast({
-        variant: 'destructive',
-        title: 'Invalid URL',
-        description: 'Please enter a valid image URL.',
-      });
-    }
-  };
-  
-  const handleRemoveImage = (index: number) => {
-    setGalleryImages(galleryImages.filter((_, i) => i !== index));
-     toast({
-        title: 'Image Removed',
-        description: 'The image has been removed from the gallery.',
-      });
-  };
-
-  const handleSaveCss = () => {
-    try {
-      const styleElement = document.createElement('style');
-      styleElement.id = 'custom-admin-styles';
-      styleElement.innerHTML = customCss;
-      
-      const existingStyleElement = document.getElementById('custom-admin-styles');
-      if (existingStyleElement) {
-        existingStyleElement.replaceWith(styleElement);
-      } else {
-        document.head.appendChild(styleElement);
-      }
-      
-      toast({
-        title: 'CSS Applied',
-        description: 'Your custom styles have been applied successfully.',
-      });
-    } catch (error) {
-       toast({
-        variant: 'destructive',
-        title: 'CSS Error',
-        description: 'There was an error applying your custom CSS.',
-      });
-      console.error('Failed to apply custom CSS:', error);
-    }
-  };
-
   return (
     <div className="flex min-h-screen w-full bg-muted/40">
       <aside className="hidden w-64 flex-col border-r bg-background p-4 sm:flex">
@@ -104,12 +47,8 @@ export default function AdminDashboardPage() {
         </div>
         <nav className="flex flex-col gap-2">
           <Button variant="secondary" className="justify-start gap-2">
-            <GalleryVertical className="h-5 w-5" />
-            Manage Gallery
-          </Button>
-          <Button variant="ghost" className="justify-start gap-2">
-            <Palette className="h-5 w-5" />
-            Custom CSS
+            <LayoutDashboard className="h-5 w-5" />
+            Dashboard
           </Button>
         </nav>
         <div className="mt-auto">
@@ -121,95 +60,122 @@ export default function AdminDashboardPage() {
           </Button>
         </div>
       </aside>
-      <main className="flex-1 p-6">
-        <h1 className="text-3xl font-bold mb-6">Admin Dashboard</h1>
-        
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-2xl">
-              <GalleryVertical className="h-6 w-6" />
-              Manage Gallery Images
-            </CardTitle>
-            <CardDescription>Add or remove images from the website's gallery.</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-              {galleryImages.map((image, index) => (
-                <div key={index} className="relative group overflow-hidden rounded-lg">
-                  <Image
-                    src={image.src}
-                    alt={image.alt}
-                    width={200}
-                    height={200}
-                    className="object-cover w-full h-full"
-                  />
-                  <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                    <Button variant="destructive" size="icon" onClick={() => handleRemoveImage(index)}>
-                      <Trash2 className="h-5 w-5" />
-                    </Button>
-                  </div>
-                </div>
-              ))}
-              <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-                <DialogTrigger asChild>
-                   <button className="flex flex-col items-center justify-center w-full h-full min-h-[150px] border-2 border-dashed rounded-lg hover:bg-accent hover:border-primary transition-colors">
-                      <Plus className="h-8 w-8 text-muted-foreground" />
-                      <span className="mt-2 text-sm font-semibold text-muted-foreground">Add Image</span>
-                   </button>
-                </DialogTrigger>
-                <DialogContent className="sm:max-w-[425px]">
-                  <DialogHeader>
-                    <DialogTitle>Add New Gallery Image</DialogTitle>
-                    <DialogDescription>
-                      Enter the URL of the image you want to add to the gallery.
-                    </DialogDescription>
-                  </DialogHeader>
-                  <div className="grid gap-4 py-4">
-                    <div className="grid grid-cols-4 items-center gap-4">
-                      <Label htmlFor="imageUrl" className="text-right">
-                        Image URL
-                      </Label>
-                      <Input
-                        id="imageUrl"
-                        value={newImageUrl}
-                        onChange={(e) => setNewImageUrl(e.target.value)}
-                        className="col-span-3"
-                        placeholder="https://placehold.co/400x400.png"
-                      />
-                    </div>
-                  </div>
-                  <DialogFooter>
-                    <Button type="submit" onClick={handleAddImage}>Save image</Button>
-                  </DialogFooter>
-                </DialogContent>
-              </Dialog>
-            </div>
-          </CardContent>
-        </Card>
-
-        <Separator className="my-8" />
-
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-2xl">
-              <Palette className="h-6 w-6" />
-              Edit Website CSS
-            </CardTitle>
-            <CardDescription>Apply custom CSS styles to your website. Changes are live but not saved permanently.</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <Textarea 
-              placeholder="/* Example: body { background-color: #f0f0f0; } */" 
-              className="min-h-[200px] font-mono"
-              value={customCss}
-              onChange={(e) => setCustomCss(e.target.value)}
-            />
-            <Button className="mt-4" onClick={handleSaveCss}>
-              Apply CSS
-            </Button>
-          </CardContent>
-        </Card>
-
+      <main className="flex flex-1 flex-col gap-4 p-4 md:gap-8 md:p-8">
+        <div className="grid gap-4 md:grid-cols-2 md:gap-8 lg:grid-cols-4">
+          <Card>
+            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+              <CardTitle className="text-sm font-medium">
+                Total Seva Revenue
+              </CardTitle>
+              <DollarSign className="h-4 w-4 text-muted-foreground" />
+            </CardHeader>
+            <CardContent>
+              <div className="text-2xl font-bold">₹4,52,318.89</div>
+              <p className="text-xs text-muted-foreground">
+                +20.1% from last month
+              </p>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+              <CardTitle className="text-sm font-medium">
+                Devotees
+              </CardTitle>
+              <Users className="h-4 w-4 text-muted-foreground" />
+            </CardHeader>
+            <CardContent>
+              <div className="text-2xl font-bold">+2350</div>
+              <p className="text-xs text-muted-foreground">
+                +180.1% from last month
+              </p>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+              <CardTitle className="text-sm font-medium">Total Sevas</CardTitle>
+              <CreditCard className="h-4 w-4 text-muted-foreground" />
+            </CardHeader>
+            <CardContent>
+              <div className="text-2xl font-bold">+12,234</div>
+              <p className="text-xs text-muted-foreground">
+                +19% from last month
+              </p>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+              <CardTitle className="text-sm font-medium">Active Now</CardTitle>
+              <Activity className="h-4 w-4 text-muted-foreground" />
+            </CardHeader>
+            <CardContent>
+              <div className="text-2xl font-bold">+573</div>
+              <p className="text-xs text-muted-foreground">
+                +201 since last hour
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+        <div className="grid gap-4 md:gap-8 lg:grid-cols-2 xl:grid-cols-3">
+          <Card className="xl:col-span-2">
+            <CardHeader>
+              <CardTitle>Seva Contributions Overview</CardTitle>
+              <CardDescription>
+                An overview of Seva financial contributions for the year.
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="pl-2">
+              <ResponsiveContainer width="100%" height={350}>
+                 <BarChart data={chartData}>
+                  <CartesianGrid strokeDasharray="3 3" />
+                  <XAxis dataKey="name" stroke="#888888" fontSize={12} tickLine={false} axisLine={false} />
+                  <YAxis stroke="#888888" fontSize={12} tickLine={false} axisLine={false} tickFormatter={(value) => `₹${value/1000}K`} />
+                  <Tooltip cursor={{fill: 'hsl(var(--secondary))'}} contentStyle={{backgroundColor: 'hsl(var(--background))', border: '1px solid hsl(var(--border))' }}/>
+                  <Legend />
+                  <Bar dataKey="total" fill="hsl(var(--primary))" radius={[4, 4, 0, 0]} />
+                </BarChart>
+              </ResponsiveContainer>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader className="flex flex-row items-center">
+              <div className="grid gap-2">
+                <CardTitle>Recent Sevas</CardTitle>
+                <CardDescription>
+                  Recent sevas from our devotees.
+                </CardDescription>
+              </div>
+               <Button asChild size="sm" className="ml-auto gap-1">
+                <Link href="#">
+                  View All
+                  <ArrowUpRight className="h-4 w-4" />
+                </Link>
+              </Button>
+            </CardHeader>
+            <CardContent>
+              <Table>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead>Devotee</TableHead>
+                    <TableHead className="text-right">Amount</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {recentSevas.map((seva, index) => (
+                    <TableRow key={index}>
+                      <TableCell>
+                        <div className="font-medium">{seva.name}</div>
+                        <div className="hidden text-sm text-muted-foreground md:inline">
+                          {seva.email}
+                        </div>
+                      </TableCell>
+                      <TableCell className="text-right">{seva.amount}</TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </CardContent>
+          </Card>
+        </div>
       </main>
     </div>
   );
