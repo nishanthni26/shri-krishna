@@ -62,11 +62,11 @@ export default function Home() {
               Your browser does not support the video tag.
             </video>
           <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-primary-foreground bg-black/50 p-6">
-            <h1 className="text-5xl md:text-8xl font-extrabold tracking-tighter drop-shadow-2xl">
-              Love, Care, Devotion.
+            <h1 className="text-5xl md:text-7xl font-extrabold tracking-tighter drop-shadow-2xl">
+              A Sanctuary for Sacred Cows
             </h1>
-            <p className="mt-6 text-xl md:text-2xl max-w-4xl drop-shadow-lg">
-              Welcome to Sri Krishna Goshala — a sacred sanctuary for the protection and welfare of cows.
+            <p className="mt-6 text-lg md:text-xl max-w-4xl drop-shadow-lg">
+               Welcome to Sri Krishna Goshala, a sacred sanctuary for the protection and welfare of our beloved cows. Join us in our mission to provide a loving and nurturing environment for these gentle souls.
             </p>
             <Button size="lg" className="mt-10 rounded-full text-lg px-10 py-7 group" asChild>
               <Link href="#donate">
@@ -91,10 +91,10 @@ export default function Home() {
               </div>
               <div>
                 <h2 className="text-4xl md:text-5xl font-bold text-foreground leading-tight">
-                  A Haven for Sacred Souls
+                  About Sri Krishna Goshala
                 </h2>
                 <p className="mt-6 text-muted-foreground text-xl">
-                  Sri Krishna Goshala is more than just a shelter; it's a loving home where cows are treated with the utmost respect and devotion they deserve. We are committed to their complete well-being, from nourishment to healthcare.
+                  Sri Krishna Goshala is a divine abode for cows, where they are cared for with love, compassion, and reverence. We are dedicated to the welfare of Gau Mata (mother cow), providing them with a safe, healthy, and peaceful environment. Our goshala is not just a shelter; it is a place where the sacred bond between humans and cows is celebrated and nurtured.
                 </p>
                 <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-8">
                   <div className="flex items-start gap-4">
@@ -102,9 +102,9 @@ export default function Home() {
                       <Sprout className="h-8 w-8 text-primary" />
                     </div>
                     <div>
-                      <h3 className="font-bold text-xl">Natural Living</h3>
+                      <h3 className="font-bold text-xl">Our Mission</h3>
                       <p className="text-md text-muted-foreground mt-1">
-                        Clean, spacious, and natural environments for our cows to thrive.
+                        To protect, preserve, and care for cows, ensuring their well-being and promoting the significance of cow protection in society.
                       </p>
                     </div>
                   </div>
@@ -113,9 +113,9 @@ export default function Home() {
                       <ShieldCheck className="h-8 w-8 text-primary" />
                     </div>
                     <div>
-                      <h3 className="font-bold text-xl">Dedicated Care</h3>
+                      <h3 className="font-bold text-xl">Our Vision</h3>
                       <p className="text-md text-muted-foreground mt-1">
-                        Round-the-clock veterinary services and loving caretakers.
+                        To create a sustainable and self-reliant goshala model that inspires respect for cows and fosters a compassionate community.
                       </p>
                     </div>
                   </div>
@@ -135,12 +135,12 @@ export default function Home() {
             </div>
             <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
-                { icon: Sprout, title: "Go-Grasa Seva", description: "Feed a cow for a day", price: "₹251", link: "#donate" },
-                { icon: ShieldCheck, title: "Medical Seva", description: "Sponsor medical care", price: "₹501", link: "#donate" },
-                { icon: HeartHandshake, title: "Vatsa Seva", description: "Adopt a calf for a month", price: "₹2100", link: "#donate" },
-                { icon: Video, title: "Video Seva", description: "Join a live video call seva", price: "₹1100", link: "/video-seva" },
-                { icon: Milk, title: "Gau-Daan", description: "Contribute to a new cow", price: "₹5100", link: "#donate" },
-                { icon: HeartHandshake, title: "Life-long Seva", description: "Adopt a cow for life", price: "₹51000", link: "#donate" }
+                { icon: Sprout, title: "Go-Grasa Seva", description: "Feed a cow for a day.", price: "₹1,100", link: "#donate" },
+                { icon: ShieldCheck, title: "Medical Seva", description: "Sponsor medical care for a cow.", price: "₹2,100", link: "#donate" },
+                { icon: HeartHandshake, title: "Vatsa Seva", description: "Adopt a calf for a month.", price: "₹5,100", link: "#donate" },
+                { icon: Video, title: "Video Seva", description: "Join a live video call seva.", price: "₹1,100", link: "/video-seva" },
+                { icon: Milk, title: "Gau Daan", description: "Donate a cow to our goshala.", price: "₹21,000", link: "#donate" },
+                { icon: HeartHandshake, title: "Life-long Seva", description: "Adopt a cow for its entire life.", price: "₹1,51,000", link: "#donate" }
               ].map(seva => (
                 <Card key={seva.title} className="flex flex-col text-center rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
                   <CardHeader className="items-center">
@@ -170,7 +170,7 @@ export default function Home() {
               Our Gentle Residents
             </h2>
             <p className="mt-5 max-w-2xl mx-auto text-muted-foreground text-xl">
-              Glimpses of daily life at Sri Krishna Goshala, filled with peace and contentment.
+              Meet some of the beloved cows that call our Goshala home.
             </p>
             <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4">
               {[
@@ -221,11 +221,11 @@ export default function Home() {
                 <span className="text-lg font-bold">Sri Krishna Goshala</span>
              </div>
             <p className="text-muted-foreground mt-4 md:mt-0">
-              &copy; {new Date().getFullYear()} Sri Krishna Goshala. A sanctuary for cows.
+              &copy; {new Date().getFullYear()} Sri Krishna Goshala. All rights reserved.
             </p>
             <div className="flex items-center gap-4 mt-4 md:mt-0">
               <Phone className="h-5 w-5 text-muted-foreground" />
-              <a href="tel:+11234567890" className="text-muted-foreground hover:text-primary transition-colors">+1 (123) 456-7890</a>
+              <a href="tel:+919876543210" className="text-muted-foreground hover:text-primary transition-colors">+91 98765 43210</a>
             </div>
           </div>
         </div>
