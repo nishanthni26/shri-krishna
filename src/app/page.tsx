@@ -91,35 +91,12 @@ export default function Home() {
               </div>
               <div>
                 <h2 className="text-4xl md:text-5xl font-bold text-foreground leading-tight">
-                  About Sri Krishna Goshala
+                  About Sri Krishna Gaushala
                 </h2>
+                <h3 className="text-2xl font-bold text-primary mt-4">WHO WE ARE</h3>
                 <p className="mt-6 text-muted-foreground text-xl">
-                  Sri Krishna Goshala is a divine abode for cows, where they are cared for with love, compassion, and reverence. We are dedicated to the welfare of Gau Mata (mother cow), providing them with a safe, healthy, and peaceful environment. Our goshala is not just a shelter; it is a place where the sacred bond between humans and cows is celebrated and nurtured.
+                  Sri Krishna Gaushala was established in 2015 by Mr. Krishnamurthy. The Cow referred as Divine Mother, the Gomata, and one which bestows health, knowledge and prosperity. In Sanskrit, the word “Go” also means “Light”. Mother cows are worshiped in Shri Krishna Gaushala. From food to Shelter, every need is taken care of. Shri Krishna Gaushala has been established with a very noble vision. Their only objective is to serve the cows, . It is said that by serving cows, all the sorrows, pain, and problems of a person go away. The cow has a special place in Hinduism, and it is believed that all gods reside in her body. Feeding a cow with green fodder is considered one of the Maha Daans that is powerful enough to remove all the Grah Doshas, or troubles arising from the malefic effects of the planets.
                 </p>
-                <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-8">
-                  <div className="flex items-start gap-4">
-                    <div className="bg-secondary p-4 rounded-2xl">
-                      <Sprout className="h-8 w-8 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-xl">Our Mission</h3>
-                      <p className="text-md text-muted-foreground mt-1">
-                        To protect, preserve, and care for cows, ensuring their well-being and promoting the significance of cow protection in society.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <div className="bg-secondary p-4 rounded-2xl">
-                      <ShieldCheck className="h-8 w-8 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-xl">Our Vision</h3>
-                      <p className="text-md text-muted-foreground mt-1">
-                        To create a sustainable and self-reliant goshala model that inspires respect for cows and fosters a compassionate community.
-                      </p>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
