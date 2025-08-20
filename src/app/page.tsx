@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRight, Milk, Sprout, HeartHandshake, ShieldCheck, Phone } from "lucide-react";
+import { ArrowRight, Milk, Sprout, HeartHandshake, ShieldCheck, Phone, Video } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -135,12 +135,12 @@ export default function Home() {
             </div>
             <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
-                { icon: Sprout, title: "Go-Grasa Seva", description: "Feed a cow for a day", price: "₹251" },
-                { icon: ShieldCheck, title: "Medical Seva", description: "Sponsor medical care", price: "₹501" },
-                { icon: HeartHandshake, title: "Vatsa Seva", description: "Adopt a calf for a month", price: "₹2100" },
-                { icon: Milk, title: "Gau-Daan", description: "Contribute to a new cow", price: "₹5100" },
-                { icon: Sprout, title: "Daily Fodder", description: "Sponsor daily green fodder", price: "₹1100" },
-                { icon: HeartHandshake, title: "Life-long Seva", description: "Adopt a cow for life", price: "₹51000" }
+                { icon: Sprout, title: "Go-Grasa Seva", description: "Feed a cow for a day", price: "₹251", link: "#donate" },
+                { icon: ShieldCheck, title: "Medical Seva", description: "Sponsor medical care", price: "₹501", link: "#donate" },
+                { icon: HeartHandshake, title: "Vatsa Seva", description: "Adopt a calf for a month", price: "₹2100", link: "#donate" },
+                { icon: Video, title: "Video Seva", description: "Join a live video call seva", price: "₹1100", link: "/video-seva" },
+                { icon: Milk, title: "Gau-Daan", description: "Contribute to a new cow", price: "₹5100", link: "#donate" },
+                { icon: HeartHandshake, title: "Life-long Seva", description: "Adopt a cow for life", price: "₹51000", link: "#donate" }
               ].map(seva => (
                 <Card key={seva.title} className="flex flex-col text-center rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
                   <CardHeader className="items-center">
@@ -154,7 +154,9 @@ export default function Home() {
                     <p className="text-4xl font-bold text-foreground mt-4">{seva.price}</p>
                   </CardContent>
                   <CardFooter className="justify-center p-6">
-                    <Button size="lg" className="w-full rounded-full text-lg">Offer Seva</Button>
+                    <Button size="lg" className="w-full rounded-full text-lg" asChild>
+                      <Link href={seva.link}>{seva.title === "Video Seva" ? "Book Now" : "Offer Seva"}</Link>
+                    </Button>
                   </CardFooter>
                 </Card>
               ))}
@@ -231,3 +233,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
