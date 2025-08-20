@@ -7,13 +7,36 @@ import { Label } from '@/components/ui/label';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import { useState } from 'react';
+import { useToast } from '@/components/ui/use-toast';
 
 export default function LoginPage() {
   const router = useRouter();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const { toast } = useToast();
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    router.push('/profile');
+    if (email === 'admin@example.com' && password === 'admin') {
+      toast({
+        title: 'Admin Login Successful',
+        description: 'Redirecting to admin dashboard...',
+      });
+      router.push('/admin/dashboard');
+    } else if (email && password) {
+       toast({
+        title: 'Login Successful',
+        description: 'Redirecting to your profile...',
+      });
+      router.push('/profile');
+    } else {
+       toast({
+        variant: 'destructive',
+        title: 'Invalid Credentials',
+        description: 'Please check your email and password.',
+      });
+    }
   };
 
   return (
@@ -34,6 +57,8 @@ export default function LoginPage() {
                 type="email"
                 placeholder="m@example.com"
                 required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
             <div className="grid gap-2">
@@ -46,7 +71,13 @@ export default function LoginPage() {
                   Forgot your password?
                 </Link>
               </div>
-              <Input id="password" type="password" required />
+              <Input 
+                id="password" 
+                type="password" 
+                required
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
             </div>
             <Button type="submit" className="w-full">
               Login
