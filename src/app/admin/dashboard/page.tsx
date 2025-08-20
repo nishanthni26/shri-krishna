@@ -1,4 +1,3 @@
-
 'use client';
 
 import { Button } from '@/components/ui/button';
@@ -7,7 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Separator } from '@/components/ui/separator';
-import { Gallery, Palette, LogOut, Upload, Trash2 } from 'lucide-react';
+import { GalleryVertical, Palette, LogOut, Upload, Trash2 } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -34,7 +33,7 @@ export default function AdminDashboardPage() {
         </div>
         <nav className="flex flex-col gap-2">
           <Button variant="ghost" className="justify-start gap-2">
-            <Gallery className="h-5 w-5" />
+            <GalleryVertical className="h-5 w-5" />
             Manage Gallery
           </Button>
           <Button variant="ghost" className="justify-start gap-2">
@@ -57,7 +56,7 @@ export default function AdminDashboardPage() {
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-2xl">
-              <Gallery className="h-6 w-6" />
+              <GalleryVertical className="h-6 w-6" />
               Manage Gallery Images
             </CardTitle>
             <CardDescription>Add or remove images from the website's gallery.</CardDescription>
