@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
-import { Video, CameraOff } from 'lucide-react';
+import { Video, CameraOff, LogIn } from 'lucide-react';
 import { useToast } from '@/components/ui/use-toast';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -51,14 +51,28 @@ export default function VideoSevaPage() {
       <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-sm">
         <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
           <Link href="/" className="flex items-center gap-3">
-             <Image src="https://placehold.co/400x400.png" alt="Goshala Logo" data-ai-hint="happy cow" width={40} height={40} className="rounded-full" />
+             <Image 
+                src="/gallery/cow-1.jpg" 
+                alt="Goshala Logo"
+                width={40} 
+                height={40} 
+                className="rounded-full object-cover"
+            />
             <span className="text-2xl font-bold text-foreground">
               Sri Krishna Goshala
             </span>
           </Link>
-          <Button asChild>
-            <Link href="/">Back to Home</Link>
-          </Button>
+           <nav className="hidden md:flex items-center gap-4">
+              <Button asChild>
+                <Link href="/">Back to Home</Link>
+              </Button>
+              <Button variant="ghost" asChild>
+                <Link href="/login" className="flex items-center gap-2">
+                    <LogIn className="w-5 h-5" />
+                    Login
+                </Link>
+              </Button>
+           </nav>
         </div>
       </header>
 

@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRight, Milk, Sprout, HeartHandshake, ShieldCheck, Phone, Video } from "lucide-react";
+import { ArrowRight, Milk, Sprout, HeartHandshake, ShieldCheck, Phone, Video, LogIn } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -10,7 +10,13 @@ export default function Home() {
       <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-sm">
         <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
           <Link href="#" className="flex items-center gap-3">
-            <Image src="https://placehold.co/400x400.png" alt="Goshala Logo" data-ai-hint="happy cow" width={40} height={40} className="rounded-full" />
+            <Image 
+              src="/gallery/cow-1.jpg" 
+              alt="Goshala Logo" 
+              width={40} 
+              height={40} 
+              className="rounded-full object-cover" 
+            />
             <span className="text-2xl font-bold text-foreground">
               Sri Krishna Goshala
             </span>
@@ -40,6 +46,12 @@ export default function Home() {
             >
               Contact
             </Link>
+            <Button variant="ghost" asChild>
+                <Link href="/login" className="flex items-center gap-2">
+                    <LogIn className="w-5 h-5" />
+                    Login
+                </Link>
+            </Button>
           </nav>
           <Button size="lg" className="hidden md:inline-flex rounded-full group" asChild>
             <Link href="#donate">
@@ -81,9 +93,8 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-16 items-center">
               <div className="relative">
                  <Image
-                  src="https://placehold.co/600x400.png"
+                  src="/gallery/cow-2.jpg"
                   alt="A calm cow being pet"
-                  data-ai-hint="petting cow"
                   width={700}
                   height={500}
                   className="rounded-2xl shadow-2xl object-cover"
@@ -151,16 +162,15 @@ export default function Home() {
             </p>
             <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4">
               {[
-                { src: "https://placehold.co/400x400.png", alt: "Happy Cow", hint: "happy cow"},
-                { src: "https://placehold.co/400x400.png", alt: "Grazing Cow", hint: "grazing cow"},
-                { src: "https://placehold.co/400x400.png", alt: "Calf Playing", hint: "calf playing"},
-                { src: "https://placehold.co/400x400.png", alt: "Cow Herd", hint: "cow herd"},
+                { src: "/gallery/cow-1.jpg", alt: "Happy Cow"},
+                { src: "/gallery/cow-2.jpg", alt: "Grazing Cow"},
+                { src: "/gallery/cow-3.jpg", alt: "Calf Playing"},
+                { src: "/gallery/cow-4.jpg", alt: "Cow Herd"},
               ].map((image, index) => (
                 <div key={index} className="overflow-hidden rounded-2xl group">
                   <Image
                     src={image.src}
                     alt={image.alt}
-                    data-ai-hint={image.hint}
                     width={400}
                     height={400}
                     className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-500 ease-in-out"
@@ -194,7 +204,13 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-6 py-10">
           <div className="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
              <div className="flex items-center gap-3">
-                <Image src="https://placehold.co/400x400.png" alt="Goshala Logo" data-ai-hint="happy cow" width={32} height={32} className="rounded-full" />
+                <Image 
+                  src="/gallery/cow-1.jpg" 
+                  alt="Goshala Logo" 
+                  width={32} 
+                  height={32} 
+                  className="rounded-full object-cover" 
+                />
                 <span className="text-lg font-bold">Sri Krishna Goshala</span>
              </div>
             <p className="text-muted-foreground mt-4 md:mt-0">
