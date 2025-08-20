@@ -4,48 +4,48 @@
 
 @layer base {
   :root {
-    --background: 47 100% 98%; /* cream white */
-    --foreground: 24 9.8% 10%;
-    --card: 47 100% 98%;
-    --card-foreground: 24 9.8% 10%;
-    --popover: 47 100% 98%;
-    --popover-foreground: 24 9.8% 10%;
-    --primary: 35 85% 55%; /* saffron */
-    --primary-foreground: 24 9.8% 10%;
-    --secondary: 35 20% 92%; /* light earthy tone */
-    --secondary-foreground: 24 9.8% 10%;
-    --muted: 35 20% 92%;
-    --muted-foreground: 24 5.4% 64.9%;
-    --accent: 35 85% 55%;
-    --accent-foreground: 24 9.8% 10%;
+    --background: 210 20% 98%; /* soft white */
+    --foreground: 224 10% 10%;
+    --card: 210 20% 98%;
+    --card-foreground: 224 10% 10%;
+    --popover: 210 20% 98%;
+    --popover-foreground: 224 10% 10%;
+    --primary: 217 33% 35%; /* slate blue */
+    --primary-foreground: 210 20% 98%;
+    --secondary: 40 30% 94%; /* soft beige */
+    --secondary-foreground: 224 10% 10%;
+    --muted: 40 30% 94%;
+    --muted-foreground: 224 7% 45%;
+    --accent: 40 90% 60%; /* warm gold */
+    --accent-foreground: 224 10% 10%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 35 20% 85%;
-    --input: 35 20% 85%;
-    --ring: 35 85% 55%;
+    --border: 217 20% 88%;
+    --input: 217 20% 88%;
+    --ring: 217 33% 35%;
     --radius: 0.8rem;
   }
  
   .dark {
-    --background: 24 9.8% 10%;
-    --foreground: 0 0% 98%;
-    --card: 24 9.8% 10%;
-    --card-foreground: 0 0% 98%;
-    --popover: 24 9.8% 10%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 35 85% 55%;
-    --primary-foreground: 24 9.8% 10%;
-    --secondary: 24 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 24 3.7% 15.9%;
-    --muted-foreground: 24 5.4% 64.9%;
-    --accent: 24 3.7% 15.9%;
-    --accent-foreground: 0 0% 98%;
+    --background: 224 10% 10%;
+    --foreground: 210 20% 98%;
+    --card: 224 10% 10%;
+    --card-foreground: 210 20% 98%;
+    --popover: 224 10% 10%;
+    --popover-foreground: 210 20% 98%;
+    --primary: 217 33% 55%;
+    --primary-foreground: 210 20% 98%;
+    --secondary: 224 10% 15%;
+    --secondary-foreground: 210 20% 98%;
+    --muted: 224 10% 15%;
+    --muted-foreground: 224 7% 55%;
+    --accent: 40 90% 60%;
+    --accent-foreground: 224 10% 10%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 24 3.7% 15.9%;
-    --input: 24 3.7% 15.9%;
-    --ring: 35 85% 55%;
+    --border: 224 10% 20%;
+    --input: 224 10% 20%;
+    --ring: 217 33% 55%;
   }
 }
  

@@ -7,7 +7,7 @@ import { Separator } from '@/components/ui/separator';
 import { Badge } from '@/components/ui/badge';
 import Image from 'next/image';
 import Link from 'next/link';
-import { DollarSign, LogOut } from 'lucide-react';
+import { DollarSign, LogOut, Award } from 'lucide-react';
 
 const userProfile = {
   name: 'Krishna Das',
@@ -25,8 +25,8 @@ const donationHistory = [
 
 export default function ProfilePage() {
   return (
-    <div className="flex flex-col min-h-screen bg-secondary/30">
-      <header className="sticky top-0 z-50 bg-background/90 backdrop-blur-sm">
+    <div className="flex flex-col min-h-screen bg-secondary">
+      <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-sm">
         <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
           <Link href="/" className="flex items-center gap-3">
              <Image
@@ -34,9 +34,9 @@ export default function ProfilePage() {
               alt="Goshala Logo"
               width={48}
               height={48}
-              className="rounded-full object-cover border-2 border-primary/50"
+              className="rounded-full object-cover border-2 border-primary/20"
             />
-            <span className="text-2xl font-bold text-foreground tracking-tight">
+            <span className="text-2xl font-bold text-primary tracking-tight">
               Sri Krishna Goshala
             </span>
           </Link>
@@ -51,34 +51,38 @@ export default function ProfilePage() {
 
       <main className="flex-1 p-4 md:p-8">
         <div className="container mx-auto max-w-4xl">
-          <Card className="shadow-xl border-t-4 border-primary">
-            <CardHeader className="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-6 p-6">
-              <Avatar className="h-24 w-24 border-4 border-primary">
+          <Card className="shadow-2xl border-t-4 border-accent">
+            <CardHeader className="flex flex-col md:flex-row items-start md:items-center gap-6 p-8">
+              <Avatar className="h-24 w-24 border-4 border-accent/50">
                 <AvatarImage src={userProfile.avatarUrl} alt={userProfile.name} data-ai-hint="smiling person" />
                 <AvatarFallback>{userProfile.name.charAt(0)}</AvatarFallback>
               </Avatar>
               <div className="flex-1">
-                <CardTitle className="text-3xl font-bold">{userProfile.name}</CardTitle>
+                <CardTitle className="text-4xl font-bold text-primary">{userProfile.name}</CardTitle>
                 <CardDescription className="text-lg text-muted-foreground">{userProfile.email}</CardDescription>
-                <p className="text-sm text-muted-foreground mt-1">Joined on {new Date(userProfile.joinDate).toLocaleDateString()}</p>
+                <p className="text-sm text-muted-foreground mt-1">Devotee since {new Date(userProfile.joinDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+              </div>
+              <div className="flex items-center gap-2 bg-accent/10 text-accent-foreground border border-accent/20 rounded-lg px-4 py-2">
+                <Award className="w-6 h-6 text-accent"/>
+                <span className="font-semibold">Gold Donor</span>
               </div>
             </CardHeader>
             <Separator />
-            <CardContent className="p-6">
-              <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
-                <DollarSign className="w-6 h-6 text-primary" />
+            <CardContent className="p-8">
+              <h3 className="text-2xl font-bold mb-6 flex items-center gap-3 text-primary">
+                <DollarSign className="w-6 h-6" />
                 Donation History
               </h3>
               <div className="space-y-4">
                 {donationHistory.map((donation) => (
-                  <Card key={donation.id} className="p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 bg-secondary/40 border">
+                  <Card key={donation.id} className="p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 bg-background border rounded-lg">
                     <div className="flex-1">
                       <p className="font-bold text-primary">{donation.type}</p>
                       <p className="text-sm text-muted-foreground">ID: {donation.id} | Date: {new Date(donation.date).toLocaleDateString()}</p>
                     </div>
-                    <div className="text-right flex items-center gap-4">
-                       <p className="text-xl font-bold">{donation.amount}</p>
-                       <Badge variant={donation.status === 'Completed' ? 'default' : 'secondary'} className="bg-green-100 text-green-800 border-green-300">{donation.status}</Badge>
+                    <div className="flex items-center gap-4">
+                       <p className="text-xl font-bold text-foreground">{donation.amount}</p>
+                       <Badge variant={donation.status === 'Completed' ? 'default' : 'secondary'} className="bg-green-100 text-green-800 border border-green-300 font-semibold">{donation.status}</Badge>
                     </div>
                   </Card>
                 ))}
