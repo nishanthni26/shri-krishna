@@ -5,13 +5,9 @@ import { Bar, BarChart, CartesianGrid, ResponsiveContainer, XAxis, YAxis, Toolti
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
-import { Input } from '@/components/ui/input';
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger, DialogFooter, DialogClose } from '@/components/ui/dialog';
-import { useToast } from '@/components/ui/use-toast';
-import { Activity, ArrowUpRight, CreditCard, DollarSign, Users, LogOut, LayoutDashboard, GalleryVertical, Trash2, Upload } from 'lucide-react';
+import { Activity, ArrowUpRight, CreditCard, DollarSign, Users, LogOut, LayoutDashboard } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Separator } from '@/components/ui/separator';
 
 const recentSevas = [
   { name: 'Ramesh Patel', email: 'ramesh@example.com', seva: 'Go-Grasa Seva', amount: '₹1,100' },
@@ -21,18 +17,7 @@ const recentSevas = [
   { name: 'Vikram Kumar', email: 'vikram.k@example.com', seva: 'Gau Daan', amount: '₹21,000' },
 ];
 
-const initialGalleryImages = [
-    { id: 1, src: "/gallery/cow-1.jpg", alt: "Happy Cow" },
-    { id: 2, src: "/gallery/cow-2.jpg", alt: "Grazing Cow" },
-    { id: 3, src: "/gallery/cow-3.jpg", alt: "Calf Playing" },
-    { id: 4, src: "/gallery/cow-4.jpg", alt: "Cow Herd" },
-];
-
-
 export default function AdminDashboardPage() {
-  const { toast } = useToast();
-  const [galleryImages, setGalleryImages] = useState(initialGalleryImages);
-  const [newImageUrl, setNewImageUrl] = useState('');
   const [chartData, setChartData] = useState<any[]>([]);
 
   useEffect(() => {
@@ -52,32 +37,6 @@ export default function AdminDashboardPage() {
     ];
     setChartData(data);
   }, []);
-
-  const handleAddImage = () => {
-    if (newImageUrl.trim() !== '') {
-      const newImage = {
-        id: Date.now(),
-        src: newImageUrl,
-        alt: 'New Gallery Image',
-      };
-      setGalleryImages([...galleryImages, newImage]);
-      setNewImageUrl('');
-      toast({
-        title: 'Image Added',
-        description: 'The new image has been added to the gallery.',
-      });
-    }
-  };
-
-  const handleDeleteImage = (id: number) => {
-    setGalleryImages(galleryImages.filter(image => image.id !== id));
-    toast({
-      variant: 'destructive',
-      title: 'Image Removed',
-      description: 'The image has been removed from the gallery.',
-    });
-  };
-
 
   return (
     <div className="flex min-h-screen w-full bg-muted/40">
@@ -223,69 +182,6 @@ export default function AdminDashboardPage() {
             </CardContent>
           </Card>
         </div>
-        <Card>
-            <CardHeader>
-                <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                        <GalleryVertical className="h-6 w-6 text-primary" />
-                        <CardTitle>Manage Gallery</CardTitle>
-                    </div>
-                     <Dialog>
-                        <DialogTrigger asChild>
-                            <Button size="sm" className="gap-2">
-                                <Upload className="h-4 w-4" />
-                                Add New Image
-                            </Button>
-                        </DialogTrigger>
-                        <DialogContent>
-                            <DialogHeader>
-                                <DialogTitle>Add a New Image</DialogTitle>
-                            </DialogHeader>
-                            <div className="grid gap-4 py-4">
-                                <Input
-                                    id="imageUrl"
-                                    placeholder="Enter image URL"
-                                    value={newImageUrl}
-                                    onChange={(e) => setNewImageUrl(e.target.value)}
-                                />
-                            </div>
-                            <DialogFooter>
-                                <DialogClose asChild>
-                                    <Button type="button" onClick={handleAddImage}>Save Image</Button>
-                                </DialogClose>
-                            </DialogFooter>
-                        </DialogContent>
-                    </Dialog>
-                </div>
-                <CardDescription>Add or remove images from the website's main gallery.</CardDescription>
-            </CardHeader>
-            <CardContent>
-                <Separator className="mb-6" />
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    {galleryImages.map(image => (
-                        <div key={image.id} className="relative group">
-                            <Image
-                                src={image.src}
-                                alt={image.alt}
-                                width={200}
-                                height={200}
-                                className="rounded-lg object-cover w-full h-full aspect-square"
-                            />
-                            <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                                <Button
-                                    variant="destructive"
-                                    size="icon"
-                                    onClick={() => handleDeleteImage(image.id)}
-                                >
-                                    <Trash2 className="h-5 w-5" />
-                                    <span className="sr-only">Delete</span>
-                                </Button>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </CardContent>
-        </Card>
       </main>
     </div>
   );
