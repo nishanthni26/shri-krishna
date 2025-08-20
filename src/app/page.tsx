@@ -192,8 +192,10 @@ export default function Home() {
                 <p className="text-center mt-3 text-white/90 font-semibold">{Math.round(progressPercentage)}% of our monthly goal reached!</p>
               </div>
 
-              <Button size="lg" variant="secondary" className="mt-10 rounded-full text-lg px-10 py-7 group bg-white text-primary hover:bg-white/90 shadow-2xl">
-                Donate for a Cause <HeartHandshake className="w-6 h-6 ml-3 transition-transform group-hover:scale-125" />
+              <Button asChild size="lg" variant="secondary" className="mt-10 rounded-full text-lg px-10 py-7 group bg-white text-primary hover:bg-white/90 shadow-2xl">
+                <Link href="/login">
+                    Donate for a Cause <HeartHandshake className="w-6 h-6 ml-3 transition-transform group-hover:scale-125" />
+                </Link>
               </Button>
             </div>
           </div>
