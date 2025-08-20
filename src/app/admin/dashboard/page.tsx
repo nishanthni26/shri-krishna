@@ -1,16 +1,28 @@
 'use client';
 
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Separator } from '@/components/ui/separator';
-import { GalleryVertical, Palette, LogOut, Upload, Trash2 } from 'lucide-react';
+import { GalleryVertical, Palette, LogOut, Upload, Trash2, Plus } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useToast } from '@/components/ui/use-toast';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
-const galleryImages = [
+
+const initialGalleryImages = [
   { src: "/gallery/cow-1.jpg", alt: "Happy Cow"},
   { src: "/gallery/cow-2.jpg", alt: "Grazing Cow"},
   { src: "/gallery/cow-3.jpg", alt: "Calf Playing"},
@@ -18,6 +30,65 @@ const galleryImages = [
 ];
 
 export default function AdminDashboardPage() {
+  const [galleryImages, setGalleryImages] = useState(initialGalleryImages);
+  const [customCss, setCustomCss] = useState('');
+  const [newImageUrl, setNewImageUrl] = useState('');
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const { toast } = useToast();
+
+  const handleAddImage = () => {
+    if (newImageUrl.trim()) {
+      setGalleryImages([...galleryImages, { src: newImageUrl, alt: "Newly Added Cow" }]);
+      setNewImageUrl('');
+      setIsDialogOpen(false);
+      toast({
+        title: 'Image Added',
+        description: 'The new image has been added to the gallery.',
+      });
+    } else {
+      toast({
+        variant: 'destructive',
+        title: 'Invalid URL',
+        description: 'Please enter a valid image URL.',
+      });
+    }
+  };
+  
+  const handleRemoveImage = (index: number) => {
+    setGalleryImages(galleryImages.filter((_, i) => i !== index));
+     toast({
+        title: 'Image Removed',
+        description: 'The image has been removed from the gallery.',
+      });
+  };
+
+  const handleSaveCss = () => {
+    try {
+      const styleElement = document.createElement('style');
+      styleElement.id = 'custom-admin-styles';
+      styleElement.innerHTML = customCss;
+      
+      const existingStyleElement = document.getElementById('custom-admin-styles');
+      if (existingStyleElement) {
+        existingStyleElement.replaceWith(styleElement);
+      } else {
+        document.head.appendChild(styleElement);
+      }
+      
+      toast({
+        title: 'CSS Applied',
+        description: 'Your custom styles have been applied successfully.',
+      });
+    } catch (error) {
+       toast({
+        variant: 'destructive',
+        title: 'CSS Error',
+        description: 'There was an error applying your custom CSS.',
+      });
+      console.error('Failed to apply custom CSS:', error);
+    }
+  };
+
   return (
     <div className="flex min-h-screen w-full bg-muted/40">
       <aside className="hidden w-64 flex-col border-r bg-background p-4 sm:flex">
@@ -32,7 +103,7 @@ export default function AdminDashboardPage() {
             <span className="text-xl font-bold text-primary">Admin Panel</span>
         </div>
         <nav className="flex flex-col gap-2">
-          <Button variant="ghost" className="justify-start gap-2">
+          <Button variant="secondary" className="justify-start gap-2">
             <GalleryVertical className="h-5 w-5" />
             Manage Gallery
           </Button>
@@ -73,17 +144,46 @@ export default function AdminDashboardPage() {
                     className="object-cover w-full h-full"
                   />
                   <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                    <Button variant="destructive" size="icon">
+                    <Button variant="destructive" size="icon" onClick={() => handleRemoveImage(index)}>
                       <Trash2 className="h-5 w-5" />
                     </Button>
                   </div>
                 </div>
               ))}
+              <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+                <DialogTrigger asChild>
+                   <button className="flex flex-col items-center justify-center w-full h-full min-h-[150px] border-2 border-dashed rounded-lg hover:bg-accent hover:border-primary transition-colors">
+                      <Plus className="h-8 w-8 text-muted-foreground" />
+                      <span className="mt-2 text-sm font-semibold text-muted-foreground">Add Image</span>
+                   </button>
+                </DialogTrigger>
+                <DialogContent className="sm:max-w-[425px]">
+                  <DialogHeader>
+                    <DialogTitle>Add New Gallery Image</DialogTitle>
+                    <DialogDescription>
+                      Enter the URL of the image you want to add to the gallery.
+                    </DialogDescription>
+                  </DialogHeader>
+                  <div className="grid gap-4 py-4">
+                    <div className="grid grid-cols-4 items-center gap-4">
+                      <Label htmlFor="imageUrl" className="text-right">
+                        Image URL
+                      </Label>
+                      <Input
+                        id="imageUrl"
+                        value={newImageUrl}
+                        onChange={(e) => setNewImageUrl(e.target.value)}
+                        className="col-span-3"
+                        placeholder="https://placehold.co/400x400.png"
+                      />
+                    </div>
+                  </div>
+                  <DialogFooter>
+                    <Button type="submit" onClick={handleAddImage}>Save image</Button>
+                  </DialogFooter>
+                </DialogContent>
+              </Dialog>
             </div>
-            <Button>
-              <Upload className="h-5 w-5 mr-2" />
-              Add New Image
-            </Button>
           </CardContent>
         </Card>
 
@@ -95,15 +195,17 @@ export default function AdminDashboardPage() {
               <Palette className="h-6 w-6" />
               Edit Website CSS
             </CardTitle>
-            <CardDescription>Apply custom CSS styles to your website. Use with caution.</CardDescription>
+            <CardDescription>Apply custom CSS styles to your website. Changes are live but not saved permanently.</CardDescription>
           </CardHeader>
           <CardContent>
             <Textarea 
               placeholder="/* Example: body { background-color: #f0f0f0; } */" 
               className="min-h-[200px] font-mono"
+              value={customCss}
+              onChange={(e) => setCustomCss(e.target.value)}
             />
-            <Button className="mt-4">
-              Save CSS
+            <Button className="mt-4" onClick={handleSaveCss}>
+              Apply CSS
             </Button>
           </CardContent>
         </Card>
