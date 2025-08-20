@@ -51,9 +51,9 @@ export default function ProfilePage() {
 
       <main className="flex-1 p-4 md:p-8">
         <div className="container mx-auto max-w-4xl">
-          <Card className="shadow-2xl border-t-4 border-accent">
+          <Card className="shadow-2xl border-t-4 border-primary">
             <CardHeader className="flex flex-col md:flex-row items-start md:items-center gap-6 p-8">
-              <Avatar className="h-24 w-24 border-4 border-accent/50">
+              <Avatar className="h-24 w-24 border-4 border-primary/20">
                 <AvatarImage src={userProfile.avatarUrl} alt={userProfile.name} data-ai-hint="smiling person" />
                 <AvatarFallback>{userProfile.name.charAt(0)}</AvatarFallback>
               </Avatar>
@@ -62,9 +62,9 @@ export default function ProfilePage() {
                 <CardDescription className="text-lg text-muted-foreground">{userProfile.email}</CardDescription>
                 <p className="text-sm text-muted-foreground mt-1">Devotee since {new Date(userProfile.joinDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
               </div>
-              <div className="flex items-center gap-2 bg-accent/10 text-accent-foreground border border-accent/20 rounded-lg px-4 py-2">
-                <Award className="w-6 h-6 text-accent"/>
-                <span className="font-semibold">Gold Donor</span>
+              <div className="flex items-center gap-2 bg-primary/10 text-primary-foreground border border-primary/20 rounded-lg px-4 py-2">
+                <Award className="w-6 h-6 text-primary"/>
+                <span className="font-semibold text-primary">Gold Donor</span>
               </div>
             </CardHeader>
             <Separator />
@@ -75,7 +75,7 @@ export default function ProfilePage() {
               </h3>
               <div className="space-y-4">
                 {donationHistory.map((donation) => (
-                  <Card key={donation.id} className="p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 bg-background border rounded-lg">
+                  <Card key={donation.id} className="p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 bg-background border rounded-lg hover:shadow-md transition-shadow">
                     <div className="flex-1">
                       <p className="font-bold text-primary">{donation.type}</p>
                       <p className="text-sm text-muted-foreground">ID: {donation.id} | Date: {new Date(donation.date).toLocaleDateString()}</p>

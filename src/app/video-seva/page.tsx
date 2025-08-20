@@ -54,11 +54,11 @@ export default function VideoSevaPage() {
              <Image 
                 src="/gallery/cow-1.jpg" 
                 alt="Goshala Logo"
-                width={40} 
-                height={40} 
-                className="rounded-full object-cover"
+                width={48} 
+                height={48} 
+                className="rounded-full object-cover border-2 border-primary/20"
             />
-            <span className="text-2xl font-bold text-foreground">
+            <span className="text-2xl font-bold text-primary tracking-tight">
               Sri Krishna Goshala
             </span>
           </Link>
@@ -78,14 +78,14 @@ export default function VideoSevaPage() {
 
       <main className="flex-1 flex items-center justify-center p-4 md:p-6">
         <Card className="w-full max-w-4xl shadow-2xl">
-          <CardHeader className="text-center">
-            <CardTitle className="text-3xl md:text-4xl font-bold flex items-center justify-center gap-3">
-              <Video className="w-8 h-8 text-primary" />
+          <CardHeader className="text-center p-8">
+            <CardTitle className="text-3xl md:text-4xl font-bold flex items-center justify-center gap-3 text-primary">
+              <Video className="w-8 h-8" />
               Live Video Seva
             </CardTitle>
           </CardHeader>
-          <CardContent>
-            <div className="aspect-video bg-black rounded-lg overflow-hidden relative flex items-center justify-center">
+          <CardContent className="p-6">
+            <div className="aspect-video bg-black rounded-lg overflow-hidden relative flex items-center justify-center border-2 border-primary">
               <video ref={videoRef} className="w-full h-full object-cover" autoPlay muted playsInline />
               {hasCameraPermission === false && (
                  <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/80 text-white p-4">
