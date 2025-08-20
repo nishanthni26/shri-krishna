@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowRight, Milk, Sprout, HeartHandshake, ShieldCheck, Phone, Video, LogIn, Award } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { HeroCarousel } from "@/components/ui/hero-carousel";
 
 export default function Home() {
   return (
@@ -53,15 +54,7 @@ export default function Home() {
 
       <main className="flex-1">
         <section className="relative w-full py-32 md:py-48 flex items-center justify-center text-center">
-           <Image
-              src="/gallery/cow-herd.jpg"
-              alt="A herd of cows in a sunlit field"
-              layout="fill"
-              objectFit="cover"
-              className="absolute z-0 opacity-20"
-              data-ai-hint="cows pasture"
-            />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-transparent z-0"></div>
+          <HeroCarousel />
           <div className="relative z-10 flex flex-col items-center justify-center p-6 animate-fade-in-up">
             <h1 className="text-5xl md:text-7xl font-extrabold tracking-tighter bg-clip-text text-transparent bg-gradient-to-br from-primary to-slate-600">
               A Sanctuary of Compassion
