@@ -71,7 +71,7 @@ export default function ProfilePage() {
             <CardContent className="p-8">
               <h3 className="text-2xl font-bold mb-6 flex items-center gap-3 text-primary">
                 <DollarSign className="w-6 h-6" />
-                Donation History
+                Donation History (₹)
               </h3>
               <div className="space-y-4">
                 {donationHistory.map((donation) => (

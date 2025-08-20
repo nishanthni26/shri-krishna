@@ -156,7 +156,7 @@ export default function AdminDashboardPage() {
                 <TableHeader>
                   <TableRow>
                     <TableHead>Devotee</TableHead>
-                    <TableHead className="text-right">Amount</TableHead>
+                    <TableHead className="text-right">Amount (₹)</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
