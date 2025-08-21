@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowRight, Milk, Sprout, HeartHandshake, ShieldCheck, Phone, Video, LogIn, Award } from "lucide-react";
@@ -115,7 +116,7 @@ export default function Home() {
                         { icon: Sprout, title: "Go-Grasa Seva", description: "Feed a cow for a day.", price: "₹1,100", link: "/payment", image: "https://placehold.co/600x400.png", hint: "cow eating" },
                         { icon: ShieldCheck, title: "Medical Seva", description: "Sponsor medical care for a cow.", price: "₹2,100", link: "/payment", image: "https://placehold.co/600x400.png", hint: "veterinarian cow" },
                         { icon: Award, title: "Vatsa Seva", description: "Adopt a calf for a month.", price: "₹5,100", link: "/payment", image: "https://placehold.co/600x400.png", hint: "small calf" },
-                        { icon: Video, title: "Video Seva", description: "Join a live video call seva.", price: "₹1,100", link: "/video-seva", image: "https://placehold.co/600x400.png", hint: "video call" },
+                        { icon: Video, title: "Video Seva", description: "Join a live video call seva.", price: "₹1,100", link: "/book-slot", image: "https://placehold.co/600x400.png", hint: "video call" },
                         { icon: Milk, title: "Gau Daan", description: "Donate a cow to our goshala.", price: "₹21,000", link: "/payment", image: "https://placehold.co/600x400.png", hint: "holy cow" },
                         { icon: HeartHandshake, title: "Life-long Seva", description: "Adopt a cow for its entire life.", price: "₹1,51,000", link: "/payment", image: "https://placehold.co/600x400.png", hint: "happy cow" }
                     ].map(seva => (
