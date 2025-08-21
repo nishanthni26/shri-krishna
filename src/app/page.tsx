@@ -50,7 +50,7 @@ export default function Home() {
               </Link>
             </Button>
             <Button className="rounded-full group shadow-lg shadow-primary/20" asChild>
-              <Link href="#donate">
+              <Link href="/payment">
                 Donate Now <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>
