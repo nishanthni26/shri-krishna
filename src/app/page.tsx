@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRight, Milk, Sprout, HeartHandshake, ShieldCheck, Phone, Video, LogIn, Award } from "lucide-react";
+import { ArrowRight, Milk, Sprout, HeartHandshake, ShieldCheck, Phone, Video, LogIn, Award, Sun, Calendar, CalendarCheck, Wheat, Leaf } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { HeroCarousel } from "@/components/ui/hero-carousel";
@@ -113,12 +113,15 @@ export default function Home() {
                 </div>
                 <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     {[
-                        { icon: Sprout, title: "Go-Grasa Seva", description: "Feed a cow for a day.", price: "₹1,100", link: "/payment", image: "https://placehold.co/600x400.png", hint: "cow eating" },
-                        { icon: ShieldCheck, title: "Medical Seva", description: "Sponsor medical care for a cow.", price: "₹2,100", link: "/payment", image: "https://placehold.co/600x400.png", hint: "veterinarian cow" },
-                        { icon: Award, title: "Vatsa Seva", description: "Adopt a calf for a month.", price: "₹5,100", link: "/payment", image: "https://placehold.co/600x400.png", hint: "small calf" },
-                        { icon: Video, title: "Video Seva", description: "Join a live video call seva.", price: "₹1,100", link: "/book-slot", image: "https://placehold.co/600x400.png", hint: "video call" },
-                        { icon: Milk, title: "Gau Daan", description: "Donate a cow to our goshala.", price: "₹21,000", link: "/payment", image: "https://placehold.co/600x400.png", hint: "holy cow" },
-                        { icon: HeartHandshake, title: "Life-long Seva", description: "Adopt a cow for its entire life.", price: "₹1,51,000", link: "/payment", image: "https://placehold.co/600x400.png", hint: "happy cow" }
+                        { icon: Sun, title: "Daily Cow Care", description: "Sponsor a cow's expenses for one day.", price: "₹111", link: "/payment", image: "https://placehold.co/600x400.png", hint: "cow eating" },
+                        { icon: Calendar, title: "Monthly Cow Care", description: "Sponsor a cow's expenses for one month.", price: "₹3,000", link: "/payment", image: "https://placehold.co/600x400.png", hint: "happy cow" },
+                        { icon: CalendarCheck, title: "Annual Cow Care", description: "Sponsor a cow's expenses for one year.", price: "₹31,000", link: "/payment", image: "https://placehold.co/600x400.png", hint: "cow herd" },
+                        { icon: Milk, title: "Donate a Cow", description: "Donate a cow to our goshala.", price: "₹31,000", link: "/payment", image: "https://placehold.co/600x400.png", hint: "holy cow" },
+                        { icon: Wheat, title: "Cow's Fodder", description: "Provide nutritious fodder for our cows.", price: "₹2,500", link: "/payment", image: "https://placehold.co/600x400.png", hint: "cow fodder" },
+                        { icon: Sprout, title: "Green Grass (Full Load)", description: "Donate a full load of fresh green grass.", price: "₹11,000", link: "/payment", image: "https://placehold.co/600x400.png", hint: "green grass" },
+                        { icon: Sprout, title: "Green Grass (Half Load)", description: "Donate a half load of fresh green grass.", price: "₹6,100", link: "/payment", image: "https://placehold.co/600x400.png", hint: "grass field" },
+                        { icon: Leaf, title: "Dry Grass (Full Load)", description: "Donate a full load of dry grass.", price: "₹10,000", link: "/payment", image: "https://placehold.co/600x400.png", hint: "hay bale" },
+                        { icon: Leaf, title: "Dry Grass (Half Load)", description: "Donate a half load of dry grass.", price: "₹5,000", link: "/payment", image: "https://placehold.co/600x400.png", hint: "dry hay" },
                     ].map(seva => (
                         <Card key={seva.title} className="flex flex-col text-center rounded-2xl shadow-lg hover:shadow-primary/20 hover:-translate-y-2 transition-all duration-300 group overflow-hidden">
                             <Link href={seva.link} className="flex flex-col h-full">
@@ -137,7 +140,7 @@ export default function Home() {
                                 </CardContent>
                                 <div className="p-6 mt-auto">
                                     <Button size="lg" className="w-full rounded-full text-lg">
-                                        {seva.title === "Video Seva" ? "Book Now" : "Offer Seva"}
+                                        Offer Seva
                                     </Button>
                                 </div>
                             </Link>
