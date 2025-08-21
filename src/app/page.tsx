@@ -80,7 +80,7 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-16 items-center">
               <div className="relative w-full aspect-square">
                  <Image
-                  src="/gallery/cow-portrait.jpg"
+                  src="https://images.unsplash.com/photo-1672858074971-55cf899b2f66?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjb3clMjBwb3J0cmFpdHxlbnwwfHx8fDE3NTU3MjIxMTR8MA&ixlib=rb-4.1.0&q=80&w=1080"
                   alt="A calm cow with gentle eyes"
                   layout="fill"
                   objectFit="cover"
@@ -102,43 +102,48 @@ export default function Home() {
         </section>
         
         <section id="seva" className="py-20 md:py-28">
-          <div className="container mx-auto px-4 md:px-6">
-            <div className="text-center max-w-3xl mx-auto">
-              <h3 className="text-base font-semibold text-primary uppercase tracking-widest">Offer Seva</h3>
-              <h2 className="text-4xl md:text-5xl font-bold text-primary mt-2">Contribute Through Service</h2>
-              <p className="mt-5 text-muted-foreground text-lg">
-                Your selfless service helps us provide the best care for our cows. Participate in our Seva programs and become a part of our family.
-              </p>
+            <div className="container mx-auto px-4 md:px-6">
+                <div className="text-center max-w-3xl mx-auto">
+                    <h3 className="text-base font-semibold text-primary uppercase tracking-widest">Offer Seva</h3>
+                    <h2 className="text-4xl md:text-5xl font-bold text-primary mt-2">Contribute Through Service</h2>
+                    <p className="mt-5 text-muted-foreground text-lg">
+                        Your selfless service helps us provide the best care for our cows. Participate in our Seva programs and become a part of our family.
+                    </p>
+                </div>
+                <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {[
+                        { icon: Sprout, title: "Go-Grasa Seva", description: "Feed a cow for a day.", price: "₹1,100", link: "/payment", image: "https://placehold.co/600x400.png", hint: "cow eating" },
+                        { icon: ShieldCheck, title: "Medical Seva", description: "Sponsor medical care for a cow.", price: "₹2,100", link: "/payment", image: "https://placehold.co/600x400.png", hint: "veterinarian cow" },
+                        { icon: Award, title: "Vatsa Seva", description: "Adopt a calf for a month.", price: "₹5,100", link: "/payment", image: "https://placehold.co/600x400.png", hint: "small calf" },
+                        { icon: Video, title: "Video Seva", description: "Join a live video call seva.", price: "₹1,100", link: "/video-seva", image: "https://placehold.co/600x400.png", hint: "video call" },
+                        { icon: Milk, title: "Gau Daan", description: "Donate a cow to our goshala.", price: "₹21,000", link: "/payment", image: "https://placehold.co/600x400.png", hint: "holy cow" },
+                        { icon: HeartHandshake, title: "Life-long Seva", description: "Adopt a cow for its entire life.", price: "₹1,51,000", link: "/payment", image: "https://placehold.co/600x400.png", hint: "happy cow" }
+                    ].map(seva => (
+                        <Card key={seva.title} className="flex flex-col text-center rounded-2xl shadow-lg hover:shadow-primary/20 hover:-translate-y-2 transition-all duration-300 group overflow-hidden">
+                            <Link href={seva.link} className="flex flex-col h-full">
+                                <div className="relative h-48 w-full">
+                                    <Image src={seva.image} alt={seva.title} layout="fill" objectFit="cover" className="group-hover:scale-110 transition-transform duration-500" data-ai-hint={seva.hint} />
+                                </div>
+                                <CardHeader className="items-center pt-6">
+                                    <div className="bg-primary/10 p-3 rounded-full group-hover:bg-primary/20 transition-colors">
+                                        <seva.icon className="h-7 w-7 text-primary group-hover:scale-110 transition-transform" />
+                                    </div>
+                                    <CardTitle className="text-2xl font-bold text-primary">{seva.title}</CardTitle>
+                                </CardHeader>
+                                <CardContent className="flex-grow">
+                                    <p className="mt-2 text-base text-muted-foreground">{seva.description}</p>
+                                    <p className="text-4xl font-bold text-foreground mt-4">{seva.price}</p>
+                                </CardContent>
+                                <div className="p-6 mt-auto">
+                                    <Button size="lg" className="w-full rounded-full text-lg">
+                                        {seva.title === "Video Seva" ? "Book Now" : "Offer Seva"}
+                                    </Button>
+                                </div>
+                            </Link>
+                        </Card>
+                    ))}
+                </div>
             </div>
-            <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[
-                { icon: Sprout, title: "Go-Grasa Seva", description: "Feed a cow for a day.", price: "₹1,100", link: "#donate" },
-                { icon: ShieldCheck, title: "Medical Seva", description: "Sponsor medical care for a cow.", price: "₹2,100", link: "#donate" },
-                { icon: Award, title: "Vatsa Seva", description: "Adopt a calf for a month.", price: "₹5,100", link: "#donate" },
-                { icon: Video, title: "Video Seva", description: "Join a live video call seva.", price: "₹1,100", link: "/video-seva" },
-                { icon: Milk, title: "Gau Daan", description: "Donate a cow to our goshala.", price: "₹21,000", link: "#donate" },
-                { icon: HeartHandshake, title: "Life-long Seva", description: "Adopt a cow for its entire life.", price: "₹1,51,000", link: "#donate" }
-              ].map(seva => (
-                <Card key={seva.title} className="flex flex-col text-center rounded-2xl shadow-lg hover:shadow-primary/20 hover:-translate-y-2 transition-all duration-300 group">
-                  <CardHeader className="items-center pt-8">
-                    <div className="bg-primary/10 p-4 rounded-full group-hover:bg-primary/20 transition-colors">
-                      <seva.icon className="h-8 w-8 text-primary group-hover:scale-110 transition-transform" />
-                    </div>
-                  </CardHeader>
-                  <CardContent className="flex-grow">
-                    <CardTitle className="text-2xl font-bold text-primary">{seva.title}</CardTitle>
-                    <p className="mt-2 text-base text-muted-foreground">{seva.description}</p>
-                    <p className="text-4xl font-bold text-foreground mt-4">{seva.price}</p>
-                  </CardContent>
-                  <div className="p-6">
-                    <Button size="lg" className="w-full rounded-full text-lg" asChild>
-                      <Link href={seva.link}>{seva.title === "Video Seva" ? "Book Now" : "Offer Seva"}</Link>
-                    </Button>
-                  </div>
-                </Card>
-              ))}
-            </div>
-          </div>
         </section>
 
         <section id="gallery" className="py-20 md:py-28 bg-secondary">
@@ -152,10 +157,10 @@ export default function Home() {
             </p>
             <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4">
               {[
-                { src: "/gallery/cow-1.jpg", alt: "Happy Cow"},
-                { src: "/gallery/cow-2.jpg", alt: "Grazing Cow"},
-                { src: "/gallery/cow-3.jpg", alt: "Calf Playing"},
-                { src: "/gallery/cow-4.jpg", alt: "Cow Herd"},
+                { src: "https://images.unsplash.com/photo-1660296146250-8f0d6338aa64?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Y293cyUyMHBhc3R1cmV8ZW58MHx8fHwxNzU1NzIyMTE0fDA&ixlib=rb-4.1.0&q=80&w=1080", alt: "Happy Cow"},
+                { src: "https://images.unsplash.com/photo-1692632428740-f0f10c652ad8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjb3clMjBncmF6aW5nfGVufDB8fHx8MTc1NTcyMjExNHww&ixlib=rb-4.1.0&q=80&w=1080", alt: "Grazing Cow"},
+                { src: "https://images.unsplash.com/photo-1618523393652-519b5d343477?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", alt: "Calf Playing"},
+                { src: "https://images.unsplash.com/photo-1720975134463-97ab99685d7f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Y293cyUyMGhlcmR8ZW58MHx8fHwxNzU1NzIyMTE0fDA&ixlib=rb-4.1.0&q=80&w=1080", alt: "Cow Herd"},
               ].map((image, index) => (
                 <div key={index} className="overflow-hidden rounded-2xl group aspect-w-1 aspect-h-1">
                   <Image
