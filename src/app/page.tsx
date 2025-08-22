@@ -65,10 +65,10 @@ export default function Home() {
         <section className="relative w-full py-32 md:py-48 flex items-center justify-center text-center">
           <HeroCarousel />
           <div className="relative z-10 flex flex-col items-center justify-center p-6 animate-fade-in-up">
-            <h1 className="text-5xl md:text-7xl font-belleza tracking-tighter text-primary-foreground">
+            <h1 className="text-5xl md:text-7xl font-belleza tracking-tighter text-white">
               A Sanctuary of Compassion
             </h1>
-            <p className="mt-6 text-lg md:text-xl max-w-3xl text-primary-foreground/90 font-semibold">
+            <p className="mt-6 text-lg md:text-xl max-w-3xl text-white/90 font-semibold">
                Welcome to Sri Krishna Goshala, a sacred haven dedicated to the care and protection of cows. Join us in nurturing these gentle souls.
             </p>
             <Button size="lg" className="mt-10 rounded-full text-lg px-10 py-7 group shadow-xl shadow-primary/20" asChild>
@@ -194,9 +194,9 @@ export default function Home() {
                 </div>
                 <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {[
-                        { name: "Ramesh P.", quote: "Serving the cows at Sri Krishna Goshala has brought immense peace to my life. It's a truly divine experience.", avatar: "https://placehold.co/100x100.png", hint: "smiling man" },
-                        { name: "Priya S.", quote: "The dedication of the staff and the serene environment make this place a true sanctuary. My children love visiting the goshala.", avatar: "https://placehold.co/100x100.png", hint: "smiling woman" },
-                        { name: "Anand K.", quote: "Donating to the goshala feels like a direct service to the Lord. I am grateful for the opportunity to contribute.", avatar: "https://placehold.co/100x100.png", hint: "happy person" },
+                        { name: "Prakash Iyer", quote: "The goshala is very well-maintained and the cows are clearly loved and cared for. A truly divine atmosphere that fills you with positivity. I recommend everyone to visit at least once.", avatar: "https://placehold.co/100x100.png", hint: "south indian man" },
+                        { name: "Sunita Sharma", quote: "A serene and peaceful place. The seva opportunities are managed transparently, and you can see your contribution making a real difference. It is a blessing to be associated with this goshala.", avatar: "https://placehold.co/100x100.png", hint: "north indian woman" },
+                        { name: "Rajesh Gupta", quote: "I participated in the 'Gau Daan' program, and it was a deeply moving and fulfilling experience. The management is very helpful and ensures all rituals are followed. A must-visit for any devotee.", avatar: "https://placehold.co/100x100.png", hint: "indian businessman" },
                     ].map(testimonial => (
                         <Card key={testimonial.name} className="bg-card p-8 rounded-2xl shadow-lg text-center border">
                             <Quote className="h-12 w-12 text-primary/30 mx-auto" />
