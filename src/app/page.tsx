@@ -249,9 +249,9 @@ export default function Home() {
 
       <footer id="contact" className="bg-secondary text-secondary-foreground py-12" style={{ backgroundImage: "url('https://www.transparenttextures.com/patterns/dark-dotted.png')" }}>
         <div className="container mx-auto px-4 md:px-6">
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-8 text-center md:text-left">
 
-                <div className="md:col-span-4">
+                <div className="md:col-span-4 flex flex-col items-center md:items-start">
                     <div className="flex items-center gap-4 mb-4">
                         <Image
                             src="/logo.png"
@@ -269,10 +269,10 @@ export default function Home() {
                     </div>
                 </div>
 
-                <div className="md:col-span-5">
+                <div className="md:col-span-5 flex flex-col items-center md:items-start">
                     <h3 className="text-lg font-semibold text-white mb-4 relative pb-2">
                         Quick Links
-                        <span className="absolute bottom-0 left-0 w-12 h-0.5 bg-footer-accent"></span>
+                        <span className="absolute bottom-0 left-1/2 md:left-0 -translate-x-1/2 md:translate-x-0 w-12 h-0.5 bg-footer-accent"></span>
                     </h3>
                     <div className="grid grid-cols-2 gap-x-8">
                         <ul className="space-y-2">
@@ -296,10 +296,10 @@ export default function Home() {
                     </div>
                 </div>
 
-                <div className="md:col-span-3">
+                <div className="md:col-span-3 flex flex-col items-center md:items-start">
                     <h3 className="text-lg font-semibold text-white mb-4 relative pb-2">
                         Bank Details
-                        <span className="absolute bottom-0 left-0 w-12 h-0.5 bg-footer-accent"></span>
+                        <span className="absolute bottom-0 left-1/2 md:left-0 -translate-x-1/2 md:translate-x-0 w-12 h-0.5 bg-footer-accent"></span>
                     </h3>
                     <div className="text-secondary-foreground/80 space-y-1 text-sm">
                         <p><b>Name:</b> SRI KRISHNA GOSHALA</p>
