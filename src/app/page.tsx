@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { HeroCarousel } from "@/components/ui/hero-carousel";
 import { Progress } from "@/components/ui/progress";
+import { TestimonialCarousel } from "@/components/ui/testimonial-carousel";
 
 export default function Home() {
 
@@ -19,7 +20,7 @@ export default function Home() {
   ];
 
   const testimonials = [
-      { name: "Sai Karthik", quote: "A heartwarming and serene experience for the whole family. The cows are so well-cared for in a clean, peaceful environment. A wonderful place to connect with nature and tradition.", avatar: "https://placehold.co/100x100.png", hint: "south indian man" },
+      { name: "Sai Karthik", quote: "A heartwarming and serene experience. The cows are so well-cared for in a clean, peaceful environment. A wonderful place to connect with nature and tradition.", avatar: "https://placehold.co/100x100.png", hint: "south indian man" },
       { name: "Prithi Malini", quote: "This Goshala is a true sanctuary. The love and care they provide is inspiring. You can see native breeds looked after with so much dignity in a peaceful, clean, and spiritually uplifting environment.", avatar: "https://placehold.co/100x100.png", hint: "woman praying" },
       { name: "Manisha G", quote: "A very well-maintained goshala! The cows are clearly cared for with love and attention. The caretakers are kind and dedicated. Truly a peaceful and heartwarming place to visit.", avatar: "https://placehold.co/100x100.png", hint: "woman smiling" },
       { name: "Rohan Sharma", quote: "An incredibly peaceful and well-managed Goshala. The dedication of the staff is evident in the health and happiness of the cows. A must-visit for anyone seeking tranquility.", avatar: "https://placehold.co/100x100.png", hint: "man portrait" },
@@ -175,20 +176,7 @@ export default function Home() {
                         Hear from others who have found peace and purpose through their connection with our Goshala.
                     </p>
                 </div>
-                <div className="mt-16 flex overflow-x-auto space-x-8 pb-4">
-                    {testimonials.map(testimonial => (
-                        <Card key={testimonial.name} className="flex-shrink-0 w-[400px] bg-background p-8 rounded-2xl shadow-lg text-center border flex flex-col">
-                            <Quote className="h-12 w-12 text-primary/30 mx-auto" />
-                            <CardContent className="pt-6 flex-grow">
-                                <p className="text-foreground/80 italic">"{testimonial.quote}"</p>
-                            </CardContent>
-                            <CardHeader className="items-center pt-4 mt-auto">
-                                <Image src={testimonial.avatar} alt={testimonial.name} width={64} height={64} className="rounded-full mb-4 border-2 border-primary/50" data-ai-hint={testimonial.hint} />
-                                <CardTitle className="font-bold text-xl text-primary">{testimonial.name}</CardTitle>
-                            </CardHeader>
-                        </Card>
-                    ))}
-                </div>
+                <TestimonialCarousel testimonials={testimonials} />
             </div>
         </section>
 
