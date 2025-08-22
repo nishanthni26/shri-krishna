@@ -111,6 +111,34 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <section id="impact" className="py-20 md:py-28 bg-primary/5">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="text-center max-w-3xl mx-auto">
+              <h3 className="text-base font-semibold text-secondary uppercase tracking-widest">Our Collective Impact</h3>
+              <h2 className="text-4xl md:text-5xl font-bold text-primary mt-2">Your Support Makes a Difference</h2>
+              <p className="mt-5 text-foreground/80 text-lg">
+                Every contribution, big or small, helps us provide continuous care for our beloved cows. See how our community's generosity adds up!
+              </p>
+            </div>
+            <div className="max-w-4xl mx-auto mt-12">
+              <Card className="p-8 shadow-lg">
+                <div className="flex justify-between items-end mb-2">
+                   <span className="text-xl font-bold text-primary">₹7,50,000</span>
+                   <span className="text-lg font-semibold text-muted-foreground">Goal: ₹10,00,000</span>
+                </div>
+                <Progress value={75} className="h-6" indicatorClassName="bg-primary" />
+                <div className="text-center mt-8">
+                  <Button size="lg" asChild>
+                    <Link href="/payment">
+                      Contribute Now <HeartHandshake className="w-5 h-5 ml-2" />
+                    </Link>
+                  </Button>
+                </div>
+              </Card>
+            </div>
+          </div>
+        </section>
         
         <section id="seva" className="py-20 md:py-28 bg-primary/10">
             <div className="container mx-auto px-4 md:px-6">
@@ -196,5 +224,7 @@ export default function Home() {
     </div>
   );
 }
+
+    
 
     
