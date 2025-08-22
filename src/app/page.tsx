@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { ArrowRight, HeartHandshake, Phone, LogIn, Quote, Users, UtensilsCrossed, Stethoscope, Plus } from "lucide-react";
+import { ArrowRight, HeartHandshake, Phone, LogIn, Quote, Users, UtensilsCrossed, Stethoscope } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Progress } from "@/components/ui/progress";
@@ -285,7 +285,6 @@ export default function Home() {
                             {quickLinks1.map(link => (
                                 <li key={link.text} className="mb-3 border-b border-gray-700/50 pb-2">
                                     <Link href={link.href} className="flex items-center text-secondary-foreground/80 hover:text-white transition-colors">
-                                        <Plus className="w-4 h-4 mr-3 text-primary" />
                                         {link.text}
                                     </Link>
                                 </li>
@@ -295,7 +294,6 @@ export default function Home() {
                             {quickLinks2.map(link => (
                                 <li key={link.text} className="mb-3 border-b border-gray-700/50 pb-2">
                                     <Link href={link.href} className="flex items-center text-secondary-foreground/80 hover:text-white transition-colors">
-                                        <Plus className="w-4 h-4 mr-3 text-primary" />
                                         {link.text}
                                     </Link>
                                 </li>
