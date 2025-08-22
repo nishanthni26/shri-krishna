@@ -1,10 +1,9 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { ArrowRight, Milk, Sprout, HeartHandshake, ShieldCheck, Phone, Video, LogIn, Award, Sun, Calendar, CalendarCheck, Wheat, Leaf, Quote, Users } from "lucide-react";
+import { ArrowRight, HeartHandshake, Phone, LogIn, Quote, Users, UtensilsCrossed, Stethoscope } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { HeroCarousel } from "@/components/ui/hero-carousel";
 import { Progress } from "@/components/ui/progress";
 import { TestimonialCarousel } from "@/components/ui/testimonial-carousel";
 import { SevaCarousel } from "@/components/ui/seva-carousel";
@@ -83,6 +82,41 @@ export default function Home() {
                 Support Our Cows <HeartHandshake className="w-6 h-6 ml-3 transition-transform group-hover:rotate-12" />
               </Link>
             </Button>
+          </div>
+        </section>
+
+        <section id="why-donate" className="py-20 md:py-28 bg-primary/5">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="text-center max-w-3xl mx-auto">
+              <h3 className="text-base font-semibold text-secondary uppercase tracking-widest">Why Your Seva Matters</h3>
+              <h2 className="text-4xl md:text-5xl font-bold text-primary mt-2">Your Support is Their Lifeline</h2>
+              <p className="mt-5 text-foreground/80 text-lg">
+                By donating, you provide more than just funds—you offer a life of dignity, care, and peace to our sacred cows. Every contribution directly supports their well-being.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-3 gap-8 mt-16 max-w-5xl mx-auto">
+              <div className="flex flex-col items-center text-center p-8 rounded-2xl bg-background shadow-lg hover:shadow-primary/20 transition-shadow duration-300">
+                <div className="bg-secondary text-primary-foreground h-20 w-20 rounded-full flex items-center justify-center mb-6">
+                  <UtensilsCrossed className="h-10 w-10" />
+                </div>
+                <h4 className="text-xl font-bold text-primary">Food & Nutrition</h4>
+                <p className="text-muted-foreground mt-2">Your donation helps us provide nutritious food, ensuring the health and happiness of our cows every day.</p>
+              </div>
+              <div className="flex flex-col items-center text-center p-8 rounded-2xl bg-background shadow-lg hover:shadow-primary/20 transition-shadow duration-300">
+                <div className="bg-secondary text-primary-foreground h-20 w-20 rounded-full flex items-center justify-center mb-6">
+                   <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                </div>
+                <h4 className="text-xl font-bold text-primary">Shelter & Care</h4>
+                <p className="text-muted-foreground mt-2">You help maintain a safe, clean, and comfortable shelter where our cows can live peacefully.</p>
+              </div>
+              <div className="flex flex-col items-center text-center p-8 rounded-2xl bg-background shadow-lg hover:shadow-primary/20 transition-shadow duration-300">
+                <div className="bg-secondary text-primary-foreground h-20 w-20 rounded-full flex items-center justify-center mb-6">
+                  <Stethoscope className="h-10 w-10" />
+                </div>
+                <h4 className="text-xl font-bold text-primary">Medical Support</h4>
+                <p className="text-muted-foreground mt-2">Your contribution funds essential veterinary care and medical treatments to keep our herd healthy.</p>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -224,7 +258,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
-
-    
