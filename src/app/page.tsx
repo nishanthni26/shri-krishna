@@ -114,13 +114,16 @@ export default function Home() {
                     </p>
                 </div>
                 <div className="mt-16 flex overflow-x-auto space-x-8 pb-4">
-                    {sevaOptions.map(seva => (
-                       <div key={seva.title} className="flex-shrink-0 w-80 flex flex-col text-center items-center p-8 rounded-2xl shadow-lg hover:shadow-primary/20 hover:-translate-y-2 transition-all duration-300 group overflow-hidden bg-background border">
+                    {sevaOptions.map((seva, index) => (
+                       <div key={index} className="flex-shrink-0 w-80 flex flex-col text-center items-center p-8 rounded-2xl shadow-lg hover:shadow-primary/20 hover:-translate-y-2 transition-all duration-300 group overflow-hidden bg-background border">
                             <div className="bg-secondary text-primary-foreground h-20 w-20 rounded-full flex items-center justify-center mb-6 transition-transform group-hover:scale-110">
                               <seva.icon className="h-10 w-10" />
                             </div>
                             <h4 className="text-xl font-bold text-primary mt-4 flex-grow">{seva.title}</h4>
-                             <p className="text-muted-foreground mt-2">{seva.description}</p>
+                             <p className="text-muted-foreground mt-2 mb-6">{seva.description}</p>
+                             <Button asChild className="mt-auto w-full">
+                                <Link href={seva.link}>Book Now</Link>
+                             </Button>
                         </div>
                     ))}
                 </div>
@@ -168,7 +171,7 @@ export default function Home() {
                 </div>
                 <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {[
-                         { name: "Sai Karthik", quote: "We had a heartwarming experience visiting this goshala with our family. The environment was serene, the cows were well taken care of, and the entire place was clean and peaceful. It was a joy to see the love and dedication of the caretakers. A great place for families to connect with nature and tradition!", avatar: "https://placehold.co/100x100.png", hint: "south indian man" },
+                         { name: "Sai Karthik", quote: "We had a heartwarming experience visiting this goshala with our family. The environment was serene, the cows were well taken care of, and the entire place was clean and peaceful. It was a joy to see the love and dedication of the caretakers. One of the highlights was the availability of pure, cold-pressed oils—they were of excellent quality and we highly recommend trying them. Our kids also loved interacting with the cows and learning about their importance in our culture. This visit was not just refreshing but also spiritually enriching. We truly appreciate the efforts of everyone involved and will definitely be coming back. A great place for families to connect with nature and tradition!", avatar: "https://placehold.co/100x100.png", hint: "south indian man" },
                          { name: "Priya Sharma", quote: "A truly spiritual place. The live video seva allowed me to connect with the goshala from my home. It was a blessing to see the cows so happy and well-cared for. I recommend it to everyone.", avatar: "https://placehold.co/100x100.png", hint: "woman praying" },
                          { name: "Rajesh Gupta", quote: "I participated in the 'Gau Daan' program, and it was a deeply moving and fulfilling experience. The management is very helpful and ensures all rituals are followed. A must-visit for any devotee.", avatar: "https://placehold.co/100x100.png", hint: "indian businessman" },
                     ].map(testimonial => (
@@ -214,5 +217,4 @@ export default function Home() {
       </footer>
     </div>
   );
-
-    
+}
