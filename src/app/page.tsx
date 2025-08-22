@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { ArrowRight, HeartHandshake, Phone, LogIn, Quote, Users, UtensilsCrossed, Stethoscope } from "lucide-react";
+import { ArrowRight, HeartHandshake, Phone, LogIn, Quote, Users, UtensilsCrossed, Stethoscope, Plus } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Progress } from "@/components/ui/progress";
@@ -27,6 +27,21 @@ export default function Home() {
       { name: "Rohan Sharma", quote: "An incredibly peaceful and well-managed Goshala. The dedication of the staff is evident in the health and happiness of the cows. A must-visit for anyone seeking tranquility.", avatar: "https://placehold.co/100x100.png", hint: "man portrait" },
       { name: "Anjali Verma", quote: "The energy here is so positive and pure. It's wonderful to see these sacred animals treated with such reverence and care. We left feeling truly blessed and will be back soon.", avatar: "https://placehold.co/100x100.png", hint: "woman nature" },
   ]
+
+  const quickLinks1 = [
+    { text: "Home", href: "#" },
+    { text: "About Us", href: "#about" },
+    { text: "Activities", href: "#" },
+    { text: "Gallery", href: "#gallery" },
+    { text: "Contact Us", href: "#contact" },
+  ];
+
+  const quickLinks2 = [
+    { text: "Sri Krishna Gaushala", href: "#" },
+    { text: "Indian Cows", href: "#" },
+    { text: "Raise A Cow", href: "#" },
+    { text: "Pray To Gaumatha", href: "#" },
+  ];
 
   return (
     <div className="flex flex-col min-h-dvh bg-background antialiased">
@@ -232,29 +247,85 @@ export default function Home() {
 
       </main>
 
-      <footer id="contact" className="bg-card border-t mt-12">
-        <div className="container mx-auto px-4 md:px-6 py-12">
-          <div className="flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-6">
-             <div className="flex items-center gap-3">
-                <Image 
-                  src="/logo.png" 
-                  alt="Goshala Logo" 
-                  width={40} 
-                  height={40} 
-                  className="rounded-full object-cover" 
-                />
-                <span className="text-lg font-bold text-primary">Sri Krishna Goshala</span>
-             </div>
-            <p className="text-foreground/80 text-sm">
-              &copy; {new Date().getFullYear()} Sri Krishna Goshala. All rights reserved.
-            </p>
-            <div className="flex items-center gap-4">
-              <Phone className="h-5 w-5 text-foreground/80" />
-              <a href="tel:+919876543210" className="text-foreground/80 hover:text-primary transition-colors">+91 98765 43210</a>
+      <footer id="contact" className="bg-[#222222] text-gray-300 py-16" style={{ backgroundImage: "url('https://www.transparenttextures.com/patterns/dark-dotted.png')" }}>
+        <div className="container mx-auto px-4 md:px-6">
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
+
+                <div className="md:col-span-4">
+                    <div className="flex items-center gap-3 mb-6">
+                        <Image
+                            src="/logo.png"
+                            alt="Goshala Logo"
+                            width={64}
+                            height={64}
+                            className="bg-white rounded-full p-1"
+                        />
+                    </div>
+                    <div>
+                        <h4 className="font-bold text-lg mb-2">ADDRESS</h4>
+                        <p className="text-gray-400">#69, Vittasandra Mainroad, 4th Cross, Lakshmi Layout, Near Post Office, Begur.</p>
+                    </div>
+                    <div className="mt-4">
+                        <h4 className="font-bold text-lg mb-2">PHONE</h4>
+                        <p className="text-gray-400">9972508500 | 8123791540</p>
+                    </div>
+                    <div className="mt-4">
+                        <h4 className="font-bold text-lg mb-2">EMAIL</h4>
+                        <p className="text-gray-400">srikrishnagaushalablr@gmail.com</p>
+                    </div>
+                </div>
+
+                <div className="md:col-span-5">
+                    <h3 className="text-xl font-bold text-white mb-4 relative pb-2">
+                        Quick Links
+                        <span className="absolute bottom-0 left-0 w-16 h-0.5 bg-footer-accent"></span>
+                    </h3>
+                    <div className="grid grid-cols-2 gap-x-8">
+                        <ul>
+                            {quickLinks1.map(link => (
+                                <li key={link.text} className="mb-3 border-b border-gray-700 pb-2">
+                                    <Link href={link.href} className="flex items-center text-gray-400 hover:text-white transition-colors">
+                                        <Plus className="w-4 h-4 mr-3 text-footer-accent" />
+                                        {link.text}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                        <ul>
+                            {quickLinks2.map(link => (
+                                <li key={link.text} className="mb-3 border-b border-gray-700 pb-2">
+                                    <Link href={link.href} className="flex items-center text-gray-400 hover:text-white transition-colors">
+                                        <Plus className="w-4 h-4 mr-3 text-footer-accent" />
+                                        {link.text}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                </div>
+
+                <div className="md:col-span-3">
+                    <h3 className="text-xl font-bold text-white mb-4 relative pb-2">
+                        Bank Details
+                        <span className="absolute bottom-0 left-0 w-16 h-0.5 bg-footer-accent"></span>
+                    </h3>
+                    <div className="text-gray-400 space-y-2">
+                        <p>Name - SRI KRISHNA GOSHALA</p>
+                        <p>A/C No. - 9552000100048201</p>
+                        <p>IFSC Code - KARB0000955</p>
+                        <p>Branch Name - Akshya Nagar Branch-Bangalore (KARNATAKA)</p>
+                        <p>Bank Name - Karnataka Bank</p>
+                    </div>
+                    <div className="mt-4">
+                        <Image src="https://placehold.co/150x150.png" alt="QR Code for Donation" width={150} height={150} data-ai-hint="qr code" />
+                    </div>
+                </div>
             </div>
-          </div>
+            <div className="border-t border-gray-700 mt-12 pt-8 text-center text-gray-500">
+                <p>&copy; {new Date().getFullYear()} Sri Krishna Goshala. All Rights Reserved.</p>
+            </div>
         </div>
-      </footer>
+    </footer>
     </div>
   );
 }
