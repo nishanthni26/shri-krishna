@@ -10,15 +10,14 @@ import { Progress } from "@/components/ui/progress";
 export default function Home() {
 
   const sevaOptions = [
-      { icon: Sun, title: "A cow’s expenditure per day", price: "₹111", link: "/payment" },
-      { icon: Calendar, title: "Monthly expense of a cow", price: "₹3,000", link: "/payment" },
-      { icon: CalendarCheck, title: "Annual cost of a cow", price: "₹31,000", link: "/payment" },
-      { icon: HeartHandshake, title: "Donation of a cow", price: "₹31,000", link: "/payment" },
-      { icon: Users, title: "Cow’s coward", price: "₹2,500", link: "/payment" },
-      { icon: Leaf, title: "Green grass (Full load)", price: "₹11,000", link: "/payment" },
-      { icon: Sprout, title: "Green grass (Half load)", price: "₹6,100", link: "/payment" },
-      { icon: Wheat, title: "Dry grass (Full load)", price: "₹10,000", link: "/payment" },
-      { icon: Milk, title: "Dry grass (Half load)", price: "₹5,000", link: "/payment" },
+      { icon: Sun, title: "A cow’s expenditure per day", description: "Sponsor a day's worth of care and feeding for one cow.", link: "/payment" },
+      { icon: Calendar, title: "Monthly expense of a cow", description: "Cover the monthly expenses for a cow, including food and shelter.", link: "/payment" },
+      { icon: CalendarCheck, title: "Annual cost of a cow", description: "Support a cow for an entire year, ensuring its well-being.", link: "/payment" },
+      { icon: HeartHandshake, title: "Donation of a cow", description: "A sacred gift. We will care for the cow on your behalf.", link: "/payment" },
+      { icon: Users, title: "Cow’s Health Checkup", description: "Fund a veterinary check-up and necessary medical care.", link: "/payment" },
+      { icon: Leaf, title: "Green Grass Contribution", description: "Provide nutritious green fodder for the entire herd.", link: "/payment" },
+      { icon: Sprout, title: "Organic Feed Seva", description: "Donate special organic feed for calves and recovering cows.", link: "/payment" },
+      { icon: Wheat, title: "Dry Grass (Full load)", description: "Contribute to our stock of essential dry fodder for all seasons.", link: "/payment" },
   ];
 
   return (
@@ -114,19 +113,14 @@ export default function Home() {
                         Your selfless service helps us provide the best care for our cows. Participate in our Seva programs and become a part of our family.
                     </p>
                 </div>
-                <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="mt-16 flex overflow-x-auto space-x-8 pb-4">
                     {sevaOptions.map(seva => (
-                       <div key={seva.title} className="flex flex-col text-center items-center p-8 rounded-2xl shadow-lg hover:shadow-primary/20 hover:-translate-y-2 transition-all duration-300 group overflow-hidden bg-background border">
+                       <div key={seva.title} className="flex-shrink-0 w-80 flex flex-col text-center items-center p-8 rounded-2xl shadow-lg hover:shadow-primary/20 hover:-translate-y-2 transition-all duration-300 group overflow-hidden bg-background border">
                             <div className="bg-secondary text-primary-foreground h-20 w-20 rounded-full flex items-center justify-center mb-6 transition-transform group-hover:scale-110">
                               <seva.icon className="h-10 w-10" />
                             </div>
                             <h4 className="text-xl font-bold text-primary mt-4 flex-grow">{seva.title}</h4>
-                            <p className="text-2xl font-bold text-foreground/80 my-4">{seva.price}</p>
-                             <Button asChild className="mt-auto rounded-full">
-                              <Link href={seva.link}>
-                                Book Now
-                              </Link>
-                            </Button>
+                             <p className="text-muted-foreground mt-2">{seva.description}</p>
                         </div>
                     ))}
                 </div>
