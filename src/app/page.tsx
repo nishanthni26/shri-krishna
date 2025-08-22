@@ -247,7 +247,7 @@ export default function Home() {
 
       </main>
 
-      <footer id="contact" className="bg-[#222222] text-gray-300 py-16" style={{ backgroundImage: "url('https://www.transparenttextures.com/patterns/dark-dotted.png')" }}>
+      <footer id="contact" className="bg-secondary text-secondary-foreground py-16" style={{ backgroundImage: "url('https://www.transparenttextures.com/patterns/dark-dotted.png')" }}>
         <div className="container mx-auto px-4 md:px-6">
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
 
@@ -262,30 +262,30 @@ export default function Home() {
                         />
                     </div>
                     <div>
-                        <h4 className="font-bold text-lg mb-2">ADDRESS</h4>
-                        <p className="text-gray-400">#69, Vittasandra Mainroad, 4th Cross, Lakshmi Layout, Near Post Office, Begur.</p>
+                        <h4 className="font-bold text-lg mb-2 text-primary-foreground">ADDRESS</h4>
+                        <p className="text-secondary-foreground/80">#69, Vittasandra Mainroad, 4th Cross, Lakshmi Layout, Near Post Office, Begur.</p>
                     </div>
                     <div className="mt-4">
-                        <h4 className="font-bold text-lg mb-2">PHONE</h4>
-                        <p className="text-gray-400">9972508500 | 8123791540</p>
+                        <h4 className="font-bold text-lg mb-2 text-primary-foreground">PHONE</h4>
+                        <p className="text-secondary-foreground/80">9972508500 | 8123791540</p>
                     </div>
                     <div className="mt-4">
-                        <h4 className="font-bold text-lg mb-2">EMAIL</h4>
-                        <p className="text-gray-400">srikrishnagaushalablr@gmail.com</p>
+                        <h4 className="font-bold text-lg mb-2 text-primary-foreground">EMAIL</h4>
+                        <p className="text-secondary-foreground/80">srikrishnagaushalablr@gmail.com</p>
                     </div>
                 </div>
 
                 <div className="md:col-span-5">
                     <h3 className="text-xl font-bold text-white mb-4 relative pb-2">
                         Quick Links
-                        <span className="absolute bottom-0 left-0 w-16 h-0.5 bg-footer-accent"></span>
+                        <span className="absolute bottom-0 left-0 w-16 h-0.5 bg-primary"></span>
                     </h3>
                     <div className="grid grid-cols-2 gap-x-8">
                         <ul>
                             {quickLinks1.map(link => (
-                                <li key={link.text} className="mb-3 border-b border-gray-700 pb-2">
-                                    <Link href={link.href} className="flex items-center text-gray-400 hover:text-white transition-colors">
-                                        <Plus className="w-4 h-4 mr-3 text-footer-accent" />
+                                <li key={link.text} className="mb-3 border-b border-gray-700/50 pb-2">
+                                    <Link href={link.href} className="flex items-center text-secondary-foreground/80 hover:text-white transition-colors">
+                                        <Plus className="w-4 h-4 mr-3 text-primary" />
                                         {link.text}
                                     </Link>
                                 </li>
@@ -293,9 +293,9 @@ export default function Home() {
                         </ul>
                         <ul>
                             {quickLinks2.map(link => (
-                                <li key={link.text} className="mb-3 border-b border-gray-700 pb-2">
-                                    <Link href={link.href} className="flex items-center text-gray-400 hover:text-white transition-colors">
-                                        <Plus className="w-4 h-4 mr-3 text-footer-accent" />
+                                <li key={link.text} className="mb-3 border-b border-gray-700/50 pb-2">
+                                    <Link href={link.href} className="flex items-center text-secondary-foreground/80 hover:text-white transition-colors">
+                                        <Plus className="w-4 h-4 mr-3 text-primary" />
                                         {link.text}
                                     </Link>
                                 </li>
@@ -307,9 +307,9 @@ export default function Home() {
                 <div className="md:col-span-3">
                     <h3 className="text-xl font-bold text-white mb-4 relative pb-2">
                         Bank Details
-                        <span className="absolute bottom-0 left-0 w-16 h-0.5 bg-footer-accent"></span>
+                        <span className="absolute bottom-0 left-0 w-16 h-0.5 bg-primary"></span>
                     </h3>
-                    <div className="text-gray-400 space-y-2">
+                    <div className="text-secondary-foreground/80 space-y-2">
                         <p>Name - SRI KRISHNA GOSHALA</p>
                         <p>A/C No. - 9552000100048201</p>
                         <p>IFSC Code - KARB0000955</p>
@@ -321,7 +321,7 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-            <div className="border-t border-gray-700 mt-12 pt-8 text-center text-gray-500">
+            <div className="border-t border-gray-700/50 mt-12 pt-8 text-center text-secondary-foreground/60">
                 <p>&copy; {new Date().getFullYear()} Sri Krishna Goshala. All Rights Reserved.</p>
             </div>
         </div>
