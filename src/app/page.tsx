@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { ArrowRight, HeartHandshake, Phone, LogIn, Quote, Users, UtensilsCrossed, Stethoscope } from "lucide-react";
+import { ArrowRight, HeartHandshake, LogIn, Quote, Users, UtensilsCrossed, Stethoscope } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Progress } from "@/components/ui/progress";
@@ -247,53 +247,47 @@ export default function Home() {
 
       </main>
 
-      <footer id="contact" className="bg-secondary text-secondary-foreground py-16" style={{ backgroundImage: "url('https://www.transparenttextures.com/patterns/dark-dotted.png')" }}>
+      <footer id="contact" className="bg-secondary text-secondary-foreground py-12" style={{ backgroundImage: "url('https://www.transparenttextures.com/patterns/dark-dotted.png')" }}>
         <div className="container mx-auto px-4 md:px-6">
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
 
                 <div className="md:col-span-4">
-                    <div className="flex items-center gap-3 mb-6">
+                    <div className="flex items-center gap-4 mb-4">
                         <Image
                             src="/logo.png"
                             alt="Goshala Logo"
-                            width={64}
-                            height={64}
+                            width={48}
+                            height={48}
                             className="bg-white rounded-full p-1"
                         />
+                        <span className="font-bold text-xl text-primary-foreground">Sri Krishna Goshala</span>
                     </div>
-                    <div>
-                        <h4 className="font-bold text-lg mb-2 text-primary-foreground">ADDRESS</h4>
-                        <p className="text-secondary-foreground/80">#69, Vittasandra Mainroad, 4th Cross, Lakshmi Layout, Near Post Office, Begur.</p>
-                    </div>
-                    <div className="mt-4">
-                        <h4 className="font-bold text-lg mb-2 text-primary-foreground">PHONE</h4>
-                        <p className="text-secondary-foreground/80">9972508500 | 8123791540</p>
-                    </div>
-                    <div className="mt-4">
-                        <h4 className="font-bold text-lg mb-2 text-primary-foreground">EMAIL</h4>
-                        <p className="text-secondary-foreground/80">srikrishnagaushalablr@gmail.com</p>
+                     <div className="text-secondary-foreground/80 space-y-3">
+                         <p>#69, Vittasandra Mainroad, 4th Cross, Lakshmi Layout, Near Post Office, Begur.</p>
+                         <p><b>Phone:</b> 9972508500 | 8123791540</p>
+                         <p><b>Email:</b> srikrishnagaushalablr@gmail.com</p>
                     </div>
                 </div>
 
                 <div className="md:col-span-5">
-                    <h3 className="text-xl font-bold text-white mb-4 relative pb-2">
+                    <h3 className="text-lg font-semibold text-white mb-4 relative pb-2">
                         Quick Links
-                        <span className="absolute bottom-0 left-0 w-16 h-0.5 bg-primary"></span>
+                        <span className="absolute bottom-0 left-0 w-12 h-0.5 bg-footer-accent"></span>
                     </h3>
                     <div className="grid grid-cols-2 gap-x-8">
-                        <ul>
+                        <ul className="space-y-2">
                             {quickLinks1.map(link => (
-                                <li key={link.text} className="mb-3 border-b border-gray-700/50 pb-2">
-                                    <Link href={link.href} className="flex items-center text-secondary-foreground/80 hover:text-white transition-colors">
+                                <li key={link.text}>
+                                    <Link href={link.href} className="text-secondary-foreground/80 hover:text-white transition-colors">
                                         {link.text}
                                     </Link>
                                 </li>
                             ))}
                         </ul>
-                        <ul>
+                        <ul className="space-y-2">
                             {quickLinks2.map(link => (
-                                <li key={link.text} className="mb-3 border-b border-gray-700/50 pb-2">
-                                    <Link href={link.href} className="flex items-center text-secondary-foreground/80 hover:text-white transition-colors">
+                                <li key={link.text}>
+                                    <Link href={link.href} className="text-secondary-foreground/80 hover:text-white transition-colors">
                                         {link.text}
                                     </Link>
                                 </li>
@@ -303,23 +297,23 @@ export default function Home() {
                 </div>
 
                 <div className="md:col-span-3">
-                    <h3 className="text-xl font-bold text-white mb-4 relative pb-2">
+                    <h3 className="text-lg font-semibold text-white mb-4 relative pb-2">
                         Bank Details
-                        <span className="absolute bottom-0 left-0 w-16 h-0.5 bg-primary"></span>
+                        <span className="absolute bottom-0 left-0 w-12 h-0.5 bg-footer-accent"></span>
                     </h3>
-                    <div className="text-secondary-foreground/80 space-y-2">
-                        <p>Name - SRI KRISHNA GOSHALA</p>
-                        <p>A/C No. - 9552000100048201</p>
-                        <p>IFSC Code - KARB0000955</p>
-                        <p>Branch Name - Akshya Nagar Branch-Bangalore (KARNATAKA)</p>
-                        <p>Bank Name - Karnataka Bank</p>
+                    <div className="text-secondary-foreground/80 space-y-1 text-sm">
+                        <p><b>Name:</b> SRI KRISHNA GOSHALA</p>
+                        <p><b>A/C No:</b> 9552000100048201</p>
+                        <p><b>IFSC:</b> KARB0000955</p>
+                        <p><b>Bank:</b> Karnataka Bank</p>
+                        <p><b>Branch:</b> Akshya Nagar, Bangalore</p>
                     </div>
-                    <div className="mt-4">
-                        <Image src="https://placehold.co/150x150.png" alt="QR Code for Donation" width={150} height={150} data-ai-hint="qr code" />
+                     <div className="mt-4">
+                        <Image src="https://placehold.co/120x120.png" alt="QR Code for Donation" width={120} height={120} data-ai-hint="qr code" />
                     </div>
                 </div>
             </div>
-            <div className="border-t border-gray-700/50 mt-12 pt-8 text-center text-secondary-foreground/60">
+            <div className="border-t border-gray-700/50 mt-8 pt-6 text-center text-secondary-foreground/60 text-sm">
                 <p>&copy; {new Date().getFullYear()} Sri Krishna Goshala. All Rights Reserved.</p>
             </div>
         </div>
