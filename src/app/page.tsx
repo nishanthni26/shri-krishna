@@ -65,10 +65,10 @@ export default function Home() {
         <section className="relative w-full py-32 md:py-48 flex items-center justify-center text-center">
           <HeroCarousel />
           <div className="relative z-10 flex flex-col items-center justify-center p-6 animate-fade-in-up">
-            <h1 className="text-5xl md:text-7xl font-belleza tracking-tighter text-primary-foreground [text-shadow:_2px_2px_8px_hsl(var(--primary))]">
+            <h1 className="text-5xl md:text-7xl font-belleza tracking-tighter text-primary-foreground">
               A Sanctuary of Compassion
             </h1>
-            <p className="mt-6 text-lg md:text-xl max-w-3xl text-primary-foreground/90 font-semibold [text-shadow:_1px_1px_4px_hsl(var(--foreground))]">
+            <p className="mt-6 text-lg md:text-xl max-w-3xl text-primary-foreground/90 font-semibold">
                Welcome to Sri Krishna Goshala, a sacred haven dedicated to the care and protection of cows. Join us in nurturing these gentle souls.
             </p>
             <Button size="lg" className="mt-10 rounded-full text-lg px-10 py-7 group shadow-xl shadow-primary/20" asChild>
