@@ -19,8 +19,7 @@ const config = {
     },
     extend: {
       fontFamily: {
-        sans: ['Belleza', 'sans-serif'],
-        serif: ['Alegreya', 'serif'],
+        sans: ['Poppins', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",

@@ -11,7 +11,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-col min-h-dvh bg-background antialiased">
-       <header className="sticky top-0 z-50 w-full bg-primary text-primary-foreground shadow-lg">
+       <header className="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-sm border-b">
         <div className="container mx-auto flex h-24 items-center justify-between px-4 md:px-6">
           <Link href="#" className="flex items-center gap-3">
             <Image 
@@ -19,26 +19,26 @@ export default function Home() {
               alt="Goshala Logo" 
               width={56} 
               height={56} 
-              className="rounded-full object-cover border-2 border-white/50"
+              className="rounded-full object-cover"
             />
-            <span className="text-3xl font-belleza tracking-tight">
+            <span className="text-2xl font-bold text-primary tracking-tight">
               Sri Krishna Goshala
             </span>
           </Link>
-          <nav className="hidden md:flex items-center gap-6 text-lg font-medium">
-            <Link href="#about" className="hover:text-white/80 transition-colors">About</Link>
-            <Link href="#seva" className="hover:text-white/80 transition-colors">Seva</Link>
-            <Link href="#gallery" className="hover:text-white/80 transition-colors">Gallery</Link>
-            <Link href="#testimonials" className="hover:text-white/80 transition-colors">Testimonials</Link>
-            <Link href="#contact" className="hover:text-white/80 transition-colors">Contact</Link>
+          <nav className="hidden md:flex items-center gap-6 text-base font-medium text-foreground/80">
+            <Link href="#about" className="hover:text-primary transition-colors">About</Link>
+            <Link href="#seva" className="hover:text-primary transition-colors">Seva</Link>
+            <Link href="#gallery" className="hover:text-primary transition-colors">Gallery</Link>
+            <Link href="#testimonials" className="hover:text-primary transition-colors">Testimonials</Link>
+            <Link href="#contact" className="hover:text-primary transition-colors">Contact</Link>
           </nav>
           <div className="flex items-center gap-4">
-            <Button asChild variant="secondary" size="lg" className="rounded-full">
+            <Button asChild size="lg" className="rounded-full bg-secondary text-secondary-foreground hover:bg-secondary/90 shadow-lg">
               <Link href="/payment">
                 Donate Now <ArrowRight className="w-5 h-5 ml-2" />
               </Link>
             </Button>
-            <Button variant="outline" className="hidden lg:flex bg-transparent text-white border-white hover:bg-white hover:text-primary" asChild>
+            <Button variant="ghost" className="hidden lg:flex" asChild>
               <Link href="/login" className="flex items-center gap-2">
                   <LogIn className="w-4 h-4" />
                   Login
@@ -53,7 +53,7 @@ export default function Home() {
            <div className="absolute top-0 left-0 w-full h-full bg-cover bg-center" style={{backgroundImage: "url('https://images.unsplash.com/photo-1660296146250-8f0d6338aa64?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Y293cyUyMHBhc3R1cmV8ZW58MHx8fHwxNzU1NzIyMTE0fDA&ixlib=rb-4.1.0&q=80&w=1080')", opacity: 0.1}}></div>
            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-background/0 via-background/50 to-background"></div>
            <div className="relative z-10 flex flex-col items-center justify-center p-6 animate-fade-in-up">
-            <h1 className="text-5xl md:text-7xl font-belleza tracking-tighter text-primary">
+            <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-primary">
               A Sanctuary of Compassion
             </h1>
             <p className="mt-6 text-lg md:text-xl max-w-3xl text-foreground/80 font-semibold">
@@ -82,7 +82,7 @@ export default function Home() {
               </div>
               <div>
                 <h3 className="text-base font-semibold text-secondary uppercase tracking-widest">Our Story</h3>
-                <h2 className="text-4xl md:text-5xl font-belleza text-primary leading-tight mt-2">
+                <h2 className="text-4xl md:text-5xl font-bold text-primary leading-tight mt-2">
                   About Sri Krishna Goshala
                 </h2>
                 <p className="mt-6 text-foreground/80 text-lg">
@@ -97,7 +97,7 @@ export default function Home() {
             <div className="container mx-auto px-4 md:px-6">
                 <div className="text-center max-w-3xl mx-auto">
                     <h3 className="text-base font-semibold text-secondary uppercase tracking-widest">Offer Seva</h3>
-                    <h2 className="text-4xl md:text-5xl font-belleza text-primary mt-2">Contribute Through Service</h2>
+                    <h2 className="text-4xl md:text-5xl font-bold text-primary mt-2">Contribute Through Service</h2>
                     <p className="mt-5 text-foreground/80 text-lg">
                         Your selfless service helps us provide the best care for our cows. Participate in our Seva programs and become a part of our family.
                     </p>
@@ -116,7 +116,7 @@ export default function Home() {
                                 <div className="bg-primary/10 p-4 rounded-full group-hover:bg-primary/20 transition-colors">
                                     <seva.icon className="h-8 w-8 text-primary group-hover:scale-110 transition-transform" />
                                 </div>
-                                <CardTitle className="text-2xl font-belleza text-primary mt-6">{seva.title}</CardTitle>
+                                <CardTitle className="text-2xl font-bold text-primary mt-6">{seva.title}</CardTitle>
                                 <p className="mt-2 text-base text-foreground/80 flex-grow">{seva.description}</p>
                                 <p className="text-4xl font-bold text-foreground mt-4">{seva.price}</p>
                                 <Button size="lg" className="w-full rounded-full text-lg mt-6 bg-secondary text-secondary-foreground hover:bg-secondary/90">
@@ -132,7 +132,7 @@ export default function Home() {
         <section id="gallery" className="py-20 md:py-28 bg-background">
           <div className="container mx-auto px-4 md:px-6 text-center">
             <h3 className="text-base font-semibold text-secondary uppercase tracking-widest">Gallery</h3>
-            <h2 className="text-4xl md:text-5xl font-belleza text-primary mt-2">
+            <h2 className="text-4xl md:text-5xl font-bold text-primary mt-2">
               Our Beloved Residents
             </h2>
             <p className="mt-5 max-w-2xl mx-auto text-foreground/80 text-lg">
@@ -163,7 +163,7 @@ export default function Home() {
             <div className="container mx-auto px-4 md:px-6">
                 <div className="text-center max-w-3xl mx-auto">
                     <h3 className="text-base font-semibold text-secondary uppercase tracking-widest">Testimonials</h3>
-                    <h2 className="text-4xl md:text-5xl font-belleza text-primary mt-2">Words from Our Devotees</h2>
+                    <h2 className="text-4xl md:text-5xl font-bold text-primary mt-2">Words from Our Devotees</h2>
                     <p className="mt-5 text-foreground/80 text-lg">
                         Hear from others who have found peace and purpose through their connection with our Goshala.
                     </p>
@@ -181,7 +181,7 @@ export default function Home() {
                             </CardContent>
                             <CardHeader className="items-center pt-4">
                                 <Image src={testimonial.avatar} alt={testimonial.name} width={64} height={64} className="rounded-full mb-4 border-2 border-primary/50" data-ai-hint={testimonial.hint} />
-                                <CardTitle className="font-belleza text-xl text-primary">{testimonial.name}</CardTitle>
+                                <CardTitle className="font-bold text-xl text-primary">{testimonial.name}</CardTitle>
                             </CardHeader>
                         </Card>
                     ))}
@@ -202,7 +202,7 @@ export default function Home() {
                   height={40} 
                   className="rounded-full object-cover" 
                 />
-                <span className="text-lg font-belleza text-primary">Sri Krishna Goshala</span>
+                <span className="text-lg font-bold text-primary">Sri Krishna Goshala</span>
              </div>
             <p className="text-foreground/80 text-sm">
               &copy; {new Date().getFullYear()} Sri Krishna Goshala. All rights reserved.
