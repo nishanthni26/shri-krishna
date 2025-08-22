@@ -16,9 +16,15 @@ export default function Home() {
       { icon: HeartHandshake, title: "Donation of a cow", description: "A sacred gift. We will care for the cow on your behalf.", link: "/payment" },
       { icon: Users, title: "Cow’s Health Checkup", description: "Fund a veterinary check-up and necessary medical care.", link: "/payment" },
       { icon: Leaf, title: "Green Grass Contribution", description: "Provide nutritious green fodder for the entire herd.", link: "/payment" },
-      { icon: Sprout, title: "Organic Feed Seva", description: "Donate special organic feed for calves and recovering cows.", link: "/payment" },
-      { icon: Wheat, title: "Dry Grass (Full load)", description: "Contribute to our stock of essential dry fodder for all seasons.", link: "/payment" },
   ];
+
+  const testimonials = [
+      { name: "Sai Karthik", quote: "A heartwarming and serene experience for the whole family. The cows are so well-cared for in a clean, peaceful environment. A wonderful place to connect with nature and tradition.", avatar: "https://placehold.co/100x100.png", hint: "south indian man" },
+      { name: "Prithi Malini", quote: "This Goshala is a true sanctuary. The love and care they provide is inspiring. You can see native breeds looked after with so much dignity in a peaceful, clean, and spiritually uplifting environment.", avatar: "https://placehold.co/100x100.png", hint: "woman praying" },
+      { name: "Manisha G", quote: "A very well-maintained goshala! The cows are clearly cared for with love and attention. The caretakers are kind and dedicated. Truly a peaceful and heartwarming place to visit.", avatar: "https://placehold.co/100x100.png", hint: "woman smiling" },
+      { name: "Rohan Sharma", quote: "An incredibly peaceful and well-managed Goshala. The dedication of the staff is evident in the health and happiness of the cows. A must-visit for anyone seeking tranquility.", avatar: "https://placehold.co/100x100.png", hint: "man portrait" },
+      { name: "Anjali Verma", quote: "The energy here is so positive and pure. It's wonderful to see these sacred animals treated with such reverence and care. We left feeling truly blessed and will be back soon.", avatar: "https://placehold.co/100x100.png", hint: "woman nature" },
+  ]
 
   return (
     <div className="flex flex-col min-h-dvh bg-background antialiased">
@@ -169,18 +175,14 @@ export default function Home() {
                         Hear from others who have found peace and purpose through their connection with our Goshala.
                     </p>
                 </div>
-                <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {[
-                         { name: "Sai Karthik", quote: "We had a heartwarming experience visiting this goshala with our family. The environment was serene, the cows were well taken care of, and the entire place was clean and peaceful. It was a joy to see the love and dedication of the caretakers. One of the highlights was the availability of pure, cold-pressed oils—they were of excellent quality and we highly recommend trying them. Our kids also loved interacting with the cows and learning about their importance in our culture. This visit was not just refreshing but also spiritually enriching. We truly appreciate the efforts of everyone involved and will definitely be coming back. A great place for families to connect with nature and tradition!", avatar: "https://placehold.co/100x100.png", hint: "south indian man" },
-                         { name: "Prithi Malini", quote: "A Place of Pure Compassion and Devotion! This Goshala is truly a sanctuary for cows. Run by a young, dedicated couple who have been selflessly caring for over 900 cows and calves — many rescued from slaughterhouses — for more than a decade. The love and care they provide is inspiring and heart-touching. You can see native breeds being looked after with so much dignity, and the environment is peaceful, clean, and spiritually uplifting. It’s not just a shelter, it’s a home for these gentle souls. If you believe in kindness, please support their work in any way you can — through donations, volunteering, or simply spreading the word. A truly divine place doing incredible seva. 🙏🐄✨", avatar: "https://placehold.co/100x100.png", hint: "woman praying" },
-                         { name: "Manisha G", quote: "A very well-maintained goshala! The cows are clearly cared for with love and attention, and the calves are absolutely adorable. The caretakers are kind, dedicated, and do a wonderful job looking after the animals. Truly a peaceful and heartwarming place to visit.", avatar: "https://placehold.co/100x100.png", hint: "woman smiling" },
-                    ].map(testimonial => (
-                        <Card key={testimonial.name} className="bg-background p-8 rounded-2xl shadow-lg text-center border">
+                <div className="mt-16 flex overflow-x-auto space-x-8 pb-4">
+                    {testimonials.map(testimonial => (
+                        <Card key={testimonial.name} className="flex-shrink-0 w-[400px] bg-background p-8 rounded-2xl shadow-lg text-center border flex flex-col">
                             <Quote className="h-12 w-12 text-primary/30 mx-auto" />
-                            <CardContent className="pt-6">
+                            <CardContent className="pt-6 flex-grow">
                                 <p className="text-foreground/80 italic">"{testimonial.quote}"</p>
                             </CardContent>
-                            <CardHeader className="items-center pt-4">
+                            <CardHeader className="items-center pt-4 mt-auto">
                                 <Image src={testimonial.avatar} alt={testimonial.name} width={64} height={64} className="rounded-full mb-4 border-2 border-primary/50" data-ai-hint={testimonial.hint} />
                                 <CardTitle className="font-bold text-xl text-primary">{testimonial.name}</CardTitle>
                             </CardHeader>
