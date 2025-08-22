@@ -14,7 +14,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-col min-h-dvh bg-background antialiased">
-      <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-sm">
+      <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-sm border-b">
         <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
           <Link href="#" className="flex items-center gap-3">
             <Image 
@@ -65,10 +65,10 @@ export default function Home() {
         <section className="relative w-full py-32 md:py-48 flex items-center justify-center text-center">
           <HeroCarousel />
           <div className="relative z-10 flex flex-col items-center justify-center p-6 animate-fade-in-up">
-            <h1 className="text-5xl md:text-7xl font-belleza tracking-tighter text-primary">
+            <h1 className="text-5xl md:text-7xl font-belleza tracking-tighter text-primary-foreground [text-shadow:_2px_2px_8px_hsl(var(--primary))]">
               A Sanctuary of Compassion
             </h1>
-            <p className="mt-6 text-lg md:text-xl max-w-3xl text-foreground/80">
+            <p className="mt-6 text-lg md:text-xl max-w-3xl text-primary-foreground/90 font-semibold [text-shadow:_1px_1px_4px_hsl(var(--foreground))]">
                Welcome to Sri Krishna Goshala, a sacred haven dedicated to the care and protection of cows. Join us in nurturing these gentle souls.
             </p>
             <Button size="lg" className="mt-10 rounded-full text-lg px-10 py-7 group shadow-xl shadow-primary/20" asChild>
@@ -126,7 +126,7 @@ export default function Home() {
                         { icon: Leaf, title: "Dry grass (Full load)", description: "Donate a full load of dry grass.", price: "₹10,000", link: "/payment", image: "https://placehold.co/600x400.png", hint: "hay bale" },
                         { icon: Leaf, title: "Dry grass (Half load)", description: "Donate a half load of dry grass.", price: "₹5,000", link: "/payment", image: "https://placehold.co/600x400.png", hint: "dry hay" },
                     ].map(seva => (
-                        <Card key={seva.title} className="flex flex-col text-center rounded-2xl shadow-lg hover:shadow-primary/20 hover:-translate-y-2 transition-all duration-300 group overflow-hidden bg-card border-2 border-white">
+                        <Card key={seva.title} className="flex flex-col text-center rounded-2xl shadow-lg hover:shadow-primary/20 hover:-translate-y-2 transition-all duration-300 group overflow-hidden bg-card border">
                             <Link href={seva.link} className="flex flex-col h-full">
                                 <div className="relative h-48 w-full">
                                     <Image src={seva.image} alt={seva.title} layout="fill" objectFit="cover" className="group-hover:scale-110 transition-transform duration-500" data-ai-hint={seva.hint} />
@@ -198,7 +198,7 @@ export default function Home() {
                         { name: "Priya S.", quote: "The dedication of the staff and the serene environment make this place a true sanctuary. My children love visiting the goshala.", avatar: "https://placehold.co/100x100.png", hint: "smiling woman" },
                         { name: "Anand K.", quote: "Donating to the goshala feels like a direct service to the Lord. I am grateful for the opportunity to contribute.", avatar: "https://placehold.co/100x100.png", hint: "happy person" },
                     ].map(testimonial => (
-                        <Card key={testimonial.name} className="bg-card p-8 rounded-2xl shadow-lg text-center border-2 border-white">
+                        <Card key={testimonial.name} className="bg-card p-8 rounded-2xl shadow-lg text-center border">
                             <Quote className="h-12 w-12 text-primary/30 mx-auto" />
                             <CardContent className="pt-6">
                                 <p className="text-foreground/80 italic">"{testimonial.quote}"</p>
@@ -230,7 +230,7 @@ export default function Home() {
                     <span>Raised: ₹{new Intl.NumberFormat('en-IN').format(raisedAmount)}</span>
                     <span>Goal: ₹{new Intl.NumberFormat('en-IN').format(goalAmount)}</span>
                 </div>
-                <Progress value={progressPercentage} className="h-5" />
+                <Progress value={progressPercentage} className="h-5 bg-white/30" indicatorClassName="bg-white" />
                 <p className="text-center mt-3 text-white/90 font-semibold">{Math.round(progressPercentage)}% of our monthly goal reached!</p>
               </div>
 
@@ -244,7 +244,7 @@ export default function Home() {
         </section>
       </main>
 
-      <footer id="contact" className="bg-card border-t-2 border-white">
+      <footer id="contact" className="bg-card border-t">
         <div className="container mx-auto px-4 md:px-6 py-12">
           <div className="flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-6">
              <div className="flex items-center gap-3">
@@ -270,5 +270,3 @@ export default function Home() {
     </div>
   );
 }
-
-    

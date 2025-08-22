@@ -49,7 +49,7 @@ export function HeroCarousel() {
           </div>
         ))}
       </div>
-       <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-transparent"></div>
+       <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent"></div>
     </div>
   )
 }
