@@ -33,7 +33,7 @@ export default function Home() {
             <Link href="#contact" className="hover:text-primary transition-colors">Contact</Link>
           </nav>
           <div className="flex items-center gap-4">
-            <Button asChild size="lg" className="rounded-full bg-secondary text-secondary-foreground hover:bg-secondary/90 shadow-lg">
+            <Button asChild size="lg" className="rounded-full shadow-lg">
               <Link href="/payment">
                 Donate Now <ArrowRight className="w-5 h-5 ml-2" />
               </Link>
@@ -93,7 +93,7 @@ export default function Home() {
           </div>
         </section>
         
-        <section id="seva" className="py-20 md:py-28 bg-card">
+        <section id="seva" className="py-20 md:py-28 bg-primary/10">
             <div className="container mx-auto px-4 md:px-6">
                 <div className="text-center max-w-3xl mx-auto">
                     <h3 className="text-base font-semibold text-secondary uppercase tracking-widest">Offer Seva</h3>
@@ -109,20 +109,24 @@ export default function Home() {
                         { icon: CalendarCheck, title: "Annual cost of a cow", description: "Sponsor a cow's expenses for one year.", price: "₹31,000", link: "/payment" },
                         { icon: HeartHandshake, title: "Donation of a cow", description: "Donate a cow to our goshala.", price: "₹31,000", link: "/payment" },
                         { icon: Wheat, title: "Cow’s Fodder", description: "Provide nutritious fodder for our cows.", price: "₹2,500", link: "/payment" },
+                        { icon: Leaf, title: "Green Grass (Full Load)", description: "Sponsor a full load of green grass.", price: "₹11,000", link: "/payment" },
+                        { icon: Leaf, title: "Green Grass (Half Load)", description: "Sponsor a half load of green grass.", price: "₹6,100", link: "/payment" },
+                        { icon: Sprout, title: "Dry Grass (Full Load)", description: "Sponsor a full load of dry grass.", price: "₹10,000", link: "/payment" },
+                        { icon: Sprout, title: "Dry Grass (Half Load)", description: "Sponsor a half load of dry grass.", price: "₹5,000", link: "/payment" },
                         { icon: Video, title: "Live Video Seva", description: "Connect with our cows via a live video call.", price: "From ₹501", link: "/book-slot" },
                     ].map(seva => (
-                        <Card key={seva.title} className="flex flex-col text-center rounded-2xl shadow-lg hover:shadow-primary/20 hover:-translate-y-2 transition-all duration-300 group overflow-hidden bg-background border">
-                            <Link href={seva.link} className="flex flex-col h-full p-8 items-center">
-                                <div className="bg-primary/10 p-4 rounded-full group-hover:bg-primary/20 transition-colors">
-                                    <seva.icon className="h-8 w-8 text-primary group-hover:scale-110 transition-transform" />
-                                </div>
-                                <CardTitle className="text-2xl font-bold text-primary mt-6">{seva.title}</CardTitle>
-                                <p className="mt-2 text-base text-foreground/80 flex-grow">{seva.description}</p>
-                                <p className="text-4xl font-bold text-foreground mt-4">{seva.price}</p>
-                                <Button size="lg" className="w-full rounded-full text-lg mt-6 bg-secondary text-secondary-foreground hover:bg-secondary/90">
-                                    Offer Seva
-                                </Button>
-                            </Link>
+                       <Card key={seva.title} className="flex flex-col text-center items-center p-8 rounded-2xl shadow-lg hover:shadow-primary/20 hover:-translate-y-2 transition-all duration-300 group overflow-hidden bg-background border">
+                         <Link href={seva.link} className="flex flex-col h-full items-center">
+                            <div className="bg-secondary text-secondary-foreground h-20 w-20 rounded-full flex items-center justify-center mb-6 transition-transform group-hover:scale-110">
+                              <seva.icon className="h-10 w-10" />
+                            </div>
+                            <CardTitle className="text-2xl font-bold text-primary mt-6">{seva.title}</CardTitle>
+                            <p className="mt-2 text-base text-foreground/80 flex-grow">{seva.description}</p>
+                            <p className="text-4xl font-bold text-foreground mt-4">{seva.price}</p>
+                            <Button size="lg" className="w-full rounded-full text-lg mt-6">
+                                Offer Seva
+                            </Button>
+                          </Link>
                         </Card>
                     ))}
                 </div>
