@@ -46,16 +46,16 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-dvh bg-background antialiased">
        <header className="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-sm border-b">
-        <div className="container mx-auto flex h-24 items-center justify-between px-4 md:px-6">
-          <Link href="#" className="flex items-center gap-3">
+        <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
+          <Link href="#" className="flex items-center gap-2">
             <Image 
               src="/logo.png" 
               alt="Goshala Logo" 
-              width={56} 
-              height={56} 
+              width={48} 
+              height={48} 
               className="rounded-full object-cover"
             />
-            <span className="text-2xl font-bold text-primary tracking-tight">
+            <span className="text-xl md:text-2xl font-bold text-primary tracking-tight">
               Sri Krishna Goshala
             </span>
           </Link>
@@ -66,10 +66,11 @@ export default function Home() {
             <Link href="#testimonials" className="hover:text-primary transition-colors">Testimonials</Link>
             <Link href="#contact" className="hover:text-primary transition-colors">Contact</Link>
           </nav>
-          <div className="flex items-center gap-4">
-            <Button asChild size="lg" className="rounded-full shadow-lg">
+          <div className="flex items-center gap-2 md:gap-4">
+            <Button asChild size="sm" className="rounded-full shadow-lg md:text-base md:px-6 md:py-4">
               <Link href="/payment">
-                Donate Now <ArrowRight className="w-5 h-5 ml-2" />
+                Donate <span className="hidden md:inline ml-1">Now</span> 
+                <ArrowRight className="w-4 h-4 ml-1 md:ml-2" />
               </Link>
             </Button>
             <Button variant="ghost" className="hidden lg:flex" asChild>
@@ -83,61 +84,61 @@ export default function Home() {
       </header>
 
       <main className="flex-1">
-        <section className="relative w-full py-32 md:py-48 flex items-center justify-center text-center bg-card overflow-hidden">
+        <section className="relative w-full py-24 md:py-48 flex items-center justify-center text-center bg-card overflow-hidden">
            <HeroCarousel />
-           <div className="relative z-10 flex flex-col items-center justify-center p-6 animate-fade-in-up">
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-primary">
+           <div className="relative z-10 flex flex-col items-center justify-center p-4 md:p-6 animate-fade-in-up">
+            <h1 className="text-4xl md:text-7xl font-bold tracking-tighter text-primary">
               A Sanctuary of Compassion
             </h1>
-            <p className="mt-6 text-lg md:text-xl max-w-3xl text-foreground/80 font-semibold">
+            <p className="mt-4 md:mt-6 text-md md:text-xl max-w-3xl text-foreground/80 font-semibold">
                Welcome to Sri Krishna Goshala, a sacred haven dedicated to the care and protection of cows. Join us in nurturing these gentle souls.
             </p>
-            <Button size="lg" className="mt-10 rounded-full text-lg px-10 py-7 group" asChild>
+            <Button size="lg" className="mt-8 md:mt-10 rounded-full text-base md:text-lg px-8 md:px-10 py-6 md:py-7 group" asChild>
               <Link href="/payment">
-                Support Our Cows <HeartHandshake className="w-6 h-6 ml-3 transition-transform group-hover:rotate-12" />
+                Support Our Cows <HeartHandshake className="w-5 h-5 md:w-6 md:h-6 ml-2 md:ml-3 transition-transform group-hover:rotate-12" />
               </Link>
             </Button>
           </div>
         </section>
 
-        <section id="why-donate" className="py-20 md:py-28 bg-primary/5">
+        <section id="why-donate" className="py-16 md:py-28 bg-primary/5">
           <div className="container mx-auto px-4 md:px-6">
             <div className="text-center max-w-3xl mx-auto">
               <h3 className="text-base font-semibold text-secondary uppercase tracking-widest">Why Your Seva Matters</h3>
-              <h2 className="text-4xl md:text-5xl font-bold text-primary mt-2">Your Support is Their Lifeline</h2>
-              <p className="mt-5 text-foreground/80 text-lg">
+              <h2 className="text-3xl md:text-5xl font-bold text-primary mt-2">Your Support is Their Lifeline</h2>
+              <p className="mt-4 md:mt-5 text-foreground/80 text-md md:text-lg">
                 By donating, you provide more than just funds—you offer a life of dignity, care, and peace to our sacred cows. Every contribution directly supports their well-being.
               </p>
             </div>
-            <div className="grid md:grid-cols-3 gap-8 mt-16 max-w-5xl mx-auto">
-              <div className="flex flex-col items-center text-center p-8 rounded-2xl bg-background shadow-lg hover:shadow-primary/20 transition-shadow duration-300">
-                <div className="bg-secondary text-primary-foreground h-20 w-20 rounded-full flex items-center justify-center mb-6">
-                  <UtensilsCrossed className="h-10 w-10" />
+            <div className="grid md:grid-cols-3 gap-6 md:gap-8 mt-12 md:mt-16 max-w-5xl mx-auto">
+              <div className="flex flex-col items-center text-center p-6 md:p-8 rounded-2xl bg-background shadow-lg hover:shadow-primary/20 transition-shadow duration-300">
+                <div className="bg-secondary text-primary-foreground h-16 w-16 md:h-20 md:w-20 rounded-full flex items-center justify-center mb-4 md:mb-6">
+                  <UtensilsCrossed className="h-8 w-8 md:h-10 md:w-10" />
                 </div>
-                <h4 className="text-xl font-bold text-primary">Food & Nutrition</h4>
-                <p className="text-muted-foreground mt-2">Your donation helps us provide nutritious food, ensuring the health and happiness of our cows every day.</p>
+                <h4 className="text-lg md:text-xl font-bold text-primary">Food & Nutrition</h4>
+                <p className="text-muted-foreground mt-2 text-sm md:text-base">Your donation helps us provide nutritious food, ensuring the health and happiness of our cows every day.</p>
               </div>
-              <div className="flex flex-col items-center text-center p-8 rounded-2xl bg-background shadow-lg hover:shadow-primary/20 transition-shadow duration-300">
-                <div className="bg-secondary text-primary-foreground h-20 w-20 rounded-full flex items-center justify-center mb-6">
-                   <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              <div className="flex flex-col items-center text-center p-6 md:p-8 rounded-2xl bg-background shadow-lg hover:shadow-primary/20 transition-shadow duration-300">
+                <div className="bg-secondary text-primary-foreground h-16 w-16 md:h-20 md:w-20 rounded-full flex items-center justify-center mb-4 md:mb-6">
+                   <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8 md:h-10 md:w-10"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
                 </div>
-                <h4 className="text-xl font-bold text-primary">Shelter & Care</h4>
-                <p className="text-muted-foreground mt-2">You help maintain a safe, clean, and comfortable shelter where our cows can live peacefully.</p>
+                <h4 className="text-lg md:text-xl font-bold text-primary">Shelter & Care</h4>
+                <p className="text-muted-foreground mt-2 text-sm md:text-base">You help maintain a safe, clean, and comfortable shelter where our cows can live peacefully.</p>
               </div>
-              <div className="flex flex-col items-center text-center p-8 rounded-2xl bg-background shadow-lg hover:shadow-primary/20 transition-shadow duration-300">
-                <div className="bg-secondary text-primary-foreground h-20 w-20 rounded-full flex items-center justify-center mb-6">
-                  <Stethoscope className="h-10 w-10" />
+              <div className="flex flex-col items-center text-center p-6 md:p-8 rounded-2xl bg-background shadow-lg hover:shadow-primary/20 transition-shadow duration-300">
+                <div className="bg-secondary text-primary-foreground h-16 w-16 md:h-20 md:w-20 rounded-full flex items-center justify-center mb-4 md:mb-6">
+                  <Stethoscope className="h-8 w-8 md:h-10 md:w-10" />
                 </div>
-                <h4 className="text-xl font-bold text-primary">Medical Support</h4>
-                <p className="text-muted-foreground mt-2">Your contribution funds essential veterinary care and medical treatments to keep our herd healthy.</p>
+                <h4 className="text-lg md:text-xl font-bold text-primary">Medical Support</h4>
+                <p className="text-muted-foreground mt-2 text-sm md:text-base">Your contribution funds essential veterinary care and medical treatments to keep our herd healthy.</p>
               </div>
             </div>
           </div>
         </section>
 
-        <section id="about" className="py-20 md:py-28 bg-background">
+        <section id="about" className="py-16 md:py-28 bg-background">
           <div className="container mx-auto px-4 md:px-6">
-            <div className="grid md:grid-cols-2 gap-16 items-center">
+            <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
               <div className="relative w-full aspect-square">
                  <Image
                   src="https://images.unsplash.com/photo-1672858074971-55cf899b2f66?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjb3clMjBwb3J0cmFpdHxlbnwwfHx8fDE3NTU3MjIxMTR8MA&ixlib=rb-4.1.0&q=80&w=1080"
@@ -150,10 +151,10 @@ export default function Home() {
               </div>
               <div>
                 <h3 className="text-base font-semibold text-secondary uppercase tracking-widest">Our Story</h3>
-                <h2 className="text-4xl md:text-5xl font-bold text-primary leading-tight mt-2">
+                <h2 className="text-3xl md:text-5xl font-bold text-primary leading-tight mt-2">
                   About Sri Krishna Goshala
                 </h2>
-                <p className="mt-6 text-foreground/80 text-lg">
+                <p className="mt-4 md:mt-6 text-foreground/80 text-md md:text-lg">
                   Sri Krishna Gaushala was established in 2015 by Mr. Krishnamurthy. The Cow referred as Divine Mother, the Gomata, and one which bestows health, knowledge and prosperity. In Sanskrit, the word “Go” also means “Light”. Mother cows are worshiped in Shri Krishna Gaushala. From food to Shelter, every need is taken care of. Shri Krishna Gaushala has been established with a very noble vision. Their only objective is to serve the cows. It is said that by serving cows, all the sorrows, pain, and problems of a person go away. The cow has a special place in Hinduism, and it is believed that all gods reside in her body. Feeding a cow with green fodder is considered one of the Maha Daans that is powerful enough to remove all the Grah Doshas, or troubles arising from the malefic effects of the planets.
                 </p>
               </div>
@@ -161,12 +162,12 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="seva" className="py-20 md:py-28 bg-primary/10">
+        <section id="seva" className="py-16 md:py-28 bg-primary/10">
             <div className="container mx-auto px-4 md:px-6">
                 <div className="text-center max-w-3xl mx-auto">
                     <h3 className="text-base font-semibold text-secondary uppercase tracking-widest">Offer Seva</h3>
-                    <h2 className="text-4xl md:text-5xl font-bold text-primary mt-2">Contribute Through Service</h2>
-                    <p className="mt-5 text-foreground/80 text-lg">
+                    <h2 className="text-3xl md:text-5xl font-bold text-primary mt-2">Contribute Through Service</h2>
+                    <p className="mt-4 md:mt-5 text-foreground/80 text-md md:text-lg">
                         Your selfless service helps us provide the best care for our cows. Participate in our Seva programs and become a part of our family.
                     </p>
                 </div>
@@ -174,23 +175,23 @@ export default function Home() {
             </div>
         </section>
 
-        <section id="gallery" className="py-20 md:py-28 bg-background">
+        <section id="gallery" className="py-16 md:py-28 bg-background">
           <div className="container mx-auto px-4 md:px-6 text-center">
             <h3 className="text-base font-semibold text-secondary uppercase tracking-widest">Gallery</h3>
-            <h2 className="text-4xl md:text-5xl font-bold text-primary mt-2">
+            <h2 className="text-3xl md:text-5xl font-bold text-primary mt-2">
               Our Beloved Residents
             </h2>
-            <p className="mt-5 max-w-2xl mx-auto text-foreground/80 text-lg">
+            <p className="mt-4 md:mt-5 max-w-2xl mx-auto text-foreground/80 text-md md:text-lg">
               Glimpses of daily life and the gentle souls that call our Goshala home.
             </p>
-            <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="mt-12 md:mt-16 grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4">
               {[
                 { src: "https://images.unsplash.com/photo-1660296146250-8f0d6338aa64?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Y293cyUyMHBhc3R1cmV8ZW58MHx8fHwxNzU1NzIyMTE0fDA&ixlib=rb-4.1.0&q=80&w=1080", alt: "Happy Cow"},
                 { src: "https://images.unsplash.com/photo-1692632428740-f0f10c652ad8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjb3clMjBncmF6aW5nfGVufDB8fHx8MTc1NTcyMjExNHww&ixlib=rb-4.1.0&q=80&w=1080", alt: "Grazing Cow"},
                 { src: "https://images.unsplash.com/photo-1618523393652-519b5d343477?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", alt: "Calf Playing"},
                 { src: "https://images.unsplash.com/photo-1720975134463-97ab99685d7f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Y293cyUyMGhlcmR8ZW58MHx8fHwxNzU1NzIyMTE0fDA&ixlib=rb-4.1.0&q=80&w=1080", alt: "Cow Herd"},
               ].map((image, index) => (
-                <div key={index} className="overflow-hidden rounded-2xl group aspect-w-1 aspect-h-1 border-4 border-white">
+                <div key={index} className="overflow-hidden rounded-lg md:rounded-2xl group aspect-w-1 aspect-h-1 border-2 md:border-4 border-white">
                   <Image
                     src={image.src}
                     alt={image.alt}
@@ -204,12 +205,12 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="testimonials" className="py-20 md:py-28 bg-card">
+        <section id="testimonials" className="py-16 md:py-28 bg-card">
             <div className="container mx-auto px-4 md:px-6">
                 <div className="text-center max-w-3xl mx-auto">
                     <h3 className="text-base font-semibold text-secondary uppercase tracking-widest">Testimonials</h3>
-                    <h2 className="text-4xl md:text-5xl font-bold text-primary mt-2">Words from Our Devotees</h2>
-                    <p className="mt-5 text-foreground/80 text-lg">
+                    <h2 className="text-3xl md:text-5xl font-bold text-primary mt-2">Words from Our Devotees</h2>
+                    <p className="mt-4 md:mt-5 text-foreground/80 text-md md:text-lg">
                         Hear from others who have found peace and purpose through their connection with our Goshala.
                     </p>
                 </div>
@@ -217,23 +218,23 @@ export default function Home() {
             </div>
         </section>
         
-        <section id="impact" className="py-20 md:py-28 bg-primary/5">
+        <section id="impact" className="py-16 md:py-28 bg-primary/5">
           <div className="container mx-auto px-4 md:px-6">
             <div className="text-center max-w-3xl mx-auto">
               <h3 className="text-base font-semibold text-secondary uppercase tracking-widest">Our Collective Impact</h3>
-              <h2 className="text-4xl md:text-5xl font-bold text-primary mt-2">Your Support Makes a Difference</h2>
-              <p className="mt-5 text-foreground/80 text-lg">
+              <h2 className="text-3xl md:text-5xl font-bold text-primary mt-2">Your Support Makes a Difference</h2>
+              <p className="mt-4 md:mt-5 text-foreground/80 text-md md:text-lg">
                 Every contribution, big or small, helps us provide continuous care for our beloved cows. See how our community's generosity adds up!
               </p>
             </div>
             <div className="max-w-4xl mx-auto mt-12">
-              <Card className="p-8 shadow-lg">
+              <Card className="p-6 md:p-8 shadow-lg">
                 <div className="flex justify-between items-end mb-2">
-                   <span className="text-xl font-bold text-primary">₹7,50,000</span>
-                   <span className="text-lg font-semibold text-muted-foreground">Goal: ₹10,00,000</span>
+                   <span className="text-lg md:text-xl font-bold text-primary">₹7,50,000</span>
+                   <span className="text-md md:text-lg font-semibold text-muted-foreground">Goal: ₹10,00,000</span>
                 </div>
-                <Progress value={75} className="h-6" indicatorClassName="bg-primary" />
-                <div className="text-center mt-8">
+                <Progress value={75} className="h-4 md:h-6" indicatorClassName="bg-primary" />
+                <div className="text-center mt-6 md:mt-8">
                   <Button size="lg" asChild>
                     <Link href="/payment">
                       Contribute Now <HeartHandshake className="w-5 h-5 ml-2" />
@@ -247,7 +248,7 @@ export default function Home() {
 
       </main>
 
-      <footer id="contact" className="bg-secondary text-secondary-foreground py-12" style={{ backgroundImage: "url('https://www.transparenttextures.com/patterns/dark-dotted.png')" }}>
+      <footer id="contact" className="bg-secondary text-secondary-foreground py-10 md:py-12" style={{ backgroundImage: "url('https://www.transparenttextures.com/patterns/dark-dotted.png')" }}>
         <div className="container mx-auto px-4 md:px-6">
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8 text-center md:text-left">
 
@@ -262,7 +263,7 @@ export default function Home() {
                         />
                         <span className="font-bold text-xl text-primary-foreground">Sri Krishna Goshala</span>
                     </div>
-                     <div className="text-secondary-foreground/80 space-y-3">
+                     <div className="text-secondary-foreground/80 space-y-3 text-sm md:text-base">
                          <p>#69, Vittasandra Mainroad, 4th Cross, Lakshmi Layout, Near Post Office, Begur.</p>
                          <p><b>Phone:</b> 9972508500 | 8123791540</p>
                          <p><b>Email:</b> srikrishnagaushalablr@gmail.com</p>
@@ -309,7 +310,7 @@ export default function Home() {
                         <p><b>Branch:</b> Akshya Nagar, Bangalore</p>
                     </div>
                      <div className="mt-4">
-                        <Image src="https://placehold.co/120x120.png" alt="QR Code for Donation" width={120} height={120} data-ai-hint="qr code" />
+                        <Image src="https://placehold.co/120x120.png" alt="QR Code for Donation" width={100} height={100} data-ai-hint="qr code" />
                     </div>
                 </div>
             </div>
@@ -321,3 +322,5 @@ export default function Home() {
     </div>
   );
 }
+
+    

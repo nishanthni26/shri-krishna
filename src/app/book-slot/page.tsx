@@ -50,7 +50,7 @@ export default function BookSlotPage() {
               height={48}
               className="rounded-full object-cover border-2 border-primary/20"
             />
-            <span className="text-2xl font-bold text-primary tracking-tight">
+            <span className="text-xl md:text-2xl font-bold text-primary tracking-tight">
               Sri Krishna Goshala
             </span>
           </Link>
@@ -62,14 +62,14 @@ export default function BookSlotPage() {
 
       <main className="flex-1 flex items-center justify-center p-4">
         <Card className="w-full max-w-4xl shadow-2xl">
-          <CardHeader>
-            <CardTitle className="text-3xl font-bold text-primary">Book Your Live Video Seva</CardTitle>
+          <CardHeader className="text-center md:text-left">
+            <CardTitle className="text-2xl md:text-3xl font-bold text-primary">Book Your Live Video Seva</CardTitle>
             <CardDescription>
               Select a date and time for your personalized video call with our cows.
             </CardDescription>
           </CardHeader>
-          <CardContent className="grid md:grid-cols-2 gap-8">
-            <div className="flex justify-center">
+          <CardContent className="grid md:grid-cols-2 gap-6 md:gap-8">
+            <div className="flex justify-center p-0 md:p-4">
               <Calendar
                 mode="single"
                 selected={date}
@@ -80,18 +80,18 @@ export default function BookSlotPage() {
             </div>
             <div className="space-y-6">
               <div>
-                <h4 className="text-lg font-semibold text-primary mb-4">Select a Time Slot</h4>
+                <h4 className="text-lg font-semibold text-primary mb-4 text-center md:text-left">Select a Time Slot</h4>
                 <RadioGroup
                   value={selectedTime}
                   onValueChange={setSelectedTime}
-                  className="grid grid-cols-2 gap-4"
+                  className="grid grid-cols-2 gap-3 md:gap-4"
                 >
                   {timeSlots.map((slot) => (
                     <div key={slot}>
                       <RadioGroupItem value={slot} id={slot} className="peer sr-only" />
                       <Label
                         htmlFor={slot}
-                        className="flex items-center justify-center rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
+                        className="flex items-center justify-center rounded-md border-2 border-muted bg-popover p-3 md:p-4 text-sm md:text-base hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
                       >
                         {slot}
                       </Label>
@@ -99,7 +99,7 @@ export default function BookSlotPage() {
                   ))}
                 </RadioGroup>
               </div>
-              <Button onClick={handleBooking} size="lg" className="w-full text-lg">
+              <Button onClick={handleBooking} size="lg" className="w-full text-md md:text-lg">
                 Confirm Booking
               </Button>
             </div>
@@ -110,3 +110,4 @@ export default function BookSlotPage() {
   );
 }
 
+    

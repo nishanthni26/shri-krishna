@@ -1,10 +1,11 @@
+
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
-import { Video, CameraOff, LogIn } from 'lucide-react';
+import { Video, CameraOff, LogIn, ArrowLeft } from 'lucide-react';
 import { useToast } from '@/components/ui/use-toast';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -58,17 +59,20 @@ export default function VideoSevaPage() {
                 height={48} 
                 className="rounded-full object-cover border-2 border-primary/20"
             />
-            <span className="text-2xl font-bold text-primary tracking-tight">
+            <span className="text-xl md:text-2xl font-bold text-primary tracking-tight">
               Sri Krishna Goshala
             </span>
           </Link>
-           <nav className="hidden md:flex items-center gap-4">
+           <nav className="flex items-center gap-2 md:gap-4">
               <Button asChild>
-                <Link href="/">Back to Home</Link>
+                 <Link href="/" className="flex items-center gap-1 md:gap-2">
+                    <ArrowLeft className="w-4 h-4" />
+                    Home
+                 </Link>
               </Button>
               <Button variant="ghost" asChild>
-                <Link href="/login" className="flex items-center gap-2">
-                    <LogIn className="w-5 h-5" />
+                <Link href="/login" className="flex items-center gap-1 md:gap-2">
+                    <LogIn className="w-4 h-4 md:w-5 md:h-5" />
                     Login
                 </Link>
               </Button>
@@ -78,30 +82,30 @@ export default function VideoSevaPage() {
 
       <main className="flex-1 flex items-center justify-center p-4 md:p-6">
         <Card className="w-full max-w-4xl shadow-2xl">
-          <CardHeader className="text-center p-8">
-            <CardTitle className="text-3xl md:text-4xl font-bold flex items-center justify-center gap-3 text-primary">
-              <Video className="w-8 h-8" />
+          <CardHeader className="text-center p-6 md:p-8">
+            <CardTitle className="text-2xl md:text-4xl font-bold flex items-center justify-center gap-3 text-primary">
+              <Video className="w-6 h-6 md:w-8 md:h-8" />
               Live Video Seva
             </CardTitle>
           </CardHeader>
-          <CardContent className="p-6">
+          <CardContent className="p-4 md:p-6">
             <div className="aspect-video bg-black rounded-lg overflow-hidden relative flex items-center justify-center border-2 border-primary">
               <video ref={videoRef} className="w-full h-full object-cover" autoPlay muted playsInline />
               {hasCameraPermission === false && (
-                 <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/80 text-white p-4">
-                    <CameraOff className="w-16 h-16 mb-4" />
-                    <h3 className="text-2xl font-bold">Camera Access Required</h3>
-                    <p className="text-muted-foreground text-center mt-2">Please allow camera and microphone access in your browser to start the Video Seva.</p>
+                 <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/80 text-white p-4 text-center">
+                    <CameraOff className="w-12 h-12 md:w-16 md:h-16 mb-4" />
+                    <h3 className="text-xl md:text-2xl font-bold">Camera Access Required</h3>
+                    <p className="text-muted-foreground text-sm md:text-base mt-2">Please allow camera and microphone access in your browser to start the Video Seva.</p>
                  </div>
               )}
                {hasCameraPermission === null && (
                  <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/80 text-white p-4">
-                    <p className="text-lg">Requesting camera permission...</p>
+                    <p className="text-md md:text-lg">Requesting camera permission...</p>
                  </div>
               )}
             </div>
             {hasCameraPermission === false && (
-              <Alert variant="destructive" className="mt-6">
+              <Alert variant="destructive" className="mt-4 md:mt-6">
                 <AlertTitle>Action Required</AlertTitle>
                 <AlertDescription>
                   To proceed, please grant camera and microphone permissions in your browser's settings and refresh the page.
@@ -109,8 +113,8 @@ export default function VideoSevaPage() {
               </Alert>
             )}
             {hasCameraPermission === true && (
-                <div className="text-center mt-6">
-                    <p className="text-lg text-muted-foreground">You are now connected. Our team will guide you through the seva.</p>
+                <div className="text-center mt-4 md:mt-6">
+                    <p className="text-md md:text-lg text-muted-foreground">You are now connected. Our team will guide you through the seva.</p>
                 </div>
             )}
           </CardContent>
@@ -119,3 +123,5 @@ export default function VideoSevaPage() {
     </div>
   );
 }
+
+    

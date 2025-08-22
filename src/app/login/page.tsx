@@ -10,6 +10,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { useToast } from '@/components/ui/use-toast';
+import { ArrowLeft } from 'lucide-react';
 
 export default function LoginPage() {
   const router = useRouter();
@@ -52,13 +53,16 @@ export default function LoginPage() {
                         height={48}
                         className="rounded-full object-cover border-2 border-primary/20"
                     />
-                    <span className="text-2xl font-bold text-primary tracking-tight">
+                    <span className="text-xl md:text-2xl font-bold text-primary tracking-tight">
                         Sri Krishna Goshala
                     </span>
                 </Link>
-                <nav className="hidden md:flex items-center gap-4">
+                <nav className="flex items-center gap-4">
                     <Button asChild variant="ghost">
-                        <Link href="/">Back to Home</Link>
+                         <Link href="/" className="flex items-center gap-2">
+                          <ArrowLeft className="w-4 h-4" />
+                          Back to Home
+                        </Link>
                     </Button>
                 </nav>
             </div>
@@ -110,3 +114,5 @@ export default function LoginPage() {
     </div>
   );
 }
+
+    

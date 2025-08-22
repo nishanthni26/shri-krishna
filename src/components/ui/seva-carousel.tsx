@@ -51,19 +51,19 @@ export const SevaCarousel: React.FC<PropType> = ({ sevaOptions }) => {
   }, [emblaApi, onSelect])
 
   return (
-    <div className="relative mt-16">
-      <div className="overflow-hidden" ref={emblaRef}>
-        <div className="flex space-x-8 pb-4">
+    <div className="relative mt-12 md:mt-16">
+      <div className="overflow-hidden -mx-4 px-4" ref={emblaRef}>
+        <div className="flex space-x-4 md:space-x-8 pb-4">
             {sevaOptions.map((seva, index) => {
                 const IconComponent = iconMap[seva.icon];
                 return (
-                    <div key={index} className="flex-shrink-0 w-80">
-                       <div className="flex flex-col text-center items-center p-8 rounded-2xl shadow-lg hover:shadow-primary/20 hover:-translate-y-2 transition-all duration-300 group overflow-hidden bg-background border h-full">
-                            <div className="bg-secondary text-primary-foreground h-20 w-20 rounded-full flex items-center justify-center mb-6 transition-transform group-hover:scale-110">
-                              {IconComponent && <IconComponent className="h-10 w-10" />}
+                    <div key={index} className="flex-shrink-0 w-full max-w-xs sm:w-80">
+                       <div className="flex flex-col text-center items-center p-6 md:p-8 rounded-2xl shadow-lg hover:shadow-primary/20 hover:-translate-y-2 transition-all duration-300 group overflow-hidden bg-background border h-full">
+                            <div className="bg-secondary text-primary-foreground h-16 w-16 md:h-20 md:w-20 rounded-full flex items-center justify-center mb-4 md:mb-6 transition-transform group-hover:scale-110">
+                              {IconComponent && <IconComponent className="h-8 w-8 md:h-10 md:w-10" />}
                             </div>
-                            <h4 className="text-xl font-bold text-primary flex-grow">{seva.title}</h4>
-                             <p className="text-muted-foreground mt-2 mb-4">{seva.description}</p>
+                            <h4 className="text-lg md:text-xl font-bold text-primary flex-grow">{seva.title}</h4>
+                             <p className="text-muted-foreground mt-2 mb-4 text-sm md:text-base">{seva.description}</p>
                              <p className="text-2xl font-bold text-foreground mb-6">{seva.price}</p>
                              <Button asChild className="mt-auto w-full">
                                 <Link href={seva.link}>Book Now</Link>
@@ -75,24 +75,24 @@ export const SevaCarousel: React.FC<PropType> = ({ sevaOptions }) => {
         </div>
       </div>
 
-       <div className="flex justify-center gap-4 mt-8">
+       <div className="flex justify-center gap-4 mt-6 md:mt-8">
             <Button
                 onClick={scrollPrev}
                 disabled={!prevBtnEnabled}
-                className="rounded-full w-14 h-14 bg-secondary text-secondary-foreground hover:bg-secondary/90 disabled:bg-secondary/50"
+                className="rounded-full w-12 h-12 md:w-14 md:h-14 bg-secondary text-secondary-foreground hover:bg-secondary/90 disabled:bg-secondary/50"
                 size="icon"
                 aria-label="Previous testimonial"
             >
-                <ArrowLeft className="h-6 w-6" />
+                <ArrowLeft className="h-5 w-5 md:h-6 md:w-6" />
             </Button>
             <Button
                 onClick={scrollNext}
                 disabled={!nextBtnEnabled}
-                className="rounded-full w-14 h-14 bg-secondary text-secondary-foreground hover:bg-secondary/90 disabled:bg-secondary/50"
+                className="rounded-full w-12 h-12 md:w-14 md:h-14 bg-secondary text-secondary-foreground hover:bg-secondary/90 disabled:bg-secondary/50"
                 size="icon"
                 aria-label="Next testimonial"
             >
-                <ArrowRight className="h-6 w-6" />
+                <ArrowRight className="h-5 w-5 md:h-6 md:w-6" />
             </Button>
         </div>
     </div>

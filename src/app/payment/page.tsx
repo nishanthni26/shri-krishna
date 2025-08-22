@@ -1,3 +1,4 @@
+
 'use client';
 
 import { Button } from '@/components/ui/button';
@@ -6,7 +7,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { useToast } from '@/components/ui/use-toast';
-import { CreditCard, LogIn } from 'lucide-react';
+import { CreditCard, LogIn, ArrowLeft } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
@@ -36,17 +37,20 @@ export default function PaymentPage() {
                         height={48}
                         className="rounded-full object-cover border-2 border-primary/20"
                     />
-                    <span className="text-2xl font-bold text-primary tracking-tight">
+                    <span className="text-xl md:text-2xl font-bold text-primary tracking-tight">
                         Sri Krishna Goshala
                     </span>
                 </Link>
-                <nav className="hidden md:flex items-center gap-4">
+                <nav className="flex items-center gap-2 md:gap-4">
                     <Button asChild variant="ghost">
-                        <Link href="/">Back to Home</Link>
+                        <Link href="/" className="flex items-center gap-1 md:gap-2">
+                          <ArrowLeft className="w-4 h-4" />
+                          Back
+                        </Link>
                     </Button>
                     <Button variant="outline" asChild>
-                        <Link href="/login" className="flex items-center gap-2">
-                            <LogIn className="w-5 h-5" />
+                        <Link href="/login" className="flex items-center gap-1 md:gap-2">
+                            <LogIn className="w-4 h-4 md:w-5 md:h-5" />
                             Login
                         </Link>
                     </Button>
@@ -57,12 +61,12 @@ export default function PaymentPage() {
             <Card className="w-full max-w-md shadow-2xl">
                 <form onSubmit={handlePayment}>
                     <CardHeader>
-                        <CardTitle className="text-3xl font-bold text-primary">Make a Donation</CardTitle>
+                        <CardTitle className="text-2xl md:text-3xl font-bold text-primary">Make a Donation</CardTitle>
                         <CardDescription>
                             Your contribution helps us care for our sacred cows.
                         </CardDescription>
                     </CardHeader>
-                    <CardContent className="grid gap-6">
+                    <CardContent className="grid gap-4 md:gap-6">
                         <div className="grid grid-cols-2 gap-4">
                             <div className="grid gap-2">
                                 <Label htmlFor="first-name">First name</Label>
@@ -83,25 +87,25 @@ export default function PaymentPage() {
                         </div>
                          <div className="grid gap-2">
                             <Label>Payment Method</Label>
-                            <RadioGroup defaultValue="card" className="grid grid-cols-3 gap-4">
+                            <RadioGroup defaultValue="card" className="grid grid-cols-3 gap-2 md:gap-4">
                                 <div>
                                     <RadioGroupItem value="card" id="card" className="peer sr-only" />
-                                    <Label htmlFor="card" className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary">
-                                        <CreditCard className="mb-3 h-6 w-6" />
+                                    <Label htmlFor="card" className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-2 md:p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary">
+                                        <CreditCard className="mb-2 h-5 w-5 md:mb-3 md:h-6 md:w-6" />
                                         Card
                                     </Label>
                                 </div>
                                 <div>
                                     <RadioGroupItem value="upi" id="upi" className="peer sr-only" />
-                                    <Label htmlFor="upi" className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary">
-                                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mb-3 h-6 w-6"><path d="M3 10h18"/><path d="m16 6 4 4-4 4"/><path d="M8 18 4 14l4-4"/></svg>
+                                    <Label htmlFor="upi" className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-2 md:p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary">
+                                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mb-2 h-5 w-5 md:mb-3 md:h-6 md:w-6"><path d="M3 10h18"/><path d="m16 6 4 4-4 4"/><path d="M8 18 4 14l4-4"/></svg>
                                         UPI
                                     </Label>
                                 </div>
                                 <div>
                                     <RadioGroupItem value="netbanking" id="netbanking" className="peer sr-only" />
-                                    <Label htmlFor="netbanking" className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary">
-                                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mb-3 h-6 w-6"><path d="M12 21V3"/><path d="m5 12 7-7 7 7"/></svg>
+                                    <Label htmlFor="netbanking" className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-2 md:p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary">
+                                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mb-2 h-5 w-5 md:mb-3 md:h-6 md:w-6"><path d="M12 21V3"/><path d="m5 12 7-7 7 7"/></svg>
                                         NetBanking
                                     </Label>
                                 </div>
@@ -117,3 +121,5 @@ export default function PaymentPage() {
     </div>
   );
 }
+
+    
