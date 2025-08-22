@@ -6,15 +6,15 @@
 
 @layer base {
   :root {
-    --background: 30 50% 98%; /* Light Beige */
+    --background: 40 100% 98%; /* Very Light Cream */
     --foreground: 24 10% 3.9%;
-    --card: 30 50% 94%; /* Slightly darker beige for cards */
+    --card: 0 0% 100%; 
     --card-foreground: 24 10% 3.9%;
-    --popover: 30 50% 98%;
+    --popover: 0 0% 100%;
     --popover-foreground: 24 10% 3.9%;
     --primary: 33 100% 50%; /* Saffron */
     --primary-foreground: 60 9.1% 97.8%;
-    --secondary: 120 61% 34%; /* Forest Green */
+    --secondary: 222 47% 11%; /* Dark Blue */
     --secondary-foreground: 60 9.1% 97.8%;
     --muted: 60 4.8% 95.9%;
     --muted-foreground: 24 5.4% 63.9%;
@@ -25,7 +25,7 @@
     --border: 30 30% 85%;
     --input: 30 30% 85%;
     --ring: 33 100% 50%;
-    --radius: 0.5rem;
+    --radius: 0.8rem;
   }
  
   .dark {
@@ -37,7 +37,7 @@
     --popover-foreground: 60 5% 95%;
     --primary: 33 100% 50%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 120 61% 34%;
+    --secondary: 222 47% 11%;
     --secondary-foreground: 0 0% 100%;
     --muted: 24 5% 20%;
     --muted-foreground: 60 5% 70%;
