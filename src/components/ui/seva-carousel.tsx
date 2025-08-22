@@ -5,21 +5,30 @@ import React, { useCallback, useEffect, useState } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-import { ArrowLeft, ArrowRight, Quote } from 'lucide-react'
-import Image from 'next/image'
+import { ArrowLeft, ArrowRight, LucideProps, Sun, Calendar, CalendarCheck, HeartHandshake, Users, Leaf } from 'lucide-react'
+import Link from 'next/link'
 
-type Testimonial = {
-    name: string;
-    quote: string;
-    avatar: string;
-    hint: string;
+const iconMap: { [key: string]: React.FC<LucideProps> } = {
+  Sun,
+  Calendar,
+  CalendarCheck,
+  HeartHandshake,
+  Users,
+  Leaf,
+};
+
+type SevaOption = {
+    icon: string;
+    title: string;
+    description: string;
+    link: string;
 };
 
 type PropType = {
-  testimonials: Testimonial[]
+  sevaOptions: SevaOption[]
 }
 
-export const TestimonialCarousel: React.FC<PropType> = ({ testimonials }) => {
+export const SevaCarousel: React.FC<PropType> = ({ sevaOptions }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: 'start' })
   const [prevBtnEnabled, setPrevBtnEnabled] = useState(false)
   const [nextBtnEnabled, setNextBtnEnabled] = useState(false)
@@ -44,20 +53,23 @@ export const TestimonialCarousel: React.FC<PropType> = ({ testimonials }) => {
     <div className="relative mt-16">
       <div className="overflow-hidden" ref={emblaRef}>
         <div className="flex space-x-8 pb-4">
-            {testimonials.map(testimonial => (
-                <div key={testimonial.name} className="flex-shrink-0 w-96">
-                    <Card className="bg-background p-6 rounded-2xl shadow-lg text-center border flex flex-col h-full">
-                        <Quote className="h-10 w-10 text-primary/30 mx-auto" />
-                        <CardContent className="pt-4 flex-grow">
-                            <p className="text-foreground/80 italic">"{testimonial.quote}"</p>
-                        </CardContent>
-                        <CardHeader className="items-center pt-4 mt-auto">
-                            <Image src={testimonial.avatar} alt={testimonial.name} width={64} height={64} className="rounded-full mb-4 border-2 border-primary/50" data-ai-hint={testimonial.hint} />
-                            <CardTitle className="font-bold text-xl text-primary">{testimonial.name}</CardTitle>
-                        </CardHeader>
-                    </Card>
-                </div>
-            ))}
+            {sevaOptions.map((seva, index) => {
+                const IconComponent = iconMap[seva.icon];
+                return (
+                    <div key={index} className="flex-shrink-0 w-80">
+                       <div className="flex flex-col text-center items-center p-8 rounded-2xl shadow-lg hover:shadow-primary/20 hover:-translate-y-2 transition-all duration-300 group overflow-hidden bg-background border h-full">
+                            <div className="bg-secondary text-primary-foreground h-20 w-20 rounded-full flex items-center justify-center mb-6 transition-transform group-hover:scale-110">
+                              {IconComponent && <IconComponent className="h-10 w-10" />}
+                            </div>
+                            <h4 className="text-xl font-bold text-primary mt-4 flex-grow">{seva.title}</h4>
+                             <p className="text-muted-foreground mt-2 mb-6">{seva.description}</p>
+                             <Button asChild className="mt-auto w-full">
+                                <Link href={seva.link}>Book Now</Link>
+                             </Button>
+                        </div>
+                    </div>
+                )
+            })}
         </div>
       </div>
 

@@ -7,16 +7,17 @@ import Link from "next/link";
 import { HeroCarousel } from "@/components/ui/hero-carousel";
 import { Progress } from "@/components/ui/progress";
 import { TestimonialCarousel } from "@/components/ui/testimonial-carousel";
+import { SevaCarousel } from "@/components/ui/seva-carousel";
 
 export default function Home() {
 
   const sevaOptions = [
-      { icon: Sun, title: "A cow’s expenditure per day", description: "Sponsor a day's worth of care and feeding for one cow.", link: "/payment" },
-      { icon: Calendar, title: "Monthly expense of a cow", description: "Cover the monthly expenses for a cow, including food and shelter.", link: "/payment" },
-      { icon: CalendarCheck, title: "Annual cost of a cow", description: "Support a cow for an entire year, ensuring its well-being.", link: "/payment" },
-      { icon: HeartHandshake, title: "Donation of a cow", description: "A sacred gift. We will care for the cow on your behalf.", link: "/payment" },
-      { icon: Users, title: "Cow’s Health Checkup", description: "Fund a veterinary check-up and necessary medical care.", link: "/payment" },
-      { icon: Leaf, title: "Green Grass Contribution", description: "Provide nutritious green fodder for the entire herd.", link: "/payment" },
+      { icon: "Sun", title: "A cow’s expenditure per day", description: "Sponsor a day's worth of care and feeding for one cow.", link: "/payment" },
+      { icon: "Calendar", title: "Monthly expense of a cow", description: "Cover the monthly expenses for a cow, including food and shelter.", link: "/payment" },
+      { icon: "CalendarCheck", title: "Annual cost of a cow", description: "Support a cow for an entire year, ensuring its well-being.", link: "/payment" },
+      { icon: "HeartHandshake", title: "Donation of a cow", description: "A sacred gift. We will care for the cow on your behalf.", link: "/payment" },
+      { icon: "Users", title: "Cow’s Health Checkup", description: "Fund a veterinary check-up and necessary medical care.", link: "/payment" },
+      { icon: "Leaf", title: "Green Grass Contribution", description: "Provide nutritious green fodder for the entire herd.", link: "/payment" },
   ];
 
   const testimonials = [
@@ -120,20 +121,7 @@ export default function Home() {
                         Your selfless service helps us provide the best care for our cows. Participate in our Seva programs and become a part of our family.
                     </p>
                 </div>
-                <div className="mt-16 flex overflow-x-auto space-x-8 pb-4">
-                    {sevaOptions.map((seva, index) => (
-                       <div key={index} className="flex-shrink-0 w-80 flex flex-col text-center items-center p-8 rounded-2xl shadow-lg hover:shadow-primary/20 hover:-translate-y-2 transition-all duration-300 group overflow-hidden bg-background border">
-                            <div className="bg-secondary text-primary-foreground h-20 w-20 rounded-full flex items-center justify-center mb-6 transition-transform group-hover:scale-110">
-                              <seva.icon className="h-10 w-10" />
-                            </div>
-                            <h4 className="text-xl font-bold text-primary mt-4 flex-grow">{seva.title}</h4>
-                             <p className="text-muted-foreground mt-2 mb-6">{seva.description}</p>
-                             <Button asChild className="mt-auto w-full">
-                                <Link href={seva.link}>Book Now</Link>
-                             </Button>
-                        </div>
-                    ))}
-                </div>
+                 <SevaCarousel sevaOptions={sevaOptions} />
             </div>
         </section>
 
