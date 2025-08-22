@@ -95,29 +95,32 @@ export default function Home() {
                   <span className="sr-only">Toggle navigation menu</span>
                 </Button>
               </SheetTrigger>
-              <SheetContent side="left">
-                <nav className="grid gap-6 text-lg font-medium">
-                  <Link href="#" className="flex items-center gap-3 mb-4">
-                      <Image 
-                        src="/logo.png" 
-                        alt="Goshala Logo" 
-                        width={40} 
-                        height={40} 
-                        className="rounded-full object-cover" 
-                      />
-                      <span className="text-lg font-bold text-primary">Sri Krishna Goshala</span>
-                    </Link>
-                    {navLinks.map((link) => (
-                       <Link key={link.text} href={link.href} className="text-foreground/80 hover:text-primary">{link.text}</Link>
-                    ))}
-                     <Separator />
-                     <Button variant="ghost" asChild>
-                        <Link href="/login" className="flex items-center justify-start gap-2">
+              <SheetContent side="left" className="flex flex-col p-0">
+                  <div className="p-6">
+                     <Link href="#" className="flex items-center gap-3 mb-6">
+                        <Image 
+                          src="/logo.png" 
+                          alt="Goshala Logo" 
+                          width={40} 
+                          height={40} 
+                          className="rounded-full object-cover" 
+                        />
+                        <span className="text-lg font-bold text-primary">Sri Krishna Goshala</span>
+                      </Link>
+                      <nav className="grid gap-3">
+                        {navLinks.map((link) => (
+                           <Link key={link.text} href={link.href} className="text-foreground/80 hover:text-primary text-lg p-2 rounded-md hover:bg-muted font-medium transition-colors">{link.text}</Link>
+                        ))}
+                      </nav>
+                  </div>
+                  <div className="mt-auto p-6 border-t">
+                     <Button variant="outline" className="w-full" asChild>
+                        <Link href="/login" className="flex items-center justify-center gap-2">
                             <LogIn className="w-5 h-5" />
-                            Login
+                            Login / Sign Up
                         </Link>
                      </Button>
-                </nav>
+                  </div>
               </SheetContent>
             </Sheet>
           </div>
