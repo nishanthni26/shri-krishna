@@ -194,7 +194,7 @@ export default function Home() {
                 </div>
                 <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {[
-                        { name: "Prakash Iyer", quote: "The goshala is very well-maintained and the cows are clearly loved and cared for. A truly divine atmosphere that fills you with positivity. I recommend everyone to visit at least once.", avatar: "https://placehold.co/100x100.png", hint: "south indian man" },
+                        { name: "Sai Karthik", quote: "We had a heartwarming experience visiting this goshala with our family. The environment was serene, the cows were well taken care of, and the entire place was clean and peaceful. It was a joy to see the love and dedication of the caretakers. A great place for families to connect with nature and tradition!", avatar: "https://placehold.co/100x100.png", hint: "south indian man" },
                         { name: "Sunita Sharma", quote: "A serene and peaceful place. The seva opportunities are managed transparently, and you can see your contribution making a real difference. It is a blessing to be associated with this goshala.", avatar: "https://placehold.co/100x100.png", hint: "north indian woman" },
                         { name: "Rajesh Gupta", quote: "I participated in the 'Gau Daan' program, and it was a deeply moving and fulfilling experience. The management is very helpful and ensures all rituals are followed. A must-visit for any devotee.", avatar: "https://placehold.co/100x100.png", hint: "indian businessman" },
                     ].map(testimonial => (
