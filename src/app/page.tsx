@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { ArrowRight, Milk, Sprout, HeartHandshake, ShieldCheck, Phone, Video, LogIn, Award, Sun, Calendar, CalendarCheck, Wheat, Leaf, Quote } from "lucide-react";
+import { ArrowRight, Milk, Sprout, HeartHandshake, ShieldCheck, Phone, Video, LogIn, Award, Sun, Calendar, CalendarCheck, Wheat, Leaf, Quote, Users } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { HeroCarousel } from "@/components/ui/hero-carousel";
@@ -102,32 +102,21 @@ export default function Home() {
                         Your selfless service helps us provide the best care for our cows. Participate in our Seva programs and become a part of our family.
                     </p>
                 </div>
-                <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
                     {[
-                        { icon: Sun, title: "A cow’s expenditure per day", description: "Sponsor a cow's expenses for one day.", price: "₹111", link: "/payment" },
-                        { icon: Calendar, title: "Monthly expense of a cow", description: "Sponsor a cow's expenses for one month.", price: "₹3,000", link: "/payment" },
-                        { icon: CalendarCheck, title: "Annual cost of a cow", description: "Sponsor a cow's expenses for one year.", price: "₹31,000", link: "/payment" },
-                        { icon: HeartHandshake, title: "Donation of a cow", description: "Donate a cow to our goshala.", price: "₹31,000", link: "/payment" },
-                        { icon: Wheat, title: "Cow’s Fodder", description: "Provide nutritious fodder for our cows.", price: "₹2,500", link: "/payment" },
-                        { icon: Leaf, title: "Green Grass (Full Load)", description: "Sponsor a full load of green grass.", price: "₹11,000", link: "/payment" },
-                        { icon: Leaf, title: "Green Grass (Half Load)", description: "Sponsor a half load of green grass.", price: "₹6,100", link: "/payment" },
-                        { icon: Sprout, title: "Dry Grass (Full Load)", description: "Sponsor a full load of dry grass.", price: "₹10,000", link: "/payment" },
-                        { icon: Sprout, title: "Dry Grass (Half Load)", description: "Sponsor a half load of dry grass.", price: "₹5,000", link: "/payment" },
-                        { icon: Video, title: "Live Video Seva", description: "Connect with our cows via a live video call.", price: "From ₹501", link: "/book-slot" },
+                        { icon: Video, title: "Live Video Seva", description: "Enable Devotees to experience the divine presence from the comfort of your home through live-darshans", link: "/book-slot" },
+                        { icon: ShieldCheck, title: "Secure Payment", description: "Enable devotees & volunteers with variety of payment options to transact hassle free", link: "/payment" },
+                        { icon: HeartHandshake, title: "Reach Donors", description: "Expand your reach to International & Non- Local devotees and donors with your online presence", link: "/payment" },
+                        { icon: Users, title: "Connect with Devotees", description: "Collaborate with Devotees and Volunteers on various projects and religious functions", link: "#contact" },
+                        { icon: Award, title: "Encourage Attendance", description: "Frequently update about the variety of activities and events to help devotees connect with their faith and community", link: "#" },
                     ].map(seva => (
-                       <Card key={seva.title} className="flex flex-col text-center items-center p-8 rounded-2xl shadow-lg hover:shadow-primary/20 hover:-translate-y-2 transition-all duration-300 group overflow-hidden bg-background border">
-                         <Link href={seva.link} className="flex flex-col h-full items-center">
-                            <div className="bg-secondary text-secondary-foreground h-20 w-20 rounded-full flex items-center justify-center mb-6 transition-transform group-hover:scale-110">
+                       <Link href={seva.link} key={seva.title} className="flex flex-col text-center items-center p-6 rounded-2xl shadow-lg hover:shadow-primary/20 hover:-translate-y-2 transition-all duration-300 group overflow-hidden bg-background border">
+                            <div className="bg-secondary text-primary-foreground h-20 w-20 rounded-full flex items-center justify-center mb-6 transition-transform group-hover:scale-110">
                               <seva.icon className="h-10 w-10" />
                             </div>
-                            <CardTitle className="text-2xl font-bold text-primary mt-6">{seva.title}</CardTitle>
-                            <p className="mt-2 text-base text-foreground/80 flex-grow">{seva.description}</p>
-                            <p className="text-4xl font-bold text-foreground mt-4">{seva.price}</p>
-                            <Button size="lg" className="w-full rounded-full text-lg mt-6">
-                                Offer Seva
-                            </Button>
-                          </Link>
-                        </Card>
+                            <h4 className="text-xl font-bold text-primary mt-4 flex-grow">{seva.title}</h4>
+                            <p className="mt-2 text-sm text-foreground/70">{seva.description}</p>
+                        </Link>
                     ))}
                 </div>
             </div>
@@ -175,7 +164,7 @@ export default function Home() {
                 <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {[
                          { name: "Sai Karthik", quote: "We had a heartwarming experience visiting this goshala with our family. The environment was serene, the cows were well taken care of, and the entire place was clean and peaceful. It was a joy to see the love and dedication of the caretakers. A great place for families to connect with nature and tradition!", avatar: "https://placehold.co/100x100.png", hint: "south indian man" },
-                         { name: "Sunita Sharma", quote: "A serene and peaceful place. The seva opportunities are managed transparently, and you can see your contribution making a real difference. It is a blessing to be associated with this goshala.", avatar: "https://placehold.co/100x100.png", hint: "north indian woman" },
+                         { name: "Priya Sharma", quote: "A truly spiritual place. The live video seva allowed me to connect with the goshala from my home. It was a blessing to see the cows so happy and well-cared for. I recommend it to everyone.", avatar: "https://placehold.co/100x100.png", hint: "woman praying" },
                          { name: "Rajesh Gupta", quote: "I participated in the 'Gau Daan' program, and it was a deeply moving and fulfilling experience. The management is very helpful and ensures all rituals are followed. A must-visit for any devotee.", avatar: "https://placehold.co/100x100.png", hint: "indian businessman" },
                     ].map(testimonial => (
                         <Card key={testimonial.name} className="bg-background p-8 rounded-2xl shadow-lg text-center border">
