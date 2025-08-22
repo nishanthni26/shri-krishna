@@ -7,6 +7,7 @@ import Link from "next/link";
 import { Progress } from "@/components/ui/progress";
 import { TestimonialCarousel } from "@/components/ui/testimonial-carousel";
 import { SevaCarousel } from "@/components/ui/seva-carousel";
+import { HeroCarousel } from "@/components/ui/hero-carousel";
 
 export default function Home() {
 
@@ -67,9 +68,8 @@ export default function Home() {
       </header>
 
       <main className="flex-1">
-        <section className="relative w-full py-32 md:py-48 flex items-center justify-center text-center bg-card">
-           <div className="absolute top-0 left-0 w-full h-full bg-cover bg-center" style={{backgroundImage: "url('https://images.unsplash.com/photo-1660296146250-8f0d6338aa64?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Y293cyUyMHBhc3R1cmV8ZW58MHx8fHwxNzU1NzIyMTE0fDA&ixlib=rb-4.1.0&q=80&w=1080')", opacity: 0.1}}></div>
-           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-background/0 via-background/50 to-background"></div>
+        <section className="relative w-full py-32 md:py-48 flex items-center justify-center text-center bg-card overflow-hidden">
+           <HeroCarousel />
            <div className="relative z-10 flex flex-col items-center justify-center p-6 animate-fade-in-up">
             <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-primary">
               A Sanctuary of Compassion
