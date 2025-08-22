@@ -21,6 +21,7 @@ type SevaOption = {
     icon: string;
     title: string;
     description: string;
+    price: string;
     link: string;
 };
 
@@ -61,8 +62,9 @@ export const SevaCarousel: React.FC<PropType> = ({ sevaOptions }) => {
                             <div className="bg-secondary text-primary-foreground h-20 w-20 rounded-full flex items-center justify-center mb-6 transition-transform group-hover:scale-110">
                               {IconComponent && <IconComponent className="h-10 w-10" />}
                             </div>
-                            <h4 className="text-xl font-bold text-primary mt-4 flex-grow">{seva.title}</h4>
-                             <p className="text-muted-foreground mt-2 mb-6">{seva.description}</p>
+                            <h4 className="text-xl font-bold text-primary flex-grow">{seva.title}</h4>
+                             <p className="text-muted-foreground mt-2 mb-4">{seva.description}</p>
+                             <p className="text-2xl font-bold text-foreground mb-6">{seva.price}</p>
                              <Button asChild className="mt-auto w-full">
                                 <Link href={seva.link}>Book Now</Link>
                              </Button>
@@ -96,3 +98,5 @@ export const SevaCarousel: React.FC<PropType> = ({ sevaOptions }) => {
     </div>
   )
 }
+
+    

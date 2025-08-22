@@ -12,12 +12,12 @@ import { SevaCarousel } from "@/components/ui/seva-carousel";
 export default function Home() {
 
   const sevaOptions = [
-      { icon: "Sun", title: "A cow’s expenditure per day", description: "Sponsor a day's worth of care and feeding for one cow.", link: "/payment" },
-      { icon: "Calendar", title: "Monthly expense of a cow", description: "Cover the monthly expenses for a cow, including food and shelter.", link: "/payment" },
-      { icon: "CalendarCheck", title: "Annual cost of a cow", description: "Support a cow for an entire year, ensuring its well-being.", link: "/payment" },
-      { icon: "HeartHandshake", title: "Donation of a cow", description: "A sacred gift. We will care for the cow on your behalf.", link: "/payment" },
-      { icon: "Users", title: "Cow’s Health Checkup", description: "Fund a veterinary check-up and necessary medical care.", link: "/payment" },
-      { icon: "Leaf", title: "Green Grass Contribution", description: "Provide nutritious green fodder for the entire herd.", link: "/payment" },
+      { icon: "Sun", title: "A cow’s expenditure per day", description: "Sponsor a day's worth of care and feeding for one cow.", price: "₹1,100", link: "/payment" },
+      { icon: "Calendar", title: "Monthly expense of a cow", description: "Cover the monthly expenses for a cow, including food and shelter.", price: "₹5,100", link: "/payment" },
+      { icon: "CalendarCheck", title: "Annual cost of a cow", description: "Support a cow for an entire year, ensuring its well-being.", price: "₹21,000", link: "/payment" },
+      { icon: "HeartHandshake", title: "Donation of a cow", description: "A sacred gift. We will care for the cow on your behalf.", price: "₹51,000", link: "/payment" },
+      { icon: "Users", title: "Cow’s Health Checkup", description: "Fund a veterinary check-up and necessary medical care.", price: "₹2,500", link: "/payment" },
+      { icon: "Leaf", title: "Green Grass Contribution", description: "Provide nutritious green fodder for the entire herd.", price: "₹3,100", link: "/payment" },
   ];
 
   const testimonials = [
@@ -196,3 +196,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
