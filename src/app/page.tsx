@@ -9,6 +9,18 @@ import { Progress } from "@/components/ui/progress";
 
 export default function Home() {
 
+  const sevaOptions = [
+      { icon: Sun, title: "A cow’s expenditure per day", price: "₹111", link: "/payment" },
+      { icon: Calendar, title: "Monthly expense of a cow", price: "₹3,000", link: "/payment" },
+      { icon: CalendarCheck, title: "Annual cost of a cow", price: "₹31,000", link: "/payment" },
+      { icon: HeartHandshake, title: "Donation of a cow", price: "₹31,000", link: "/payment" },
+      { icon: Users, title: "Cow’s coward", price: "₹2,500", link: "/payment" },
+      { icon: Leaf, title: "Green grass (Full load)", price: "₹11,000", link: "/payment" },
+      { icon: Sprout, title: "Green grass (Half load)", price: "₹6,100", link: "/payment" },
+      { icon: Wheat, title: "Dry grass (Full load)", price: "₹10,000", link: "/payment" },
+      { icon: Milk, title: "Dry grass (Half load)", price: "₹5,000", link: "/payment" },
+  ];
+
   return (
     <div className="flex flex-col min-h-dvh bg-background antialiased">
        <header className="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-sm border-b">
@@ -102,21 +114,20 @@ export default function Home() {
                         Your selfless service helps us provide the best care for our cows. Participate in our Seva programs and become a part of our family.
                     </p>
                 </div>
-                <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
-                    {[
-                        { icon: Video, title: "Live Video Seva", description: "Enable Devotees to experience the divine presence from the comfort of your home through live-darshans", link: "/book-slot" },
-                        { icon: ShieldCheck, title: "Secure Payment", description: "Enable devotees & volunteers with variety of payment options to transact hassle free", link: "/payment" },
-                        { icon: HeartHandshake, title: "Reach Donors", description: "Expand your reach to International & Non- Local devotees and donors with your online presence", link: "/payment" },
-                        { icon: Users, title: "Connect with Devotees", description: "Collaborate with Devotees and Volunteers on various projects and religious functions", link: "#contact" },
-                        { icon: Award, title: "Encourage Attendance", description: "Frequently update about the variety of activities and events to help devotees connect with their faith and community", link: "#" },
-                    ].map(seva => (
-                       <Link href={seva.link} key={seva.title} className="flex flex-col text-center items-center p-6 rounded-2xl shadow-lg hover:shadow-primary/20 hover:-translate-y-2 transition-all duration-300 group overflow-hidden bg-background border">
+                <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {sevaOptions.map(seva => (
+                       <div key={seva.title} className="flex flex-col text-center items-center p-8 rounded-2xl shadow-lg hover:shadow-primary/20 hover:-translate-y-2 transition-all duration-300 group overflow-hidden bg-background border">
                             <div className="bg-secondary text-primary-foreground h-20 w-20 rounded-full flex items-center justify-center mb-6 transition-transform group-hover:scale-110">
                               <seva.icon className="h-10 w-10" />
                             </div>
                             <h4 className="text-xl font-bold text-primary mt-4 flex-grow">{seva.title}</h4>
-                            <p className="mt-2 text-sm text-foreground/70">{seva.description}</p>
-                        </Link>
+                            <p className="text-2xl font-bold text-foreground/80 my-4">{seva.price}</p>
+                             <Button asChild className="mt-auto rounded-full">
+                              <Link href={seva.link}>
+                                Book Now
+                              </Link>
+                            </Button>
+                        </div>
                     ))}
                 </div>
             </div>
