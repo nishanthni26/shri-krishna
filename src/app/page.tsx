@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRight, Milk, Sprout, HeartHandshake, ShieldCheck, Phone, Video, LogIn, Award, Sun, Calendar, CalendarCheck, Wheat, Leaf } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { ArrowRight, Milk, Sprout, HeartHandshake, ShieldCheck, Phone, Video, LogIn, Award, Sun, Calendar, CalendarCheck, Wheat, Leaf, Quote } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { HeroCarousel } from "@/components/ui/hero-carousel";
@@ -22,9 +22,9 @@ export default function Home() {
               alt="Goshala Logo" 
               width={48} 
               height={48} 
-              className="rounded-full object-cover border-2 border-primary/20" 
+              className="rounded-full object-cover"
             />
-            <span className="text-2xl font-bold text-primary tracking-tight">
+            <span className="text-2xl font-belleza text-primary tracking-tight">
               Sri Krishna Goshala
             </span>
           </Link>
@@ -37,6 +37,9 @@ export default function Home() {
             </Button>
             <Button variant="ghost" asChild>
                 <Link href="#gallery">Gallery</Link>
+            </Button>
+            <Button variant="ghost" asChild>
+                <Link href="#testimonials">Testimonials</Link>
             </Button>
              <Button variant="ghost" asChild>
                 <Link href="#contact">Contact</Link>
@@ -62,21 +65,21 @@ export default function Home() {
         <section className="relative w-full py-32 md:py-48 flex items-center justify-center text-center">
           <HeroCarousel />
           <div className="relative z-10 flex flex-col items-center justify-center p-6 animate-fade-in-up">
-            <h1 className="text-5xl md:text-7xl font-extrabold tracking-tighter bg-clip-text text-transparent bg-gradient-to-br from-primary to-slate-600">
+            <h1 className="text-5xl md:text-7xl font-belleza tracking-tighter text-primary">
               A Sanctuary of Compassion
             </h1>
-            <p className="mt-6 text-lg md:text-xl max-w-3xl text-muted-foreground">
+            <p className="mt-6 text-lg md:text-xl max-w-3xl text-foreground/80">
                Welcome to Sri Krishna Goshala, a sacred haven dedicated to the care and protection of cows. Join us in nurturing these gentle souls.
             </p>
             <Button size="lg" className="mt-10 rounded-full text-lg px-10 py-7 group shadow-xl shadow-primary/20" asChild>
-              <Link href="#donate">
+              <Link href="/payment">
                 Support Our Cows <HeartHandshake className="w-6 h-6 ml-3 transition-transform group-hover:rotate-12" />
               </Link>
             </Button>
           </div>
         </section>
 
-        <section id="about" className="py-20 md:py-28 bg-secondary">
+        <section id="about" className="py-20 md:py-28 bg-card">
           <div className="container mx-auto px-4 md:px-6">
             <div className="grid md:grid-cols-2 gap-16 items-center">
               <div className="relative w-full aspect-square">
@@ -85,16 +88,16 @@ export default function Home() {
                   alt="A calm cow with gentle eyes"
                   layout="fill"
                   objectFit="cover"
-                  className="rounded-2xl shadow-2xl"
+                  className="rounded-2xl shadow-2xl border-4 border-white"
                   data-ai-hint="cow portrait"
                 />
               </div>
               <div className="prose-lg">
-                <h3 className="text-base font-semibold text-accent-foreground uppercase tracking-widest">Our Story</h3>
-                <h2 className="text-4xl md:text-5xl font-bold text-primary leading-tight mt-2">
+                <h3 className="text-base font-semibold text-secondary uppercase tracking-widest">Our Story</h3>
+                <h2 className="text-4xl md:text-5xl font-belleza text-primary leading-tight mt-2">
                   About Sri Krishna Goshala
                 </h2>
-                <p className="mt-6 text-muted-foreground">
+                <p className="mt-6 text-foreground/80">
                   Sri Krishna Gaushala was established in 2015 by Mr. Krishnamurthy. The Cow referred as Divine Mother, the Gomata, and one which bestows health, knowledge and prosperity. In Sanskrit, the word “Go” also means “Light”. Mother cows are worshiped in Shri Krishna Gaushala. From food to Shelter, every need is taken care of. Shri Krishna Gaushala has been established with a very noble vision. Their only objective is to serve the cows. It is said that by serving cows, all the sorrows, pain, and problems of a person go away. The cow has a special place in Hinduism, and it is believed that all gods reside in her body. Feeding a cow with green fodder is considered one of the Maha Daans that is powerful enough to remove all the Grah Doshas, or troubles arising from the malefic effects of the planets.
                 </p>
               </div>
@@ -105,25 +108,25 @@ export default function Home() {
         <section id="seva" className="py-20 md:py-28">
             <div className="container mx-auto px-4 md:px-6">
                 <div className="text-center max-w-3xl mx-auto">
-                    <h3 className="text-base font-semibold text-primary uppercase tracking-widest">Offer Seva</h3>
-                    <h2 className="text-4xl md:text-5xl font-bold text-primary mt-2">Contribute Through Service</h2>
-                    <p className="mt-5 text-muted-foreground text-lg">
+                    <h3 className="text-base font-semibold text-secondary uppercase tracking-widest">Offer Seva</h3>
+                    <h2 className="text-4xl md:text-5xl font-belleza text-primary mt-2">Contribute Through Service</h2>
+                    <p className="mt-5 text-foreground/80 text-lg">
                         Your selfless service helps us provide the best care for our cows. Participate in our Seva programs and become a part of our family.
                     </p>
                 </div>
                 <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     {[
-                        { icon: Sun, title: "Daily Cow Care", description: "Sponsor a cow's expenses for one day.", price: "₹111", link: "/payment", image: "https://placehold.co/600x400.png", hint: "cow eating" },
-                        { icon: Calendar, title: "Monthly Cow Care", description: "Sponsor a cow's expenses for one month.", price: "₹3,000", link: "/payment", image: "https://placehold.co/600x400.png", hint: "happy cow" },
-                        { icon: CalendarCheck, title: "Annual Cow Care", description: "Sponsor a cow's expenses for one year.", price: "₹31,000", link: "/payment", image: "https://placehold.co/600x400.png", hint: "cow herd" },
-                        { icon: Milk, title: "Donate a Cow", description: "Donate a cow to our goshala.", price: "₹31,000", link: "/payment", image: "https://placehold.co/600x400.png", hint: "holy cow" },
-                        { icon: Wheat, title: "Cow's Fodder", description: "Provide nutritious fodder for our cows.", price: "₹2,500", link: "/payment", image: "https://placehold.co/600x400.png", hint: "cow fodder" },
-                        { icon: Sprout, title: "Green Grass (Full Load)", description: "Donate a full load of fresh green grass.", price: "₹11,000", link: "/payment", image: "https://placehold.co/600x400.png", hint: "green grass" },
-                        { icon: Sprout, title: "Green Grass (Half Load)", description: "Donate a half load of fresh green grass.", price: "₹6,100", link: "/payment", image: "https://placehold.co/600x400.png", hint: "grass field" },
-                        { icon: Leaf, title: "Dry Grass (Full Load)", description: "Donate a full load of dry grass.", price: "₹10,000", link: "/payment", image: "https://placehold.co/600x400.png", hint: "hay bale" },
-                        { icon: Leaf, title: "Dry Grass (Half Load)", description: "Donate a half load of dry grass.", price: "₹5,000", link: "/payment", image: "https://placehold.co/600x400.png", hint: "dry hay" },
+                        { icon: Sun, title: "A cow’s expenditure per day", description: "Sponsor a cow's expenses for one day.", price: "₹111", link: "/payment", image: "https://placehold.co/600x400.png", hint: "cow eating" },
+                        { icon: Calendar, title: "Monthly expense of a cow", description: "Sponsor a cow's expenses for one month.", price: "₹3,000", link: "/payment", image: "https://placehold.co/600x400.png", hint: "happy cow" },
+                        { icon: CalendarCheck, title: "Annual cost of a cow", description: "Sponsor a cow's expenses for one year.", price: "₹31,000", link: "/payment", image: "https://placehold.co/600x400.png", hint: "cow herd" },
+                        { icon: HeartHandshake, title: "Donation of a cow", description: "Donate a cow to our goshala.", price: "₹31,000", link: "/payment", image: "https://placehold.co/600x400.png", hint: "holy cow" },
+                        { icon: Wheat, title: "Cow’s Fodder", description: "Provide nutritious fodder for our cows.", price: "₹2,500", link: "/payment", image: "https://placehold.co/600x400.png", hint: "cow fodder" },
+                        { icon: Sprout, title: "Green grass (Full load)", description: "Donate a full load of fresh green grass.", price: "₹11,000", link: "/payment", image: "https://placehold.co/600x400.png", hint: "green grass" },
+                        { icon: Sprout, title: "Green grass (Half load)", description: "Donate a half load of fresh green grass.", price: "₹6,100", link: "/payment", image: "https://placehold.co/600x400.png", hint: "grass field" },
+                        { icon: Leaf, title: "Dry grass (Full load)", description: "Donate a full load of dry grass.", price: "₹10,000", link: "/payment", image: "https://placehold.co/600x400.png", hint: "hay bale" },
+                        { icon: Leaf, title: "Dry grass (Half load)", description: "Donate a half load of dry grass.", price: "₹5,000", link: "/payment", image: "https://placehold.co/600x400.png", hint: "dry hay" },
                     ].map(seva => (
-                        <Card key={seva.title} className="flex flex-col text-center rounded-2xl shadow-lg hover:shadow-primary/20 hover:-translate-y-2 transition-all duration-300 group overflow-hidden">
+                        <Card key={seva.title} className="flex flex-col text-center rounded-2xl shadow-lg hover:shadow-primary/20 hover:-translate-y-2 transition-all duration-300 group overflow-hidden bg-card border-2 border-white">
                             <Link href={seva.link} className="flex flex-col h-full">
                                 <div className="relative h-48 w-full">
                                     <Image src={seva.image} alt={seva.title} layout="fill" objectFit="cover" className="group-hover:scale-110 transition-transform duration-500" data-ai-hint={seva.hint} />
@@ -132,14 +135,14 @@ export default function Home() {
                                     <div className="bg-primary/10 p-3 rounded-full group-hover:bg-primary/20 transition-colors">
                                         <seva.icon className="h-7 w-7 text-primary group-hover:scale-110 transition-transform" />
                                     </div>
-                                    <CardTitle className="text-2xl font-bold text-primary">{seva.title}</CardTitle>
+                                    <CardTitle className="text-2xl font-belleza text-primary">{seva.title}</CardTitle>
                                 </CardHeader>
                                 <CardContent className="flex-grow">
-                                    <p className="mt-2 text-base text-muted-foreground">{seva.description}</p>
+                                    <p className="mt-2 text-base text-foreground/80">{seva.description}</p>
                                     <p className="text-4xl font-bold text-foreground mt-4">{seva.price}</p>
                                 </CardContent>
                                 <div className="p-6 mt-auto">
-                                    <Button size="lg" className="w-full rounded-full text-lg">
+                                    <Button size="lg" className="w-full rounded-full text-lg bg-secondary text-secondary-foreground hover:bg-secondary/90">
                                         Offer Seva
                                     </Button>
                                 </div>
@@ -150,13 +153,13 @@ export default function Home() {
             </div>
         </section>
 
-        <section id="gallery" className="py-20 md:py-28 bg-secondary">
+        <section id="gallery" className="py-20 md:py-28 bg-card">
           <div className="container mx-auto px-4 md:px-6 text-center">
-            <h3 className="text-base font-semibold text-primary uppercase tracking-widest">Gallery</h3>
-            <h2 className="text-4xl md:text-5xl font-bold text-primary mt-2">
+            <h3 className="text-base font-semibold text-secondary uppercase tracking-widest">Gallery</h3>
+            <h2 className="text-4xl md:text-5xl font-belleza text-primary mt-2">
               Our Beloved Residents
             </h2>
-            <p className="mt-5 max-w-2xl mx-auto text-muted-foreground text-lg">
+            <p className="mt-5 max-w-2xl mx-auto text-foreground/80 text-lg">
               Glimpses of daily life and the gentle souls that call our Goshala home.
             </p>
             <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -166,7 +169,7 @@ export default function Home() {
                 { src: "https://images.unsplash.com/photo-1618523393652-519b5d343477?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", alt: "Calf Playing"},
                 { src: "https://images.unsplash.com/photo-1720975134463-97ab99685d7f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Y293cyUyMGhlcmR8ZW58MHx8fHwxNzU1NzIyMTE0fDA&ixlib=rb-4.1.0&q=80&w=1080", alt: "Cow Herd"},
               ].map((image, index) => (
-                <div key={index} className="overflow-hidden rounded-2xl group aspect-w-1 aspect-h-1">
+                <div key={index} className="overflow-hidden rounded-2xl group aspect-w-1 aspect-h-1 border-4 border-white">
                   <Image
                     src={image.src}
                     alt={image.alt}
@@ -180,12 +183,42 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="donate" className="py-20 md:py-28">
+        <section id="testimonials" className="py-20 md:py-28">
+            <div className="container mx-auto px-4 md:px-6">
+                <div className="text-center max-w-3xl mx-auto">
+                    <h3 className="text-base font-semibold text-secondary uppercase tracking-widest">Testimonials</h3>
+                    <h2 className="text-4xl md:text-5xl font-belleza text-primary mt-2">Words from Our Devotees</h2>
+                    <p className="mt-5 text-foreground/80 text-lg">
+                        Hear from others who have found peace and purpose through their connection with our Goshala.
+                    </p>
+                </div>
+                <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {[
+                        { name: "Ramesh P.", quote: "Serving the cows at Sri Krishna Goshala has brought immense peace to my life. It's a truly divine experience.", avatar: "https://placehold.co/100x100.png", hint: "smiling man" },
+                        { name: "Priya S.", quote: "The dedication of the staff and the serene environment make this place a true sanctuary. My children love visiting the goshala.", avatar: "https://placehold.co/100x100.png", hint: "smiling woman" },
+                        { name: "Anand K.", quote: "Donating to the goshala feels like a direct service to the Lord. I am grateful for the opportunity to contribute.", avatar: "https://placehold.co/100x100.png", hint: "happy person" },
+                    ].map(testimonial => (
+                        <Card key={testimonial.name} className="bg-card p-8 rounded-2xl shadow-lg text-center border-2 border-white">
+                            <Quote className="h-12 w-12 text-primary/30 mx-auto" />
+                            <CardContent className="pt-6">
+                                <p className="text-foreground/80 italic">"{testimonial.quote}"</p>
+                            </CardContent>
+                            <CardHeader className="items-center pt-4">
+                                <Image src={testimonial.avatar} alt={testimonial.name} width={64} height={64} className="rounded-full mb-4 border-2 border-primary/50" data-ai-hint={testimonial.hint} />
+                                <CardTitle className="font-belleza text-xl text-primary">{testimonial.name}</CardTitle>
+                            </CardHeader>
+                        </Card>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        <section id="donate" className="py-20 md:py-28 bg-card">
           <div className="container mx-auto px-4 md:px-6">
-            <div className="bg-gradient-to-br from-primary to-blue-400 text-primary-foreground p-12 md:p-20 rounded-3xl text-center relative overflow-hidden">
+            <div className="bg-gradient-to-br from-primary to-orange-400 text-primary-foreground p-12 md:p-20 rounded-3xl text-center relative overflow-hidden">
                 <div className="absolute -top-10 -left-10 w-32 h-32 bg-white/10 rounded-full opacity-50"></div>
                 <div className="absolute -bottom-16 -right-5 w-48 h-48 bg-white/10 rounded-full opacity-50"></div>
-              <h2 className="text-4xl md:text-5xl font-bold text-white">
+              <h2 className="text-4xl md:text-5xl font-belleza text-white">
                 Your Support is a Blessing
               </h2>
               <p className="mt-5 max-w-3xl mx-auto text-lg text-white/80">
@@ -197,7 +230,7 @@ export default function Home() {
                     <span>Raised: ₹{new Intl.NumberFormat('en-IN').format(raisedAmount)}</span>
                     <span>Goal: ₹{new Intl.NumberFormat('en-IN').format(goalAmount)}</span>
                 </div>
-                <Progress value={progressPercentage} className="h-5 border-2 border-white/30" />
+                <Progress value={progressPercentage} className="h-5" />
                 <p className="text-center mt-3 text-white/90 font-semibold">{Math.round(progressPercentage)}% of our monthly goal reached!</p>
               </div>
 
@@ -211,7 +244,7 @@ export default function Home() {
         </section>
       </main>
 
-      <footer id="contact" className="bg-secondary/70">
+      <footer id="contact" className="bg-card border-t-2 border-white">
         <div className="container mx-auto px-4 md:px-6 py-12">
           <div className="flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-6">
              <div className="flex items-center gap-3">
@@ -222,14 +255,14 @@ export default function Home() {
                   height={40} 
                   className="rounded-full object-cover" 
                 />
-                <span className="text-lg font-bold text-primary">Sri Krishna Goshala</span>
+                <span className="text-lg font-belleza text-primary">Sri Krishna Goshala</span>
              </div>
-            <p className="text-muted-foreground text-sm">
+            <p className="text-foreground/80 text-sm">
               &copy; {new Date().getFullYear()} Sri Krishna Goshala. All rights reserved.
             </p>
             <div className="flex items-center gap-4">
-              <Phone className="h-5 w-5 text-muted-foreground" />
-              <a href="tel:+919876543210" className="text-muted-foreground hover:text-primary transition-colors">+91 98765 43210</a>
+              <Phone className="h-5 w-5 text-foreground/80" />
+              <a href="tel:+919876543210" className="text-foreground/80 hover:text-primary transition-colors">+91 98765 43210</a>
             </div>
           </div>
         </div>
