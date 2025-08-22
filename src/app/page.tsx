@@ -1,13 +1,15 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { ArrowRight, HeartHandshake, LogIn, Quote, Users, UtensilsCrossed, Stethoscope } from "lucide-react";
+import { ArrowRight, HeartHandshake, LogIn, Quote, Users, UtensilsCrossed, Stethoscope, Menu } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Progress } from "@/components/ui/progress";
 import { TestimonialCarousel } from "@/components/ui/testimonial-carousel";
 import { SevaCarousel } from "@/components/ui/seva-carousel";
 import { HeroCarousel } from "@/components/ui/hero-carousel";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Separator } from "@/components/ui/separator";
 
 export default function Home() {
 
@@ -43,6 +45,15 @@ export default function Home() {
     { text: "Pray To Gaumatha", href: "#" },
   ];
 
+  const navLinks = [
+    { text: "About", href: "#about" },
+    { text: "Seva", href: "#seva" },
+    { text: "Gallery", href: "#gallery" },
+    { text: "Testimonials", href: "#testimonials" },
+    { text: "Contact", href: "#contact" },
+  ];
+
+
   return (
     <div className="flex flex-col min-h-dvh bg-background antialiased">
        <header className="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-sm border-b">
@@ -60,11 +71,9 @@ export default function Home() {
             </span>
           </Link>
           <nav className="hidden md:flex items-center gap-6 text-base font-medium text-foreground/80">
-            <Link href="#about" className="hover:text-primary transition-colors">About</Link>
-            <Link href="#seva" className="hover:text-primary transition-colors">Seva</Link>
-            <Link href="#gallery" className="hover:text-primary transition-colors">Gallery</Link>
-            <Link href="#testimonials" className="hover:text-primary transition-colors">Testimonials</Link>
-            <Link href="#contact" className="hover:text-primary transition-colors">Contact</Link>
+            {navLinks.map((link) => (
+              <Link key={link.text} href={link.href} className="hover:text-primary transition-colors">{link.text}</Link>
+            ))}
           </nav>
           <div className="flex items-center gap-2 md:gap-4">
             <Button asChild size="sm" className="rounded-full shadow-lg md:text-base md:px-6 md:py-4">
@@ -79,6 +88,38 @@ export default function Home() {
                   Login
               </Link>
             </Button>
+             <Sheet>
+              <SheetTrigger asChild>
+                <Button variant="outline" size="icon" className="md:hidden">
+                  <Menu className="h-6 w-6" />
+                  <span className="sr-only">Toggle navigation menu</span>
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="left">
+                <nav className="grid gap-6 text-lg font-medium">
+                  <Link href="#" className="flex items-center gap-3 mb-4">
+                      <Image 
+                        src="/logo.png" 
+                        alt="Goshala Logo" 
+                        width={40} 
+                        height={40} 
+                        className="rounded-full object-cover" 
+                      />
+                      <span className="text-lg font-bold text-primary">Sri Krishna Goshala</span>
+                    </Link>
+                    {navLinks.map((link) => (
+                       <Link key={link.text} href={link.href} className="text-foreground/80 hover:text-primary">{link.text}</Link>
+                    ))}
+                     <Separator />
+                     <Button variant="ghost" asChild>
+                        <Link href="/login" className="flex items-center justify-start gap-2">
+                            <LogIn className="w-5 h-5" />
+                            Login
+                        </Link>
+                     </Button>
+                </nav>
+              </SheetContent>
+            </Sheet>
           </div>
         </div>
       </header>
@@ -322,5 +363,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
