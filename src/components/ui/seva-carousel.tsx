@@ -5,7 +5,7 @@ import React, { useCallback, useEffect, useState } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-import { ArrowLeft, ArrowRight, LucideProps, Sun, Calendar, CalendarCheck, HeartHandshake, Users, Leaf } from 'lucide-react'
+import { ArrowLeft, ArrowRight, LucideProps, Sun, Calendar, CalendarCheck, HeartHandshake, Users, Leaf, MessageCircle } from 'lucide-react'
 import Link from 'next/link'
 
 const iconMap: { [key: string]: React.FC<LucideProps> } = {
@@ -15,6 +15,7 @@ const iconMap: { [key: string]: React.FC<LucideProps> } = {
   HeartHandshake,
   Users,
   Leaf,
+  MessageCircle,
 };
 
 type SevaOption = {
@@ -66,7 +67,7 @@ export const SevaCarousel: React.FC<PropType> = ({ sevaOptions }) => {
                              <p className="text-muted-foreground mt-2 mb-4 text-sm md:text-base">{seva.description}</p>
                              <p className="text-2xl font-bold text-foreground mb-6">{seva.price}</p>
                              <Button asChild className="mt-auto w-full">
-                                <Link href={seva.link}>Book Now</Link>
+                                <Link href={seva.link}>{seva.price === "Free" ? "Try Now" : "Book Now"}</Link>
                              </Button>
                         </div>
                     </div>
@@ -98,5 +99,3 @@ export const SevaCarousel: React.FC<PropType> = ({ sevaOptions }) => {
     </div>
   )
 }
-
-    
