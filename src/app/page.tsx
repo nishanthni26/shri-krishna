@@ -2,6 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { ArrowRight, HeartHandshake, LogIn, Quote, Users, UtensilsCrossed, Stethoscope, Menu } from "lucide-react";
+import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
 import Link from "next/link";
 import { Progress } from "@/components/ui/progress";
@@ -95,7 +96,7 @@ export default function Home() {
                 </Button>
               </SheetTrigger>
               <SheetContent side="left" className="flex flex-col p-0">
-                  <div className="p-6">
+                  <div className="p-6 flex-1 flex flex-col">
                      <Link href="#" className="flex items-center gap-3 mb-6">
                         <Image 
                           src="/logo.png" 
@@ -106,13 +107,14 @@ export default function Home() {
                         />
                         <span className="text-lg font-bold text-primary">Sri Krishna Goshala</span>
                       </Link>
+                      <Separator className="mb-4" />
                       <nav className="grid gap-3">
                         {navLinks.map((link) => (
                            <Link key={link.text} href={link.href} className="text-foreground/80 hover:text-primary text-lg p-2 rounded-md hover:bg-muted font-medium transition-colors">{link.text}</Link>
                         ))}
                       </nav>
                   </div>
-                  <div className="mt-auto p-6 border-t">
+                  <div className="p-6 border-t">
                      <Button variant="outline" className="w-full" asChild>
                         <Link href="/login" className="flex items-center justify-center gap-2">
                             <LogIn className="w-5 h-5" />
