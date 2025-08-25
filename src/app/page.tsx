@@ -95,33 +95,29 @@ export default function Home() {
                   <span className="sr-only">Toggle navigation menu</span>
                 </Button>
               </SheetTrigger>
-              <SheetContent side="left" className="flex flex-col p-0 bg-background">
-                  <div className="flex-1 flex flex-col p-6">
-                     <Link href="#" className="flex items-center gap-3 mb-8">
-                        <Image 
-                          src="/logo.png" 
-                          alt="Goshala Logo" 
-                          width={40} 
-                          height={40} 
-                          className="rounded-full object-cover" 
-                        />
-                        <span className="text-lg font-bold text-primary">Sri Krishna Goshala</span>
-                      </Link>
-                      <nav className="grid gap-3">
-                        {navLinks.map((link) => (
-                           <Link key={link.text} href={link.href} className="text-foreground/80 hover:text-primary text-lg p-2 rounded-md hover:bg-muted font-medium transition-colors">{link.text}</Link>
-                        ))}
-                      </nav>
-                  </div>
-                  <Separator />
-                  <div className="p-6">
-                     <Button variant="outline" className="w-full" asChild>
-                        <Link href="/login" className="flex items-center justify-center gap-2">
-                            <LogIn className="w-5 h-5" />
-                            Login / Sign Up
-                        </Link>
-                     </Button>
-                  </div>
+              <SheetContent side="left" className="flex flex-col p-6 bg-background">
+                  <Link href="#" className="flex items-center gap-3 mb-8">
+                    <Image 
+                      src="/logo.png" 
+                      alt="Goshala Logo" 
+                      width={40} 
+                      height={40} 
+                      className="rounded-full object-cover" 
+                    />
+                    <span className="text-lg font-bold text-primary">Sri Krishna Goshala</span>
+                  </Link>
+                  <nav className="grid gap-4 text-lg font-medium">
+                    {navLinks.map((link) => (
+                       <Link key={link.text} href={link.href} className="text-foreground/80 hover:text-primary py-2 rounded-md hover:bg-muted font-medium transition-colors">{link.text}</Link>
+                    ))}
+                  </nav>
+                  <Separator className="my-6" />
+                   <Button variant="outline" className="w-full" asChild>
+                    <Link href="/login" className="flex items-center justify-center gap-2">
+                        <LogIn className="w-5 h-5" />
+                        Login / Sign Up
+                    </Link>
+                  </Button>
               </SheetContent>
             </Sheet>
           </div>
@@ -186,12 +182,12 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
               <div className="relative w-full aspect-square group">
                  <Image
-                  src="https://images.unsplash.com/photo-1672858074971-55cf899b2f66?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjb3clMjBwb3J0cmFpdHxlbnwwfHx8fDE3NTU3MjIxMTR8MA&ixlib=rb-4.1.0&q=80&w=1080"
-                  alt="A calm cow with gentle eyes"
+                  src="/__b64_img_0__"
+                  alt="Founder with two young calves in a green pasture"
                   layout="fill"
                   objectFit="cover"
                   className="rounded-2xl shadow-2xl border-8 border-white transition-transform duration-500 group-hover:scale-105"
-                  data-ai-hint="cow portrait"
+                  data-ai-hint="man calves"
                 />
               </div>
               <div>
