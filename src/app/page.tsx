@@ -55,7 +55,7 @@ export default function Home() {
 
 
   return (
-    <div className="flex flex-col min-h-dvh bg-background antialiased">
+    <div className="flex flex-col min-h-dvh bg-transparent antialiased">
        <header className="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-sm border-b">
         <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
           <Link href="#" className="flex items-center gap-2">
@@ -76,7 +76,7 @@ export default function Home() {
             ))}
           </nav>
           <div className="flex items-center gap-2 md:gap-4">
-            <Button asChild size="sm" className="rounded-full shadow-lg md:text-base md:px-6 md:py-4">
+            <Button asChild size="sm" className="rounded-full shadow-lg md:text-base md:px-6 md:py-4 hover:scale-105 transition-transform">
               <Link href="/payment">
                 Donate <span className="hidden md:inline ml-1">Now</span> 
                 <ArrowRight className="w-4 h-4 ml-1 md:ml-2" />
@@ -127,6 +127,7 @@ export default function Home() {
       <main className="flex-1">
         <section className="relative w-full py-24 md:py-48 flex items-center justify-center text-center bg-card overflow-hidden">
            <HeroCarousel />
+           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent z-0"></div>
            <div className="relative z-10 flex flex-col items-center justify-center p-4 md:p-6 animate-fade-in-up">
             <h1 className="text-4xl md:text-7xl font-bold tracking-tighter text-primary">
               A Sanctuary of Compassion
@@ -134,7 +135,7 @@ export default function Home() {
             <p className="mt-4 md:mt-6 text-md md:text-xl max-w-3xl text-foreground/80 font-semibold">
                Welcome to Sri Krishna Goshala, a sacred haven dedicated to the care and protection of cows. Join us in nurturing these gentle souls.
             </p>
-            <Button size="lg" className="mt-8 md:mt-10 rounded-full text-base md:text-lg px-8 md:px-10 py-6 md:py-7 group" asChild>
+            <Button size="lg" className="mt-8 md:mt-10 rounded-full text-base md:text-lg px-8 md:px-10 py-6 md:py-7 group hover:scale-105 hover:shadow-xl transition-all duration-300" asChild>
               <Link href="/payment">
                 Support Our Cows <HeartHandshake className="w-5 h-5 md:w-6 md:h-6 ml-2 md:ml-3 transition-transform group-hover:rotate-12" />
               </Link>
@@ -142,7 +143,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="why-donate" className="py-16 md:py-28 bg-primary/5">
+        <section id="why-donate" className="py-16 md:py-28 bg-transparent">
           <div className="container mx-auto px-4 md:px-6">
             <div className="text-center max-w-3xl mx-auto">
               <h3 className="text-base font-semibold text-secondary uppercase tracking-widest">Why Your Seva Matters</h3>
@@ -152,21 +153,21 @@ export default function Home() {
               </p>
             </div>
             <div className="grid md:grid-cols-3 gap-6 md:gap-8 mt-12 md:mt-16 max-w-5xl mx-auto">
-              <div className="flex flex-col items-center text-center p-6 md:p-8 rounded-2xl bg-background shadow-lg hover:shadow-primary/20 transition-all duration-300 border border-transparent hover:border-primary/50">
+              <div className="flex flex-col items-center text-center p-6 md:p-8 rounded-2xl bg-gradient-to-br from-card to-muted/50 shadow-lg hover:shadow-primary/20 transition-all duration-300 border border-transparent hover:border-primary/50 hover:-translate-y-2">
                 <div className="bg-secondary text-primary-foreground h-16 w-16 md:h-20 md:w-20 rounded-full flex items-center justify-center mb-4 md:mb-6">
                   <UtensilsCrossed className="h-8 w-8 md:h-10 md:w-10" />
                 </div>
                 <h4 className="text-lg md:text-xl font-bold text-primary">Food & Nutrition</h4>
                 <p className="text-muted-foreground mt-2 text-sm md:text-base">Your donation helps us provide nutritious food, ensuring the health and happiness of our cows every day.</p>
               </div>
-              <div className="flex flex-col items-center text-center p-6 md:p-8 rounded-2xl bg-background shadow-lg hover:shadow-primary/20 transition-all duration-300 border border-transparent hover:border-primary/50">
+              <div className="flex flex-col items-center text-center p-6 md:p-8 rounded-2xl bg-gradient-to-br from-card to-muted/50 shadow-lg hover:shadow-primary/20 transition-all duration-300 border border-transparent hover:border-primary/50 hover:-translate-y-2">
                 <div className="bg-secondary text-primary-foreground h-16 w-16 md:h-20 md:w-20 rounded-full flex items-center justify-center mb-4 md:mb-6">
                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8 md:h-10 md:w-10"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
                 </div>
                 <h4 className="text-lg md:text-xl font-bold text-primary">Shelter & Care</h4>
                 <p className="text-muted-foreground mt-2 text-sm md:text-base">You help maintain a safe, clean, and comfortable shelter where our cows can live peacefully.</p>
               </div>
-              <div className="flex flex-col items-center text-center p-6 md:p-8 rounded-2xl bg-background shadow-lg hover:shadow-primary/20 transition-all duration-300 border border-transparent hover:border-primary/50">
+              <div className="flex flex-col items-center text-center p-6 md:p-8 rounded-2xl bg-gradient-to-br from-card to-muted/50 shadow-lg hover:shadow-primary/20 transition-all duration-300 border border-transparent hover:border-primary/50 hover:-translate-y-2">
                 <div className="bg-secondary text-primary-foreground h-16 w-16 md:h-20 md:w-20 rounded-full flex items-center justify-center mb-4 md:mb-6">
                   <Stethoscope className="h-8 w-8 md:h-10 md:w-10" />
                 </div>
@@ -177,7 +178,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="about" className="py-16 md:py-28 bg-background">
+        <section id="about" className="py-16 md:py-28 bg-transparent">
           <div className="container mx-auto px-4 md:px-6">
             <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
               <div className="relative w-full aspect-square group">
