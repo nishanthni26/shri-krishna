@@ -58,7 +58,7 @@
   body {
     @apply text-foreground;
     background-color: hsl(var(--background));
-    background-image: linear-gradient(to bottom, hsl(var(--background)) 0%, hsl(40, 100%, 97%) 100%);
+    background-image: linear-gradient(to bottom, hsl(var(--background)) 0%, hsl(33, 100%, 95%) 100%);
     font-family: 'Poppins', sans-serif;
   }
   h1, h2, h3, h4, h5, h6 {
