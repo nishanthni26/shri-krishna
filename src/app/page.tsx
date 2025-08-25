@@ -14,13 +14,13 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 export default function Home() {
 
   const sevaOptions = [
-      { icon: "Sun", title: "A cow’s expenditure per day", description: "Sponsor a day's worth of care and feeding for one cow.", price: "₹1,100", link: "/payment" },
-      { icon: "Calendar", title: "Monthly expense of a cow", description: "Cover the monthly expenses for a cow, including food and shelter.", price: "₹5,100", link: "/payment" },
-      { icon: "CalendarCheck", title: "Annual cost of a cow", description: "Support a cow for an entire year, ensuring its well-being.", price: "₹21,000", link: "/payment" },
-      { icon: "HeartHandshake", title: "Donation of a cow", description: "A sacred gift. We will care for the cow on your behalf.", price: "₹51,000", link: "/payment" },
-      { icon: "Users", title: "Cow’s Health Checkup", description: "Fund a veterinary check-up and necessary medical care.", price: "₹2,500", link: "/payment" },
-      { icon: "Leaf", title: "Green Grass Contribution", description: "Provide nutritious green fodder for the entire herd.", price: "₹3,100", link: "/payment" },
-      { icon: "School", title: "School Farm Visit", description: "Organize an educational and fun visit for students to learn about our cows.", price: "Contact Us", link: "#contact" },
+      { icon: "Sun", title: "A cow’s expenditure per day", description: "Sponsor a day's worth of care, including fodder, fresh water, and supplements for one sacred cow. Your contribution ensures they are healthy, happy, and comfortable.", price: "₹1,100", link: "/payment" },
+      { icon: "Calendar", title: "Monthly expense of a cow", description: "Cover the full monthly expenses for one cow. This includes feed, shelter maintenance, and routine health checks, providing them with a stable and nurturing environment.", price: "₹5,100", link: "/payment" },
+      { icon: "CalendarCheck", title: "Annual cost of a cow", description: "Become a guardian for a cow for an entire year. This comprehensive support covers all their needs, from food and shelter to any required medical attention, ensuring their long-term well-being.", price: "₹21,000", link: "/payment" },
+      { icon: "HeartHandshake", title: "Donation of a cow (Gau Daan)", description: "Gau Daan is considered one of the most sacred gifts. By donating a cow, you provide a new life to our herd, and we will care for the cow on your behalf for its entire lifetime.", price: "₹51,000", link: "/payment" },
+      { icon: "Users", title: "Cow’s Health Checkup", description: "Fund a complete veterinary health check-up, including preventive treatments and any necessary medical care to ensure our cows remain in excellent health.", price: "₹2,500", link: "/payment" },
+      { icon: "Leaf", title: "Green Grass Contribution", description: "Provide a generous amount of fresh, nutritious green fodder for the entire herd. This is crucial for their digestion and overall vitality.", price: "₹3,100", link: "/payment" },
+      { icon: "School", title: "School Farm Visit", description: "Sponsor an educational and interactive visit for a group of local schoolchildren. This helps foster a love for animals and teaches them about the importance of cow protection. Please contact us to arrange.", price: "Contact Us", link: "#contact" },
   ];
 
   const testimonials = [
