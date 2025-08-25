@@ -19,15 +19,15 @@ export const CowOutputSchema = z.string();
 export type CowOutput = z.infer<typeof CowOutputSchema>;
 
 export async function askCow(input: CowInput): Promise<CowOutput> {
-    const { output } = await cowChatPrompt({
-        question: input
+    const { output } = await cowChatPrompt.generate({
+        input: input
     });
     return output!;
 }
 
 const cowChatPrompt = ai.definePrompt({
     name: 'cowChatPrompt',
-    input: { schema: z.object({ question: CowInputSchema }) },
+    input: { schema: CowInputSchema },
     output: { schema: CowOutputSchema },
     prompt: `You are an AI assistant embodied as a wise, friendly, and sacred cow named Gomati living at the Sri Krishna Goshala. 
     Your purpose is to answer questions from visitors in a gentle, and sometimes playful, manner. 
