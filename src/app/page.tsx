@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { ArrowRight, HeartHandshake, LogIn, Quote, Users, UtensilsCrossed, Stethoscope, Menu } from "lucide-react";
+import { ArrowRight, HeartHandshake, LogIn, Quote, Users, UtensilsCrossed, Stethoscope, Menu, School } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
 import Link from "next/link";
@@ -20,6 +20,7 @@ export default function Home() {
       { icon: "HeartHandshake", title: "Donation of a cow", description: "A sacred gift. We will care for the cow on your behalf.", price: "₹51,000", link: "/payment" },
       { icon: "Users", title: "Cow’s Health Checkup", description: "Fund a veterinary check-up and necessary medical care.", price: "₹2,500", link: "/payment" },
       { icon: "Leaf", title: "Green Grass Contribution", description: "Provide nutritious green fodder for the entire herd.", price: "₹3,100", link: "/payment" },
+      { icon: "School", title: "School Farm Visit", description: "Organize an educational and fun visit for students to learn about our cows.", price: "Contact Us", link: "/school-visit" },
   ];
 
   const testimonials = [
@@ -76,10 +77,10 @@ export default function Home() {
             ))}
           </nav>
           <div className="flex items-center gap-2 md:gap-4">
-            <Button asChild size="sm" className="rounded-full shadow-lg md:text-base md:px-6 md:py-4 hover:scale-105 transition-transform">
+            <Button asChild size="sm" className="rounded-full shadow-lg md:text-base md:px-6 md:py-4 hover:scale-105 transition-transform group">
               <Link href="/payment">
                 Donate <span className="hidden md:inline ml-1">Now</span> 
-                <ArrowRight className="w-4 h-4 ml-1 md:ml-2" />
+                <ArrowRight className="w-4 h-4 ml-1 md:ml-2 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
             <Button variant="ghost" className="hidden lg:flex" asChild>
@@ -108,11 +109,11 @@ export default function Home() {
                   </Link>
                   <nav className="grid gap-4 text-lg font-medium">
                     {navLinks.map((link) => (
-                       <Link key={link.text} href={link.href} className="text-foreground/80 hover:text-primary py-2 rounded-md hover:bg-muted font-medium transition-colors">{link.text}</Link>
+                       <Link key={link.text} href={link.href} className="text-foreground/80 hover:text-primary py-2 px-3 rounded-md hover:bg-muted font-medium transition-colors -mx-3">{link.text}</Link>
                     ))}
                   </nav>
                   <Separator className="my-6" />
-                   <Button variant="outline" className="w-full" asChild>
+                   <Button variant="outline" className="w-full mt-auto" asChild>
                     <Link href="/login" className="flex items-center justify-center gap-2">
                         <LogIn className="w-5 h-5" />
                         Login / Sign Up
@@ -127,8 +128,8 @@ export default function Home() {
       <main className="flex-1">
         <section className="relative w-full py-24 md:py-48 flex items-center justify-center text-center bg-card overflow-hidden">
            <HeroCarousel />
-           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent z-0"></div>
-           <div className="relative z-10 flex flex-col items-center justify-center p-4 md:p-6 animate-fade-in-up">
+           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent z-10"></div>
+           <div className="relative z-20 flex flex-col items-center justify-center p-4 md:p-6 animate-fade-in-up">
             <h1 className="text-4xl md:text-7xl font-bold tracking-tighter text-primary">
               A Sanctuary of Compassion
             </h1>
@@ -183,8 +184,8 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
               <div className="relative w-full aspect-square group">
                  <Image
-                  src="/__b64_img_0__"
-                  alt="Founder with two young calves in a green pasture"
+                  src="/__b64_img_1__"
+                  alt="Founder of Sri Krishna Goshala with two young calves in a green pasture"
                   layout="fill"
                   objectFit="cover"
                   className="rounded-2xl shadow-2xl border-8 border-white transition-transform duration-500 group-hover:scale-105"
