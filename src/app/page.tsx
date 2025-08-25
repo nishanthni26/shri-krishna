@@ -20,7 +20,7 @@ export default function Home() {
       { icon: "HeartHandshake", title: "Donation of a cow", description: "A sacred gift. We will care for the cow on your behalf.", price: "₹51,000", link: "/payment" },
       { icon: "Users", title: "Cow’s Health Checkup", description: "Fund a veterinary check-up and necessary medical care.", price: "₹2,500", link: "/payment" },
       { icon: "Leaf", title: "Green Grass Contribution", description: "Provide nutritious green fodder for the entire herd.", price: "₹3,100", link: "/payment" },
-      { icon: "School", title: "School Farm Visit", description: "Organize an educational and fun visit for students to learn about our cows.", price: "Contact Us", link: "/school-visit" },
+      { icon: "School", title: "School Farm Visit", description: "Organize an educational and fun visit for students to learn about our cows.", price: "Contact Us", link: "#contact" },
   ];
 
   const testimonials = [
