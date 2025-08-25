@@ -9,7 +9,7 @@
  * - CowOutput - The return type for the askCow function.
  */
 
-import { ai } from '@/ai/genkit';
+import { ai } from '@/app/api/genkit/[...flow]/route';
 import { z } from 'genkit';
 
 export const CowInputSchema = z.string();
