@@ -20,7 +20,6 @@ export default function Home() {
       { icon: "HeartHandshake", title: "Donation of a cow", description: "A sacred gift. We will care for the cow on your behalf.", price: "₹51,000", link: "/payment" },
       { icon: "Users", title: "Cow’s Health Checkup", description: "Fund a veterinary check-up and necessary medical care.", price: "₹2,500", link: "/payment" },
       { icon: "Leaf", title: "Green Grass Contribution", description: "Provide nutritious green fodder for the entire herd.", price: "₹3,100", link: "/payment" },
-      { icon: "MessageCircle", title: "Talk to a Cow (AI)", description: "Ask our AI cow about life at the Goshala.", price: "Free", link: "/ask-a-cow" },
   ];
 
   const testimonials = [
