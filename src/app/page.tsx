@@ -184,7 +184,7 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
               <div className="relative w-full aspect-square group">
                  <Image
-                  src="/__b64_img_1__"
+                  src="/logo.png"
                   alt="Founder of Sri Krishna Goshala with two young calves in a green pasture"
                   layout="fill"
                   objectFit="cover"

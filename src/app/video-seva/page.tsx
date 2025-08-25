@@ -123,5 +123,3 @@ export default function VideoSevaPage() {
     </div>
   );
 }
-
-    
