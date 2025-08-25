@@ -95,9 +95,9 @@ export default function Home() {
                   <span className="sr-only">Toggle navigation menu</span>
                 </Button>
               </SheetTrigger>
-              <SheetContent side="left" className="flex flex-col p-0">
-                  <div className="p-6 flex-1 flex flex-col">
-                     <Link href="#" className="flex items-center gap-3 mb-6">
+              <SheetContent side="left" className="flex flex-col p-0 bg-background">
+                  <div className="flex-1 flex flex-col p-6">
+                     <Link href="#" className="flex items-center gap-3 mb-8">
                         <Image 
                           src="/logo.png" 
                           alt="Goshala Logo" 
@@ -107,14 +107,14 @@ export default function Home() {
                         />
                         <span className="text-lg font-bold text-primary">Sri Krishna Goshala</span>
                       </Link>
-                      <Separator className="mb-4" />
                       <nav className="grid gap-3">
                         {navLinks.map((link) => (
                            <Link key={link.text} href={link.href} className="text-foreground/80 hover:text-primary text-lg p-2 rounded-md hover:bg-muted font-medium transition-colors">{link.text}</Link>
                         ))}
                       </nav>
                   </div>
-                  <div className="p-6 border-t">
+                  <Separator />
+                  <div className="p-6">
                      <Button variant="outline" className="w-full" asChild>
                         <Link href="/login" className="flex items-center justify-center gap-2">
                             <LogIn className="w-5 h-5" />
@@ -156,21 +156,21 @@ export default function Home() {
               </p>
             </div>
             <div className="grid md:grid-cols-3 gap-6 md:gap-8 mt-12 md:mt-16 max-w-5xl mx-auto">
-              <div className="flex flex-col items-center text-center p-6 md:p-8 rounded-2xl bg-background shadow-lg hover:shadow-primary/20 transition-shadow duration-300">
+              <div className="flex flex-col items-center text-center p-6 md:p-8 rounded-2xl bg-background shadow-lg hover:shadow-primary/20 transition-all duration-300 border border-transparent hover:border-primary/50">
                 <div className="bg-secondary text-primary-foreground h-16 w-16 md:h-20 md:w-20 rounded-full flex items-center justify-center mb-4 md:mb-6">
                   <UtensilsCrossed className="h-8 w-8 md:h-10 md:w-10" />
                 </div>
                 <h4 className="text-lg md:text-xl font-bold text-primary">Food & Nutrition</h4>
                 <p className="text-muted-foreground mt-2 text-sm md:text-base">Your donation helps us provide nutritious food, ensuring the health and happiness of our cows every day.</p>
               </div>
-              <div className="flex flex-col items-center text-center p-6 md:p-8 rounded-2xl bg-background shadow-lg hover:shadow-primary/20 transition-shadow duration-300">
+              <div className="flex flex-col items-center text-center p-6 md:p-8 rounded-2xl bg-background shadow-lg hover:shadow-primary/20 transition-all duration-300 border border-transparent hover:border-primary/50">
                 <div className="bg-secondary text-primary-foreground h-16 w-16 md:h-20 md:w-20 rounded-full flex items-center justify-center mb-4 md:mb-6">
                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8 md:h-10 md:w-10"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
                 </div>
                 <h4 className="text-lg md:text-xl font-bold text-primary">Shelter & Care</h4>
                 <p className="text-muted-foreground mt-2 text-sm md:text-base">You help maintain a safe, clean, and comfortable shelter where our cows can live peacefully.</p>
               </div>
-              <div className="flex flex-col items-center text-center p-6 md:p-8 rounded-2xl bg-background shadow-lg hover:shadow-primary/20 transition-shadow duration-300">
+              <div className="flex flex-col items-center text-center p-6 md:p-8 rounded-2xl bg-background shadow-lg hover:shadow-primary/20 transition-all duration-300 border border-transparent hover:border-primary/50">
                 <div className="bg-secondary text-primary-foreground h-16 w-16 md:h-20 md:w-20 rounded-full flex items-center justify-center mb-4 md:mb-6">
                   <Stethoscope className="h-8 w-8 md:h-10 md:w-10" />
                 </div>
@@ -184,13 +184,13 @@ export default function Home() {
         <section id="about" className="py-16 md:py-28 bg-background">
           <div className="container mx-auto px-4 md:px-6">
             <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
-              <div className="relative w-full aspect-square">
+              <div className="relative w-full aspect-square group">
                  <Image
                   src="https://images.unsplash.com/photo-1672858074971-55cf899b2f66?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjb3clMjBwb3J0cmFpdHxlbnwwfHx8fDE3NTU3MjIxMTR8MA&ixlib=rb-4.1.0&q=80&w=1080"
                   alt="A calm cow with gentle eyes"
                   layout="fill"
                   objectFit="cover"
-                  className="rounded-2xl shadow-2xl border-8 border-white"
+                  className="rounded-2xl shadow-2xl border-8 border-white transition-transform duration-500 group-hover:scale-105"
                   data-ai-hint="cow portrait"
                 />
               </div>
