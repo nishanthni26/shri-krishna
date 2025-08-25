@@ -9,7 +9,6 @@ import { TestimonialCarousel } from "@/components/ui/testimonial-carousel";
 import { SevaCarousel } from "@/components/ui/seva-carousel";
 import { HeroCarousel } from "@/components/ui/hero-carousel";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Separator } from "@/components/ui/separator";
 
 export default function Home() {
 
