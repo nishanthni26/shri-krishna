@@ -2,7 +2,7 @@
 /**
  * @fileoverview This file is the Genkit API route for Next.js.
  */
-import { nextHandler } from '@genkit-ai/next';
+import { defineNextHandler } from '@genkit-ai/next';
 import { genkit } from 'genkit';
 import { googleAI } from '@genkit-ai/googleai';
 
@@ -17,4 +17,6 @@ export const ai = genkit({
 });
 
 
-export const { GET, POST } = nextHandler(ai);
+export const { GET, POST } = defineNextHandler({
+  ai,
+});
