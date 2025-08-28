@@ -57,7 +57,7 @@ export default function VideoSevaPage() {
                 alt="Goshala Logo"
                 width={48} 
                 height={48} 
-                className="rounded-full object-cover border-2 border-primary/20"
+                className="p-1 bg-secondary rounded-full object-cover"
             />
             <span className="text-xl md:text-2xl font-bold text-primary tracking-tight">
               Sri Krishna Goshala
@@ -123,3 +123,5 @@ export default function VideoSevaPage() {
     </div>
   );
 }
+
+    

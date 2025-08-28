@@ -49,7 +49,7 @@ export default function AdminDashboardPage() {
               alt="Goshala Logo" 
               width={48} 
               height={48} 
-              className="rounded-full object-cover" 
+              className="p-1 bg-secondary rounded-full object-cover" 
             />
             <span className="text-xl font-bold text-primary">Admin Panel</span>
         </div>
@@ -85,7 +85,7 @@ export default function AdminDashboardPage() {
                       alt="Goshala Logo" 
                       width={40} 
                       height={40} 
-                      className="rounded-full object-cover" 
+                      className="p-1 bg-secondary rounded-full object-cover" 
                     />
                     <span className="text-lg font-bold text-primary">Admin Panel</span>
                   </Link>
@@ -227,3 +227,5 @@ export default function AdminDashboardPage() {
     </div>
   );
 }
+
+    
