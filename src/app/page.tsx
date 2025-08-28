@@ -230,10 +230,10 @@ export default function Home() {
             </p>
             <div className="mt-12 md:mt-16 grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4">
               {[
-                { src: "/gallery/g1.jpg", alt: "A devotee feeding a cow"},
-                { src: "/gallery/g2.jpg", alt: "A calf in the goshala"},
-                { src: "/gallery/g3.jpg", alt: "Cows resting in the shade"},
-                { src: "/gallery/g4.jpg", alt: "A beautiful white cow"},
+                { src: "/gallery/g1.png", alt: "A devotee feeding a cow"},
+                { src: "/gallery/g2.png", alt: "A calf in the goshala"},
+                { src: "/gallery/g3.png", alt: "Cows resting in the shade"},
+                { src: "/gallery/g4.png", alt: "A beautiful white cow"},
               ].map((image, index) => (
                 <div key={index} className="overflow-hidden rounded-lg md:rounded-2xl group aspect-w-1 aspect-h-1 border-2 md:border-4 border-white">
                   <Image
