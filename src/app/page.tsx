@@ -20,7 +20,7 @@ export default function Home() {
       { icon: "HeartHandshake", title: "Donation of a cow (Gau Daan)", description: "Gau Daan is considered one of the most sacred gifts. By donating a cow, you provide a new life to our herd, and we will care for the cow on your behalf for its entire lifetime.", price: "₹51,000", link: "/payment" },
       { icon: "Users", title: "Cow’s Health Checkup", description: "Fund a complete veterinary health check-up, including preventive treatments and any necessary medical care to ensure our cows remain in excellent health.", price: "₹2,500", link: "/payment" },
       { icon: "Leaf", title: "Green Grass Contribution", description: "Provide a generous amount of fresh, nutritious green fodder for the entire herd. This is crucial for their digestion and overall vitality.", price: "₹3,100", link: "/payment" },
-      { icon: "School", title: "School Farm Visit", description: "Sponsor an educational and interactive visit for a group of local schoolchildren. This helps foster a love for animals and teaches them about the importance of cow protection. Please contact us to arrange.", price: "Contact Us", link: "#contact" },
+      { icon: "School", title: "School Farm Visit", description: "Sponsor an educational and interactive visit for a group of local schoolchildren. This helps foster a love for animals and teaches them about the importance of cow protection. Please contact us to arrange.", price: "Contact Us", link: "/school-visit" },
   ];
 
   const testimonials = [
