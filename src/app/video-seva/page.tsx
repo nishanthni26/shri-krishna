@@ -55,8 +55,8 @@ export default function VideoSevaPage() {
              <Image 
                 src="/gallery/logo.png?v=2" 
                 alt="Goshala Logo"
-                width={48} 
-                height={48} 
+                width={64} 
+                height={64} 
                 className="p-1 bg-secondary rounded-full object-cover"
             />
             <span className="text-xl md:text-2xl font-bold text-primary tracking-tight">
@@ -123,5 +123,3 @@ export default function VideoSevaPage() {
     </div>
   );
 }
-
-    

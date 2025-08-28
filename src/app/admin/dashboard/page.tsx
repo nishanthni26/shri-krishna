@@ -47,8 +47,8 @@ export default function AdminDashboardPage() {
             <Image 
               src="/gallery/logo.png?v=2" 
               alt="Goshala Logo" 
-              width={48} 
-              height={48} 
+              width={64} 
+              height={64} 
               className="p-1 bg-secondary rounded-full object-cover" 
             />
             <span className="text-xl font-bold text-primary">Admin Panel</span>
@@ -227,5 +227,3 @@ export default function AdminDashboardPage() {
     </div>
   );
 }
-
-    
