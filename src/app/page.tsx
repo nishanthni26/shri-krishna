@@ -66,7 +66,7 @@ export default function Home() {
               alt="Goshala Logo" 
               width={64} 
               height={64} 
-              className="p-1 bg-secondary rounded-full object-cover"
+              className="p-1 bg-primary rounded-full object-cover"
             />
             <span className="text-xl md:text-2xl font-bold text-primary tracking-tight">
               Sri Krishna Goshala
@@ -104,7 +104,7 @@ export default function Home() {
                       alt="Goshala Logo" 
                       width={40} 
                       height={40} 
-                      className="p-1 bg-secondary rounded-full object-cover" 
+                      className="p-1 bg-primary rounded-full object-cover" 
                     />
                     <span className="text-lg font-bold text-primary">Sri Krishna Goshala</span>
                   </Link>
@@ -366,3 +366,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
