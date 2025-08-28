@@ -70,4 +70,7 @@
     .bg-footer-accent {
         background-color: hsl(var(--primary));
     }
+    .bg-logo-background {
+        background-color: hsl(24.24deg 42.49% 45.69%);
+    }
 }

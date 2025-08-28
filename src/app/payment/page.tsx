@@ -35,7 +35,7 @@ export default function PaymentPage() {
                         alt="Goshala Logo"
                         width={64}
                         height={64}
-                        className="p-1 bg-primary rounded-full object-cover"
+                        className="p-1 bg-logo-background rounded-full object-cover"
                     />
                     <span className="text-xl md:text-2xl font-bold text-primary tracking-tight">
                         Sri Krishna Goshala
@@ -93,21 +93,21 @@ export default function PaymentPage() {
                                     <Label htmlFor="card" className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-2 md:p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary">
                                         <CreditCard className="mb-2 h-5 w-5 md:mb-3 md:h-6 md:w-6" />
                                         Card
-                                    </Aabel>
+                                    </Label>
                                 </div>
                                 <div>
                                     <RadioGroupItem value="upi" id="upi" className="peer sr-only" />
                                     <Label htmlFor="upi" className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-2 md:p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary">
                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mb-2 h-5 w-5 md:mb-3 md:h-6 md:w-6"><path d="M3 10h18"/><path d="m16 6 4 4-4 4"/><path d="M8 18 4 14l4-4"/></svg>
                                         UPI
-                                    </Aabel>
+                                    </Label>
                                 </div>
                                 <div>
                                     <RadioGroupItem value="netbanking" id="netbanking" className="peer sr-only" />
                                     <Label htmlFor="netbanking" className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-2 md:p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary">
                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mb-2 h-5 w-5 md:mb-3 md:h-6 md:w-6"><path d="M12 21V3"/><path d="m5 12 7-7 7 7"/></svg>
                                         NetBanking
-                                    </Aabel>
+                                    </Label>
                                 </div>
                             </RadioGroup>
                         </div>
@@ -121,4 +121,3 @@ export default function PaymentPage() {
     </div>
   );
 }
-    
