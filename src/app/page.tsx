@@ -55,6 +55,11 @@ export default function Home() {
     { text: "Contact", href: "#contact" },
   ];
 
+  const galleryImages = Array.from({ length: 20 }, (_, i) => ({
+    src: `/gallery/G${i + 1}.png`,
+    alt: `Goshala gallery image ${i + 1}`,
+  }));
+
 
   return (
     <div className="flex flex-col min-h-dvh bg-transparent antialiased">
@@ -228,13 +233,8 @@ export default function Home() {
             <p className="mt-4 md:mt-5 max-w-2xl mx-auto text-foreground/80 text-md md:text-lg">
               Glimpses of daily life and the gentle souls that call our Goshala home.
             </p>
-            <div className="mt-12 md:mt-16 grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4">
-              {[
-                { src: "/gallery/g1.png", alt: "A devotee feeding a cow"},
-                { src: "/gallery/g2.png", alt: "A calf in the goshala"},
-                { src: "/gallery/g3.png", alt: "Cows resting in the shade"},
-                { src: "/gallery/g4.png", alt: "A beautiful white cow"},
-              ].map((image, index) => (
+            <div className="mt-12 md:mt-16 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 md:gap-4">
+              {galleryImages.map((image, index) => (
                 <div key={index} className="overflow-hidden rounded-lg md:rounded-2xl group aspect-w-1 aspect-h-1 border-2 md:border-4 border-white">
                   <Image
                     src={image.src}
