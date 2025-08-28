@@ -48,6 +48,7 @@ export default function Home() {
 
   const navLinks = [
     { text: "About", href: "#about" },
+    { text: "Our Cows", href: "/our-cows" },
     { text: "Seva", href: "#seva" },
     { text: "Gallery", href: "#gallery" },
     { text: "Testimonials", href: "#testimonials" },
@@ -184,7 +185,7 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
               <div className="relative w-full aspect-square group">
                  <Image
-                  src="/logo.png"
+                  src="/photo.png"
                   alt="Founder of Sri Krishna Goshala with two young calves in a green pasture"
                   layout="fill"
                   objectFit="cover"
