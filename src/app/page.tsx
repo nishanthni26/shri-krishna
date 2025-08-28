@@ -62,7 +62,7 @@ export default function Home() {
         <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
           <Link href="#" className="flex items-center gap-2">
             <Image 
-              src="/gallery/logo.png?v=2" 
+              src="/gallery/logo.png?v=3" 
               alt="Goshala Logo" 
               width={64} 
               height={64} 
@@ -100,7 +100,7 @@ export default function Home() {
               <SheetContent side="left" className="flex flex-col p-6 bg-background">
                   <Link href="#" className="flex items-center gap-3 mb-8">
                     <Image 
-                      src="/gallery/logo.png?v=2" 
+                      src="/gallery/logo.png?v=3" 
                       alt="Goshala Logo" 
                       width={40} 
                       height={40} 
@@ -299,7 +299,7 @@ export default function Home() {
                 <div className="md:col-span-4 flex flex-col items-center md:items-start">
                     <div className="flex items-center gap-4 mb-4">
                         <Image
-                            src="/gallery/logo.png?v=2"
+                            src="/gallery/logo.png?v=3"
                             alt="Goshala Logo"
                             width={48}
                             height={48}

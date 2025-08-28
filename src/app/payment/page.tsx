@@ -31,7 +31,7 @@ export default function PaymentPage() {
             <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
                 <Link href="/" className="flex items-center gap-3">
                     <Image
-                        src="/gallery/logo.png?v=2"
+                        src="/gallery/logo.png?v=3"
                         alt="Goshala Logo"
                         width={64}
                         height={64}
@@ -93,7 +93,7 @@ export default function PaymentPage() {
                                     <Label htmlFor="card" className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-2 md:p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary">
                                         <CreditCard className="mb-2 h-5 w-5 md:mb-3 md:h-6 md:w-6" />
                                         Card
-                                    </Label>
+                                    </Aabel>
                                 </div>
                                 <div>
                                     <RadioGroupItem value="upi" id="upi" className="peer sr-only" />
@@ -121,5 +121,4 @@ export default function PaymentPage() {
     </div>
   );
 }
-
     
