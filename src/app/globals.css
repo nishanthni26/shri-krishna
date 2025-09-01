@@ -68,31 +68,6 @@
     overflow-x: hidden;
     background-color: transparent;
   }
-  
-  body::before {
-    content: '';
-    position: fixed;
-    bottom: 20px;
-    left: -150px; /* Start off-screen */
-    width: 150px;
-    height: 120px;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 80' width='150' height='120'%3E%3Cstyle%3Epath, line, circle %7B fill: none; stroke: hsl(33 100% 50% / 0.2); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; %7D%3C/style%3E%3Cpath d='M10,40 C20,25 50,25 90,40' /%3E%3Cpath d='M10,40 Q20,55 50,55 T90,40' /%3E%3Cpath d='M75,40 C75,25 95,25 95,40' /%3E%3Ccircle cx='81' cy='32' r='1' fill='hsl(33 100% 50% / 0.2)' stroke='none'/%3E%3Ccircle cx='89' cy='32' r='1' fill='hsl(33 100% 50% / 0.2)' stroke='none'/%3E%3Cline x1='30' y1='55' x2='28' y2='65' /%3E%3Cline x1='40' y1='55' x2='38' y2='65' /%3E%3Cline x1='65' y1='55' x2='63' y2='65' /%3E%3Cline x1='75' y1='55' x2='73' y2='65' /%3E%3Cpath d='M10,40 C0,45 5,55 5,55' /%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-size: contain;
-    z-index: -1;
-    opacity: 0.5;
-    animation: doodle-parade 45s linear infinite;
-    animation-delay: 2s;
-  }
-
-  @keyframes doodle-parade {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(calc(100vw + 150px)); /* Move across the full viewport width */
-    }
-  }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Poppins', sans-serif;
@@ -105,5 +80,26 @@
     }
     .bg-logo-background {
         background-color: hsl(24.24deg 42.49% 45.69%);
+    }
+
+    .doodle-animation {
+      position: fixed;
+      bottom: 20px;
+      left: -150px;
+      width: 150px;
+      height: 120px;
+      z-index: -1;
+      opacity: 0.5;
+      animation: doodle-parade 45s linear infinite;
+      animation-delay: 2s;
+    }
+
+    @keyframes doodle-parade {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(calc(100vw + 150px)); /* Move across the full viewport width */
+      }
     }
 }

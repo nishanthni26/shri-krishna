@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
+import { DoodleAnimation } from "@/components/ui/doodle-animation";
 
 export const metadata: Metadata = {
   title: "Sri Krishna Goshala - A sanctuary for the sacred cow",
@@ -15,6 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body>
+        <DoodleAnimation />
         {children}
         <Toaster />
       </body>
