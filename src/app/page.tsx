@@ -152,7 +152,7 @@ export default function Home() {
 
         <section id="why-donate" className="py-16 md:py-28 bg-transparent">
           <div className="container mx-auto px-4 md:px-6">
-            <div className="text-center max-w-3xl mx-auto">
+            <div className="text-center max-w-3xl mx-auto animate-fade-in-up">
               <h3 className="text-base font-semibold text-secondary uppercase tracking-widest">Why Your Seva Matters</h3>
               <h2 className="text-3xl md:text-5xl font-bold text-primary mt-2">Your Support is Their Lifeline</h2>
               <p className="mt-4 md:mt-5 text-foreground/80 text-md md:text-lg">
@@ -160,21 +160,21 @@ export default function Home() {
               </p>
             </div>
             <div className="grid md:grid-cols-3 gap-6 md:gap-8 mt-12 md:mt-16 max-w-5xl mx-auto">
-              <div className="flex flex-col items-center text-center p-6 md:p-8 rounded-2xl bg-gradient-to-br from-card to-muted/50 shadow-lg hover:shadow-primary/20 transition-all duration-300 border border-transparent hover:border-primary/50 hover:-translate-y-2">
+              <div className="flex flex-col items-center text-center p-6 md:p-8 rounded-2xl bg-gradient-to-br from-card to-muted/50 shadow-lg hover:shadow-primary/20 transition-all duration-300 border border-transparent hover:border-primary/50 hover:-translate-y-2 animate-fade-in-up [animation-delay:0.2s]">
                 <div className="bg-secondary text-primary-foreground h-16 w-16 md:h-20 md:w-20 rounded-full flex items-center justify-center mb-4 md:mb-6">
                   <UtensilsCrossed className="h-8 w-8 md:h-10 md:w-10" />
                 </div>
                 <h4 className="text-lg md:text-xl font-bold text-primary">Food & Nutrition</h4>
                 <p className="text-muted-foreground mt-2 text-sm md:text-base">Your donation helps us provide nutritious food, ensuring the health and happiness of our cows every day.</p>
               </div>
-              <div className="flex flex-col items-center text-center p-6 md:p-8 rounded-2xl bg-gradient-to-br from-card to-muted/50 shadow-lg hover:shadow-primary/20 transition-all duration-300 border border-transparent hover:border-primary/50 hover:-translate-y-2">
+              <div className="flex flex-col items-center text-center p-6 md:p-8 rounded-2xl bg-gradient-to-br from-card to-muted/50 shadow-lg hover:shadow-primary/20 transition-all duration-300 border border-transparent hover:border-primary/50 hover:-translate-y-2 animate-fade-in-up [animation-delay:0.4s]">
                 <div className="bg-secondary text-primary-foreground h-16 w-16 md:h-20 md:w-20 rounded-full flex items-center justify-center mb-4 md:mb-6">
                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8 md:h-10 md:w-10"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
                 </div>
                 <h4 className="text-lg md:text-xl font-bold text-primary">Shelter & Care</h4>
                 <p className="text-muted-foreground mt-2 text-sm md:text-base">You help maintain a safe, clean, and comfortable shelter where our cows can live peacefully.</p>
               </div>
-              <div className="flex flex-col items-center text-center p-6 md:p-8 rounded-2xl bg-gradient-to-br from-card to-muted/50 shadow-lg hover:shadow-primary/20 transition-all duration-300 border border-transparent hover:border-primary/50 hover:-translate-y-2">
+              <div className="flex flex-col items-center text-center p-6 md:p-8 rounded-2xl bg-gradient-to-br from-card to-muted/50 shadow-lg hover:shadow-primary/20 transition-all duration-300 border border-transparent hover:border-primary/50 hover:-translate-y-2 animate-fade-in-up [animation-delay:0.6s]">
                 <div className="bg-secondary text-primary-foreground h-16 w-16 md:h-20 md:w-20 rounded-full flex items-center justify-center mb-4 md:mb-6">
                   <Stethoscope className="h-8 w-8 md:h-10 md:w-10" />
                 </div>
@@ -185,10 +185,10 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="about" className="py-16 md:py-28 bg-transparent">
+        <section id="about" className="py-16 md:py-28 bg-transparent overflow-hidden">
           <div className="container mx-auto px-4 md:px-6">
             <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
-              <div className="relative w-full aspect-square group">
+              <div className="relative w-full aspect-square group animate-slide-in-from-left">
                  <Image
                   src="/photo.png"
                   alt="Founder of Sri Krishna Goshala with two young calves in a green pasture"
@@ -198,7 +198,7 @@ export default function Home() {
                   data-ai-hint="man calves"
                 />
               </div>
-              <div>
+              <div className="animate-slide-in-from-right">
                 <h3 className="text-base font-semibold text-secondary uppercase tracking-widest">Our Story</h3>
                 <h2 className="text-3xl md:text-5xl font-bold text-primary leading-tight mt-2">
                   About Sri Krishna Goshala
@@ -213,7 +213,7 @@ export default function Home() {
 
         <section id="seva" className="py-16 md:py-28 bg-primary/10">
             <div className="container mx-auto px-4 md:px-6">
-                <div className="text-center max-w-3xl mx-auto">
+                <div className="text-center max-w-3xl mx-auto animate-fade-in-up">
                     <h3 className="text-base font-semibold text-secondary uppercase tracking-widest">Offer Seva</h3>
                     <h2 className="text-3xl md:text-5xl font-bold text-primary mt-2">Contribute Through Service</h2>
                     <p className="mt-4 md:mt-5 text-foreground/80 text-md md:text-lg">
@@ -226,16 +226,16 @@ export default function Home() {
 
         <section id="gallery" className="py-16 md:py-28 bg-background">
           <div className="container mx-auto px-4 md:px-6 text-center">
-            <h3 className="text-base font-semibold text-secondary uppercase tracking-widest">Gallery</h3>
-            <h2 className="text-3xl md:text-5xl font-bold text-primary mt-2">
+            <h3 className="text-base font-semibold text-secondary uppercase tracking-widest animate-fade-in">Gallery</h3>
+            <h2 className="text-3xl md:text-5xl font-bold text-primary mt-2 animate-fade-in [animation-delay:0.1s]">
               Our Beloved Residents
             </h2>
-            <p className="mt-4 md:mt-5 max-w-2xl mx-auto text-foreground/80 text-md md:text-lg">
+            <p className="mt-4 md:mt-5 max-w-2xl mx-auto text-foreground/80 text-md md:text-lg animate-fade-in [animation-delay:0.2s]">
               Glimpses of daily life and the gentle souls that call our Goshala home.
             </p>
             <div className="mt-12 md:mt-16 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 md:gap-4">
               {galleryImages.map((image, index) => (
-                <div key={index} className="overflow-hidden rounded-lg md:rounded-2xl group aspect-w-1 aspect-h-1 border-2 md:border-4 border-white">
+                <div key={index} className="overflow-hidden rounded-lg md:rounded-2xl group aspect-w-1 aspect-h-1 border-2 md:border-4 border-white animate-fade-in-up" style={{animationDelay: `${0.3 + index * 0.1}s`}}>
                   <Image
                     src={image.src}
                     alt={image.alt}
@@ -246,7 +246,7 @@ export default function Home() {
                 </div>
               ))}
             </div>
-            <div className="mt-12 text-center">
+            <div className="mt-12 text-center animate-fade-in-up" style={{animationDelay: '1s'}}>
                 <Button asChild size="lg">
                     <Link href="/gallery">
                         View All Photos <ArrowRight className="w-5 h-5 ml-2" />
@@ -258,7 +258,7 @@ export default function Home() {
 
         <section id="testimonials" className="py-16 md:py-28 bg-card">
             <div className="container mx-auto px-4 md:px-6">
-                <div className="text-center max-w-3xl mx-auto">
+                <div className="text-center max-w-3xl mx-auto animate-fade-in-up">
                     <h3 className="text-base font-semibold text-secondary uppercase tracking-widest">Testimonials</h3>
                     <h2 className="text-3xl md:text-5xl font-bold text-primary mt-2">Words from Our Devotees</h2>
                     <p className="mt-4 md:mt-5 text-foreground/80 text-md md:text-lg">
@@ -271,14 +271,14 @@ export default function Home() {
         
         <section id="impact" className="py-16 md:py-28 bg-primary/5">
           <div className="container mx-auto px-4 md:px-6">
-            <div className="text-center max-w-3xl mx-auto">
+            <div className="text-center max-w-3xl mx-auto animate-fade-in-up">
               <h3 className="text-base font-semibold text-secondary uppercase tracking-widest">Our Collective Impact</h3>
               <h2 className="text-3xl md:text-5xl font-bold text-primary mt-2">Your Support Makes a Difference</h2>
               <p className="mt-4 md:mt-5 text-foreground/80 text-md md:text-lg">
                 Every contribution, big or small, helps us provide continuous care for our beloved cows. See how our community's generosity adds up!
               </p>
             </div>
-            <div className="max-w-4xl mx-auto mt-12">
+            <div className="max-w-4xl mx-auto mt-12 animate-fade-in-up [animation-delay:0.2s]">
               <Card className="p-6 md:p-8 shadow-lg">
                 <div className="flex justify-between items-end mb-2">
                    <span className="text-lg md:text-xl font-bold text-primary">₹7,50,000</span>
