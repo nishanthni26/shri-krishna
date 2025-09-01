@@ -55,13 +55,18 @@
   * {
     @apply border-border;
   }
-  body {
-    @apply text-foreground;
+
+  html {
     background-color: hsl(var(--background));
     background-image: url('https://www.transparenttextures.com/patterns/dark-dotted.png'), linear-gradient(to bottom, hsl(var(--background)) 0%, hsl(33, 100%, 95%) 100%);
+  }
+
+  body {
+    @apply text-foreground;
     font-family: 'Poppins', sans-serif;
     position: relative;
     overflow-x: hidden;
+    background-color: transparent;
   }
   
   body::before {
