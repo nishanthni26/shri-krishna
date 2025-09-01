@@ -35,7 +35,7 @@ export default function Home() {
     { text: "Home", href: "#" },
     { text: "About Us", href: "#about" },
     { text: "Activities", href: "#" },
-    { text: "Gallery", href: "#gallery" },
+    { text: "Gallery", href: "/gallery" },
     { text: "Contact Us", href: "#contact" },
   ];
 
@@ -50,12 +50,12 @@ export default function Home() {
     { text: "About", href: "#about" },
     { text: "Our Cows", href: "/our-cows" },
     { text: "Seva", href: "#seva" },
-    { text: "Gallery", href: "#gallery" },
+    { text: "Gallery", href: "/gallery" },
     { text: "Testimonials", href: "#testimonials" },
     { text: "Contact", href: "#contact" },
   ];
 
-  const galleryImages = Array.from({ length: 20 }, (_, i) => ({
+  const galleryImages = Array.from({ length: 5 }, (_, i) => ({
     src: `/gallery/G${i + 1}.png`,
     alt: `Goshala gallery image ${i + 1}`,
   }));
@@ -245,6 +245,13 @@ export default function Home() {
                   />
                 </div>
               ))}
+            </div>
+            <div className="mt-12 text-center">
+                <Button asChild size="lg">
+                    <Link href="/gallery">
+                        View All Photos <ArrowRight className="w-5 h-5 ml-2" />
+                    </Link>
+                </Button>
             </div>
           </div>
         </section>
