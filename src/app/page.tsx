@@ -31,19 +31,12 @@ export default function Home() {
       { name: "Anjali Verma", quote: "The energy here is so positive and pure. It's wonderful to see these sacred animals treated with such reverence and care. We left feeling truly blessed and will be back soon.", avatar: "https://placehold.co/100x100.png", hint: "woman nature" },
   ]
 
-  const quickLinks1 = [
+  const quickLinks = [
     { text: "Home", href: "#" },
     { text: "About Us", href: "#about" },
-    { text: "Activities", href: "#" },
+    { text: "Seva", href: "#seva" },
     { text: "Gallery", href: "/gallery" },
     { text: "Contact Us", href: "#contact" },
-  ];
-
-  const quickLinks2 = [
-    { text: "Sri Krishna Gaushala", href: "#" },
-    { text: "Indian Cows", href: "#" },
-    { text: "Raise A Cow", href: "#" },
-    { text: "Pray To Gaumatha", href: "#" },
   ];
 
   const navLinks = [
@@ -301,9 +294,9 @@ export default function Home() {
 
       <footer id="contact" className="bg-secondary text-secondary-foreground py-10 md:py-12" style={{ backgroundImage: "url('https://www.transparenttextures.com/patterns/dark-dotted.png')" }}>
         <div className="container mx-auto px-4 md:px-6">
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-8 text-center md:text-left">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
 
-                <div className="md:col-span-4 flex flex-col items-center md:items-start">
+                <div className="md:col-span-1 flex flex-col items-center md:items-start">
                     <div className="flex items-center gap-4 mb-4">
                         <Image
                             src="/gallery/logo.png?v=3"
@@ -321,34 +314,23 @@ export default function Home() {
                     </div>
                 </div>
 
-                <div className="md:col-span-5 flex flex-col items-center md:items-start">
+                <div className="md:col-span-1 flex flex-col items-center md:items-start">
                     <h3 className="text-lg font-semibold text-white mb-4 relative pb-2">
                         Quick Links
                         <span className="absolute bottom-0 left-1/2 md:left-0 -translate-x-1/2 md:translate-x-0 w-12 h-0.5 bg-footer-accent"></span>
                     </h3>
-                    <div className="grid grid-cols-2 gap-x-8">
-                        <ul className="space-y-2">
-                            {quickLinks1.map(link => (
-                                <li key={link.text}>
-                                    <Link href={link.href} className="text-secondary-foreground/80 hover:text-white transition-colors">
-                                        {link.text}
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                        <ul className="space-y-2">
-                            {quickLinks2.map(link => (
-                                <li key={link.text}>
-                                    <Link href={link.href} className="text-secondary-foreground/80 hover:text-white transition-colors">
-                                        {link.text}
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
+                    <ul className="space-y-2">
+                        {quickLinks.map(link => (
+                            <li key={link.text}>
+                                <Link href={link.href} className="text-secondary-foreground/80 hover:text-white transition-colors">
+                                    {link.text}
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>
                 </div>
 
-                <div className="md:col-span-3 flex flex-col items-center md:items-start">
+                <div className="md:col-span-1 flex flex-col items-center md:items-start">
                     <h3 className="text-lg font-semibold text-white mb-4 relative pb-2">
                         Bank Details
                         <span className="absolute bottom-0 left-1/2 md:left-0 -translate-x-1/2 md:translate-x-0 w-12 h-0.5 bg-footer-accent"></span>
@@ -373,3 +355,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
