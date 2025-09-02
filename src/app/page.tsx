@@ -14,19 +14,19 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 export default function Home() {
 
   const sevaOptions = [
-      { icon: "Sun", title: "A cow’s expenditure per day", description: "Sponsor a day's worth of care, including fodder, fresh water, and supplements for one sacred cow. Your contribution ensures they are healthy, happy, and comfortable.", price: "₹1,100", link: "/payment?amount=1100" },
-      { icon: "Calendar", title: "Monthly expense of a cow", description: "Cover the full monthly expenses for one cow. This includes feed, shelter maintenance, and routine health checks, providing them with a stable and nurturing environment.", price: "₹5,100", link: "/payment?amount=5100" },
-      { icon: "CalendarCheck", title: "Annual cost of a cow", description: "Become a guardian for a cow for an entire year. This comprehensive support covers all their needs, from food and shelter to any required medical attention, ensuring their long-term well-being.", price: "₹21,000", link: "/payment?amount=21000" },
-      { icon: "HeartHandshake", title: "Donation of a cow (Gau Daan)", description: "Gau Daan is considered one of the most sacred gifts. By donating a cow, you provide a new life to our herd, and we will care for the cow on your behalf for its entire lifetime.", price: "₹51,000", link: "/payment?amount=51000" },
-      { icon: "Users", title: "Cow’s Health Checkup", description: "Fund a complete veterinary health check-up, including preventive treatments and any necessary medical care to ensure our cows remain in excellent health.", price: "₹2,500", link: "/payment?amount=2500" },
-      { icon: "Leaf", title: "Green Grass Contribution", description: "Provide a generous amount of fresh, nutritious green fodder for the entire herd. This is crucial for their digestion and overall vitality.", price: "₹3,100", link: "/payment?amount=3100" },
+      { icon: "Sun", title: "A cow’s expenditure per day", description: "Sponsor a day's worth of care, including fodder, fresh water, and supplements for one sacred cow. Your contribution ensures they are healthy, happy, and comfortable.", price: "₹1,100", link: "/seva?amount=1100" },
+      { icon: "Calendar", title: "Monthly expense of a cow", description: "Cover the full monthly expenses for one cow. This includes feed, shelter maintenance, and routine health checks, providing them with a stable and nurturing environment.", price: "₹5,100", link: "/seva?amount=5100" },
+      { icon: "CalendarCheck", title: "Annual cost of a cow", description: "Become a guardian for a cow for an entire year. This comprehensive support covers all their needs, from food and shelter to any required medical attention, ensuring their long-term well-being.", price: "₹21,000", link: "/seva?amount=21000" },
+      { icon: "HeartHandshake", title: "Donation of a cow (Gau Daan)", description: "Gau Daan is considered one of the most sacred gifts. By donating a cow, you provide a new life to our herd, and we will care for the cow on your behalf for its entire lifetime.", price: "₹51,000", link: "/seva?amount=51000" },
+      { icon: "Users", title: "Cow’s Health Checkup", description: "Fund a complete veterinary health check-up, including preventive treatments and any necessary medical care to ensure our cows remain in excellent health.", price: "₹2,500", link: "/seva?amount=2500" },
+      { icon: "Leaf", title: "Green Grass Contribution", description: "Provide a generous amount of fresh, nutritious green fodder for the entire herd. This is crucial for their digestion and overall vitality.", price: "₹3,100", link: "/seva?amount=3100" },
       { icon: "School", title: "School Farm Visit", description: "Sponsor an educational and interactive visit for a group of local schoolchildren. This helps foster a love for animals and teaches them about the importance of cow protection. Please contact us to arrange.", price: "Contact Us", link: "/school-visit" },
   ];
   
   const mobileSevaOptions = [
-    { icon: Sun, title: "One Day's Care", price: "₹1,100", link: "/payment?amount=1100" },
-    { icon: Calendar, title: "One Month's Care", price: "₹5,100", link: "/payment?amount=5100" },
-    { icon: Heart, title: "Gau Daan", price: "₹51,000", link: "/payment?amount=51000" },
+    { icon: Sun, title: "One Day's Care", price: "₹1,100", link: "/seva?amount=1100" },
+    { icon: Calendar, title: "One Month's Care", price: "₹5,100", link: "/seva?amount=5100" },
+    { icon: Heart, title: "Gau Daan", price: "₹51,000", link: "/seva?amount=51000" },
   ]
 
   const testimonials = [
@@ -40,7 +40,7 @@ export default function Home() {
   const navLinks = [
     { text: "About", href: "#about" },
     { text: "Our Cows", href: "/our-cows" },
-    { text: "Seva", href: "#seva" },
+    { text: "Seva", href: "/seva" },
     { text: "Gallery", href: "/gallery" },
     { text: "Testimonials", href: "#testimonials" },
     { text: "Contact", href: "#contact" },
@@ -75,7 +75,7 @@ export default function Home() {
           </nav>
           <div className="flex items-center gap-2 md:gap-4">
             <Button asChild size="sm" className="rounded-full shadow-lg md:text-base md:px-6 md:py-4 hover:scale-105 transition-transform group">
-              <Link href="/payment">
+              <Link href="/seva">
                 Donate <span className="hidden md:inline ml-1">Now</span> 
                 <ArrowRight className="w-4 h-4 ml-1 md:ml-2 group-hover:translate-x-1 transition-transform" />
               </Link>
@@ -128,7 +128,7 @@ export default function Home() {
                Welcome to Sri Krishna Goshala, a sacred haven dedicated to the care and protection of cows. Join us in nurturing these gentle souls.
             </p>
             <Button size="lg" className="mt-8 md:mt-10 rounded-full text-base md:text-lg px-8 md:px-10 py-6 md:py-7 group hover:scale-105 hover:shadow-xl transition-all duration-300" asChild>
-              <Link href="/payment">
+              <Link href="/seva">
                 Support Our Cows <HeartHandshake className="w-5 h-5 md:w-6 md:h-6 ml-2 md:ml-3 transition-transform group-hover:rotate-12" />
               </Link>
             </Button>
@@ -228,6 +228,13 @@ export default function Home() {
                 <div className="hidden md:block">
                   <SevaCarousel sevaOptions={sevaOptions} />
                 </div>
+                 <div className="mt-12 text-center">
+                    <Button asChild size="lg">
+                        <Link href="/seva">
+                            View All Sevas <ArrowRight className="w-5 h-5 ml-2" />
+                        </Link>
+                    </Button>
+                </div>
             </div>
         </section>
 
@@ -294,7 +301,7 @@ export default function Home() {
                 <Progress value={75} className="h-4 md:h-6" indicatorClassName="bg-primary" />
                 <div className="text-center mt-6 md:mt-8">
                   <Button size="lg" asChild>
-                    <Link href="/payment">
+                    <Link href="/seva">
                       Contribute Now <HeartHandshake className="w-5 h-5 ml-2" />
                     </Link>
                   </Button>
