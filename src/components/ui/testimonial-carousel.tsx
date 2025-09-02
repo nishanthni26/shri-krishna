@@ -5,13 +5,12 @@ import React, { useCallback, useEffect, useState } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-import { ArrowLeft, ArrowRight, Quote } from 'lucide-react'
-import Image from 'next/image'
+import { ArrowLeft, ArrowRight, Quote, Star } from 'lucide-react'
 
 type Testimonial = {
     name: string;
     quote: string;
-    avatar: string;
+    rating: number;
     hint: string;
 };
 
@@ -52,7 +51,14 @@ export const TestimonialCarousel: React.FC<PropType> = ({ testimonials }) => {
                             <p className="text-foreground/80 italic text-sm md:text-base">"{testimonial.quote}"</p>
                         </CardContent>
                         <CardHeader className="items-center pt-4 mt-auto">
-                            <Image src={testimonial.avatar} alt={testimonial.name} width={64} height={64} className="rounded-full mb-4 border-2 border-primary/50" data-ai-hint={testimonial.hint} />
+                            <div className="flex items-center gap-1 mb-4">
+                                {Array.from({ length: testimonial.rating }).map((_, i) => (
+                                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
+                                ))}
+                                {Array.from({ length: 5 - testimonial.rating }).map((_, i) => (
+                                     <Star key={i} className="w-5 h-5 text-gray-300" />
+                                ))}
+                            </div>
                             <CardTitle className="font-bold text-lg md:text-xl text-primary">{testimonial.name}</CardTitle>
                         </CardHeader>
                     </Card>
@@ -84,5 +90,3 @@ export const TestimonialCarousel: React.FC<PropType> = ({ testimonials }) => {
     </div>
   )
 }
-
-    
