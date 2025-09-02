@@ -1,34 +1,23 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { ArrowRight, HeartHandshake, LogIn, Quote, Users, UtensilsCrossed, Stethoscope, Menu, School, Sun, Calendar, Heart } from "lucide-react";
+import { ArrowRight, HeartHandshake, LogIn, Quote, Users, UtensilsCrossed, Stethoscope, Menu, School, Sun, Calendar, Heart, Leaf, CalendarCheck } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
 import Link from "next/link";
 import { Progress } from "@/components/ui/progress";
 import { TestimonialCarousel } from "@/components/ui/testimonial-carousel";
-import { SevaCarousel } from "@/components/ui/seva-carousel";
 import { HeroCarousel } from "@/components/ui/hero-carousel";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 export default function Home() {
 
   const sevaOptions = [
-      { icon: "Sun", title: "A cow’s expenditure per day", description: "Sponsor a day's worth of care, including fodder, fresh water, and supplements for one sacred cow. Your contribution ensures they are healthy, happy, and comfortable.", price: "₹1,100", link: "/seva?amount=1100" },
-      { icon: "Calendar", title: "Monthly expense of a cow", description: "Cover the full monthly expenses for one cow. This includes feed, shelter maintenance, and routine health checks, providing them with a stable and nurturing environment.", price: "₹5,100", link: "/seva?amount=5100" },
-      { icon: "CalendarCheck", title: "Annual cost of a cow", description: "Become a guardian for a cow for an entire year. This comprehensive support covers all their needs, from food and shelter to any required medical attention, ensuring their long-term well-being.", price: "₹21,000", link: "/seva?amount=21000" },
-      { icon: "HeartHandshake", title: "Donation of a cow (Gau Daan)", description: "Gau Daan is considered one of the most sacred gifts. By donating a cow, you provide a new life to our herd, and we will care for the cow on your behalf for its entire lifetime.", price: "₹51,000", link: "/seva?amount=51000" },
-      { icon: "Users", title: "Cow’s Health Checkup", description: "Fund a complete veterinary health check-up, including preventive treatments and any necessary medical care to ensure our cows remain in excellent health.", price: "₹2,500", link: "/seva?amount=2500" },
-      { icon: "Leaf", title: "Green Grass Contribution", description: "Provide a generous amount of fresh, nutritious green fodder for the entire herd. This is crucial for their digestion and overall vitality.", price: "₹3,100", link: "/seva?amount=3100" },
-      { icon: "School", title: "School Farm Visit", description: "Sponsor an educational and interactive visit for a group of local schoolchildren. This helps foster a love for animals and teaches them about the importance of cow protection. Please contact us to arrange.", price: "Contact Us", link: "/school-visit" },
+      { icon: Sun, title: "A cow’s expenditure per day", description: "Sponsor a day's worth of care, including fodder, fresh water, and supplements for one sacred cow.", price: "₹1,100", link: "/seva" },
+      { icon: Calendar, title: "Monthly expense of a cow", description: "Cover the full monthly expenses for one cow. This includes feed, shelter maintenance, and routine health checks.", price: "₹5,100", link: "/seva" },
+      { icon: HeartHandshake, title: "Donation of a cow (Gau Daan)", description: "Gau Daan is considered one of the most sacred gifts. By donating a cow, you provide a new life to our herd.", price: "₹51,000", link: "/seva" },
   ];
   
-  const mobileSevaOptions = [
-    { icon: Sun, title: "One Day's Care", price: "₹1,100", link: "/seva?amount=1100" },
-    { icon: Calendar, title: "One Month's Care", price: "₹5,100", link: "/seva?amount=5100" },
-    { icon: Heart, title: "Gau Daan", price: "₹51,000", link: "/seva?amount=51000" },
-  ]
-
   const testimonials = [
       { name: "Sai Karthik", quote: "A heartwarming and serene experience. The cows are so well-cared for in a clean, peaceful environment. A wonderful place to connect with nature and tradition.", avatar: "https://placehold.co/100x100.png", hint: "south indian man" },
       { name: "Prithi Malini", quote: "This Goshala is a true sanctuary. The love and care they provide is inspiring. You can see native breeds looked after with so much dignity in a peaceful, clean, and spiritually uplifting environment.", avatar: "https://placehold.co/100x100.png", hint: "woman praying" },
@@ -205,29 +194,25 @@ export default function Home() {
                         Your selfless service helps us provide the best care for our cows. Participate in our Seva programs and become a part of our family.
                     </p>
                 </div>
-                <div className="md:hidden mt-8 space-y-4">
-                  {mobileSevaOptions.map((seva, index) => (
-                    <Card key={index} className="bg-background shadow-md">
-                      <CardContent className="p-4 flex items-center justify-between">
-                        <div className="flex items-center gap-4">
-                          <div className="bg-secondary text-primary-foreground h-12 w-12 rounded-full flex items-center justify-center">
-                            <seva.icon className="h-6 w-6" />
+
+                <div className="grid md:grid-cols-3 gap-6 md:gap-8 mt-12 md:mt-16 max-w-5xl mx-auto">
+                  {sevaOptions.map((seva, index) => (
+                     <div key={index} className="flex flex-col text-center items-center p-6 md:p-8 rounded-2xl shadow-lg hover:shadow-primary/20 hover:-translate-y-2 transition-all duration-300 group overflow-hidden bg-background border h-full">
+                          <div className="bg-secondary text-primary-foreground h-16 w-16 md:h-20 md:w-20 rounded-full flex items-center justify-center mb-4 md:mb-6 transition-transform group-hover:scale-110">
+                            <seva.icon className="h-8 w-8 md:h-10 md:w-10" />
                           </div>
-                          <div>
-                            <h4 className="font-bold text-primary">{seva.title}</h4>
-                            <p className="font-semibold">{seva.price}</p>
-                          </div>
-                        </div>
-                        <Button asChild size="sm">
-                          <Link href={seva.link}>Donate</Link>
-                        </Button>
-                      </CardContent>
-                    </Card>
+                          <h4 className="text-lg md:text-xl font-bold text-primary flex-grow">{seva.title}</h4>
+                           <p className="text-muted-foreground mt-2 mb-4 text-sm md:text-base">{seva.description}</p>
+                           <p className="text-2xl font-bold text-foreground mb-6">{seva.price}</p>
+                           <Button asChild className="mt-auto w-full">
+                              <Link href={seva.link}>
+                                  Donate Now
+                              </Link>
+                           </Button>
+                      </div>
                   ))}
                 </div>
-                <div className="hidden md:block">
-                  <SevaCarousel sevaOptions={sevaOptions} />
-                </div>
+
                  <div className="mt-12 text-center">
                     <Button asChild size="lg">
                         <Link href="/seva">
@@ -359,3 +344,5 @@ export default function Home() {
     </div>
   );
 }
+
+    

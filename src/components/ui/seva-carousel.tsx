@@ -83,7 +83,7 @@ export const SevaCarousel: React.FC<PropType> = ({ sevaOptions }) => {
                              <p className="text-muted-foreground mt-2 mb-4 text-sm md:text-base">{shortDescription}</p>
                              <p className="text-2xl font-bold text-foreground mb-6">{seva.price}</p>
                              <Button onClick={() => handleSevaClick(seva)} className="mt-auto w-full">
-                                {seva.price === "Contact Us" ? "Request Info" : "Learn More"}
+                                {seva.price === "Contact Us" ? "Request Info" : "Learn More & Donate"}
                              </Button>
                         </div>
                     </div>
@@ -109,7 +109,7 @@ export const SevaCarousel: React.FC<PropType> = ({ sevaOptions }) => {
                     <DialogFooter className="sm:justify-between items-center border-t pt-4">
                         <div className="text-2xl font-bold text-primary">{selectedSeva.price}</div>
                         <Button asChild size="lg">
-                            <Link href={selectedSeva.link}>Proceed to Pay</Link>
+                            <Link href="/seva">Proceed to Donate</Link>
                         </Button>
                     </DialogFooter>
                 </>
@@ -140,3 +140,5 @@ export const SevaCarousel: React.FC<PropType> = ({ sevaOptions }) => {
     </div>
   )
 }
+
+    
