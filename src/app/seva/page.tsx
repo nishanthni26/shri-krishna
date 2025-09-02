@@ -32,12 +32,14 @@ export default function SevaPage() {
 
     const SevaCard = ({ title, amount, img, aiHint }: { title: string; amount: number; img: string; aiHint: string; }) => (
         <Card className="overflow-hidden shadow-lg hover:shadow-primary/20 transition-shadow duration-300 group bg-card">
-            <Image src={img} alt={title} width={300} height={200} className="w-full object-cover group-hover:scale-105 transition-transform" data-ai-hint={aiHint} />
-            <CardContent className="p-4">
-                <h3 className="font-semibold text-lg text-primary truncate">{title}</h3>
+            <div className="aspect-video overflow-hidden">
+                <Image src={img} alt={title} width={300} height={200} className="w-full object-cover group-hover:scale-105 transition-transform" data-ai-hint={aiHint} />
+            </div>
+            <CardContent className="p-4 flex flex-col h-full">
+                <h3 className="font-semibold text-lg text-primary truncate flex-grow">{title}</h3>
                 <div className="flex justify-between items-center mt-2">
                     <p className="font-bold text-xl">₹{amount.toLocaleString('en-IN')}</p>
-                    <Button onClick={() => handleDonation(amount)} variant="outline">Add Donation</Button>
+                    <Button onClick={() => handleDonation(amount)} size="sm">Donate</Button>
                 </div>
             </CardContent>
         </Card>
@@ -75,8 +77,8 @@ export default function SevaPage() {
                                 </div>
                             </div>
                         </div>
-                        <div className="hidden md:block h-full relative">
-                             <Image src="https://picsum.photos/600/400" alt="Cow" width={600} height={400} className="object-cover w-full h-full" data-ai-hint="holy cow"/>
+                        <div className="hidden md:block h-full relative aspect-video">
+                             <Image src="https://picsum.photos/600/400" alt="Cow" fill style={{objectFit: 'cover'}} data-ai-hint="holy cow"/>
                         </div>
                     </div>
                  </div>
@@ -101,30 +103,27 @@ export default function SevaPage() {
                     </div>
 
                     <div className="max-w-5xl mx-auto mt-12">
-                         <h3 className="text-xl md:text-3xl font-bold text-primary mb-6">One Day Maintenance Expenses</h3>
+                         <h3 className="text-xl md:text-3xl font-bold text-primary mb-6 text-center">One Day Maintenance Expenses</h3>
                          <Tabs defaultValue="kripa" className="w-full">
                             <TabsList className="grid w-full grid-cols-2 max-w-sm mx-auto mb-8 bg-muted p-1 rounded-lg">
-                                <TabsTrigger value="kripa" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground rounded-md">Kripa Seva</TabsTrigger>
-                                <TabsTrigger value="kartavya" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground rounded-md">Kartavya Seva</TabsTrigger>
+                                <TabsTrigger value="kripa" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-md rounded-md transition-colors">Kripa Seva</TabsTrigger>
+                                <TabsTrigger value="kartavya" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-md rounded-md transition-colors">Kartavya Seva</TabsTrigger>
                             </TabsList>
                             <TabsContent value="kripa">
-                                <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+                                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                                     {kripaSeva.map(seva => <SevaCard key={seva.title} {...seva} />)}
                                 </div>
                             </TabsContent>
                             <TabsContent value="kartavya">
-                                <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+                                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                                      {kartavyaSeva.map(seva => <SevaCard key={seva.title} {...seva} />)}
                                 </div>
                             </TabsContent>
                         </Tabs>
                     </div>
-
                  </div>
             </section>
         </main>
     </div>
   );
 }
-
-    
