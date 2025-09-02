@@ -17,19 +17,19 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const kripaSevaOptions = [
     { title: "Dry Cake Seeds 30 kg", amount: 650, img: "https://images.unsplash.com/photo-1731846568472-cef37f1a5ede?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjb3clMjBpbmRpYW58ZW58MHx8fHwxNzU2ODQzMjk0fDA&ixlib=rb-4.1.0&q=80&w=1080", aiHint: "cow food" },
-    { title: "Medicines for cows", amount: 2100, img: "https://picsum.photos/150/150?random=5", aiHint: "cow medicine" },
-    { title: "Dried Green", amount: 31000, img: "https://picsum.photos/150/150?random=6", aiHint: "green grass" },
-    { title: "Jaggery 40 Kg", amount: 1000, img: "https://picsum.photos/150/150?random=9", aiHint: "jaggery" },
-    { title: "Wheat Bran 650 kg", amount: 17000, img: "https://picsum.photos/150/150?random=10", aiHint: "wheat bran" },
-    { title: "Barley Flour 100 kg", amount: 2000, img: "https://picsum.photos/150/150?random=11", aiHint: "barley flour" },
-    { title: "2 Trolley Green Grass", amount: 21000, img: "https://picsum.photos/150/150?random=12", aiHint: "green grass trolley" },
+    { title: "Medicines for cows", amount: 2100, img: "https://images.unsplash.com/photo-1731846568472-cef37f1a5ede?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjb3clMjBpbmRpYW58ZW58MHx8fHwxNzU2ODQzMjk0fDA&ixlib=rb-4.1.0&q=80&w=1080", aiHint: "cow medicine" },
+    { title: "Dried Green", amount: 31000, img: "https://images.unsplash.com/photo-1731846568472-cef37f1a5ede?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjb3clMjBpbmRpYW58ZW58MHx8fHwxNzU2ODQzMjk0fDA&ixlib=rb-4.1.0&q=80&w=1080", aiHint: "green grass" },
+    { title: "Jaggery 40 Kg", amount: 1000, img: "https://images.unsplash.com/photo-1731846568472-cef37f1a5ede?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjb3clMjBpbmRpYW58ZW58MHx8fHwxNzU2ODQzMjk0fDA&ixlib=rb-4.1.0&q=80&w=1080", aiHint: "jaggery" },
+    { title: "Wheat Bran 650 kg", amount: 17000, img: "https://images.unsplash.com/photo-1731846568472-cef37f1a5ede?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjb3clMjBpbmRpYW58ZW58MHx8fHwxNzU2ODQzMjk0fDA&ixlib=rb-4.1.0&q=80&w=1080", aiHint: "wheat bran" },
+    { title: "Barley Flour 100 kg", amount: 2000, img: "https://images.unsplash.com/photo-1731846568472-cef37f1a5ede?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjb3clMjBpbmRpYW58ZW58MHx8fHwxNzU2ODQzMjk0fDA&ixlib=rb-4.1.0&q=80&w=1080", aiHint: "barley flour" },
+    { title: "2 Trolley Green Grass", amount: 21000, img: "https://images.unsplash.com/photo-1731846568472-cef37f1a5ede?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjb3clMjBpbmRpYW58ZW58MHx8fHwxNzU2ODQzMjk0fDA&ixlib=rb-4.1.0&q=80&w=1080", aiHint: "green grass trolley" },
 ];
 
 const kartavyaSevaOptions = [
-    { title: "Feed 10 Cows", amount: 1500, img: "https://picsum.photos/150/150?random=2", aiHint: "happy cow" },
-    { title: "Feed 20 Cows", amount: 3000, img: "https://picsum.photos/150/150?random=7", aiHint: "cow shelter" },
-    { title: "Feed 50 Cows", amount: 7000, img: "https://picsum.photos/150/150?random=3", aiHint: "cow family" },
-    { title: "1 Day Maintenance of Goshala", amount: 51000, img: "https://picsum.photos/150/150?random=4", aiHint: "person donating cow" },
+    { title: "Feed 10 Cows", amount: 1500, img: "https://images.unsplash.com/photo-1731846568472-cef37f1a5ede?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjb3clMjBpbmRpYW58ZW58MHx8fHwxNzU2ODQzMjk0fDA&ixlib=rb-4.1.0&q=80&w=1080", aiHint: "happy cow" },
+    { title: "Feed 20 Cows", amount: 3000, img: "https://images.unsplash.com/photo-1731846568472-cef37f1a5ede?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjb3clMjBpbmRpYW58ZW58MHx8fHwxNzU2ODQzMjk0fDA&ixlib=rb-4.1.0&q=80&w=1080", aiHint: "cow shelter" },
+    { title: "Feed 50 Cows", amount: 7000, img: "https://images.unsplash.com/photo-1731846568472-cef37f1a5ede?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjb3clMjBpbmRpYW58ZW58MHx8fHwxNzU2ODQzMjk0fDA&ixlib=rb-4.1.0&q=80&w=1080", aiHint: "cow family" },
+    { title: "1 Day Maintenance of Goshala", amount: 51000, img: "https://images.unsplash.com/photo-1731846568472-cef37f1a5ede?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjb3clMjBpbmRpYW58ZW58MHx8fHwxNzU2ODQzMjk0fDA&ixlib=rb-4.1.0&q=80&w=1080", aiHint: "person donating cow" },
 ];
 
 
@@ -173,12 +173,12 @@ export default function Home() {
                         </TabsList>
                     </div>
                     <TabsContent value="kripa" className="mt-8">
-                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             {kripaSevaOptions.map(seva => <SevaCard key={seva.title} {...seva} />)}
                         </div>
                     </TabsContent>
                     <TabsContent value="kartavya" className="mt-8">
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             {kartavyaSevaOptions.map(seva => <SevaCard key={seva.title} {...seva} />)}
                         </div>
                     </TabsContent>
