@@ -60,7 +60,7 @@ function PaymentFormComponent() {
                 </Link>
                 <nav className="flex items-center gap-2 md:gap-4">
                     <Button asChild variant="ghost" size="sm">
-                        <Link href="/seva" className="flex items-center gap-1">
+                        <Link href="/#seva" className="flex items-center gap-1">
                           <ArrowLeft className="w-4 h-4" />
                           Back to Sevas
                         </Link>

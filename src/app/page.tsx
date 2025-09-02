@@ -1,7 +1,9 @@
 
+'use client';
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { ArrowRight, HeartHandshake, LogIn, Quote, Users, UtensilsCrossed, Stethoscope, Menu, School, Sun, Calendar, Heart, Leaf, CalendarCheck } from "lucide-react";
+import { ArrowRight, HeartHandshake, LogIn, Menu, Quote } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
 import Link from "next/link";
@@ -9,15 +11,30 @@ import { Progress } from "@/components/ui/progress";
 import { TestimonialCarousel } from "@/components/ui/testimonial-carousel";
 import { HeroCarousel } from "@/components/ui/hero-carousel";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { useRouter } from "next/navigation";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+
+
+const kripaSevaOptions = [
+    { title: "Dry Cake Seeds 30 kg", amount: 650, img: "https://picsum.photos/150/150?random=1", aiHint: "cow food" },
+    { title: "Medicines for cows", amount: 2100, img: "https://picsum.photos/150/150?random=5", aiHint: "cow medicine" },
+    { title: "Dried Green", amount: 31000, img: "https://picsum.photos/150/150?random=6", aiHint: "green grass" },
+    { title: "Jaggery 40 Kg", amount: 1000, img: "https://picsum.photos/150/150?random=9", aiHint: "jaggery" },
+    { title: "Wheat Bran 650 kg", amount: 17000, img: "https://picsum.photos/150/150?random=10", aiHint: "wheat bran" },
+    { title: "Barley Flour 100 kg", amount: 2000, img: "https://picsum.photos/150/150?random=11", aiHint: "barley flour" },
+    { title: "2 Trolley Green Grass", amount: 21000, img: "https://picsum.photos/150/150?random=12", aiHint: "green grass trolley" },
+];
+
+const kartavyaSevaOptions = [
+    { title: "Feed 10 Cows", amount: 1500, img: "https://picsum.photos/150/150?random=2", aiHint: "happy cow" },
+    { title: "Feed 20 Cows", amount: 3000, img: "https://picsum.photos/150/150?random=7", aiHint: "cow shelter" },
+    { title: "Feed 50 Cows", amount: 7000, img: "https://picsum.photos/150/150?random=3", aiHint: "cow family" },
+    { title: "1 Day Maintenance of Goshala", amount: 51000, img: "https://picsum.photos/150/150?random=4", aiHint: "person donating cow" },
+];
+
 
 export default function Home() {
 
-  const sevaOptions = [
-      { icon: Sun, title: "A cow’s expenditure per day", description: "Sponsor a day's worth of care, including fodder, fresh water, and supplements for one sacred cow.", price: "₹1,100", link: "/seva" },
-      { icon: Calendar, title: "Monthly expense of a cow", description: "Cover the full monthly expenses for one cow. This includes feed, shelter maintenance, and routine health checks.", price: "₹5,100", link: "/seva" },
-      { icon: HeartHandshake, title: "Donation of a cow (Gau Daan)", description: "Gau Daan is considered one of the most sacred gifts. By donating a cow, you provide a new life to our herd.", price: "₹51,000", link: "/seva" },
-  ];
-  
   const testimonials = [
       { name: "Sai Karthik", quote: "A heartwarming and serene experience. The cows are so well-cared for in a clean, peaceful environment. A wonderful place to connect with nature and tradition.", avatar: "https://placehold.co/100x100.png", hint: "south indian man" },
       { name: "Prithi Malini", quote: "This Goshala is a true sanctuary. The love and care they provide is inspiring. You can see native breeds looked after with so much dignity in a peaceful, clean, and spiritually uplifting environment.", avatar: "https://placehold.co/100x100.png", hint: "woman praying" },
@@ -29,7 +46,7 @@ export default function Home() {
   const navLinks = [
     { text: "About", href: "#about" },
     { text: "Our Cows", href: "/our-cows" },
-    { text: "Seva", href: "/seva" },
+    { text: "Seva", href: "#seva" },
     { text: "Gallery", href: "/gallery" },
     { text: "Testimonials", href: "#testimonials" },
     { text: "Contact", href: "#contact" },
@@ -41,8 +58,29 @@ export default function Home() {
   }));
 
 
+  const SevaCard = ({ title, amount, img, aiHint }: { title: string; amount: number; img: string; aiHint: string; }) => {
+    const router = useRouter();
+    const handleDonation = (amount: number) => {
+        router.push(`/payment?amount=${amount}`);
+    };
+
+    return (
+      <Card className="flex items-center p-3 shadow-sm hover:shadow-md transition-shadow duration-300 bg-card border rounded-lg">
+        <div className="relative w-16 h-16 rounded-md overflow-hidden">
+            <Image src={img} alt={title} layout="fill" objectFit="cover" data-ai-hint={aiHint} />
+        </div>
+        <div className="flex-grow ml-4">
+            <p className="font-semibold text-foreground">{title}</p>
+            <p className="font-bold text-primary">₹{amount.toLocaleString('en-IN')}</p>
+        </div>
+        <Button onClick={() => handleDonation(amount)} variant="outline" size="sm">Add Donation</Button>
+      </Card>
+    );
+  }
+
+
   return (
-    <div className="flex flex-col min-h-dvh bg-transparent antialiased">
+    <div className="flex flex-col min-h-dvh bg-background antialiased">
        <header className="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-sm border-b">
         <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
           <Link href="#" className="flex items-center gap-2">
@@ -64,7 +102,7 @@ export default function Home() {
           </nav>
           <div className="flex items-center gap-2 md:gap-4">
             <Button asChild size="sm" className="rounded-full shadow-lg md:text-base md:px-6 md:py-4 hover:scale-105 transition-transform group">
-              <Link href="/seva">
+              <Link href="#seva">
                 Donate <span className="hidden md:inline ml-1">Now</span> 
                 <ArrowRight className="w-4 h-4 ml-1 md:ml-2 group-hover:translate-x-1 transition-transform" />
               </Link>
@@ -117,46 +155,35 @@ export default function Home() {
                Welcome to Sri Krishna Goshala, a sacred haven dedicated to the care and protection of cows. Join us in nurturing these gentle souls.
             </p>
             <Button size="lg" className="mt-8 md:mt-10 rounded-full text-base md:text-lg px-8 md:px-10 py-6 md:py-7 group hover:scale-105 hover:shadow-xl transition-all duration-300" asChild>
-              <Link href="/seva">
+              <Link href="#seva">
                 Support Our Cows <HeartHandshake className="w-5 h-5 md:w-6 md:h-6 ml-2 md:ml-3 transition-transform group-hover:rotate-12" />
               </Link>
             </Button>
           </div>
         </section>
 
-        <section id="why-donate" className="py-16 md:py-28 bg-transparent">
-          <div className="container mx-auto px-4 md:px-6">
-            <div className="text-center max-w-3xl mx-auto">
-              <h3 className="text-base font-semibold text-secondary uppercase tracking-widest">Why Your Seva Matters</h3>
-              <h2 className="text-3xl md:text-5xl font-bold text-primary mt-2">Your Support is Their Lifeline</h2>
-              <p className="mt-4 md:mt-5 text-foreground/80 text-md md:text-lg">
-                By donating, you provide more than just funds—you offer a life of dignity, care, and peace to our sacred cows. Every contribution directly supports their well-being.
-              </p>
+        <section id="seva" className="py-16 md:py-28 bg-gray-50">
+            <div className="container mx-auto px-4 md:px-6">
+                <Tabs defaultValue="kripa" className="w-full">
+                    <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
+                        <h2 className="text-2xl md:text-3xl font-bold text-primary mb-4 md:mb-0">One Day Maintenance Expenses</h2>
+                        <TabsList className="grid w-full grid-cols-2 md:w-auto h-auto">
+                            <TabsTrigger value="kripa" className="py-2 text-base data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">Kripa Seva</TabsTrigger>
+                            <TabsTrigger value="kartavya" className="py-2 text-base data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">Kartavya Seva</TabsTrigger>
+                        </TabsList>
+                    </div>
+                    <TabsContent value="kripa" className="mt-8">
+                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                            {kripaSevaOptions.map(seva => <SevaCard key={seva.title} {...seva} />)}
+                        </div>
+                    </TabsContent>
+                    <TabsContent value="kartavya" className="mt-8">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                            {kartavyaSevaOptions.map(seva => <SevaCard key={seva.title} {...seva} />)}
+                        </div>
+                    </TabsContent>
+                </Tabs>
             </div>
-            <div className="grid md:grid-cols-3 gap-6 md:gap-8 mt-12 md:mt-16 max-w-5xl mx-auto">
-              <div className="flex flex-col items-center text-center p-6 md:p-8 rounded-2xl bg-gradient-to-br from-card to-muted/50 shadow-lg hover:shadow-primary/20 transition-all duration-300 border border-transparent hover:border-primary/50 hover:-translate-y-2">
-                <div className="bg-secondary text-primary-foreground h-16 w-16 md:h-20 md:w-20 rounded-full flex items-center justify-center mb-4 md:mb-6">
-                  <UtensilsCrossed className="h-8 w-8 md:h-10 md:w-10" />
-                </div>
-                <h4 className="text-lg md:text-xl font-bold text-primary">Food & Nutrition</h4>
-                <p className="text-muted-foreground mt-2 text-sm md:text-base">Your donation helps us provide nutritious food, ensuring the health and happiness of our cows every day.</p>
-              </div>
-              <div className="flex flex-col items-center text-center p-6 md:p-8 rounded-2xl bg-gradient-to-br from-card to-muted/50 shadow-lg hover:shadow-primary/20 transition-all duration-300 border border-transparent hover:border-primary/50 hover:-translate-y-2">
-                <div className="bg-secondary text-primary-foreground h-16 w-16 md:h-20 md:w-20 rounded-full flex items-center justify-center mb-4 md:mb-6">
-                   <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-8 w-8 md:h-10 md:w-10"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-                </div>
-                <h4 className="text-lg md:text-xl font-bold text-primary">Shelter & Care</h4>
-                <p className="text-muted-foreground mt-2 text-sm md:text-base">You help maintain a safe, clean, and comfortable shelter where our cows can live peacefully.</p>
-              </div>
-              <div className="flex flex-col items-center text-center p-6 md:p-8 rounded-2xl bg-gradient-to-br from-card to-muted/50 shadow-lg hover:shadow-primary/20 transition-all duration-300 border border-transparent hover:border-primary/50 hover:-translate-y-2">
-                <div className="bg-secondary text-primary-foreground h-16 w-16 md:h-20 md:w-20 rounded-full flex items-center justify-center mb-4 md:mb-6">
-                  <Stethoscope className="h-8 w-8 md:h-10 md:w-10" />
-                </div>
-                <h4 className="text-lg md:text-xl font-bold text-primary">Medical Support</h4>
-                <p className="text-muted-foreground mt-2 text-sm md:text-base">Your contribution funds essential veterinary care and medical treatments to keep our herd healthy.</p>
-              </div>
-            </div>
-          </div>
         </section>
 
         <section id="about" className="py-16 md:py-28 bg-transparent overflow-hidden">
@@ -183,44 +210,6 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </section>
-
-        <section id="seva" className="py-16 md:py-28 bg-primary/10">
-            <div className="container mx-auto px-4 md:px-6">
-                <div className="text-center max-w-3xl mx-auto">
-                    <h3 className="text-base font-semibold text-secondary uppercase tracking-widest">Offer Seva</h3>
-                    <h2 className="text-3xl md:text-5xl font-bold text-primary mt-2">Contribute Through Service</h2>
-                    <p className="mt-4 md:mt-5 text-foreground/80 text-md md:text-lg">
-                        Your selfless service helps us provide the best care for our cows. Participate in our Seva programs and become a part of our family.
-                    </p>
-                </div>
-
-                <div className="grid md:grid-cols-3 gap-6 md:gap-8 mt-12 md:mt-16 max-w-5xl mx-auto">
-                  {sevaOptions.map((seva, index) => (
-                     <div key={index} className="flex flex-col text-center items-center p-6 md:p-8 rounded-2xl shadow-lg hover:shadow-primary/20 hover:-translate-y-2 transition-all duration-300 group overflow-hidden bg-background border h-full">
-                          <div className="bg-secondary text-primary-foreground h-16 w-16 md:h-20 md:w-20 rounded-full flex items-center justify-center mb-4 md:mb-6 transition-transform group-hover:scale-110">
-                            <seva.icon className="h-8 w-8 md:h-10 md:w-10" />
-                          </div>
-                          <h4 className="text-lg md:text-xl font-bold text-primary flex-grow">{seva.title}</h4>
-                           <p className="text-muted-foreground mt-2 mb-4 text-sm md:text-base">{seva.description}</p>
-                           <p className="text-2xl font-bold text-foreground mb-6">{seva.price}</p>
-                           <Button asChild className="mt-auto w-full">
-                              <Link href={seva.link}>
-                                  Donate Now
-                              </Link>
-                           </Button>
-                      </div>
-                  ))}
-                </div>
-
-                 <div className="mt-12 text-center">
-                    <Button asChild size="lg">
-                        <Link href="/seva">
-                            View All Sevas <ArrowRight className="w-5 h-5 ml-2" />
-                        </Link>
-                    </Button>
-                </div>
-            </div>
         </section>
 
         <section id="gallery" className="py-16 md:py-28 bg-background">
@@ -286,7 +275,7 @@ export default function Home() {
                 <Progress value={75} className="h-4 md:h-6" indicatorClassName="bg-primary" />
                 <div className="text-center mt-6 md:mt-8">
                   <Button size="lg" asChild>
-                    <Link href="/seva">
+                    <Link href="#seva">
                       Contribute Now <HeartHandshake className="w-5 h-5 ml-2" />
                     </Link>
                   </Button>

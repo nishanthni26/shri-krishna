@@ -106,7 +106,7 @@ export default function OurCowsPage() {
                         </CardContent>
                         <div className="p-6 pt-0">
                              <Button asChild className="w-full group">
-                                <Link href="/seva">
+                                <Link href="/#seva">
                                     Sponsor {cow.name} <Heart className="w-4 h-4 ml-2 group-hover:fill-red-500 transition-colors" />
                                 </Link>
                             </Button>
