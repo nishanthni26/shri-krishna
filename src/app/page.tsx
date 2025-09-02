@@ -3,7 +3,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { ArrowRight, HeartHandshake, LogIn, Menu, Quote } from "lucide-react";
+import { ArrowRight, HeartHandshake, LogIn, Menu, Quote, Star } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
 import Link from "next/link";
@@ -16,7 +16,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 
 const kripaSevaOptions = [
-    { title: "Dry Cake Seeds 30 kg", amount: 650, img: "https://picsum.photos/150/150?random=1", aiHint: "cow food" },
+    { title: "Dry Cake Seeds 30 kg", amount: 650, img: "https://images.unsplash.com/photo-1731846568472-cef37f1a5ede?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjb3clMjBpbmRpYW58ZW58MHx8fHwxNzU2ODQzMjk0fDA&ixlib=rb-4.1.0&q=80&w=1080", aiHint: "cow food" },
     { title: "Medicines for cows", amount: 2100, img: "https://picsum.photos/150/150?random=5", aiHint: "cow medicine" },
     { title: "Dried Green", amount: 31000, img: "https://picsum.photos/150/150?random=6", aiHint: "green grass" },
     { title: "Jaggery 40 Kg", amount: 1000, img: "https://picsum.photos/150/150?random=9", aiHint: "jaggery" },
@@ -36,11 +36,11 @@ const kartavyaSevaOptions = [
 export default function Home() {
 
   const testimonials = [
-      { name: "Sai Karthik", rating: 5, quote: "A heartwarming and serene experience. The cows are so well-cared for in a clean, peaceful environment. A wonderful place to connect with nature and tradition.", avatar: "https://placehold.co/100x100.png", hint: "south indian man" },
-      { name: "Prithi Malini", rating: 5, quote: "This Goshala is a true sanctuary. The love and care they provide is inspiring. You can see native breeds looked after with so much dignity in a peaceful, clean, and spiritually uplifting environment.", avatar: "https://placehold.co/100x100.png", hint: "woman praying" },
-      { name: "Manisha G", rating: 5, quote: "A very well-maintained goshala! The cows are clearly cared for with love and attention. The caretakers are kind and dedicated. Truly a peaceful and heartwarming place to visit.", avatar: "https://placehold.co/100x100.png", hint: "woman smiling" },
-      { name: "Rohan Sharma", rating: 5, quote: "An incredibly peaceful and well-managed Goshala. The dedication of the staff is evident in the health and happiness of the cows. A must-visit for anyone seeking tranquility.", avatar: "https://placehold.co/100x100.png", hint: "man portrait" },
-      { name: "Anjali Verma", rating: 5, quote: "The energy here is so positive and pure. It's wonderful to see these sacred animals treated with such reverence and care. We left feeling truly blessed and will be back soon.", avatar: "https://placehold.co/100x100.png", hint: "woman nature" },
+      { name: "Sai Karthik", rating: 5, quote: "A heartwarming and serene experience. The cows are so well-cared for in a clean, peaceful environment. A wonderful place to connect with nature and tradition.", hint: "south indian man" },
+      { name: "Prithi Malini", rating: 5, quote: "This Goshala is a true sanctuary. The love and care they provide is inspiring. You can see native breeds looked after with so much dignity in a peaceful, clean, and spiritually uplifting environment.", hint: "woman praying" },
+      { name: "Manisha G", rating: 4, quote: "A very well-maintained goshala! The cows are clearly cared for with love and attention. The caretakers are kind and dedicated. Truly a peaceful and heartwarming place to visit.", hint: "woman smiling" },
+      { name: "Rohan Sharma", rating: 5, quote: "An incredibly peaceful and well-managed Goshala. The dedication of the staff is evident in the health and happiness of the cows. A must-visit for anyone seeking tranquility.", hint: "man portrait" },
+      { name: "Anjali Verma", rating: 5, quote: "The energy here is so positive and pure. It's wonderful to see these sacred animals treated with such reverence and care. We left feeling truly blessed and will be back soon.", hint: "woman nature" },
   ]
 
   const navLinks = [
