@@ -47,8 +47,8 @@ export default function AdminDashboardPage() {
             <Image 
               src="/gallery/logo.png?v=3" 
               alt="Goshala Logo" 
-              width={64} 
-              height={64} 
+              width={56} 
+              height={56} 
               className="p-1 bg-logo-background rounded-full object-cover" 
             />
             <span className="text-xl font-bold text-primary">Admin Panel</span>
@@ -106,19 +106,19 @@ export default function AdminDashboardPage() {
           </Sheet>
           <span className="text-lg font-semibold">Dashboard</span>
         </header>
-        <main className="flex-1 p-4 md:p-8">
-          <div className="grid gap-4 md:grid-cols-2 md:gap-8 lg:grid-cols-4">
+        <main className="flex-1 p-4 md:p-6">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             <Card>
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                 <CardTitle className="text-sm font-medium">
-                  Total Seva Revenue
+                  Total Revenue
                 </CardTitle>
                 <DollarSign className="h-4 w-4 text-muted-foreground" />
               </CardHeader>
               <CardContent>
-                <div className="text-2xl font-bold">₹4,52,318.89</div>
+                <div className="text-2xl font-bold">₹4,52,318</div>
                 <p className="text-xs text-muted-foreground">
-                  +20.1% from last month
+                  +20.1% last month
                 </p>
               </CardContent>
             </Card>
@@ -132,7 +132,7 @@ export default function AdminDashboardPage() {
               <CardContent>
                 <div className="text-2xl font-bold">+2350</div>
                 <p className="text-xs text-muted-foreground">
-                  +180.1% from last month
+                  +180.1% last month
                 </p>
               </CardContent>
             </Card>
@@ -144,7 +144,7 @@ export default function AdminDashboardPage() {
               <CardContent>
                 <div className="text-2xl font-bold">+12,234</div>
                 <p className="text-xs text-muted-foreground">
-                  +19% from last month
+                  +19% last month
                 </p>
               </CardContent>
             </Card>
@@ -156,21 +156,18 @@ export default function AdminDashboardPage() {
               <CardContent>
                 <div className="text-2xl font-bold">+573</div>
                 <p className="text-xs text-muted-foreground">
-                  +201 since last hour
+                  +201 last hour
                 </p>
               </CardContent>
             </Card>
           </div>
-          <div className="mt-4 md:mt-8 grid gap-4 md:gap-8 lg:grid-cols-2 xl:grid-cols-3">
-            <Card className="xl:col-span-2">
+          <div className="mt-4 md:mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            <Card className="lg:col-span-2">
               <CardHeader>
-                <CardTitle>Seva Contributions Overview</CardTitle>
-                <CardDescription>
-                  An overview of Seva financial contributions for the year.
-                </CardDescription>
+                <CardTitle>Contributions Overview</CardTitle>
               </CardHeader>
               <CardContent className="pl-2">
-                <ResponsiveContainer width="100%" height={350}>
+                <ResponsiveContainer width="100%" height={300}>
                    <BarChart data={chartData}>
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis dataKey="name" stroke="#888888" fontSize={12} tickLine={false} axisLine={false} />
@@ -187,7 +184,7 @@ export default function AdminDashboardPage() {
                 <div className="grid gap-2">
                   <CardTitle>Recent Sevas</CardTitle>
                   <CardDescription>
-                    Recent sevas from our devotees.
+                    Recent sevas from devotees.
                   </CardDescription>
                 </div>
                  <Button asChild size="sm" className="ml-auto gap-1">
@@ -202,7 +199,7 @@ export default function AdminDashboardPage() {
                   <TableHeader>
                     <TableRow>
                       <TableHead>Devotee</TableHead>
-                      <TableHead className="text-right">Amount (₹)</TableHead>
+                      <TableHead className="text-right">Amount</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
@@ -210,7 +207,7 @@ export default function AdminDashboardPage() {
                       <TableRow key={index}>
                         <TableCell>
                           <div className="font-medium">{seva.name}</div>
-                          <div className="hidden text-sm text-muted-foreground md:inline">
+                          <div className="hidden text-sm text-muted-foreground sm:inline">
                             {seva.email}
                           </div>
                         </TableCell>

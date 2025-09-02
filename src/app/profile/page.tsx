@@ -33,15 +33,15 @@ export default function ProfilePage() {
              <Image
               src="/gallery/logo.png?v=3"
               alt="Goshala Logo"
-              width={64}
-              height={64}
+              width={56}
+              height={56}
               className="p-1 bg-logo-background rounded-full object-cover"
             />
             <span className="text-xl md:text-2xl font-bold text-primary tracking-tight">
               Sri Krishna Goshala
             </span>
           </Link>
-          <Button asChild variant="outline">
+          <Button asChild variant="outline" size="sm">
             <Link href="/" className="flex items-center gap-2">
                 <LogOut className="w-4 h-4" />
                 Logout
@@ -53,39 +53,41 @@ export default function ProfilePage() {
       <main className="flex-1 p-4 md:p-8">
         <div className="container mx-auto max-w-4xl">
           <Card className="shadow-2xl border-t-4 border-primary">
-            <CardHeader className="flex flex-col md:flex-row items-center md:items-start text-center md:text-left gap-4 md:gap-6 p-6 md:p-8">
-              <Avatar className="h-20 w-20 md:h-24 md:w-24 border-4 border-primary/20">
+            <CardHeader className="flex flex-col items-center text-center gap-4 p-6">
+              <Avatar className="h-24 w-24 border-4 border-primary/20">
                 <AvatarImage src={userProfile.avatarUrl} alt={userProfile.name} data-ai-hint="smiling person" />
                 <AvatarFallback>{userProfile.name.charAt(0)}</AvatarFallback>
               </Avatar>
               <div className="flex-1">
-                <CardTitle className="text-3xl md:text-4xl font-bold text-primary">{userProfile.name}</CardTitle>
-                <CardDescription className="text-md md:text-lg text-muted-foreground">{userProfile.email}</CardDescription>
-                <p className="text-sm text-muted-foreground mt-1">Devotee since {new Date(userProfile.joinDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+                <CardTitle className="text-3xl font-bold text-primary">{userProfile.name}</CardTitle>
+                <CardDescription className="text-base text-muted-foreground">{userProfile.email}</CardDescription>
+                <p className="text-sm text-muted-foreground mt-1">Devotee since {new Date(userProfile.joinDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long' })}</p>
               </div>
-              <div className="flex items-center gap-2 bg-primary/10 text-primary-foreground border border-primary/20 rounded-lg px-3 py-1 md:px-4 md:py-2">
-                <Award className="w-5 h-5 md:w-6 md:h-6 text-primary"/>
-                <span className="font-semibold text-primary text-sm md:text-base">Gold Donor</span>
+              <div className="flex items-center gap-2 bg-primary/10 text-primary-foreground border border-primary/20 rounded-lg px-4 py-2">
+                <Award className="w-6 h-6 text-primary"/>
+                <span className="font-semibold text-primary text-base">Gold Donor</span>
               </div>
             </CardHeader>
             <Separator />
-            <CardContent className="p-6 md:p-8">
+            <CardContent className="p-4 md:p-8">
               <h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 flex items-center gap-3 text-primary">
-                <DollarSign className="w-5 h-5 md:w-6 md:h-6" />
+                <DollarSign className="w-6 h-6" />
                 Donation History
               </h3>
-              <div className="space-y-4">
+              <div className="space-y-3">
                 {donationHistory.map((donation) => (
-                  <Card key={donation.id} className="p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 bg-background border rounded-lg hover:shadow-md transition-shadow">
-                    <div className="flex-1 mb-2 sm:mb-0">
-                      <p className="font-bold text-primary">{donation.type}</p>
-                      <p className="text-xs text-muted-foreground">ID: {donation.id} | Date: {new Date(donation.date).toLocaleDateString()}</p>
-                    </div>
-                    <div className="flex items-center gap-4 w-full sm:w-auto">
-                       <p className="text-lg font-bold text-foreground flex-1 sm:flex-none">{donation.amount}</p>
-                       <Badge variant={donation.status === 'Completed' ? 'default' : 'secondary'} className="bg-green-100 text-green-800 border border-green-300 font-semibold text-xs">
-                         {donation.status}
-                       </Badge>
+                  <Card key={donation.id} className="p-3 bg-background border rounded-lg hover:shadow-md transition-shadow">
+                    <div className="flex justify-between items-center gap-3">
+                      <div className="flex-1">
+                        <p className="font-bold text-primary">{donation.type}</p>
+                        <p className="text-xs text-muted-foreground">Date: {new Date(donation.date).toLocaleDateString()}</p>
+                      </div>
+                      <div className="text-right">
+                         <p className="text-lg font-bold text-foreground">{donation.amount}</p>
+                         <Badge variant={donation.status === 'Completed' ? 'default' : 'secondary'} className="bg-green-100 text-green-800 border border-green-300 font-semibold text-xs">
+                           {donation.status}
+                         </Badge>
+                      </div>
                     </div>
                   </Card>
                 ))}

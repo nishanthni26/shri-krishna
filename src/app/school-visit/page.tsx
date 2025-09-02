@@ -21,7 +21,6 @@ export default function SchoolVisitPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Basic validation
     const form = e.target as HTMLFormElement;
     const schoolName = (form.elements.namedItem('school-name') as HTMLInputElement).value;
     const contactPerson = (form.elements.namedItem('contact-person') as HTMLInputElement).value;
@@ -45,15 +44,15 @@ export default function SchoolVisitPage() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-secondary/50">
+    <div className="flex flex-col min-h-screen bg-secondary/10">
       <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-sm">
         <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
           <Link href="/" className="flex items-center gap-3">
             <Image
               src="/gallery/logo.png?v=3"
               alt="Goshala Logo"
-              width={64}
-              height={64}
+              width={56}
+              height={56}
               className="p-1 bg-logo-background rounded-full object-cover"
             />
             <span className="text-xl md:text-2xl font-bold text-primary tracking-tight">
@@ -72,13 +71,13 @@ export default function SchoolVisitPage() {
       <main className="flex-1 flex items-center justify-center p-4">
         <Card className="w-full max-w-4xl shadow-2xl">
           <form onSubmit={handleSubmit}>
-            <CardHeader className="text-center md:text-left">
+            <CardHeader className="text-center">
               <CardTitle className="text-2xl md:text-3xl font-bold text-primary">Request a School Farm Visit</CardTitle>
               <CardDescription>
                 Fill out the form below to organize an educational trip for your students.
               </CardDescription>
             </CardHeader>
-            <CardContent className="grid md:grid-cols-2 gap-6 md:gap-8">
+            <CardContent className="grid md:grid-cols-2 gap-6 md:gap-8 p-4">
               <div className="space-y-4">
                 <div className="grid gap-2">
                   <Label htmlFor="school-name">School Name</Label>
@@ -103,8 +102,8 @@ export default function SchoolVisitPage() {
                     <Input id="student-count" type="number" placeholder="e.g., 30" required />
                  </div>
                  <div className="grid gap-2">
-                    <Label htmlFor="notes">Additional Notes or Questions</Label>
-                    <Textarea id="notes" placeholder="Tell us about any special requirements or questions you have." />
+                    <Label htmlFor="notes">Additional Notes</Label>
+                    <Textarea id="notes" placeholder="Any special requirements?" />
                  </div>
               </div>
               <div className="flex flex-col items-center">
@@ -118,7 +117,7 @@ export default function SchoolVisitPage() {
                  />
               </div>
             </CardContent>
-            <CardFooter className="flex justify-end p-6">
+            <CardFooter className="flex justify-center md:justify-end p-4">
                 <Button type="submit" size="lg">Submit Request</Button>
             </CardFooter>
           </form>

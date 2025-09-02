@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { ArrowRight, HeartHandshake, LogIn, Quote, Users, UtensilsCrossed, Stethoscope, Menu, School } from "lucide-react";
+import { ArrowRight, HeartHandshake, LogIn, Quote, Users, UtensilsCrossed, Stethoscope, Menu, School, Sun, Calendar, Heart } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
 import Link from "next/link";
@@ -22,6 +22,12 @@ export default function Home() {
       { icon: "Leaf", title: "Green Grass Contribution", description: "Provide a generous amount of fresh, nutritious green fodder for the entire herd. This is crucial for their digestion and overall vitality.", price: "₹3,100", link: "/payment" },
       { icon: "School", title: "School Farm Visit", description: "Sponsor an educational and interactive visit for a group of local schoolchildren. This helps foster a love for animals and teaches them about the importance of cow protection. Please contact us to arrange.", price: "Contact Us", link: "/school-visit" },
   ];
+  
+  const mobileSevaOptions = [
+    { icon: Sun, title: "One Day's Care", price: "₹1,100", link: "/payment" },
+    { icon: Calendar, title: "One Month's Care", price: "₹5,100", link: "/payment" },
+    { icon: Heart, title: "Gau Daan", price: "₹51,000", link: "/payment" },
+  ]
 
   const testimonials = [
       { name: "Sai Karthik", quote: "A heartwarming and serene experience. The cows are so well-cared for in a clean, peaceful environment. A wonderful place to connect with nature and tradition.", avatar: "https://placehold.co/100x100.png", hint: "south indian man" },
@@ -30,14 +36,6 @@ export default function Home() {
       { name: "Rohan Sharma", quote: "An incredibly peaceful and well-managed Goshala. The dedication of the staff is evident in the health and happiness of the cows. A must-visit for anyone seeking tranquility.", avatar: "https://placehold.co/100x100.png", hint: "man portrait" },
       { name: "Anjali Verma", quote: "The energy here is so positive and pure. It's wonderful to see these sacred animals treated with such reverence and care. We left feeling truly blessed and will be back soon.", avatar: "https://placehold.co/100x100.png", hint: "woman nature" },
   ]
-
-  const quickLinks = [
-    { text: "Home", href: "#" },
-    { text: "About Us", href: "#about" },
-    { text: "Seva", href: "#seva" },
-    { text: "Gallery", href: "/gallery" },
-    { text: "Contact Us", href: "#contact" },
-  ];
 
   const navLinks = [
     { text: "About", href: "#about" },
@@ -80,12 +78,6 @@ export default function Home() {
               <Link href="/payment">
                 Donate <span className="hidden md:inline ml-1">Now</span> 
                 <ArrowRight className="w-4 h-4 ml-1 md:ml-2 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </Button>
-            <Button variant="ghost" className="hidden lg:flex" asChild>
-              <Link href="/login" className="flex items-center gap-2">
-                  <LogIn className="w-4 h-4" />
-                  Login
               </Link>
             </Button>
              <Sheet>
@@ -185,8 +177,8 @@ export default function Home() {
                  <Image
                   src="/photo.png"
                   alt="Founder of Sri Krishna Goshala with two young calves in a green pasture"
-                  layout="fill"
-                  objectFit="cover"
+                  fill
+                  style={{objectFit: 'cover'}}
                   className="rounded-2xl shadow-2xl border-8 border-white transition-transform duration-500 group-hover:scale-105"
                   data-ai-hint="man calves"
                 />
@@ -213,7 +205,29 @@ export default function Home() {
                         Your selfless service helps us provide the best care for our cows. Participate in our Seva programs and become a part of our family.
                     </p>
                 </div>
-                 <SevaCarousel sevaOptions={sevaOptions} />
+                <div className="md:hidden mt-8 space-y-4">
+                  {mobileSevaOptions.map((seva, index) => (
+                    <Card key={index} className="bg-background shadow-md">
+                      <CardContent className="p-4 flex items-center justify-between">
+                        <div className="flex items-center gap-4">
+                          <div className="bg-secondary text-primary-foreground h-12 w-12 rounded-full flex items-center justify-center">
+                            <seva.icon className="h-6 w-6" />
+                          </div>
+                          <div>
+                            <h4 className="font-bold text-primary">{seva.title}</h4>
+                            <p className="font-semibold">{seva.price}</p>
+                          </div>
+                        </div>
+                        <Button asChild size="sm">
+                          <Link href={seva.link}>Donate</Link>
+                        </Button>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+                <div className="hidden md:block">
+                  <SevaCarousel sevaOptions={sevaOptions} />
+                </div>
             </div>
         </section>
 
@@ -294,9 +308,8 @@ export default function Home() {
 
       <footer id="contact" className="bg-secondary text-secondary-foreground py-10 md:py-12" style={{ backgroundImage: "url('https://www.transparenttextures.com/patterns/dark-dotted.png')" }}>
         <div className="container mx-auto px-4 md:px-6">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
-
-                <div className="md:col-span-1 flex flex-col items-center md:items-start">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-center md:text-left">
+                <div className="flex flex-col items-center md:items-start">
                     <div className="flex items-center gap-4 mb-4">
                         <Image
                             src="/gallery/logo.png?v=3"
@@ -314,23 +327,7 @@ export default function Home() {
                     </div>
                 </div>
 
-                <div className="md:col-span-1 flex flex-col items-center md:items-start">
-                    <h3 className="text-lg font-semibold text-white mb-4 relative pb-2">
-                        Quick Links
-                        <span className="absolute bottom-0 left-1/2 md:left-0 -translate-x-1/2 md:translate-x-0 w-12 h-0.5 bg-footer-accent"></span>
-                    </h3>
-                    <ul className="space-y-2">
-                        {quickLinks.map(link => (
-                            <li key={link.text}>
-                                <Link href={link.href} className="text-secondary-foreground/80 hover:text-white transition-colors">
-                                    {link.text}
-                                </Link>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-
-                <div className="md:col-span-1 flex flex-col items-center md:items-start">
+                <div className="flex flex-col items-center md:items-start">
                     <h3 className="text-lg font-semibold text-white mb-4 relative pb-2">
                         Bank Details
                         <span className="absolute bottom-0 left-1/2 md:left-0 -translate-x-1/2 md:translate-x-0 w-12 h-0.5 bg-footer-accent"></span>
@@ -355,5 +352,3 @@ export default function Home() {
     </div>
   );
 }
-
-    

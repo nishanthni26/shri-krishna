@@ -39,15 +39,15 @@ export default function BookSlotPage() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-secondary/50">
+    <div className="flex flex-col min-h-screen bg-secondary/10">
       <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-sm">
         <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
           <Link href="/" className="flex items-center gap-3">
             <Image
               src="/gallery/logo.png?v=3"
               alt="Goshala Logo"
-              width={64}
-              height={64}
+              width={56}
+              height={56}
               className="p-1 bg-logo-background rounded-full object-cover"
             />
             <span className="text-xl md:text-2xl font-bold text-primary tracking-tight">
@@ -62,14 +62,14 @@ export default function BookSlotPage() {
 
       <main className="flex-1 flex items-center justify-center p-4">
         <Card className="w-full max-w-4xl shadow-2xl">
-          <CardHeader className="text-center md:text-left">
+          <CardHeader className="text-center">
             <CardTitle className="text-2xl md:text-3xl font-bold text-primary">Book Your Live Video Seva</CardTitle>
             <CardDescription>
               Select a date and time for your personalized video call with our cows.
             </CardDescription>
           </CardHeader>
           <CardContent className="grid md:grid-cols-2 gap-6 md:gap-8">
-            <div className="flex justify-center p-0 md:p-4">
+            <div className="flex justify-center p-0">
               <Calendar
                 mode="single"
                 selected={date}
@@ -84,14 +84,14 @@ export default function BookSlotPage() {
                 <RadioGroup
                   value={selectedTime}
                   onValueChange={setSelectedTime}
-                  className="grid grid-cols-2 gap-3 md:gap-4"
+                  className="grid grid-cols-2 gap-3"
                 >
                   {timeSlots.map((slot) => (
                     <div key={slot}>
                       <RadioGroupItem value={slot} id={slot} className="peer sr-only" />
                       <Label
                         htmlFor={slot}
-                        className="flex items-center justify-center rounded-md border-2 border-muted bg-popover p-3 md:p-4 text-sm md:text-base hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
+                        className="flex items-center justify-center rounded-md border-2 border-muted bg-popover p-4 text-base hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
                       >
                         {slot}
                       </Label>
@@ -99,7 +99,7 @@ export default function BookSlotPage() {
                   ))}
                 </RadioGroup>
               </div>
-              <Button onClick={handleBooking} size="lg" className="w-full text-md md:text-lg">
+              <Button onClick={handleBooking} size="lg" className="w-full text-lg">
                 Confirm Booking
               </Button>
             </div>
