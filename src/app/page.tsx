@@ -14,19 +14,19 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 export default function Home() {
 
   const sevaOptions = [
-      { icon: "Sun", title: "A cow’s expenditure per day", description: "Sponsor a day's worth of care, including fodder, fresh water, and supplements for one sacred cow. Your contribution ensures they are healthy, happy, and comfortable.", price: "₹1,100", link: "/payment" },
-      { icon: "Calendar", title: "Monthly expense of a cow", description: "Cover the full monthly expenses for one cow. This includes feed, shelter maintenance, and routine health checks, providing them with a stable and nurturing environment.", price: "₹5,100", link: "/payment" },
-      { icon: "CalendarCheck", title: "Annual cost of a cow", description: "Become a guardian for a cow for an entire year. This comprehensive support covers all their needs, from food and shelter to any required medical attention, ensuring their long-term well-being.", price: "₹21,000", link: "/payment" },
-      { icon: "HeartHandshake", title: "Donation of a cow (Gau Daan)", description: "Gau Daan is considered one of the most sacred gifts. By donating a cow, you provide a new life to our herd, and we will care for the cow on your behalf for its entire lifetime.", price: "₹51,000", link: "/payment" },
-      { icon: "Users", title: "Cow’s Health Checkup", description: "Fund a complete veterinary health check-up, including preventive treatments and any necessary medical care to ensure our cows remain in excellent health.", price: "₹2,500", link: "/payment" },
-      { icon: "Leaf", title: "Green Grass Contribution", description: "Provide a generous amount of fresh, nutritious green fodder for the entire herd. This is crucial for their digestion and overall vitality.", price: "₹3,100", link: "/payment" },
+      { icon: "Sun", title: "A cow’s expenditure per day", description: "Sponsor a day's worth of care, including fodder, fresh water, and supplements for one sacred cow. Your contribution ensures they are healthy, happy, and comfortable.", price: "₹1,100", link: "/payment?amount=1100" },
+      { icon: "Calendar", title: "Monthly expense of a cow", description: "Cover the full monthly expenses for one cow. This includes feed, shelter maintenance, and routine health checks, providing them with a stable and nurturing environment.", price: "₹5,100", link: "/payment?amount=5100" },
+      { icon: "CalendarCheck", title: "Annual cost of a cow", description: "Become a guardian for a cow for an entire year. This comprehensive support covers all their needs, from food and shelter to any required medical attention, ensuring their long-term well-being.", price: "₹21,000", link: "/payment?amount=21000" },
+      { icon: "HeartHandshake", title: "Donation of a cow (Gau Daan)", description: "Gau Daan is considered one of the most sacred gifts. By donating a cow, you provide a new life to our herd, and we will care for the cow on your behalf for its entire lifetime.", price: "₹51,000", link: "/payment?amount=51000" },
+      { icon: "Users", title: "Cow’s Health Checkup", description: "Fund a complete veterinary health check-up, including preventive treatments and any necessary medical care to ensure our cows remain in excellent health.", price: "₹2,500", link: "/payment?amount=2500" },
+      { icon: "Leaf", title: "Green Grass Contribution", description: "Provide a generous amount of fresh, nutritious green fodder for the entire herd. This is crucial for their digestion and overall vitality.", price: "₹3,100", link: "/payment?amount=3100" },
       { icon: "School", title: "School Farm Visit", description: "Sponsor an educational and interactive visit for a group of local schoolchildren. This helps foster a love for animals and teaches them about the importance of cow protection. Please contact us to arrange.", price: "Contact Us", link: "/school-visit" },
   ];
   
   const mobileSevaOptions = [
-    { icon: Sun, title: "One Day's Care", price: "₹1,100", link: "/payment" },
-    { icon: Calendar, title: "One Month's Care", price: "₹5,100", link: "/payment" },
-    { icon: Heart, title: "Gau Daan", price: "₹51,000", link: "/payment" },
+    { icon: Sun, title: "One Day's Care", price: "₹1,100", link: "/payment?amount=1100" },
+    { icon: Calendar, title: "One Month's Care", price: "₹5,100", link: "/payment?amount=5100" },
+    { icon: Heart, title: "Gau Daan", price: "₹51,000", link: "/payment?amount=51000" },
   ]
 
   const testimonials = [
@@ -333,7 +333,7 @@ export default function Home() {
                         <span className="absolute bottom-0 left-1/2 md:left-0 -translate-x-1/2 md:translate-x-0 w-12 h-0.5 bg-footer-accent"></span>
                     </h3>
                     <div className="text-secondary-foreground/80 space-y-1 text-sm">
-                        <p><b>Name:</b> SRI KRISHNA GOSHALA</p>
+                        <p><b>Name:</b> SRI KRISHNA GOSHALA TRUST</p>
                         <p><b>A/C No:</b> 9552000100048201</p>
                         <p><b>IFSC:</b> KARB0000955</p>
                         <p><b>Bank:</b> Karnataka Bank</p>

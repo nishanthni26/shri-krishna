@@ -72,4 +72,11 @@
     .bg-logo-background {
         background-color: hsl(24.24deg 42.49% 45.69%);
     }
+    .bg-dotted-pattern {
+      background-image: radial-gradient(hsl(var(--muted)) 1px, transparent 1px);
+      background-size: 10px 10px;
+      background-color: hsl(var(--primary)/0.05);
+      border-radius: var(--radius);
+      border: 1px solid hsl(var(--border)/0.5);
+    }
 }
