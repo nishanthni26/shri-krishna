@@ -3,7 +3,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { ArrowRight, HeartHandshake, LogIn, Menu, Quote, Star, Plus } from "lucide-react";
+import { ArrowRight, HeartHandshake, LogIn, Menu, Quote, Star, Plus, Video } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
 import Link from "next/link";
@@ -198,8 +198,11 @@ export default function Home() {
             <div className="container mx-auto px-4 md:px-6">
                 <Tabs defaultValue="kripa" className="w-full">
                     <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
-                        <h2 className="text-2xl md:text-3xl font-bold text-primary mb-4 md:mb-0 text-center md:text-left">One Day Maintenance Expenses</h2>
-                        <TabsList className="grid w-full grid-cols-2 md:w-auto h-auto">
+                        <div className="text-center md:text-left">
+                            <h3 className="text-base font-semibold text-secondary uppercase tracking-widest">Contribute</h3>
+                            <h2 className="text-3xl md:text-5xl font-bold text-primary mt-1">One Day Maintenance Expenses</h2>
+                        </div>
+                        <TabsList className="grid w-full grid-cols-2 md:w-auto h-auto mt-4 md:mt-0">
                             <TabsTrigger value="kripa" className="py-2 text-base data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">Kripa Seva</TabsTrigger>
                             <TabsTrigger value="kartavya" className="py-2 text-base data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">Kartavya Seva</TabsTrigger>
                         </TabsList>
@@ -218,7 +221,38 @@ export default function Home() {
             </div>
         </section>
 
-        <section id="about" className="py-16 md:py-28 bg-transparent overflow-hidden">
+        <section id="video-seva" className="py-16 md:py-28 bg-background">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
+              <div>
+                <h3 className="text-base font-semibold text-secondary uppercase tracking-widest">Connect From Anywhere</h3>
+                <h2 className="text-3xl md:text-5xl font-bold text-primary leading-tight mt-2">
+                  Live Video Seva
+                </h2>
+                <p className="mt-4 md:mt-6 text-foreground/80 text-md md:text-lg">
+                  Experience the serenity of our Goshala from the comfort of your home. With our Video Seva, you can connect with our beloved cows through a live, personalized video call. It's a unique opportunity to offer your prayers and feel the divine presence, no matter where you are in the world.
+                </p>
+                <Button size="lg" className="mt-8" asChild>
+                    <Link href="/book-slot">
+                        Book Your Video Seva <Video className="w-5 h-5 ml-2" />
+                    </Link>
+                </Button>
+              </div>
+              <div className="relative w-full aspect-video group rounded-2xl shadow-2xl border-8 border-white overflow-hidden">
+                 <Image
+                  src="https://picsum.photos/600/338"
+                  alt="A person on a video call with a cow"
+                  fill
+                  style={{objectFit: 'cover'}}
+                  className="transition-transform duration-500 group-hover:scale-105"
+                  data-ai-hint="person video call"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="about" className="py-16 md:py-28 bg-primary/5 overflow-hidden">
           <div className="container mx-auto px-4 md:px-6">
             <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
               <div className="relative w-full aspect-square group">
@@ -310,7 +344,6 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-6">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 text-center lg:text-left">
                 
-                {/* Column 1: Address Info */}
                 <div className="lg:col-span-3 flex flex-col items-center lg:items-start">
                     <Image
                         src="/gallery/logo.png?v=3"
@@ -335,11 +368,9 @@ export default function Home() {
                     </div>
                 </div>
 
-                {/* Column 2: Quick Links */}
                 <div className="lg:col-span-5">
-                    <h3 className="text-lg font-semibold text-white mb-4 relative pb-2 inline-block lg:block">
+                    <h3 className="text-lg font-semibold text-white mb-6 relative pb-2 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-1/4 after:h-0.5 after:bg-primary">
                         Quick Links
-                        <span className="absolute bottom-0 left-0 w-full h-0.5 bg-primary"></span>
                     </h3>
                     <div className="grid grid-cols-2 gap-x-8 gap-y-3">
                       <div className="flex flex-col items-center lg:items-start gap-3">
@@ -359,11 +390,9 @@ export default function Home() {
                     </div>
                 </div>
 
-                {/* Column 3: Bank Details */}
                 <div className="lg:col-span-4 flex flex-col items-center lg:items-start">
-                    <h3 className="text-lg font-semibold text-white mb-4 relative pb-2 inline-block lg:block">
+                    <h3 className="text-lg font-semibold text-white mb-6 relative pb-2 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-1/4 after:h-0.5 after:bg-primary">
                         Bank Details
-                        <span className="absolute bottom-0 left-0 w-full h-0.5 bg-primary"></span>
                     </h3>
                     <div className="text-secondary-foreground/80 space-y-1 text-sm text-left">
                         <p><b>Name:</b> SRI KRISHNA GOSHALA</p>
@@ -386,3 +415,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
