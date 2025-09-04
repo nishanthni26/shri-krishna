@@ -9,6 +9,7 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: true,
   },
   images: {
+    unoptimized: process.env.NODE_ENV === 'production',
     remotePatterns: [
       {
         protocol: 'https',
@@ -33,3 +34,5 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
+
+    

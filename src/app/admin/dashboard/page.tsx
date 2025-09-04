@@ -66,7 +66,7 @@ export default function AdminDashboardPage() {
       <aside className="hidden w-64 flex-col border-r bg-background p-4 sm:flex">
         <div className="flex items-center gap-3 mb-8">
             <Image 
-              src="/gallery/logo.png?v=6" 
+              src="/gallery/logo.png?v=7" 
               alt="Goshala Logo" 
               width={56} 
               height={56} 
@@ -107,7 +107,7 @@ export default function AdminDashboardPage() {
                <nav className="grid gap-4 text-lg font-medium">
                  <Link href="#" className="flex items-center gap-3 mb-4">
                     <Image 
-                      src="/gallery/logo.png?v=6" 
+                      src="/gallery/logo.png?v=7" 
                       alt="Goshala Logo" 
                       width={40} 
                       height={40} 
@@ -268,3 +268,5 @@ export default function AdminDashboardPage() {
     </div>
   );
 }
+
+    

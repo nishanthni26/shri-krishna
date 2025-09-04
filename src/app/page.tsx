@@ -118,7 +118,7 @@ export default function Home() {
           <Link href="#" className="flex items-center gap-2">
             <div className="relative w-14 h-14">
                 <Image 
-                  src="/gallery/logo.png?v=6" 
+                  src="/gallery/logo.png?v=7" 
                   alt="Goshala Logo" 
                   fill
                   className="object-contain" 
@@ -157,7 +157,7 @@ export default function Home() {
                      <Link href="#" className="flex items-center gap-3">
                         <div className="relative w-10 h-10">
                             <Image 
-                            src="/gallery/logo.png?v=6" 
+                            src="/gallery/logo.png?v=7" 
                             alt="Goshala Logo" 
                             fill
                             className="object-contain" 
@@ -372,7 +372,7 @@ export default function Home() {
                 <div className="lg:col-span-3 flex flex-col items-center lg:items-start">
                     <div className="relative w-20 h-20 mb-6">
                         <Image
-                            src="/gallery/logo.png?v=6"
+                            src="/gallery/logo.png?v=7"
                             alt="Goshala Logo"
                             fill
                             className="object-contain"
@@ -441,3 +441,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
