@@ -265,7 +265,7 @@ export default function Home() {
               </div>
               <div className="relative w-full aspect-video group rounded-2xl shadow-2xl border-8 border-white overflow-hidden">
                  <Image
-                  src="https://picsum.photos/600/338"
+                  src="/gallery/a26.png"
                   alt="A person on a video call with a cow"
                   fill
                   style={{objectFit: 'cover'}}
