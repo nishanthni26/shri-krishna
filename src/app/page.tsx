@@ -52,9 +52,9 @@ export default function Home() {
     { text: "Contact", href: "#contact" },
   ];
 
-  const galleryImages = Array.from({ length: 5 }, (_, i) => ({
-    src: `/gallery/G${i + 1}.png`,
-    alt: `Goshala gallery image ${i + 1}`,
+  const galleryImages = Array.from({ length: 6 }, (_, i) => ({
+    src: `/gallery/a${i + 1}.png`,
+    alt: `Goshala gallery image a${i + 1}`,
   }));
 
 
