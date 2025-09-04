@@ -14,6 +14,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { useRouter } from "next/navigation";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { GalleryCarousel } from "@/components/ui/gallery-carousel";
+import { AnimatedCounter } from "@/components/ui/animated-counter";
 
 
 const kripaSevaOptions = [
@@ -63,10 +64,10 @@ export default function Home() {
   ];
 
   const stats = [
-    { value: "10+", label: "Years of Service" },
-    { value: "15+", label: "Breeds" },
-    { value: "200+", label: "Cows" },
-    { value: "500+", label: "Donors & Volunteers" },
+    { value: 10, suffix: "+", label: "Years of Service" },
+    { value: 15, suffix: "+", label: "Breeds" },
+    { value: 200, suffix: "+", label: "Cows" },
+    { value: 500, suffix: "+", label: "Donors & Volunteers" },
   ];
 
   const galleryImages = Array.from({ length: 6 }, (_, i) => ({
@@ -115,13 +116,14 @@ export default function Home() {
        <header className="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-sm border-b">
         <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
           <Link href="#" className="flex items-center gap-2">
-            <Image 
-              src="/gallery/logo.png?v=6" 
-              alt="Goshala Logo" 
-              width={56} 
-              height={56} 
-              className="object-contain" 
-            />
+            <div className="relative w-14 h-14">
+                <Image 
+                  src="/gallery/logo.png?v=6" 
+                  alt="Goshala Logo" 
+                  fill
+                  className="object-contain" 
+                />
+            </div>
             <span className="text-lg md:text-2xl font-bold text-primary tracking-tight">
               Sri Krishna Goshala
             </span>
@@ -153,13 +155,14 @@ export default function Home() {
               <SheetContent side="left" className="flex flex-col p-0 bg-secondary text-secondary-foreground">
                   <div className="flex items-center justify-between p-4 border-b border-gray-700/50">
                      <Link href="#" className="flex items-center gap-3">
-                        <Image 
-                          src="/gallery/logo.png?v=6" 
-                          alt="Goshala Logo" 
-                          width={40} 
-                          height={40} 
-                          className="object-contain" 
-                        />
+                        <div className="relative w-10 h-10">
+                            <Image 
+                            src="/gallery/logo.png?v=6" 
+                            alt="Goshala Logo" 
+                            fill
+                            className="object-contain" 
+                            />
+                        </div>
                         <span className="text-lg font-bold text-primary">Sri Krishna Goshala</span>
                       </Link>
                   </div>
@@ -205,8 +208,10 @@ export default function Home() {
           <div className="container mx-auto px-4 md:px-6">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
               {stats.map((stat) => (
-                <div key={stat.label} className="flex flex-col items-center justify-center">
-                  <span className="text-4xl md:text-5xl font-bold text-secondary">{stat.value}</span>
+                <div key={stat.label} className="flex flex-col items-center justify-center p-4 rounded-lg">
+                  <span className="text-4xl md:text-5xl font-bold text-secondary">
+                    <AnimatedCounter end={stat.value} suffix={stat.suffix} />
+                  </span>
                   <span className="mt-2 text-sm md:text-base text-muted-foreground">{stat.label}</span>
                 </div>
               ))}
@@ -365,13 +370,14 @@ export default function Home() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 text-center lg:text-left">
                 
                 <div className="lg:col-span-3 flex flex-col items-center lg:items-start">
-                    <Image
-                        src="/gallery/logo.png?v=6"
-                        alt="Goshala Logo"
-                        width={80}
-                        height={80}
-                        className="object-contain mb-6"
-                    />
+                    <div className="relative w-20 h-20 mb-6">
+                        <Image
+                            src="/gallery/logo.png?v=6"
+                            alt="Goshala Logo"
+                            fill
+                            className="object-contain"
+                        />
+                    </div>
                     <div className="text-secondary-foreground/80 space-y-4 text-sm">
                          <div>
                             <h4 className="font-bold text-white mb-1">ADDRESS</h4>
