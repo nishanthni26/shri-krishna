@@ -77,7 +77,6 @@ export default function Home() {
   
   const footerQuickLinks2 = [
     { text: "Sri Krishna Gaushala", href: "#" },
-    { text: "Indian Cows", href: "/our-cows" },
     { text: "Raise A Cow", href: "#seva" },
     { text: "Pray To Gaumatha", href: "#seva" },
   ];
