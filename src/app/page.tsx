@@ -201,9 +201,9 @@ export default function Home() {
               </div>
               <div>
                 <h3 className="text-base font-semibold text-secondary uppercase tracking-widest">Our Story</h3>
-                <h2 className="text-3xl md:text-5xl font-bold text-primary leading-tight mt-2">
+                <h1 className="text-3xl md:text-5xl font-bold text-primary leading-tight mt-2">
                   About Sri Krishna Goshala
-                </h2>
+                </h1>
                 <p className="mt-4 md:mt-6 text-foreground/80 text-md md:text-lg">
                   Sri Krishna Gaushala was established in 2015 by Mr. Krishnamurthy. The Cow referred as Divine Mother, the Gomata, and one which bestows health, knowledge and prosperity. In Sanskrit, the word “Go” also means “Light”. Mother cows are worshiped in Shri Krishna Gaushala. From food to Shelter, every need is taken care of. Shri Krishna Gaushala has been established with a very noble vision. Their only objective is to serve the cows. It is said that by serving cows, all the sorrows, pain, and problems of a person go away. The cow has a special place in Hinduism, and it is believed that all gods reside in her body. Feeding a cow with green fodder is considered one of the Maha Daans that is powerful enough to remove all the Grah Doshas, or troubles arising from the malefic effects of the planets.
                 </p>
