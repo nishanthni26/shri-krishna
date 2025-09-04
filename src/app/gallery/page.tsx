@@ -6,9 +6,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 
-const galleryImages = Array.from({ length: 23 }, (_, i) => ({
-  src: `/gallery/a${i + 1}.png`,
-  alt: `Goshala gallery image a${i + 1}`,
+const galleryImageNumbers = Array.from({ length: 23 }, (_, i) => i + 1).filter(n => n !== 18);
+
+const galleryImages = galleryImageNumbers.map(i => ({
+  src: `/gallery/a${i}.png`,
+  alt: `Goshala gallery image a${i}`,
 }));
 
 export default function GalleryPage() {
