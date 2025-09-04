@@ -200,9 +200,9 @@ export default function Home() {
               </div>
               <div>
                 <h3 className="text-base font-semibold text-secondary uppercase tracking-widest">Our Story</h3>
-                <h2 className="text-3xl md:text-5xl font-bold text-primary leading-tight mt-2">
+                <h1 className="text-3xl md:text-5xl font-bold text-primary leading-tight mt-2">
                   About Sri Krishna Goshala
-                </h2>
+                </h1>
                 <p className="mt-4 md:mt-6 text-foreground/80 text-md md:text-lg">
                   Sri Krishna Gaushala was established in 2015 by Mr. Krishnamurthy. The Cow referred as Divine Mother, the Gomata, and one which bestows health, knowledge and prosperity. In Sanskrit, the word “Go” also means “Light”. Mother cows are worshiped in Shri Krishna Gaushala. From food to Shelter, every need is taken care of. Shri Krishna Gaushala has been established with a very noble vision. Their only objective is to serve the cows. It is said that by serving cows, all the sorrows, pain, and problems of a person go away. The cow has a special place in Hinduism, and it is believed that all gods reside in her body. Feeding a cow with green fodder is considered one of the Maha Daans that is powerful enough to remove all the Grah Doshas, or troubles arising from the malefic effects of the planets.
                 </p>
@@ -220,9 +220,9 @@ export default function Home() {
             <p className="mt-4 md:mt-5 max-w-2xl mx-auto text-foreground/80 text-md md:text-lg">
               Glimpses of daily life and the gentle souls that call our Goshala home.
             </p>
-            <div className="mt-12 md:mt-16 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-2 md:gap-4">
+            <div className="mt-12 md:mt-16 flex overflow-x-auto gap-4 pb-4">
               {galleryImages.map((image, index) => (
-                <div key={index} className="overflow-hidden rounded-lg md:rounded-2xl group aspect-w-1 aspect-h-1 border-2 md:border-4 border-white">
+                <div key={index} className="flex-shrink-0 w-64 h-64 overflow-hidden rounded-lg md:rounded-2xl group aspect-w-1 aspect-h-1 border-2 md:border-4 border-white">
                   <Image
                     src={image.src}
                     alt={image.alt}
@@ -338,4 +338,5 @@ export default function Home() {
     
 
     
+
 
