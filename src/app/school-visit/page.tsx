@@ -49,7 +49,7 @@ export default function SchoolVisitPage() {
         <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
           <Link href="/" className="flex items-center gap-3">
             <Image
-              src="/gallery/logo.png?v=3"
+              src="/gallery/logo.png?v=4"
               alt="Goshala Logo"
               width={56}
               height={56}
