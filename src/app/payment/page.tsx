@@ -48,7 +48,7 @@ function PaymentFormComponent() {
             <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
                 <Link href="/" className="flex items-center gap-3">
                     <Image
-                        src="/gallery/logo.png?v=5"
+                        src="/gallery/logo.png?v=6"
                         alt="Goshala Logo"
                         width={56}
                         height={56}

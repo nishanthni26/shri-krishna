@@ -109,7 +109,7 @@ export default function Home() {
         <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
           <Link href="#" className="flex items-center gap-2">
             <Image 
-              src="/gallery/logo.png?v=5" 
+              src="/gallery/logo.png?v=6" 
               alt="Goshala Logo" 
               width={56} 
               height={56} 
@@ -147,7 +147,7 @@ export default function Home() {
                   <div className="flex items-center justify-between p-4 border-b border-gray-700/50">
                      <Link href="#" className="flex items-center gap-3">
                         <Image 
-                          src="/gallery/logo.png?v=5" 
+                          src="/gallery/logo.png?v=6" 
                           alt="Goshala Logo" 
                           width={40} 
                           height={40} 
@@ -346,7 +346,7 @@ export default function Home() {
                 
                 <div className="lg:col-span-3 flex flex-col items-center lg:items-start">
                     <Image
-                        src="/gallery/logo.png?v=5"
+                        src="/gallery/logo.png?v=6"
                         alt="Goshala Logo"
                         width={80}
                         height={80}
@@ -415,5 +415,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
