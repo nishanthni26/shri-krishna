@@ -38,10 +38,9 @@ export function HeroCarousel() {
             <Image
               src={img.src}
               alt={img.alt}
-              layout="fill"
-              objectFit="cover"
+              fill
               className="transition-opacity duration-500"
-              style={{ opacity }}
+              style={{ opacity, objectFit: 'cover' }}
               data-ai-hint={img.hint}
             />
           </div>

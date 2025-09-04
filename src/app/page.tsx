@@ -99,7 +99,7 @@ export default function Home() {
     return (
       <Card className="flex items-center p-3 shadow-sm hover:shadow-md transition-shadow duration-300 bg-card border rounded-lg">
         <div className="relative w-16 h-16 rounded-md overflow-hidden flex-shrink-0">
-            <Image src={img} alt={title} layout="fill" objectFit="cover" data-ai-hint={aiHint} />
+            <Image src={img} alt={title} fill style={{objectFit:"cover"}} data-ai-hint={aiHint} />
         </div>
         <div className="flex-grow ml-3 overflow-hidden">
             <p className="font-semibold text-foreground truncate">{title}</p>
@@ -442,4 +442,3 @@ export default function Home() {
   );
 }
 
-    
