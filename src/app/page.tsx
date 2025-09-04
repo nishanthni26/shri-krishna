@@ -13,6 +13,7 @@ import { HeroCarousel } from "@/components/ui/hero-carousel";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { useRouter } from "next/navigation";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { GalleryCarousel } from "@/components/ui/gallery-carousel";
 
 
 const kripaSevaOptions = [
@@ -52,7 +53,7 @@ export default function Home() {
     { text: "Contact", href: "#contact" },
   ];
 
-  const galleryImages = Array.from({ length: 5 }, (_, i) => ({
+  const galleryImages = Array.from({ length: 6 }, (_, i) => ({
     src: `/gallery/a${i + 1}.png`,
     alt: `Goshala gallery image a${i + 1}`,
   }));
@@ -101,6 +102,11 @@ export default function Home() {
             ))}
           </nav>
           <div className="flex items-center gap-2 md:gap-4">
+             <Button asChild variant="ghost" className="hidden md:inline-flex">
+              <Link href="/login">
+                  Login
+              </Link>
+            </Button>
             <Button asChild size="sm" className="rounded-full shadow-lg md:text-base md:px-6 md:py-4 hover:scale-105 transition-transform group">
               <Link href="#seva">
                 Donate <span className="hidden md:inline ml-1">Now</span> 
@@ -222,19 +228,7 @@ export default function Home() {
             <p className="mt-4 md:mt-5 max-w-2xl mx-auto text-foreground/80 text-md md:text-lg">
               Glimpses of daily life and the gentle souls that call our Goshala home.
             </p>
-            <div className="mt-12 md:mt-16 flex overflow-x-auto gap-4 pb-4">
-              {galleryImages.map((image, index) => (
-                <div key={index} className="flex-shrink-0 w-64 h-64 overflow-hidden rounded-lg md:rounded-2xl group aspect-w-1 aspect-h-1 border-2 md:border-4 border-white">
-                  <Image
-                    src={image.src}
-                    alt={image.alt}
-                    width={400}
-                    height={400}
-                    className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-500 ease-in-out"
-                  />
-                </div>
-              ))}
-            </div>
+            <GalleryCarousel images={galleryImages} className="mt-12 md:mt-16" />
             <div className="mt-12 text-center">
                 <Button asChild size="lg">
                     <Link href="/gallery">
@@ -334,14 +328,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
-
-    
-
-    
-
-
-
-
-    
