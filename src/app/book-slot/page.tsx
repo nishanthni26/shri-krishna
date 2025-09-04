@@ -17,6 +17,7 @@ const timeSlots = ['09:00 AM', '11:00 AM', '02:00 PM', '04:00 PM'];
 export default function BookSlotPage() {
   const [date, setDate] = useState<Date | undefined>(new Date());
   const [selectedTime, setSelectedTime] = useState<string | undefined>();
+  const [bookingConfirmed, setBookingConfirmed] = useState(false);
   const { toast } = useToast();
   const router = useRouter();
 
@@ -50,10 +51,12 @@ export default function BookSlotPage() {
 
     toast({
       title: 'Booking Confirmed!',
-      description: `Your Video Seva is booked for ${date.toLocaleDateString()} at ${selectedTime}. Redirecting...`,
+      description: `Sri Krishna Goshala has been notified and will call you at your selected time.`,
     });
-
-    router.push('/video-seva');
+    
+    setBookingConfirmed(true);
+    setDate(undefined);
+    setSelectedTime(undefined);
   };
 
   return (
