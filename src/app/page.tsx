@@ -45,6 +45,15 @@ export default function Home() {
   ]
 
   const navLinks = [
+    { text: "HOME", href: "#" },
+    { text: "ABOUT US", href: "#about" },
+    { text: "GAUSHALA", href: "/our-cows" },
+    { text: "ACTIVITIES", href: "#seva" },
+    { text: "GALLERY", href: "/gallery" },
+    { text: "CONTACT US", href: "#contact" },
+  ];
+  
+  const desktopNavLinks = [
     { text: "About", href: "#about" },
     { text: "Our Cows", href: "/our-cows" },
     { text: "Seva", href: "#seva" },
@@ -112,7 +121,7 @@ export default function Home() {
             </span>
           </Link>
           <nav className="hidden md:flex items-center gap-6 text-base font-medium text-foreground/80">
-            {navLinks.map((link) => (
+            {desktopNavLinks.map((link) => (
               <Link key={link.text} href={link.href} className="hover:text-primary transition-colors">{link.text}</Link>
             ))}
           </nav>
@@ -130,30 +139,31 @@ export default function Home() {
             </Button>
              <Sheet>
               <SheetTrigger asChild>
-                <Button variant="outline" size="icon" className="md:hidden">
+                <Button variant="outline" size="icon" className="md:hidden bg-secondary text-secondary-foreground">
                   <Menu className="h-6 w-6" />
                   <span className="sr-only">Toggle navigation menu</span>
                 </Button>
               </SheetTrigger>
-              <SheetContent side="left" className="flex flex-col p-6 bg-background">
-                  <Link href="#" className="flex items-center gap-3 mb-8">
-                    <Image 
-                      src="/gallery/logo.png?v=3" 
-                      alt="Goshala Logo" 
-                      width={40} 
-                      height={40} 
-                      className="p-1 bg-logo-background rounded-full object-cover" 
-                    />
-                    <span className="text-lg font-bold text-primary">Sri Krishna Goshala</span>
-                  </Link>
-                  <nav className="grid gap-4 text-lg font-medium">
+              <SheetContent side="left" className="flex flex-col p-0 bg-secondary text-secondary-foreground">
+                  <div className="flex items-center justify-between p-4 border-b border-gray-700/50">
+                     <Link href="#" className="flex items-center gap-3">
+                        <Image 
+                          src="/gallery/logo.png?v=3" 
+                          alt="Goshala Logo" 
+                          width={40} 
+                          height={40} 
+                          className="p-1 bg-logo-background rounded-full object-cover" 
+                        />
+                        <span className="text-lg font-bold text-primary">Sri Krishna Goshala</span>
+                      </Link>
+                  </div>
+                  <nav className="flex flex-col text-lg font-medium">
                     {navLinks.map((link) => (
-                       <Link key={link.text} href={link.href} className="text-foreground/80 hover:text-primary py-2 px-3 rounded-md hover:bg-muted font-medium transition-colors -mx-3">{link.text}</Link>
+                       <Link key={link.text} href={link.href} className="text-secondary-foreground hover:bg-primary/20 hover:text-white py-3 px-6 border-b border-gray-700/50 transition-colors">{link.text}</Link>
                     ))}
                   </nav>
-                  <div className="mt-auto">
-                    <Separator className="my-6" />
-                     <Button variant="outline" className="w-full" asChild>
+                  <div className="mt-auto p-6">
+                     <Button variant="outline" className="w-full bg-transparent border-primary text-primary hover:bg-primary hover:text-primary-foreground" asChild>
                       <Link href="/login" className="flex items-center justify-center gap-2">
                           <LogIn className="w-5 h-5" />
                           Login / Sign Up
