@@ -62,6 +62,13 @@ export default function Home() {
     { text: "Contact", href: "#contact" },
   ];
 
+  const stats = [
+    { value: "10+", label: "Years of Service" },
+    { value: "15+", label: "Breeds" },
+    { value: "200+", label: "Cows" },
+    { value: "500+", label: "Donors & Volunteers" },
+  ];
+
   const galleryImages = Array.from({ length: 6 }, (_, i) => ({
     src: `/gallery/a${i + 1}.png`,
     alt: `Goshala gallery image a${i + 1}`,
@@ -191,6 +198,19 @@ export default function Home() {
                 Support Our Cows <HeartHandshake className="w-5 h-5 md:w-6 md:h-6 ml-2 md:ml-3 transition-transform group-hover:rotate-12" />
               </Link>
             </Button>
+          </div>
+        </section>
+
+        <section className="py-12 md:py-20 bg-background">
+          <div className="container mx-auto px-4 md:px-6">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+              {stats.map((stat) => (
+                <div key={stat.label} className="flex flex-col items-center justify-center">
+                  <span className="text-4xl md:text-5xl font-bold text-secondary">{stat.value}</span>
+                  <span className="mt-2 text-sm md:text-base text-muted-foreground">{stat.label}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
