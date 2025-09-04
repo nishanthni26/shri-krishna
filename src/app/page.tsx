@@ -3,7 +3,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { ArrowRight, HeartHandshake, LogIn, Menu, Quote, Star } from "lucide-react";
+import { ArrowRight, HeartHandshake, LogIn, Menu, Quote, Star, Plus } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
 import Link from "next/link";
@@ -57,6 +57,21 @@ export default function Home() {
     src: `/gallery/a${i + 1}.png`,
     alt: `Goshala gallery image a${i + 1}`,
   }));
+
+  const footerQuickLinks1 = [
+    { text: "Home", href: "#" },
+    { text: "About Us", href: "#about" },
+    { text: "Activities", href: "#seva" },
+    { text: "Gallery", href: "/gallery" },
+    { text: "Contact Us", href: "#contact" },
+  ];
+  
+  const footerQuickLinks2 = [
+    { text: "Sri Krishna Gaushala", href: "#" },
+    { text: "Indian Cows", href: "/our-cows" },
+    { text: "Raise A Cow", href: "#seva" },
+    { text: "Pray To Gaumatha", href: "#seva" },
+  ];
 
 
   const SevaCard = ({ title, amount, img, aiHint }: { title: string; amount: number; img: string; aiHint: string; }) => {
@@ -282,45 +297,79 @@ export default function Home() {
 
       </main>
 
-      <footer id="contact" className="bg-secondary text-secondary-foreground py-10 md:py-12" style={{ backgroundImage: "url('https://www.transparenttextures.com/patterns/dark-dotted.png')" }}>
+      <footer id="contact" className="bg-secondary text-secondary-foreground py-10 md:py-20" style={{ backgroundImage: "url('https://www.transparenttextures.com/patterns/dark-dotted.png')" }}>
         <div className="container mx-auto px-4 md:px-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-center md:text-left">
-                <div className="flex flex-col items-center md:items-start">
-                    <div className="flex items-center gap-4 mb-4">
-                        <Image
-                            src="/gallery/logo.png?v=3"
-                            alt="Goshala Logo"
-                            width={48}
-                            height={48}
-                            className="bg-logo-background rounded-full p-1"
-                        />
-                        <span className="font-bold text-xl text-primary-foreground">Sri Krishna Goshala</span>
-                    </div>
-                     <div className="text-secondary-foreground/80 space-y-3 text-sm md:text-base">
-                         <p>#69, Vittasandra Mainroad, 4th Cross, Lakshmi Layout, Near Post Office, Begur.</p>
-                         <p><b>Phone:</b> 9972508500 | 8123791540</p>
-                         <p><b>Email:</b> srikrishnagaushalablr@gmail.com</p>
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 text-center lg:text-left">
+                
+                {/* Column 1: Address Info */}
+                <div className="lg:col-span-3 flex flex-col items-center lg:items-start">
+                    <Image
+                        src="/gallery/logo.png?v=3"
+                        alt="Goshala Logo"
+                        width={80}
+                        height={80}
+                        className="bg-logo-background rounded-full p-2 mb-6"
+                    />
+                    <div className="text-secondary-foreground/80 space-y-4 text-sm">
+                         <div>
+                            <h4 className="font-bold text-white mb-1">ADDRESS</h4>
+                            <p>#69, Vittasandra Mainroad, 4th Cross, Lakshmi Layout, Near Post Office, Begur.</p>
+                         </div>
+                         <div>
+                            <h4 className="font-bold text-white mb-1">PHONE</h4>
+                            <p>9972508500 | 8123791540</p>
+                         </div>
+                         <div>
+                            <h4 className="font-bold text-white mb-1">EMAIL</h4>
+                            <p>srikrishnagaushalablr@gmail.com</p>
+                         </div>
                     </div>
                 </div>
 
-                <div className="flex flex-col items-center md:items-start">
-                    <h3 className="text-lg font-semibold text-white mb-4 relative pb-2">
-                        Bank Details
-                        <span className="absolute bottom-0 left-1/2 md:left-0 -translate-x-1/2 md:translate-x-0 w-12 h-0.5 bg-footer-accent"></span>
+                {/* Column 2: Quick Links */}
+                <div className="lg:col-span-5">
+                    <h3 className="text-lg font-semibold text-white mb-4 relative pb-2 inline-block lg:block">
+                        Quick Links
+                        <span className="absolute bottom-0 left-0 w-full h-0.5 bg-primary"></span>
                     </h3>
-                    <div className="text-secondary-foreground/80 space-y-1 text-sm">
-                        <p><b>Name:</b> SRI KRISHNA GOSHALA TRUST</p>
-                        <p><b>A/C No:</b> 9552000100048201</p>
-                        <p><b>IFSC:</b> KARB0000955</p>
-                        <p><b>Bank:</b> Karnataka Bank</p>
-                        <p><b>Branch:</b> Akshya Nagar, Bangalore</p>
-                    </div>
-                     <div className="mt-4 flex justify-center md:justify-start">
-                        <Image src="/gallery/qr.png" alt="QR Code for Donation" width={100} height={100} data-ai-hint="qr code" />
+                    <div className="grid grid-cols-2 gap-x-8 gap-y-3">
+                      <div className="flex flex-col items-center lg:items-start gap-3">
+                        {footerQuickLinks1.map(link => (
+                          <Link key={link.text} href={link.href} className="text-secondary-foreground/80 hover:text-primary transition-colors flex items-center gap-2">
+                            <Plus className="w-3 h-3"/> {link.text}
+                          </Link>
+                        ))}
+                      </div>
+                       <div className="flex flex-col items-center lg:items-start gap-3">
+                        {footerQuickLinks2.map(link => (
+                          <Link key={link.text} href={link.href} className="text-secondary-foreground/80 hover:text-primary transition-colors flex items-center gap-2">
+                             <Plus className="w-3 h-3"/> {link.text}
+                          </Link>
+                        ))}
+                      </div>
                     </div>
                 </div>
+
+                {/* Column 3: Bank Details */}
+                <div className="lg:col-span-4 flex flex-col items-center lg:items-start">
+                    <h3 className="text-lg font-semibold text-white mb-4 relative pb-2 inline-block lg:block">
+                        Bank Details
+                        <span className="absolute bottom-0 left-0 w-full h-0.5 bg-primary"></span>
+                    </h3>
+                    <div className="text-secondary-foreground/80 space-y-1 text-sm text-left">
+                        <p><b>Name:</b> SRI KRISHNA GOSHALA</p>
+                        <p><b>A/C No:</b> 9552000100048201</p>
+                        <p><b>IFSC Code:</b> KARB0000955</p>
+                        <p><b>Branch Name:</b> Akshya Nagar Branch- Bangalore (KARNATAKA)</p>
+                        <p><b>Bank Name:</b> Karnataka Bank</p>
+                    </div>
+                     <div className="mt-4">
+                        <Image src="/gallery/qr.png" alt="QR Code for Donation" width={120} height={120} data-ai-hint="qr code" className="bg-white p-1 rounded-md"/>
+                    </div>
+                </div>
+
             </div>
-            <div className="border-t border-gray-700/50 mt-8 pt-6 text-center text-secondary-foreground/60 text-sm">
+            <div className="border-t border-gray-700/50 mt-12 pt-6 text-center text-secondary-foreground/60 text-sm">
                 <p>&copy; {new Date().getFullYear()} Sri Krishna Goshala. All Rights Reserved.</p>
             </div>
         </div>
