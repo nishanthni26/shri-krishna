@@ -6,7 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 
-const galleryImages = Array.from({ length: 15 }, (_, i) => ({
+const galleryImages = Array.from({ length: 23 }, (_, i) => ({
   src: `/gallery/a${i + 1}.png`,
   alt: `Goshala gallery image a${i + 1}`,
 }));
