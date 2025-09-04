@@ -130,13 +130,15 @@ export default function Home() {
                        <Link key={link.text} href={link.href} className="text-foreground/80 hover:text-primary py-2 px-3 rounded-md hover:bg-muted font-medium transition-colors -mx-3">{link.text}</Link>
                     ))}
                   </nav>
-                  <Separator className="my-6" />
-                   <Button variant="outline" className="w-full mt-auto" asChild>
-                    <Link href="/login" className="flex items-center justify-center gap-2">
-                        <LogIn className="w-5 h-5" />
-                        Login / Sign Up
-                    </Link>
-                  </Button>
+                  <div className="mt-auto">
+                    <Separator className="my-6" />
+                     <Button variant="outline" className="w-full" asChild>
+                      <Link href="/login" className="flex items-center justify-center gap-2">
+                          <LogIn className="w-5 h-5" />
+                          Login / Sign Up
+                      </Link>
+                    </Button>
+                  </div>
               </SheetContent>
             </Sheet>
           </div>
@@ -320,7 +322,7 @@ export default function Home() {
                         <p><b>Branch:</b> Akshya Nagar, Bangalore</p>
                     </div>
                      <div className="mt-4 flex justify-center md:justify-start">
-                        <Image src="https://placehold.co/120x120.png" alt="QR Code for Donation" width={100} height={100} data-ai-hint="qr code" />
+                        <Image src="/gallery/qr.png" alt="QR Code for Donation" width={100} height={100} data-ai-hint="qr code" />
                     </div>
                 </div>
             </div>
@@ -340,3 +342,6 @@ export default function Home() {
     
 
 
+
+
+    
