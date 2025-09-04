@@ -191,7 +191,7 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
               <div className="relative w-full aspect-square group">
                  <Image
-                  src="/h1.png"
+                  src="/k1.png"
                   alt="Founder of Sri Krishna Goshala with two young calves in a green pasture"
                   fill
                   style={{objectFit: 'cover'}}
@@ -333,5 +333,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
