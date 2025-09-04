@@ -7,12 +7,11 @@ import Autoplay from 'embla-carousel-autoplay'
 import Image from 'next/image'
 
 const images = [
-    { src: "/gallery/s1.png", alt: "A herd of cows in a sunlit field", hint: "cows pasture" },
     { src: "/gallery/s2.png", alt: "A calm cow with gentle eyes", hint: "cow portrait" },
 ]
 
 export function HeroCarousel() {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: images.length > 1 }, [
     Autoplay({ delay: 5000, stopOnInteraction: false }),
   ])
   const [opacity, setOpacity] = React.useState(1)
