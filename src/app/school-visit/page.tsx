@@ -55,7 +55,7 @@ export default function SchoolVisitPage() {
               height={56}
               className="p-1 bg-logo-background rounded-full object-cover"
             />
-            <span className="text-xl md:text-2xl font-bold text-primary tracking-tight">
+            <span className="text-lg md:text-2xl font-bold text-primary tracking-tight">
               Sri Krishna Goshala
             </span>
           </Link>
@@ -71,13 +71,13 @@ export default function SchoolVisitPage() {
       <main className="flex-1 flex items-center justify-center p-4">
         <Card className="w-full max-w-4xl shadow-2xl">
           <form onSubmit={handleSubmit}>
-            <CardHeader className="text-center">
+            <CardHeader className="text-center px-4 pt-6 md:px-6 md:pt-8">
               <CardTitle className="text-2xl md:text-3xl font-bold text-primary">Request a School Farm Visit</CardTitle>
               <CardDescription>
                 Fill out the form below to organize an educational trip for your students.
               </CardDescription>
             </CardHeader>
-            <CardContent className="grid md:grid-cols-2 gap-6 md:gap-8 p-4">
+            <CardContent className="grid md:grid-cols-2 gap-6 md:gap-8 p-4 md:p-6">
               <div className="space-y-4">
                 <div className="grid gap-2">
                   <Label htmlFor="school-name">School Name</Label>
@@ -112,12 +112,12 @@ export default function SchoolVisitPage() {
                     mode="single"
                     selected={date}
                     onSelect={setDate}
-                    className="rounded-md border"
+                    className="rounded-md border p-0 sm:p-3"
                     disabled={(day) => day < new Date(new Date().setDate(new Date().getDate())) }
                  />
               </div>
             </CardContent>
-            <CardFooter className="flex justify-center md:justify-end p-4">
+            <CardFooter className="flex justify-center md:justify-end p-4 md:p-6">
                 <Button type="submit" size="lg">Submit Request</Button>
             </CardFooter>
           </form>
@@ -126,3 +126,5 @@ export default function SchoolVisitPage() {
     </div>
   );
 }
+
+    

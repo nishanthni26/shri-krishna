@@ -66,14 +66,14 @@ export default function Home() {
 
     return (
       <Card className="flex items-center p-3 shadow-sm hover:shadow-md transition-shadow duration-300 bg-card border rounded-lg">
-        <div className="relative w-16 h-16 rounded-md overflow-hidden">
+        <div className="relative w-16 h-16 rounded-md overflow-hidden flex-shrink-0">
             <Image src={img} alt={title} layout="fill" objectFit="cover" data-ai-hint={aiHint} />
         </div>
-        <div className="flex-grow ml-4">
-            <p className="font-semibold text-foreground">{title}</p>
+        <div className="flex-grow ml-3 overflow-hidden">
+            <p className="font-semibold text-foreground truncate">{title}</p>
             <p className="font-bold text-primary">₹{amount.toLocaleString('en-IN')}</p>
         </div>
-        <Button onClick={() => handleDonation(amount)} variant="outline" size="sm">Add Donation</Button>
+        <Button onClick={() => handleDonation(amount)} variant="outline" size="sm" className="ml-2 flex-shrink-0">Donate</Button>
       </Card>
     );
   }
@@ -87,11 +87,11 @@ export default function Home() {
             <Image 
               src="/gallery/logo.png?v=3" 
               alt="Goshala Logo" 
-              width={64} 
-              height={64} 
+              width={56} 
+              height={56} 
               className="p-1 bg-logo-background rounded-full object-cover" 
             />
-            <span className="text-xl md:text-2xl font-bold text-primary tracking-tight">
+            <span className="text-lg md:text-2xl font-bold text-primary tracking-tight">
               Sri Krishna Goshala
             </span>
           </Link>
@@ -166,7 +166,7 @@ export default function Home() {
             <div className="container mx-auto px-4 md:px-6">
                 <Tabs defaultValue="kripa" className="w-full">
                     <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
-                        <h2 className="text-2xl md:text-3xl font-bold text-primary mb-4 md:mb-0">One Day Maintenance Expenses</h2>
+                        <h2 className="text-2xl md:text-3xl font-bold text-primary mb-4 md:mb-0 text-center md:text-left">One Day Maintenance Expenses</h2>
                         <TabsList className="grid w-full grid-cols-2 md:w-auto h-auto">
                             <TabsTrigger value="kripa" className="py-2 text-base data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">Kripa Seva</TabsTrigger>
                             <TabsTrigger value="kartavya" className="py-2 text-base data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">Kartavya Seva</TabsTrigger>
@@ -200,9 +200,9 @@ export default function Home() {
               </div>
               <div>
                 <h3 className="text-base font-semibold text-secondary uppercase tracking-widest">Our Story</h3>
-                <h1 className="text-3xl md:text-5xl font-bold text-primary leading-tight mt-2">
+                <h2 className="text-3xl md:text-5xl font-bold text-primary leading-tight mt-2">
                   About Sri Krishna Goshala
-                </h1>
+                </h2>
                 <p className="mt-4 md:mt-6 text-foreground/80 text-md md:text-lg">
                   Sri Krishna Gaushala was established in 2015 by Mr. Krishnamurthy. The Cow referred as Divine Mother, the Gomata, and one which bestows health, knowledge and prosperity. In Sanskrit, the word “Go” also means “Light”. Mother cows are worshiped in Shri Krishna Gaushala. From food to Shelter, every need is taken care of. Shri Krishna Gaushala has been established with a very noble vision. Their only objective is to serve the cows. It is said that by serving cows, all the sorrows, pain, and problems of a person go away. The cow has a special place in Hinduism, and it is believed that all gods reside in her body. Feeding a cow with green fodder is considered one of the Maha Daans that is powerful enough to remove all the Grah Doshas, or troubles arising from the malefic effects of the planets.
                 </p>
@@ -267,9 +267,9 @@ export default function Home() {
             </div>
             <div className="max-w-4xl mx-auto mt-12">
               <Card className="p-6 md:p-8 shadow-lg">
-                <div className="flex justify-between items-end mb-2">
+                <div className="flex justify-between items-end mb-2 flex-wrap">
                    <span className="text-lg md:text-xl font-bold text-primary">₹7,50,000</span>
-                   <span className="text-md md:text-lg font-semibold text-muted-foreground">Goal: ₹10,00,000</span>
+                   <span className="text-sm md:text-lg font-semibold text-muted-foreground">Goal: ₹10,00,000</span>
                 </div>
                 <Progress value={75} className="h-4 md:h-6" indicatorClassName="bg-primary" />
                 <div className="text-center mt-6 md:mt-8">
@@ -319,7 +319,7 @@ export default function Home() {
                         <p><b>Bank:</b> Karnataka Bank</p>
                         <p><b>Branch:</b> Akshya Nagar, Bangalore</p>
                     </div>
-                     <div className="mt-4">
+                     <div className="mt-4 flex justify-center md:justify-start">
                         <Image src="https://placehold.co/120x120.png" alt="QR Code for Donation" width={100} height={100} data-ai-hint="qr code" />
                     </div>
                 </div>
@@ -332,6 +332,8 @@ export default function Home() {
     </div>
   );
 }
+
+    
 
     
 

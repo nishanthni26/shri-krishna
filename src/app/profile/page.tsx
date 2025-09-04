@@ -58,7 +58,7 @@ export default function ProfilePage() {
                 <AvatarImage src={userProfile.avatarUrl} alt={userProfile.name} data-ai-hint="smiling person" />
                 <AvatarFallback>{userProfile.name.charAt(0)}</AvatarFallback>
               </Avatar>
-              <div className="flex-1">
+              <div>
                 <CardTitle className="text-3xl font-bold text-primary">{userProfile.name}</CardTitle>
                 <CardDescription className="text-base text-muted-foreground">{userProfile.email}</CardDescription>
                 <p className="text-sm text-muted-foreground mt-1">Devotee since {new Date(userProfile.joinDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long' })}</p>
@@ -77,14 +77,14 @@ export default function ProfilePage() {
               <div className="space-y-3">
                 {donationHistory.map((donation) => (
                   <Card key={donation.id} className="p-3 bg-background border rounded-lg hover:shadow-md transition-shadow">
-                    <div className="flex justify-between items-center gap-3">
+                    <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-3">
                       <div className="flex-1">
                         <p className="font-bold text-primary">{donation.type}</p>
                         <p className="text-xs text-muted-foreground">Date: {new Date(donation.date).toLocaleDateString()}</p>
                       </div>
-                      <div className="text-right">
+                      <div className="text-left sm:text-right mt-2 sm:mt-0">
                          <p className="text-lg font-bold text-foreground">{donation.amount}</p>
-                         <Badge variant={donation.status === 'Completed' ? 'default' : 'secondary'} className="bg-green-100 text-green-800 border border-green-300 font-semibold text-xs">
+                         <Badge variant={donation.status === 'Completed' ? 'default' : 'secondary'} className="bg-green-100 text-green-800 border border-green-300 font-semibold text-xs mt-1 sm:mt-0">
                            {donation.status}
                          </Badge>
                       </div>
@@ -99,3 +99,5 @@ export default function ProfilePage() {
     </div>
   );
 }
+
+    
