@@ -6,10 +6,11 @@ import { Bar, BarChart, CartesianGrid, ResponsiveContainer, XAxis, YAxis, Toolti
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
-import { Activity, ArrowUpRight, CreditCard, DollarSign, Users, LogOut, LayoutDashboard, Menu } from 'lucide-react';
+import { Activity, ArrowUpRight, CreditCard, DollarSign, Users, LogOut, LayoutDashboard, Menu, Video, Bell } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Badge } from '@/components/ui/badge';
 
 const recentSevas = [
   { name: 'Ramesh Patel', email: 'ramesh@example.com', seva: 'Go-Grasa Seva', amount: '₹1,100' },
@@ -19,8 +20,18 @@ const recentSevas = [
   { name: 'Vikram Kumar', email: 'vikram.k@example.com', seva: 'Gau Daan', amount: '₹21,000' },
 ];
 
+interface VideoSevaBooking {
+  id: string;
+  name: string;
+  seva: string;
+  date: string;
+  time: string;
+  status: 'new' | 'confirmed';
+}
+
 export default function AdminDashboardPage() {
   const [chartData, setChartData] = useState<any[]>([]);
+  const [videoBookings, setVideoBookings] = useState<VideoSevaBooking[]>([]);
 
   useEffect(() => {
     const data = [
@@ -38,7 +49,17 @@ export default function AdminDashboardPage() {
       { name: 'Dec', total: Math.floor(Math.random() * 5000) + 1000 },
     ];
     setChartData(data);
+
+    try {
+        const storedBookings = JSON.parse(localStorage.getItem('videoSevaBookings') || '[]');
+        setVideoBookings(storedBookings);
+    } catch(error) {
+        console.error("Error reading bookings from localStorage", error);
+    }
+
   }, []);
+
+  const newBookingCount = videoBookings.filter(b => b.status === 'new').length;
 
   return (
     <div className="flex min-h-screen w-full bg-muted/40">
@@ -57,6 +78,11 @@ export default function AdminDashboardPage() {
           <Button variant="secondary" className="justify-start gap-2">
             <LayoutDashboard className="h-5 w-5" />
             Dashboard
+          </Button>
+          <Button variant="ghost" className="justify-start gap-2 relative">
+            <Video className="h-5 w-5" />
+            Video Seva Bookings
+            {newBookingCount > 0 && <Badge className="absolute right-2 top-1/2 -translate-y-1/2 h-5 w-5 justify-center p-0">{newBookingCount}</Badge>}
           </Button>
         </nav>
         <div className="mt-auto">
@@ -93,6 +119,11 @@ export default function AdminDashboardPage() {
                     <LayoutDashboard className="h-5 w-5" />
                     Dashboard
                   </Button>
+                  <Button variant="ghost" className="justify-start gap-2 relative">
+                    <Video className="h-5 w-5" />
+                    Video Seva Bookings
+                    {newBookingCount > 0 && <Badge className="absolute right-2 top-1/2 -translate-y-1/2 h-5 w-5 justify-center p-0">{newBookingCount}</Badge>}
+                  </Button>
                </nav>
                 <div className="mt-auto">
                   <Button variant="outline" className="w-full justify-start gap-2" asChild>
@@ -107,6 +138,19 @@ export default function AdminDashboardPage() {
           <span className="text-lg font-semibold">Dashboard</span>
         </header>
         <main className="flex-1 p-4 md:p-6">
+           {newBookingCount > 0 && (
+            <Card className="mb-4 border-primary bg-primary/5">
+              <CardHeader className="flex flex-row items-center gap-4">
+                <Bell className="w-6 h-6 text-primary"/>
+                <div>
+                  <CardTitle>New Bookings</CardTitle>
+                  <CardDescription>You have {newBookingCount} new Video Seva booking(s) to review.</CardDescription>
+                </div>
+                <Button size="sm" className="ml-auto">View</Button>
+              </CardHeader>
+            </Card>
+          )}
+
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             <Card>
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">

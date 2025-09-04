@@ -29,6 +29,24 @@ export default function BookSlotPage() {
       });
       return;
     }
+    
+    const newBooking = {
+      id: `booking-${Date.now()}`,
+      name: 'Anonymous Devotee', // Placeholder name
+      seva: 'Live Video Seva',
+      date: date.toLocaleDateString(),
+      time: selectedTime,
+      status: 'new'
+    };
+
+    try {
+      const existingBookings = JSON.parse(localStorage.getItem('videoSevaBookings') || '[]');
+      const updatedBookings = [newBooking, ...existingBookings];
+      localStorage.setItem('videoSevaBookings', JSON.stringify(updatedBookings));
+    } catch (error) {
+      console.error("Failed to save booking to localStorage", error);
+    }
+
 
     toast({
       title: 'Booking Confirmed!',
@@ -109,5 +127,3 @@ export default function BookSlotPage() {
     </div>
   );
 }
-
-    
