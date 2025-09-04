@@ -52,7 +52,7 @@ export default function Home() {
     { text: "Contact", href: "#contact" },
   ];
 
-  const galleryImages = Array.from({ length: 6 }, (_, i) => ({
+  const galleryImages = Array.from({ length: 5 }, (_, i) => ({
     src: `/gallery/a${i + 1}.png`,
     alt: `Goshala gallery image a${i + 1}`,
   }));
@@ -220,7 +220,7 @@ export default function Home() {
             <p className="mt-4 md:mt-5 max-w-2xl mx-auto text-foreground/80 text-md md:text-lg">
               Glimpses of daily life and the gentle souls that call our Goshala home.
             </p>
-            <div className="mt-12 md:mt-16 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 md:gap-4">
+            <div className="mt-12 md:mt-16 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-2 md:gap-4">
               {galleryImages.map((image, index) => (
                 <div key={index} className="overflow-hidden rounded-lg md:rounded-2xl group aspect-w-1 aspect-h-1 border-2 md:border-4 border-white">
                   <Image
@@ -338,3 +338,4 @@ export default function Home() {
     
 
     
+
