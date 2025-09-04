@@ -191,12 +191,11 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
               <div className="relative w-full aspect-square group">
                  <Image
-                  src="/k1.png"
-                  alt="Founder of Sri Krishna Goshala with two young calves in a green pasture"
+                  src="/gallery/a24.png"
+                  alt="A scene from Sri Krishna Goshala"
                   fill
                   style={{objectFit: 'cover'}}
                   className="rounded-2xl shadow-2xl border-8 border-white transition-transform duration-500 group-hover:scale-105"
-                  data-ai-hint="man calves"
                 />
               </div>
               <div>
@@ -333,5 +332,7 @@ export default function Home() {
     </div>
   );
 }
+
+    
 
     
