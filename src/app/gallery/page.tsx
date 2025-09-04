@@ -6,7 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 
-const galleryImageNumbers = Array.from({ length: 23 }, (_, i) => i + 1).filter(n => n !== 18);
+const galleryImageNumbers = Array.from({ length: 23 }, (_, i) => i + 1).filter(n => n !== 18 && n !== 12);
 
 const galleryImages = galleryImageNumbers.map(i => ({
   src: `/gallery/a${i}.png`,
