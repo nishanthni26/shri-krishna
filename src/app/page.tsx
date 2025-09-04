@@ -282,7 +282,7 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
               <div className="relative w-full aspect-square group">
                  <Image
-                  src="/gallery/a26.png"
+                  src="/gallery/a24.png"
                   alt="A scene from Sri Krishna Goshala"
                   fill
                   style={{objectFit: 'cover'}}
