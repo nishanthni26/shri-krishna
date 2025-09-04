@@ -31,11 +31,11 @@ export default function ProfilePage() {
         <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
           <Link href="/" className="flex items-center gap-3">
              <Image
-              src="/gallery/logo.png?v=4"
+              src="/gallery/logo.png?v=5"
               alt="Goshala Logo"
               width={56}
               height={56}
-              className="p-1 bg-logo-background rounded-full object-cover"
+              className="object-contain"
             />
             <span className="text-xl md:text-2xl font-bold text-primary tracking-tight">
               Sri Krishna Goshala

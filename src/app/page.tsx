@@ -109,11 +109,11 @@ export default function Home() {
         <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
           <Link href="#" className="flex items-center gap-2">
             <Image 
-              src="/gallery/logo.png?v=4" 
+              src="/gallery/logo.png?v=5" 
               alt="Goshala Logo" 
               width={56} 
               height={56} 
-              className="p-1 bg-logo-background rounded-full object-cover" 
+              className="object-contain" 
             />
             <span className="text-lg md:text-2xl font-bold text-primary tracking-tight">
               Sri Krishna Goshala
@@ -147,11 +147,11 @@ export default function Home() {
                   <div className="flex items-center justify-between p-4 border-b border-gray-700/50">
                      <Link href="#" className="flex items-center gap-3">
                         <Image 
-                          src="/gallery/logo.png?v=4" 
+                          src="/gallery/logo.png?v=5" 
                           alt="Goshala Logo" 
                           width={40} 
                           height={40} 
-                          className="p-1 bg-logo-background rounded-full object-cover" 
+                          className="object-contain" 
                         />
                         <span className="text-lg font-bold text-primary">Sri Krishna Goshala</span>
                       </Link>
@@ -346,11 +346,11 @@ export default function Home() {
                 
                 <div className="lg:col-span-3 flex flex-col items-center lg:items-start">
                     <Image
-                        src="/gallery/logo.png?v=4"
+                        src="/gallery/logo.png?v=5"
                         alt="Goshala Logo"
                         width={80}
                         height={80}
-                        className="bg-logo-background rounded-full p-2 mb-6"
+                        className="object-contain mb-6"
                     />
                     <div className="text-secondary-foreground/80 space-y-4 text-sm">
                          <div>
@@ -369,7 +369,7 @@ export default function Home() {
                 </div>
 
                 <div className="lg:col-span-5">
-                    <h3 className="text-lg font-semibold text-white mb-6 relative pb-2 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-1/4 after:h-0.5 after:bg-primary">
+                    <h3 className="text-lg font-semibold text-white mb-6 relative pb-2 after:content-[''] after:absolute after:left-1/2 lg:after:left-0 after:-translate-x-1/2 lg:after:translate-x-0 after:bottom-0 after:w-1/4 after:h-0.5 after:bg-primary">
                         Quick Links
                     </h3>
                     <div className="grid grid-cols-2 gap-x-8 gap-y-3">
@@ -391,7 +391,7 @@ export default function Home() {
                 </div>
 
                 <div className="lg:col-span-4 flex flex-col items-center lg:items-start">
-                    <h3 className="text-lg font-semibold text-white mb-6 relative pb-2 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-1/4 after:h-0.5 after:bg-primary">
+                    <h3 className="text-lg font-semibold text-white mb-6 relative pb-2 after:content-[''] after:absolute after:left-1/2 lg:after:left-0 after:-translate-x-1/2 lg:after:translate-x-0 after:bottom-0 after:w-1/4 after:h-0.5 after:bg-primary">
                         Bank Details
                     </h3>
                     <div className="text-secondary-foreground/80 space-y-1 text-sm text-left">

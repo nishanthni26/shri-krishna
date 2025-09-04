@@ -45,11 +45,11 @@ export default function AdminDashboardPage() {
       <aside className="hidden w-64 flex-col border-r bg-background p-4 sm:flex">
         <div className="flex items-center gap-3 mb-8">
             <Image 
-              src="/gallery/logo.png?v=4" 
+              src="/gallery/logo.png?v=5" 
               alt="Goshala Logo" 
               width={56} 
               height={56} 
-              className="p-1 bg-logo-background rounded-full object-cover" 
+              className="object-contain" 
             />
             <span className="text-xl font-bold text-primary">Admin Panel</span>
         </div>
@@ -81,11 +81,11 @@ export default function AdminDashboardPage() {
                <nav className="grid gap-4 text-lg font-medium">
                  <Link href="#" className="flex items-center gap-3 mb-4">
                     <Image 
-                      src="/gallery/logo.png?v=4" 
+                      src="/gallery/logo.png?v=5" 
                       alt="Goshala Logo" 
                       width={40} 
                       height={40} 
-                      className="p-1 bg-logo-background rounded-full object-cover" 
+                      className="object-contain" 
                     />
                     <span className="text-lg font-bold text-primary">Admin Panel</span>
                   </Link>
